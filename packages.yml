@@ -1,0 +1,5 @@
+packages:
+  - git: https://github.com/fueled-io/dbt-fueled-utils.git
+    revision: fueled-rename-complete
+  - package: dbt-labs/codegen
+    version: 0.9.0
