@@ -18,8 +18,7 @@ with
             user_id,
             context_anonymous_id as domain_userid
 
-            /* TODO - Add enrichments and additional context array items. */
-
+        /* TODO - Add enrichments and additional context array items. */
         from source
 
     )
