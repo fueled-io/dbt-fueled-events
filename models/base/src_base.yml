@@ -5,15 +5,15 @@ version: 2
 sources:
   - name: fueled_events_atomic
     schema: "{{ var('fueled__atomic_schema', 'fueled_atomic') }}"
-    description: ""
+    description: "Raw event data from Fueled client-side and server-side Source integrations"
     tables:
       - name: cart_viewed
-        description: ""
+        description: "Client-side eCommerce shopping cart views"
         columns:
           - name: cart_id
-            description: ""
+            description: '{{ doc("col_cart_id") }}'
           - name: channel
-            description: ""
+            description: '{{ doc("col_channel") }}'
           - name: context_client_id
             description: ""
           - name: context_destination_id
