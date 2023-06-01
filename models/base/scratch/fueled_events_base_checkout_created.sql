@@ -42,6 +42,4 @@ with
     )
 
 select *
-from
-    checkout_created
-    
+from checkout_created
