@@ -42,20 +42,6 @@ with
     )
 
 select *
-from checkout_created
-
-/*
-    cart_id,
-    context_destination_id as v_collector,
-    context_destination_type v_elt,
-    context_ip as user_ipaddress,
-    context_library_version as v_tracker,
-    context_source as event_source,
-    id as event_id,
-    original_timestamp as collector_tstamp,
-    products,
-    received_at as etl_tstamp,
-    total,
-    user_id,
-    context_anonymous_id as domain_userid
-*/
+from
+    checkout_created
+    
