@@ -19,7 +19,7 @@ with
             phone,
             context_anonymous_id as anonymous_id,
             id as user_id
-            {{ get_shared_event_attributes("fueled_events_atomic", "tracks") }},
+            {{ get_shared_event_attributes("fueled_events_atomic", "users") }},
 
         from source
 
