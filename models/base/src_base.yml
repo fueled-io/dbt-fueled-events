@@ -1,1472 +1,3728 @@
 version: 2
 
-# TODO - Add enrichments and additional context items.
-
 sources:
   - name: fueled_events_atomic
     schema: "{{ var('fueled__atomic_schema', 'fueled_atomic') }}"
     description: "Raw event data from Fueled client-side and server-side Source integrations"
     tables:
       - name: cart_viewed
-        description: "Client-side eCommerce shopping cart views"
+        description: ""
         columns:
-          - name: cart_id
-            description: '{{ doc("col_cart_id") }}'
-          - name: channel
-            description: '{{ doc("col_channel") }}'
-          - name: context_client_id
-            description: ""
-          - name: context_destination_id
-            description: ""
-          - name: context_destination_type
-            description: ""
-          - name: context_ip
-            description: ""
-          - name: context_library_name
-            description: ""
-          - name: context_library_version
-            description: ""
           - name: context_request_ip
-            description: ""
-          - name: context_rudderstack_source
-            description: ""
-          - name: context_session_id
-            description: ""
-          - name: context_source
-            description: ""
-          - name: context_source_id
-            description: ""
-          - name: context_source_type
-            description: ""
-          - name: event
-            description: ""
-          - name: event_text
-            description: ""
-          - name: id
-            description: ""
-          - name: original_timestamp
-            description: ""
-          - name: products
-            description: ""
-          - name: received_at
-            description: ""
-          - name: sent_at
-            description: ""
-          - name: timestamp
             description: ""
           - name: total
             description: ""
+          - name: uuid_ts
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: received_at
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: context_anonymous_id
+            description: ""
+          - name: id
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: context_source
+            description: ""
           - name: user_id
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: event
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: products
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: event_text
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: channel
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: context_referrer
+            description: ""
+          - name: context_page_title
+            description: ""
+          - name: context_user_agent
+            description: ""
+          - name: context_page_height
+            description: ""
+          - name: context_debug
+            description: ""
+          - name: context_page_referrer
+            description: ""
+          - name: context_page_path
+            description: ""
+          - name: context_os_name
+            description: ""
+          - name: context_page_url
+            description: ""
+          - name: context_offline
+            description: ""
+          - name: context_initialized
+            description: ""
+          - name: context_locale
+            description: ""
+          - name: context_timezone
+            description: ""
+          - name: context_page_width
+            description: ""
+          - name: context_app
+            description: ""
+          - name: context_campaign_name
+            description: ""
+          - name: context_campaign_medium
+            description: ""
+          - name: context_campaign_source
+            description: ""
+          - name: context_page_search
+            description: ""
+          - name: context_page_hash
+            description: ""
+
+      - name: cart_viewed_view
+        description: ""
+        columns:
+          - name: context_request_ip
+            description: ""
+          - name: total
             description: ""
           - name: uuid_ts
             description: ""
+          - name: context_client_id
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: received_at
+            description: ""
+          - name: context_source_type
+            description: ""
           - name: context_anonymous_id
+            description: ""
+          - name: id
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: context_source
+            description: ""
+          - name: user_id
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: event
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: products
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: event_text
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: channel
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: context_destination_type
             description: ""
 
       - name: checkout_created
         description: ""
         columns:
-          - name: affiliation
-            description: ""
-          - name: channel
-            description: ""
-          - name: context_destination_id
-            description: ""
-          - name: context_destination_type
-            description: ""
-          - name: context_ip
+          - name: context_client_id
             description: ""
           - name: context_library_name
             description: ""
-          - name: context_library_version
-            description: ""
-          - name: context_request_ip
-            description: ""
-          - name: context_rudderstack_source
-            description: ""
-          - name: context_source
-            description: ""
-          - name: context_source_id
-            description: ""
-          - name: context_source_type
-            description: ""
-          - name: currency
+          - name: context_destination_id
             description: ""
           - name: discount
             description: ""
-          - name: event
-            description: ""
-          - name: event_text
-            description: ""
-          - name: id
-            description: ""
-          - name: original_timestamp
-            description: ""
-          - name: products
-            description: ""
-          - name: received_at
-            description: ""
-          - name: sent_at
-            description: ""
-          - name: tax
-            description: ""
-          - name: timestamp
-            description: ""
-          - name: user_id
-            description: ""
-          - name: uuid_ts
-            description: ""
-          - name: value
-            description: ""
-          - name: coupon
-            description: ""
-          - name: context_passed_ip
-            description: ""
-          - name: context_session_id
-            description: ""
-          - name: context_user_agent
-            description: ""
-          - name: context_anonymous_id
-            description: ""
-          - name: context_locale
-            description: ""
-          - name: context_client_id
-            description: ""
-
-      - name: checkout_started
-        description: ""
-        columns:
-          - name: affiliation
-            description: ""
-          - name: channel
-            description: ""
-          - name: context_anonymous_id
-            description: ""
-          - name: context_client_id
-            description: ""
-          - name: context_destination_id
-            description: ""
-          - name: context_destination_type
-            description: ""
-          - name: context_ip
-            description: ""
-          - name: context_library_name
-            description: ""
-          - name: context_library_version
+          - name: context_source_id
             description: ""
           - name: context_request_ip
             description: ""
-          - name: context_rudderstack_source
+          - name: context_locale
             description: ""
-          - name: context_session_id
-            description: ""
-          - name: context_source
-            description: ""
-          - name: context_source_id
-            description: ""
-          - name: context_source_type
-            description: ""
-          - name: currency
-            description: ""
-          - name: event
-            description: ""
-          - name: event_text
-            description: ""
-          - name: id
-            description: ""
-          - name: original_timestamp
+          - name: loaded_at
             description: ""
           - name: products
             description: ""
-          - name: received_at
+          - name: context_user_agent
             description: ""
-          - name: revenue
+          - name: id
+            description: ""
+          - name: affiliation
+            description: ""
+          - name: context_source
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: tax
+            description: ""
+          - name: currency
+            description: ""
+          - name: original_timestamp
             description: ""
           - name: sent_at
             description: ""
-          - name: timestamp
+          - name: context_session_id
+            description: ""
+          - name: context_anonymous_id
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: channel
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: event
             description: ""
           - name: user_id
             description: ""
-          - name: uuid_ts
+          - name: context_destination_type
+            description: ""
+          - name: context_source_type
             description: ""
           - name: value
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: context_passed_ip
+            description: ""
+          - name: event_text
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: received_at
+            description: ""
+          - name: coupon
+            description: ""
+
+      - name: checkout_created_view
+        description: ""
+        columns:
+          - name: context_client_id
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: discount
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: context_locale
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: products
+            description: ""
+          - name: context_user_agent
+            description: ""
+          - name: id
+            description: ""
+          - name: affiliation
+            description: ""
+          - name: context_source
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: tax
+            description: ""
+          - name: currency
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: context_anonymous_id
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: channel
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: event
+            description: ""
+          - name: user_id
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: value
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: context_passed_ip
+            description: ""
+          - name: event_text
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: received_at
             description: ""
 
       - name: checkout_updated
         description: ""
         columns:
-          - name: affiliation
-            description: ""
-          - name: channel
-            description: ""
-          - name: context_client_id
-            description: ""
-          - name: context_destination_id
-            description: ""
-          - name: context_destination_type
-            description: ""
-          - name: context_ip
-            description: ""
-          - name: context_library_name
-            description: ""
-          - name: context_library_version
-            description: ""
-          - name: context_locale
-            description: ""
-          - name: context_passed_ip
-            description: ""
-          - name: context_request_ip
-            description: ""
-          - name: context_rudderstack_source
-            description: ""
-          - name: context_session_id
-            description: ""
           - name: context_source
-            description: ""
-          - name: context_source_id
-            description: ""
-          - name: context_source_type
-            description: ""
-          - name: context_user_agent
-            description: ""
-          - name: coupon
             description: ""
           - name: currency
             description: ""
-          - name: discount
+          - name: context_locale
             description: ""
-          - name: event
+          - name: uuid_ts
             description: ""
-          - name: event_text
+          - name: loaded_at
             description: ""
-          - name: id
+          - name: context_destination_id
             description: ""
-          - name: original_timestamp
+          - name: value
             description: ""
-          - name: products
+          - name: user_id
             description: ""
           - name: received_at
             description: ""
+          - name: context_request_ip
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: event_text
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: id
+            description: ""
           - name: sent_at
+            description: ""
+          - name: channel
+            description: ""
+          - name: context_anonymous_id
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: context_user_agent
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: products
+            description: ""
+          - name: event
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: discount
             description: ""
           - name: tax
             description: ""
           - name: timestamp
             description: ""
-          - name: user_id
+          - name: original_timestamp
+            description: ""
+          - name: coupon
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: affiliation
+            description: ""
+          - name: context_passed_ip
+            description: ""
+
+      - name: checkout_updated_view
+        description: ""
+        columns:
+          - name: context_source
+            description: ""
+          - name: currency
+            description: ""
+          - name: context_locale
             description: ""
           - name: uuid_ts
             description: ""
+          - name: loaded_at
+            description: ""
+          - name: context_destination_id
+            description: ""
           - name: value
             description: ""
+          - name: user_id
+            description: ""
+          - name: received_at
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: event_text
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: id
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: channel
+            description: ""
           - name: context_anonymous_id
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: context_user_agent
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: products
+            description: ""
+          - name: event
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: discount
+            description: ""
+          - name: tax
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: coupon
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: affiliation
+            description: ""
+          - name: context_passed_ip
             description: ""
 
       - name: identifies
         description: ""
         columns:
-          - name: addresses
-            description: ""
           - name: channel
             description: ""
-          - name: context_client_id
-            description: ""
-          - name: context_destination_id
-            description: ""
-          - name: context_destination_type
-            description: ""
-          - name: context_ip
-            description: ""
-          - name: context_library_name
-            description: ""
-          - name: context_library_version
-            description: ""
-          - name: context_locale
-            description: ""
-          - name: context_passed_ip
-            description: ""
-          - name: context_request_ip
-            description: ""
-          - name: context_rudderstack_source
-            description: ""
-          - name: context_session_id
-            description: ""
-          - name: context_source
-            description: ""
-          - name: context_source_id
-            description: ""
-          - name: context_source_type
-            description: ""
-          - name: context_traits_addresses
-            description: ""
-          - name: context_traits_created_at
-            description: ""
-          - name: context_traits_email
-            description: ""
-          - name: context_traits_external_customer_id
+          - name: sent_at
             description: ""
           - name: context_traits_first_name
             description: ""
-          - name: context_traits_last_name
-            description: ""
           - name: context_traits_phone
             description: ""
-          - name: context_user_agent
+          - name: context_rudderstack_source
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: context_locale
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: last_name
             description: ""
           - name: created_at
             description: ""
-          - name: email
+          - name: context_passed_ip
+            description: ""
+          - name: context_user_agent
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: context_source
+            description: ""
+          - name: user_id
+            description: ""
+          - name: received_at
             description: ""
           - name: external_customer_id
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: context_traits_email
+            description: ""
+          - name: context_traits_last_name
+            description: ""
+          - name: context_request_ip
             description: ""
           - name: first_name
             description: ""
           - name: id
             description: ""
-          - name: last_name
+          - name: context_traits_created_at
             description: ""
-          - name: original_timestamp
+          - name: context_traits_external_customer_id
+            description: ""
+          - name: email
+            description: ""
+          - name: context_anonymous_id
+            description: ""
+          - name: loaded_at
             description: ""
           - name: phone
             description: ""
-          - name: received_at
+          - name: context_source_type
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: context_traits_name
+            description: ""
+          - name: context_traits_context_session_id
+            description: ""
+          - name: address_country_code
+            description: ""
+          - name: address_city
+            description: ""
+          - name: address_postal_code
+            description: ""
+          - name: context_traits_address_street
+            description: ""
+          - name: context_traits_context_ip
+            description: ""
+          - name: context_traits_address_country_code
+            description: ""
+          - name: context_traits_address_state
+            description: ""
+          - name: address_state
+            description: ""
+          - name: address_street
+            description: ""
+          - name: name
+            description: ""
+          - name: context_traits_context_client_id
+            description: ""
+          - name: context_traits_context_anonymous_id
+            description: ""
+          - name: context_traits_address_postal_code
+            description: ""
+          - name: context_traits_address_city
+            description: ""
+          - name: addresses
+            description: ""
+          - name: context_traits_addresses
+            description: ""
+          - name: context_traits_context_page_url
+            description: ""
+          - name: context_page_path
+            description: ""
+          - name: context_traits_context_page_search
+            description: ""
+          - name: context_traits_context_debug
+            description: ""
+          - name: context_traits_context_os_name
+            description: ""
+          - name: context_traits_context_page_width
+            description: ""
+          - name: context_page_width
+            description: ""
+          - name: context_traits_context_page_title
+            description: ""
+          - name: context_traits_context_page_referrer
+            description: ""
+          - name: context_os_name
+            description: ""
+          - name: context_referrer
+            description: ""
+          - name: context_page_height
+            description: ""
+          - name: context_traits_context_library_version
+            description: ""
+          - name: context_page_search
+            description: ""
+          - name: context_traits_context_locale
+            description: ""
+          - name: context_traits_context_page_height
+            description: ""
+          - name: context_traits_context_user_agent
+            description: ""
+          - name: context_page_url
+            description: ""
+          - name: context_app
+            description: ""
+          - name: context_timezone
+            description: ""
+          - name: context_page_referrer
+            description: ""
+          - name: context_traits_context_app
+            description: ""
+          - name: context_traits_context_library_name
+            description: ""
+          - name: context_initialized
+            description: ""
+          - name: context_page_title
+            description: ""
+          - name: context_offline
+            description: ""
+          - name: context_traits_context_referrer
+            description: ""
+          - name: context_traits_context_initialized
+            description: ""
+          - name: context_debug
+            description: ""
+          - name: context_traits_context_timezone
+            description: ""
+          - name: context_traits_context_page_path
+            description: ""
+          - name: context_traits_context_offline
+            description: ""
+          - name: context_campaign_gclid
+            description: ""
+          - name: context_traits_context_campaign_gclid
+            description: ""
+          - name: context_traits_context_page_hash
+            description: ""
+          - name: context_page_hash
+            description: ""
+          - name: context_campaign_term
+            description: ""
+          - name: context_traits_context_campaign_source
+            description: ""
+          - name: context_traits_context_campaign_term
+            description: ""
+          - name: context_traits_context_campaign_medium
+            description: ""
+          - name: context_campaign_name
+            description: ""
+          - name: context_campaign_source
+            description: ""
+          - name: context_traits_context_campaign_name
+            description: ""
+          - name: context_campaign_medium
+            description: ""
+          - name: context_campaign_profile
+            description: ""
+          - name: context_campaign_id
+            description: ""
+          - name: context_traits_context_campaign_id
+            description: ""
+          - name: context_traits_context_campaign_profile
+            description: ""
+
+      - name: identifies_view
+        description: ""
+        columns:
+          - name: channel
             description: ""
           - name: sent_at
             description: ""
+          - name: context_traits_first_name
+            description: ""
+          - name: context_traits_phone
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: context_client_id
+            description: ""
           - name: timestamp
             description: ""
-          - name: user_id
+          - name: context_locale
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: last_name
+            description: ""
+          - name: created_at
+            description: ""
+          - name: context_passed_ip
+            description: ""
+          - name: context_user_agent
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: original_timestamp
             description: ""
           - name: uuid_ts
             description: ""
+          - name: context_source
+            description: ""
+          - name: user_id
+            description: ""
+          - name: received_at
+            description: ""
+          - name: external_customer_id
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: context_traits_email
+            description: ""
+          - name: context_traits_last_name
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: first_name
+            description: ""
+          - name: id
+            description: ""
+          - name: context_traits_created_at
+            description: ""
+          - name: context_traits_external_customer_id
+            description: ""
+          - name: email
+            description: ""
           - name: context_anonymous_id
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: phone
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: context_library_version
+            description: ""
+
+      - name: logged_in
+        description: ""
+        columns:
+          - name: context_request_ip
+            description: ""
+          - name: user_id
+            description: ""
+          - name: id
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: received_at
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: event_text
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: context_anonymous_id
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: context_source
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: event
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: channel
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: context_page_width
+            description: ""
+          - name: context_timezone
+            description: ""
+          - name: context_offline
+            description: ""
+          - name: context_user_agent
+            description: ""
+          - name: context_page_url
+            description: ""
+          - name: context_page_referrer
+            description: ""
+          - name: context_os_name
+            description: ""
+          - name: context_debug
+            description: ""
+          - name: context_initialized
+            description: ""
+          - name: context_page_title
+            description: ""
+          - name: context_page_height
+            description: ""
+          - name: context_locale
+            description: ""
+          - name: context_referrer
+            description: ""
+          - name: context_page_path
+            description: ""
+          - name: context_app
+            description: ""
+          - name: context_page_search
+            description: ""
+
+      - name: logged_in_view
+        description: ""
+        columns:
+          - name: context_request_ip
+            description: ""
+          - name: user_id
+            description: ""
+          - name: id
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: received_at
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: event_text
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: context_anonymous_id
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: context_source
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: event
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: channel
+            description: ""
+          - name: context_session_id
             description: ""
 
       - name: order_cancelled
         description: ""
         columns:
-          - name: affiliation
-            description: ""
-          - name: billing_address_address
-            description: ""
-          - name: billing_address_city
-            description: ""
-          - name: billing_address_country
-            description: ""
-          - name: billing_address_first_name
-            description: ""
-          - name: billing_address_last_name
-            description: ""
-          - name: billing_address_phone
-            description: ""
-          - name: billing_address_postal_code
-            description: ""
-          - name: billing_address_state
-            description: ""
-          - name: channel
-            description: ""
-          - name: context_destination_id
-            description: ""
-          - name: context_destination_type
-            description: ""
-          - name: context_ip
-            description: ""
-          - name: context_library_name
-            description: ""
-          - name: context_library_version
-            description: ""
-          - name: context_request_ip
-            description: ""
-          - name: context_rudderstack_source
-            description: ""
-          - name: context_source
-            description: ""
-          - name: context_source_id
-            description: ""
           - name: context_source_type
-            description: ""
-          - name: currency
-            description: ""
-          - name: discount
-            description: ""
-          - name: event
-            description: ""
-          - name: event_text
             description: ""
           - name: id
             description: ""
-          - name: order_id
+          - name: value
             description: ""
-          - name: original_timestamp
+          - name: context_library_name
             description: ""
-          - name: products
-            description: ""
-          - name: received_at
-            description: ""
-          - name: revenue
-            description: ""
-          - name: sent_at
-            description: ""
-          - name: shipping
-            description: ""
-          - name: status
-            description: ""
-          - name: subtotal
-            description: ""
-          - name: tax
-            description: ""
-          - name: timestamp
-            description: ""
-          - name: total
-            description: ""
-          - name: type
+          - name: billing_address_city
             description: ""
           - name: user_id
             description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: total
+            description: ""
+          - name: revenue
+            description: ""
+          - name: context_source
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: shipping
+            description: ""
+          - name: subtotal
+            description: ""
+          - name: billing_address_country
+            description: ""
+          - name: billing_address_state
+            description: ""
+          - name: billing_address_first_name
+            description: ""
+          - name: order_id
+            description: ""
+          - name: status
+            description: ""
+          - name: received_at
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: event
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: currency
+            description: ""
+          - name: billing_address_address
+            description: ""
+          - name: type
+            description: ""
+          - name: billing_address_last_name
+            description: ""
+          - name: billing_address_postal_code
+            description: ""
+          - name: event_text
+            description: ""
+          - name: products
+            description: ""
+          - name: channel
+            description: ""
+          - name: sent_at
+            description: ""
           - name: uuid_ts
             description: ""
-          - name: value
+          - name: context_destination_type
             description: ""
           - name: cart_id
             description: ""
-          - name: context_passed_ip
+          - name: billing_address_phone
             description: ""
-          - name: context_user_agent
+          - name: timestamp
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: tax
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: affiliation
             description: ""
           - name: payment_type
+            description: ""
+          - name: discount
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: context_anonymous_id
+            description: ""
+          - name: coupon
+            description: ""
+          - name: context_passed_ip
+            description: ""
+          - name: context_session_id
             description: ""
           - name: context_locale
             description: ""
           - name: context_client_id
             description: ""
-          - name: context_session_id
+          - name: context_user_agent
+            description: ""
+          - name: billing_address_company
             description: ""
           - name: billing_address_email
             description: ""
-          - name: coupon
+
+      - name: order_cancelled_view
+        description: ""
+        columns:
+          - name: context_source_type
             description: ""
-          - name: billing_address_company
+          - name: id
+            description: ""
+          - name: value
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: billing_address_city
+            description: ""
+          - name: user_id
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: total
+            description: ""
+          - name: revenue
+            description: ""
+          - name: context_source
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: shipping
+            description: ""
+          - name: subtotal
+            description: ""
+          - name: billing_address_country
+            description: ""
+          - name: billing_address_state
+            description: ""
+          - name: billing_address_first_name
+            description: ""
+          - name: order_id
+            description: ""
+          - name: status
+            description: ""
+          - name: received_at
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: event
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: currency
+            description: ""
+          - name: billing_address_address
+            description: ""
+          - name: type
+            description: ""
+          - name: billing_address_last_name
+            description: ""
+          - name: billing_address_postal_code
+            description: ""
+          - name: event_text
+            description: ""
+          - name: products
+            description: ""
+          - name: channel
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: cart_id
+            description: ""
+          - name: billing_address_phone
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: tax
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: affiliation
+            description: ""
+          - name: payment_type
+            description: ""
+          - name: discount
+            description: ""
+          - name: loaded_at
             description: ""
 
       - name: order_completed
         description: ""
         columns:
-          - name: affiliation
-            description: ""
-          - name: billing_address_address
-            description: ""
-          - name: billing_address_city
-            description: ""
-          - name: billing_address_country
-            description: ""
-          - name: billing_address_first_name
-            description: ""
-          - name: billing_address_last_name
-            description: ""
-          - name: billing_address_postal_code
-            description: ""
           - name: billing_address_state
             description: ""
-          - name: channel
-            description: ""
-          - name: context_destination_id
-            description: ""
-          - name: context_destination_type
-            description: ""
-          - name: context_ip
-            description: ""
-          - name: context_library_name
-            description: ""
-          - name: context_library_version
-            description: ""
-          - name: context_request_ip
-            description: ""
-          - name: context_rudderstack_source
-            description: ""
-          - name: context_source
-            description: ""
-          - name: context_source_id
+          - name: context_passed_ip
             description: ""
           - name: context_source_type
             description: ""
-          - name: currency
-            description: ""
-          - name: discount
-            description: ""
           - name: event
             description: ""
-          - name: event_text
+          - name: billing_address_first_name
             description: ""
-          - name: id
-            description: ""
-          - name: order_id
-            description: ""
-          - name: original_timestamp
-            description: ""
-          - name: products
-            description: ""
-          - name: received_at
+          - name: context_user_agent
             description: ""
           - name: revenue
             description: ""
-          - name: sent_at
+          - name: discount
             description: ""
-          - name: shipping
+          - name: id
             description: ""
-          - name: status
+          - name: billing_address_country
             description: ""
-          - name: subtotal
+          - name: received_at
+            description: ""
+          - name: value
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: coupon
+            description: ""
+          - name: context_source
+            description: ""
+          - name: type
+            description: ""
+          - name: context_library_name
             description: ""
           - name: tax
+            description: ""
+          - name: event_text
+            description: ""
+          - name: status
             description: ""
           - name: timestamp
             description: ""
           - name: total
             description: ""
-          - name: type
+          - name: context_request_ip
             description: ""
-          - name: user_id
+          - name: context_source_id
             description: ""
-          - name: uuid_ts
+          - name: context_rudderstack_source
             description: ""
-          - name: value
+          - name: context_destination_type
             description: ""
-          - name: cart_id
+          - name: billing_address_address
             description: ""
-          - name: context_client_id
-            description: ""
-          - name: context_passed_ip
-            description: ""
-          - name: billing_address_phone
-            description: ""
-          - name: context_locale
-            description: ""
-          - name: context_user_agent
-            description: ""
-          - name: context_session_id
+          - name: subtotal
             description: ""
           - name: payment_type
             description: ""
-          - name: coupon
+          - name: billing_address_postal_code
             description: ""
-          - name: billing_address_email
+          - name: context_library_version
+            description: ""
+          - name: cart_id
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: billing_address_phone
+            description: ""
+          - name: currency
+            description: ""
+          - name: affiliation
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: user_id
+            description: ""
+          - name: channel
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: order_id
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: shipping
+            description: ""
+          - name: context_anonymous_id
+            description: ""
+          - name: billing_address_last_name
+            description: ""
+          - name: context_locale
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: billing_address_city
+            description: ""
+          - name: products
+            description: ""
+          - name: context_ip
             description: ""
           - name: billing_address_company
             description: ""
+
+      - name: order_completed_view
+        description: ""
+        columns:
+          - name: billing_address_state
+            description: ""
+          - name: context_passed_ip
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: event
+            description: ""
+          - name: billing_address_first_name
+            description: ""
+          - name: context_user_agent
+            description: ""
+          - name: revenue
+            description: ""
+          - name: discount
+            description: ""
+          - name: id
+            description: ""
+          - name: billing_address_country
+            description: ""
+          - name: received_at
+            description: ""
+          - name: value
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: coupon
+            description: ""
+          - name: context_source
+            description: ""
+          - name: type
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: tax
+            description: ""
+          - name: event_text
+            description: ""
+          - name: status
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: total
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: billing_address_address
+            description: ""
+          - name: subtotal
+            description: ""
+          - name: payment_type
+            description: ""
+          - name: billing_address_postal_code
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: cart_id
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: billing_address_phone
+            description: ""
+          - name: currency
+            description: ""
+          - name: affiliation
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: user_id
+            description: ""
+          - name: channel
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: order_id
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: shipping
+            description: ""
           - name: context_anonymous_id
+            description: ""
+          - name: billing_address_last_name
+            description: ""
+          - name: context_locale
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: billing_address_city
+            description: ""
+          - name: products
+            description: ""
+          - name: context_ip
             description: ""
 
       - name: order_updated
         description: ""
         columns:
+          - name: loaded_at
+            description: ""
+          - name: billing_address_city
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: discount
+            description: ""
+          - name: event_text
+            description: ""
+          - name: user_id
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: billing_address_first_name
+            description: ""
           - name: affiliation
             description: ""
           - name: billing_address_address
             description: ""
-          - name: billing_address_city
+          - name: context_source_type
             description: ""
-          - name: billing_address_company
+          - name: coupon
             description: ""
-          - name: billing_address_country
+          - name: billing_address_postal_code
             description: ""
-          - name: billing_address_first_name
+          - name: shipping
+            description: ""
+          - name: context_anonymous_id
+            description: ""
+          - name: context_user_agent
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: type
+            description: ""
+          - name: total
             description: ""
           - name: billing_address_last_name
             description: ""
-          - name: billing_address_phone
+          - name: status
             description: ""
-          - name: billing_address_postal_code
+          - name: received_at
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: value
+            description: ""
+          - name: context_locale
+            description: ""
+          - name: payment_type
+            description: ""
+          - name: id
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: order_id
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: channel
+            description: ""
+          - name: currency
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: tax
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: context_passed_ip
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: event
+            description: ""
+          - name: context_source
             description: ""
           - name: billing_address_state
             description: ""
           - name: cart_id
             description: ""
-          - name: channel
-            description: ""
-          - name: context_client_id
-            description: ""
-          - name: context_destination_id
-            description: ""
-          - name: context_destination_type
-            description: ""
-          - name: context_ip
-            description: ""
-          - name: context_library_name
-            description: ""
-          - name: context_library_version
-            description: ""
-          - name: context_locale
-            description: ""
-          - name: context_passed_ip
+          - name: billing_address_phone
             description: ""
           - name: context_request_ip
             description: ""
-          - name: context_rudderstack_source
-            description: ""
-          - name: context_session_id
-            description: ""
-          - name: context_source
+          - name: products
             description: ""
           - name: context_source_id
             description: ""
-          - name: context_source_type
+          - name: context_library_version
             description: ""
-          - name: context_user_agent
+          - name: billing_address_country
             description: ""
-          - name: currency
-            description: ""
-          - name: discount
-            description: ""
-          - name: event
-            description: ""
-          - name: event_text
-            description: ""
-          - name: id
-            description: ""
-          - name: order_id
-            description: ""
-          - name: original_timestamp
-            description: ""
-          - name: payment_type
-            description: ""
-          - name: products
-            description: ""
-          - name: received_at
-            description: ""
-          - name: revenue
-            description: ""
-          - name: sent_at
-            description: ""
-          - name: shipping
-            description: ""
-          - name: status
+          - name: billing_address_company
             description: ""
           - name: subtotal
             description: ""
-          - name: tax
-            description: ""
-          - name: timestamp
-            description: ""
-          - name: total
-            description: ""
-          - name: type
-            description: ""
-          - name: user_id
-            description: ""
-          - name: uuid_ts
-            description: ""
-          - name: value
-            description: ""
-          - name: coupon
+          - name: revenue
             description: ""
           - name: billing_address_email
             description: ""
+
+      - name: order_updated_view
+        description: ""
+        columns:
+          - name: loaded_at
+            description: ""
+          - name: billing_address_city
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: discount
+            description: ""
+          - name: event_text
+            description: ""
+          - name: user_id
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: billing_address_first_name
+            description: ""
+          - name: affiliation
+            description: ""
+          - name: billing_address_address
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: coupon
+            description: ""
+          - name: billing_address_postal_code
+            description: ""
+          - name: shipping
+            description: ""
           - name: context_anonymous_id
+            description: ""
+          - name: context_user_agent
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: type
+            description: ""
+          - name: total
+            description: ""
+          - name: billing_address_last_name
+            description: ""
+          - name: status
+            description: ""
+          - name: received_at
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: value
+            description: ""
+          - name: context_locale
+            description: ""
+          - name: payment_type
+            description: ""
+          - name: id
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: order_id
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: channel
+            description: ""
+          - name: currency
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: tax
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: context_passed_ip
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: event
+            description: ""
+          - name: context_source
+            description: ""
+          - name: billing_address_state
+            description: ""
+          - name: cart_id
+            description: ""
+          - name: billing_address_phone
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: products
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: billing_address_country
+            description: ""
+          - name: billing_address_company
+            description: ""
+          - name: subtotal
+            description: ""
+          - name: revenue
+            description: ""
+
+      - name: pages
+        description: ""
+        columns:
+          - name: path
+            description: ""
+          - name: channel
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: context_anonymous_id
+            description: ""
+          - name: search
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: height
+            description: ""
+          - name: width
+            description: ""
+          - name: name
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: user_id
+            description: ""
+          - name: received_at
+            description: ""
+          - name: url
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: id
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: title
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: referrer
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: _hash
+            description: ""
+          - name: context_timezone
+            description: ""
+          - name: context_page_hash
+            description: ""
+          - name: context_page_search
+            description: ""
+          - name: context_page_height
+            description: ""
+          - name: context_locale
+            description: ""
+          - name: context_page_url
+            description: ""
+          - name: context_page_referrer
+            description: ""
+          - name: context_app
+            description: ""
+          - name: context_campaign_medium
+            description: ""
+          - name: context_campaign_name
+            description: ""
+          - name: context_debug
+            description: ""
+          - name: context_os_name
+            description: ""
+          - name: context_referrer
+            description: ""
+          - name: context_campaign_gclid
+            description: ""
+          - name: context_page_title
+            description: ""
+          - name: context_page_path
+            description: ""
+          - name: context_user_agent
+            description: ""
+          - name: context_campaign_term
+            description: ""
+          - name: context_campaign_source
+            description: ""
+          - name: context_page_width
+            description: ""
+          - name: context_offline
+            description: ""
+          - name: context_initialized
+            description: ""
+          - name: context_campaign_content
+            description: ""
+          - name: context_campaign_profile
+            description: ""
+          - name: context_campaign_id
+            description: ""
+
+      - name: pages_view
+        description: ""
+        columns:
+          - name: path
+            description: ""
+          - name: channel
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: context_anonymous_id
+            description: ""
+          - name: search
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: height
+            description: ""
+          - name: width
+            description: ""
+          - name: name
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: user_id
+            description: ""
+          - name: received_at
+            description: ""
+          - name: url
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: id
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: title
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: referrer
+            description: ""
+          - name: uuid_ts
             description: ""
 
       - name: product_added
         description: ""
         columns:
-          - name: brand
-            description: ""
-          - name: category
-            description: ""
-          - name: channel
-            description: ""
           - name: context_client_id
-            description: ""
-          - name: context_destination_id
-            description: ""
-          - name: context_destination_type
-            description: ""
-          - name: context_ip
-            description: ""
-          - name: context_library_name
-            description: ""
-          - name: context_library_version
-            description: ""
-          - name: context_request_ip
-            description: ""
-          - name: context_rudderstack_source
-            description: ""
-          - name: context_session_id
-            description: ""
-          - name: context_source
-            description: ""
-          - name: context_source_id
             description: ""
           - name: context_source_type
             description: ""
-          - name: event
-            description: ""
-          - name: event_text
-            description: ""
-          - name: id
-            description: ""
-          - name: image_url
-            description: ""
           - name: name
             description: ""
-          - name: original_timestamp
+          - name: context_rudderstack_source
             description: ""
-          - name: price
-            description: ""
-          - name: product_id
+          - name: context_destination_type
             description: ""
           - name: quantity
             description: ""
-          - name: received_at
+          - name: original_timestamp
             description: ""
-          - name: sent_at
+          - name: context_library_name
+            description: ""
+          - name: product_id
+            description: ""
+          - name: event_text
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: channel
+            description: ""
+          - name: brand
+            description: ""
+          - name: image_url
             description: ""
           - name: sku
             description: ""
+          - name: context_destination_id
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: event
+            description: ""
+          - name: price
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: category
+            description: ""
           - name: timestamp
             description: ""
-          - name: url
+          - name: loaded_at
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: variant
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: id
             description: ""
           - name: user_id
             description: ""
           - name: uuid_ts
             description: ""
-          - name: variant
+          - name: context_source
+            description: ""
+          - name: context_anonymous_id
+            description: ""
+          - name: received_at
+            description: ""
+          - name: url
             description: ""
           - name: position
             description: ""
+          - name: context_page_height
+            description: ""
+          - name: context_page_path
+            description: ""
+          - name: context_os_name
+            description: ""
+          - name: context_debug
+            description: ""
+          - name: context_app
+            description: ""
+          - name: context_locale
+            description: ""
+          - name: context_page_url
+            description: ""
+          - name: context_referrer
+            description: ""
+          - name: context_page_search
+            description: ""
+          - name: context_timezone
+            description: ""
+          - name: context_initialized
+            description: ""
+          - name: context_user_agent
+            description: ""
+          - name: context_page_referrer
+            description: ""
+          - name: context_offline
+            description: ""
+          - name: context_page_width
+            description: ""
+          - name: context_page_title
+            description: ""
+          - name: context_campaign_gclid
+            description: ""
+          - name: context_campaign_content
+            description: ""
+          - name: context_campaign_medium
+            description: ""
+          - name: context_campaign_name
+            description: ""
+          - name: context_campaign_source
+            description: ""
+          - name: context_campaign_term
+            description: ""
+          - name: context_page_hash
+            description: ""
+          - name: context_campaign_profile
+            description: ""
+          - name: context_campaign_id
+            description: ""
+
+      - name: product_added_view
+        description: ""
+        columns:
+          - name: context_client_id
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: name
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: quantity
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: product_id
+            description: ""
+          - name: event_text
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: channel
+            description: ""
+          - name: brand
+            description: ""
+          - name: image_url
+            description: ""
+          - name: sku
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: event
+            description: ""
+          - name: price
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: category
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: variant
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: id
+            description: ""
+          - name: user_id
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: context_source
+            description: ""
           - name: context_anonymous_id
+            description: ""
+          - name: received_at
             description: ""
 
       - name: product_list_viewed
         description: ""
         columns:
-          - name: category
-            description: ""
-          - name: channel
-            description: ""
-          - name: context_client_id
-            description: ""
-          - name: context_destination_id
-            description: ""
-          - name: context_destination_type
-            description: ""
-          - name: context_ip
-            description: ""
-          - name: context_library_name
-            description: ""
-          - name: context_library_version
-            description: ""
-          - name: context_request_ip
-            description: ""
-          - name: context_rudderstack_source
-            description: ""
-          - name: context_session_id
-            description: ""
-          - name: context_source
-            description: ""
-          - name: context_source_id
-            description: ""
-          - name: context_source_type
-            description: ""
-          - name: event
-            description: ""
-          - name: event_text
-            description: ""
-          - name: id
-            description: ""
-          - name: original_timestamp
-            description: ""
-          - name: products
-            description: ""
-          - name: received_at
+          - name: list_id
             description: ""
           - name: sent_at
             description: ""
+          - name: context_destination_id
+            description: ""
+          - name: context_source
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: context_anonymous_id
+            description: ""
+          - name: category
+            description: ""
+          - name: context_library_name
+            description: ""
           - name: timestamp
             description: ""
-          - name: user_id
+          - name: context_client_id
             description: ""
           - name: uuid_ts
             description: ""
+          - name: event_text
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: products
+            description: ""
+          - name: id
+            description: ""
+          - name: event
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: channel
+            description: ""
+          - name: received_at
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: user_id
+            description: ""
+          - name: context_campaign_name
+            description: ""
+          - name: context_page_title
+            description: ""
+          - name: context_page_width
+            description: ""
+          - name: context_campaign_medium
+            description: ""
+          - name: context_timezone
+            description: ""
+          - name: context_locale
+            description: ""
+          - name: context_os_name
+            description: ""
+          - name: context_page_referrer
+            description: ""
+          - name: context_app
+            description: ""
+          - name: context_page_height
+            description: ""
+          - name: context_page_search
+            description: ""
+          - name: context_offline
+            description: ""
+          - name: context_debug
+            description: ""
+          - name: context_initialized
+            description: ""
+          - name: context_user_agent
+            description: ""
+          - name: context_referrer
+            description: ""
+          - name: context_page_url
+            description: ""
+          - name: context_campaign_source
+            description: ""
+          - name: context_page_path
+            description: ""
+          - name: context_campaign_term
+            description: ""
+          - name: context_campaign_gclid
+            description: ""
+          - name: context_campaign_content
+            description: ""
+          - name: context_page_hash
+            description: ""
+          - name: context_campaign_profile
+            description: ""
+          - name: context_campaign_id
+            description: ""
+
+      - name: product_list_viewed_view
+        description: ""
+        columns:
+          - name: list_id
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: context_source
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
           - name: context_anonymous_id
+            description: ""
+          - name: category
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: event_text
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: products
+            description: ""
+          - name: id
+            description: ""
+          - name: event
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: channel
+            description: ""
+          - name: received_at
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: user_id
             description: ""
 
       - name: product_removed
         description: ""
         columns:
-          - name: channel
+          - name: context_source_id
             description: ""
-          - name: context_client_id
-            description: ""
-          - name: context_destination_id
+          - name: received_at
             description: ""
           - name: context_destination_type
             description: ""
-          - name: context_ip
+          - name: original_timestamp
             description: ""
-          - name: context_library_name
+          - name: sent_at
             description: ""
-          - name: context_library_version
+          - name: context_destination_id
             description: ""
           - name: context_request_ip
             description: ""
           - name: context_rudderstack_source
             description: ""
+          - name: context_client_id
+            description: ""
           - name: context_session_id
-            description: ""
-          - name: context_source
-            description: ""
-          - name: context_source_id
             description: ""
           - name: context_source_type
             description: ""
-          - name: event
+          - name: context_ip
             description: ""
           - name: event_text
             description: ""
-          - name: id
-            description: ""
-          - name: image_url
-            description: ""
-          - name: line_price
-            description: ""
-          - name: name
-            description: ""
-          - name: original_timestamp
-            description: ""
           - name: position
             description: ""
-          - name: price
-            description: ""
-          - name: product_id
-            description: ""
-          - name: quantity
-            description: ""
-          - name: received_at
-            description: ""
-          - name: sent_at
+          - name: loaded_at
             description: ""
           - name: timestamp
             description: ""
-          - name: url
+          - name: context_anonymous_id
+            description: ""
+          - name: context_library_name
             description: ""
           - name: user_id
             description: ""
+          - name: channel
+            description: ""
           - name: uuid_ts
             description: ""
+          - name: context_library_version
+            description: ""
+          - name: id
+            description: ""
+          - name: event
+            description: ""
+          - name: context_source
+            description: ""
+          - name: context_initialized
+            description: ""
+          - name: context_user_agent
+            description: ""
+          - name: context_locale
+            description: ""
+          - name: context_page_url
+            description: ""
+          - name: context_app
+            description: ""
+          - name: context_page_path
+            description: ""
+          - name: context_page_referrer
+            description: ""
+          - name: context_page_title
+            description: ""
+          - name: context_os_name
+            description: ""
+          - name: context_debug
+            description: ""
+          - name: context_referrer
+            description: ""
+          - name: context_page_height
+            description: ""
+          - name: context_offline
+            description: ""
+          - name: context_timezone
+            description: ""
+          - name: context_page_width
+            description: ""
+
+      - name: product_removed_view
+        description: ""
+        columns:
+          - name: context_source_id
+            description: ""
+          - name: received_at
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: event_text
+            description: ""
+          - name: position
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: timestamp
+            description: ""
           - name: context_anonymous_id
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: user_id
+            description: ""
+          - name: channel
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: id
+            description: ""
+          - name: event
+            description: ""
+          - name: context_source
             description: ""
 
       - name: product_viewed
         description: ""
         columns:
-          - name: brand
+          - name: image_url
             description: ""
-          - name: category
+          - name: user_id
+            description: ""
+          - name: context_anonymous_id
             description: ""
           - name: channel
             description: ""
-          - name: context_client_id
-            description: ""
-          - name: context_destination_id
-            description: ""
-          - name: context_destination_type
-            description: ""
-          - name: context_ip
-            description: ""
-          - name: context_library_name
-            description: ""
-          - name: context_library_version
-            description: ""
-          - name: context_request_ip
-            description: ""
-          - name: context_rudderstack_source
-            description: ""
-          - name: context_session_id
+          - name: variant
             description: ""
           - name: context_source
             description: ""
-          - name: context_source_id
+          - name: original_timestamp
             description: ""
-          - name: context_source_type
+          - name: context_ip
             description: ""
-          - name: event
+          - name: context_session_id
             description: ""
-          - name: event_text
+          - name: loaded_at
             description: ""
           - name: id
             description: ""
-          - name: image_url
-            description: ""
           - name: name
-            description: ""
-          - name: original_timestamp
-            description: ""
-          - name: price
-            description: ""
-          - name: product_id
             description: ""
           - name: received_at
             description: ""
           - name: sent_at
             description: ""
+          - name: context_request_ip
+            description: ""
+          - name: context_destination_type
+            description: ""
           - name: sku
             description: ""
-          - name: timestamp
+          - name: event
             description: ""
-          - name: url
+          - name: event_text
             description: ""
-          - name: user_id
+          - name: price
+            description: ""
+          - name: brand
+            description: ""
+          - name: context_client_id
             description: ""
           - name: uuid_ts
             description: ""
-          - name: variant
+          - name: context_rudderstack_source
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: product_id
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: category
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: context_page_url
+            description: ""
+          - name: context_page_height
+            description: ""
+          - name: context_campaign_source
+            description: ""
+          - name: context_initialized
+            description: ""
+          - name: context_referrer
+            description: ""
+          - name: context_campaign_name
+            description: ""
+          - name: context_page_title
+            description: ""
+          - name: context_offline
+            description: ""
+          - name: context_campaign_gclid
+            description: ""
+          - name: context_page_search
+            description: ""
+          - name: context_campaign_medium
+            description: ""
+          - name: context_debug
+            description: ""
+          - name: context_page_path
+            description: ""
+          - name: context_campaign_content
+            description: ""
+          - name: context_page_width
+            description: ""
+          - name: context_os_name
+            description: ""
+          - name: context_page_referrer
+            description: ""
+          - name: context_user_agent
+            description: ""
+          - name: context_app
+            description: ""
+          - name: context_timezone
+            description: ""
+          - name: context_locale
+            description: ""
+          - name: context_campaign_term
+            description: ""
+          - name: context_campaign_profile
+            description: ""
+          - name: context_campaign_id
+            description: ""
+
+      - name: product_viewed_view
+        description: ""
+        columns:
+          - name: image_url
+            description: ""
+          - name: user_id
             description: ""
           - name: context_anonymous_id
+            description: ""
+          - name: channel
+            description: ""
+          - name: variant
+            description: ""
+          - name: context_source
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: id
+            description: ""
+          - name: name
+            description: ""
+          - name: received_at
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: sku
+            description: ""
+          - name: event
+            description: ""
+          - name: event_text
+            description: ""
+          - name: price
+            description: ""
+          - name: brand
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: product_id
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: category
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: context_library_version
+            description: ""
+
+      - name: products_searched
+        description: ""
+        columns:
+          - name: event
+            description: ""
+          - name: context_source
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: received_at
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: user_id
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: event_text
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: context_anonymous_id
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: channel
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: id
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: query
+            description: ""
+          - name: context_page_search
+            description: ""
+          - name: context_os_name
+            description: ""
+          - name: context_locale
+            description: ""
+          - name: context_app
+            description: ""
+          - name: context_referrer
+            description: ""
+          - name: context_page_referrer
+            description: ""
+          - name: context_page_height
+            description: ""
+          - name: context_timezone
+            description: ""
+          - name: context_page_title
+            description: ""
+          - name: context_offline
+            description: ""
+          - name: context_initialized
+            description: ""
+          - name: context_page_path
+            description: ""
+          - name: context_page_url
+            description: ""
+          - name: context_user_agent
+            description: ""
+          - name: context_debug
+            description: ""
+          - name: context_page_width
+            description: ""
+
+      - name: products_searched_view
+        description: ""
+        columns:
+          - name: event
+            description: ""
+          - name: context_source
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: received_at
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: user_id
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: event_text
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: context_anonymous_id
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: channel
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: id
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: query
+            description: ""
+
+      - name: signed_up
+        description: ""
+        columns:
+          - name: id
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: email
+            description: ""
+          - name: user_id
+            description: ""
+          - name: context_anonymous_id
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: event_text
+            description: ""
+          - name: first_name
+            description: ""
+          - name: received_at
+            description: ""
+          - name: channel
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: last_name
+            description: ""
+          - name: event
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: context_source
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: context_offline
+            description: ""
+          - name: context_timezone
+            description: ""
+          - name: context_referrer
+            description: ""
+          - name: context_app
+            description: ""
+          - name: context_os_name
+            description: ""
+          - name: context_page_height
+            description: ""
+          - name: context_user_agent
+            description: ""
+          - name: context_locale
+            description: ""
+          - name: context_initialized
+            description: ""
+          - name: context_debug
+            description: ""
+          - name: context_page_referrer
+            description: ""
+          - name: context_page_url
+            description: ""
+          - name: context_page_width
+            description: ""
+          - name: context_page_title
+            description: ""
+          - name: context_page_path
+            description: ""
+
+      - name: signed_up_view
+        description: ""
+        columns:
+          - name: id
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: email
+            description: ""
+          - name: user_id
+            description: ""
+          - name: context_anonymous_id
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: event_text
+            description: ""
+          - name: first_name
+            description: ""
+          - name: received_at
+            description: ""
+          - name: channel
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: last_name
+            description: ""
+          - name: event
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: context_source
+            description: ""
+          - name: context_destination_type
             description: ""
 
       - name: subscription_activated
         description: ""
         columns:
-          - name: channel
-            description: ""
-          - name: charge_interval_frequency
-            description: ""
-          - name: context_destination_id
-            description: ""
-          - name: context_destination_type
-            description: ""
-          - name: context_ip
-            description: ""
-          - name: context_library_name
-            description: ""
-          - name: context_library_version
-            description: ""
-          - name: context_request_ip
-            description: ""
-          - name: context_rudderstack_source
-            description: ""
-          - name: context_source
-            description: ""
-          - name: context_source_id
-            description: ""
-          - name: context_source_type
-            description: ""
-          - name: created_at
-            description: ""
-          - name: event
-            description: ""
-          - name: event_text
-            description: ""
-          - name: has_queued_charges
-            description: ""
-          - name: id
-            description: ""
-          - name: is_skippable
-            description: ""
           - name: is_swappable
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: order_subtotal
+            description: ""
+          - name: order_revenue
             description: ""
           - name: max_retries_reached
             description: ""
-          - name: next_charge_scheduled_at
+          - name: is_skippable
+            description: ""
+          - name: event
+            description: ""
+          - name: order_type
+            description: ""
+          - name: context_source
+            description: ""
+          - name: order_discount
+            description: ""
+          - name: updated_at
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: products
+            description: ""
+          - name: event_text
+            description: ""
+          - name: order_status
+            description: ""
+          - name: order_billing_address_postal_code
+            description: ""
+          - name: sku_override
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: order_total
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: id
+            description: ""
+          - name: order_billing_address_last_name
+            description: ""
+          - name: has_queued_charges
+            description: ""
+          - name: channel
+            description: ""
+          - name: created_at
             description: ""
           - name: order_billing_address_address
+            description: ""
+          - name: order_billing_address_email
+            description: ""
+          - name: order_tax
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: order_products
+            description: ""
+          - name: order_billing_address_first_name
+            description: ""
+          - name: status
+            description: ""
+          - name: next_charge_scheduled_at
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: started_at
+            description: ""
+          - name: order_interval_unit
+            description: ""
+          - name: order_currency
+            description: ""
+          - name: order_order_id
+            description: ""
+          - name: received_at
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: order_billing_address_state
             description: ""
           - name: order_billing_address_city
             description: ""
           - name: order_billing_address_country
             description: ""
-          - name: order_billing_address_email
-            description: ""
-          - name: order_billing_address_first_name
-            description: ""
-          - name: order_billing_address_last_name
-            description: ""
-          - name: order_billing_address_phone
-            description: ""
-          - name: order_billing_address_postal_code
-            description: ""
-          - name: order_billing_address_state
-            description: ""
-          - name: order_coupon
-            description: ""
-          - name: order_currency
-            description: ""
-          - name: order_discount
-            description: ""
-          - name: order_id
-            description: ""
           - name: order_interval_frequency
-            description: ""
-          - name: order_interval_unit
-            description: ""
-          - name: order_order_id
-            description: ""
-          - name: order_products
-            description: ""
-          - name: order_revenue
-            description: ""
-          - name: order_status
-            description: ""
-          - name: order_subtotal
-            description: ""
-          - name: order_tax
-            description: ""
-          - name: order_total
-            description: ""
-          - name: order_type
             description: ""
           - name: order_value
             description: ""
-          - name: original_timestamp
+          - name: charge_interval_frequency
             description: ""
-          - name: products
-            description: ""
-          - name: received_at
-            description: ""
-          - name: sent_at
-            description: ""
-          - name: sku_override
-            description: ""
-          - name: started_at
-            description: ""
-          - name: status
-            description: ""
-          - name: timestamp
-            description: ""
-          - name: updated_at
+          - name: order_billing_address_phone
             description: ""
           - name: user_id
             description: ""
-          - name: uuid_ts
+          - name: order_id
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: order_coupon
             description: ""
           - name: order_cart_id
             description: ""
-          - name: end_reason
+
+      - name: subscription_activated_view
+        description: ""
+        columns:
+          - name: is_swappable
             description: ""
-          - name: ended_at
+          - name: loaded_at
             description: ""
-          - name: order_billing_address_company
+          - name: order_subtotal
+            description: ""
+          - name: order_revenue
+            description: ""
+          - name: max_retries_reached
+            description: ""
+          - name: is_skippable
+            description: ""
+          - name: event
+            description: ""
+          - name: order_type
+            description: ""
+          - name: context_source
+            description: ""
+          - name: order_discount
+            description: ""
+          - name: updated_at
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: products
+            description: ""
+          - name: event_text
+            description: ""
+          - name: order_status
+            description: ""
+          - name: order_billing_address_postal_code
+            description: ""
+          - name: sku_override
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: order_total
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: id
+            description: ""
+          - name: order_billing_address_last_name
+            description: ""
+          - name: has_queued_charges
+            description: ""
+          - name: channel
+            description: ""
+          - name: created_at
+            description: ""
+          - name: order_billing_address_address
+            description: ""
+          - name: order_billing_address_email
+            description: ""
+          - name: order_tax
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: order_products
+            description: ""
+          - name: order_billing_address_first_name
+            description: ""
+          - name: status
+            description: ""
+          - name: next_charge_scheduled_at
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: started_at
+            description: ""
+          - name: order_interval_unit
+            description: ""
+          - name: order_currency
+            description: ""
+          - name: order_order_id
+            description: ""
+          - name: received_at
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: order_billing_address_state
+            description: ""
+          - name: order_billing_address_city
+            description: ""
+          - name: order_billing_address_country
+            description: ""
+          - name: order_interval_frequency
+            description: ""
+          - name: order_value
+            description: ""
+          - name: charge_interval_frequency
+            description: ""
+          - name: order_billing_address_phone
+            description: ""
+          - name: user_id
+            description: ""
+          - name: order_id
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: sent_at
             description: ""
 
       - name: subscription_cancelled
         description: ""
         columns:
-          - name: channel
-            description: ""
-          - name: charge_interval_frequency
-            description: ""
-          - name: context_destination_id
-            description: ""
-          - name: context_destination_type
-            description: ""
-          - name: context_ip
-            description: ""
-          - name: context_library_name
-            description: ""
-          - name: context_library_version
-            description: ""
-          - name: context_request_ip
-            description: ""
-          - name: context_rudderstack_source
-            description: ""
-          - name: context_source
-            description: ""
-          - name: context_source_id
-            description: ""
-          - name: context_source_type
-            description: ""
-          - name: created_at
-            description: ""
-          - name: end_reason
-            description: ""
-          - name: ended_at
-            description: ""
-          - name: event
-            description: ""
-          - name: event_text
-            description: ""
-          - name: has_queued_charges
-            description: ""
-          - name: id
-            description: ""
-          - name: is_skippable
-            description: ""
-          - name: is_swappable
+          - name: order_order_id
             description: ""
           - name: max_retries_reached
             description: ""
-          - name: order_billing_address_address
-            description: ""
-          - name: order_billing_address_city
-            description: ""
-          - name: order_billing_address_country
-            description: ""
-          - name: order_billing_address_email
-            description: ""
-          - name: order_billing_address_first_name
-            description: ""
-          - name: order_billing_address_last_name
-            description: ""
-          - name: order_billing_address_phone
-            description: ""
-          - name: order_billing_address_postal_code
-            description: ""
-          - name: order_billing_address_state
-            description: ""
-          - name: order_cart_id
-            description: ""
-          - name: order_currency
+          - name: order_interval_unit
             description: ""
           - name: order_discount
             description: ""
-          - name: order_id
+          - name: sku_override
+            description: ""
+          - name: id
+            description: ""
+          - name: order_billing_address_postal_code
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: order_tax
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: is_skippable
+            description: ""
+          - name: order_type
             description: ""
           - name: order_interval_frequency
             description: ""
-          - name: order_interval_unit
+          - name: context_request_ip
             description: ""
-          - name: order_order_id
+          - name: context_source
+            description: ""
+          - name: event_text
+            description: ""
+          - name: order_billing_address_email
+            description: ""
+          - name: is_swappable
+            description: ""
+          - name: user_id
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: order_total
+            description: ""
+          - name: products
+            description: ""
+          - name: order_billing_address_state
+            description: ""
+          - name: updated_at
+            description: ""
+          - name: order_subtotal
             description: ""
           - name: order_products
             description: ""
           - name: order_revenue
             description: ""
-          - name: order_status
+          - name: uuid_ts
             description: ""
-          - name: order_subtotal
+          - name: context_library_name
             description: ""
-          - name: order_tax
+          - name: context_library_version
             description: ""
-          - name: order_total
-            description: ""
-          - name: order_type
-            description: ""
-          - name: order_value
+          - name: order_billing_address_last_name
             description: ""
           - name: original_timestamp
             description: ""
-          - name: products
-            description: ""
-          - name: received_at
+          - name: created_at
             description: ""
           - name: sent_at
             description: ""
-          - name: sku_override
+          - name: ended_at
+            description: ""
+          - name: received_at
+            description: ""
+          - name: channel
+            description: ""
+          - name: order_status
+            description: ""
+          - name: has_queued_charges
+            description: ""
+          - name: order_currency
+            description: ""
+          - name: order_id
+            description: ""
+          - name: charge_interval_frequency
+            description: ""
+          - name: order_value
+            description: ""
+          - name: event
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: order_billing_address_address
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: order_billing_address_country
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: order_billing_address_city
+            description: ""
+          - name: order_billing_address_first_name
+            description: ""
+          - name: context_destination_id
             description: ""
           - name: started_at
             description: ""
+          - name: order_billing_address_phone
+            description: ""
+          - name: end_reason
+            description: ""
           - name: status
             description: ""
-          - name: timestamp
-            description: ""
-          - name: updated_at
-            description: ""
-          - name: user_id
-            description: ""
-          - name: uuid_ts
+          - name: order_cart_id
             description: ""
           - name: order_coupon
             description: ""
           - name: order_billing_address_company
             description: ""
-          - name: order_day_of_month
+
+      - name: subscription_cancelled_view
+        description: ""
+        columns:
+          - name: order_order_id
+            description: ""
+          - name: max_retries_reached
+            description: ""
+          - name: order_interval_unit
+            description: ""
+          - name: order_discount
+            description: ""
+          - name: sku_override
+            description: ""
+          - name: id
+            description: ""
+          - name: order_billing_address_postal_code
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: order_tax
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: is_skippable
+            description: ""
+          - name: order_type
+            description: ""
+          - name: order_interval_frequency
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: context_source
+            description: ""
+          - name: event_text
+            description: ""
+          - name: order_billing_address_email
+            description: ""
+          - name: is_swappable
+            description: ""
+          - name: user_id
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: order_total
+            description: ""
+          - name: products
+            description: ""
+          - name: order_billing_address_state
+            description: ""
+          - name: updated_at
+            description: ""
+          - name: order_subtotal
+            description: ""
+          - name: order_products
+            description: ""
+          - name: order_revenue
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: order_billing_address_last_name
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: created_at
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: ended_at
+            description: ""
+          - name: received_at
+            description: ""
+          - name: channel
+            description: ""
+          - name: order_status
+            description: ""
+          - name: has_queued_charges
+            description: ""
+          - name: order_currency
+            description: ""
+          - name: order_id
+            description: ""
+          - name: charge_interval_frequency
+            description: ""
+          - name: order_value
+            description: ""
+          - name: event
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: order_billing_address_address
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: order_billing_address_country
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: order_billing_address_city
+            description: ""
+          - name: order_billing_address_first_name
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: started_at
+            description: ""
+          - name: order_billing_address_phone
+            description: ""
+          - name: end_reason
+            description: ""
+          - name: status
             description: ""
 
       - name: subscription_created
         description: ""
         columns:
-          - name: channel
-            description: ""
-          - name: charge_interval_frequency
-            description: ""
-          - name: context_destination_id
-            description: ""
-          - name: context_destination_type
-            description: ""
-          - name: context_ip
-            description: ""
-          - name: context_library_name
-            description: ""
-          - name: context_library_version
-            description: ""
-          - name: context_request_ip
-            description: ""
-          - name: context_rudderstack_source
-            description: ""
-          - name: context_source
-            description: ""
-          - name: context_source_id
-            description: ""
-          - name: context_source_type
-            description: ""
-          - name: created_at
-            description: ""
-          - name: event
-            description: ""
-          - name: event_text
-            description: ""
-          - name: has_queued_charges
-            description: ""
-          - name: id
-            description: ""
-          - name: is_skippable
-            description: ""
-          - name: is_swappable
-            description: ""
-          - name: max_retries_reached
-            description: ""
-          - name: next_charge_scheduled_at
-            description: ""
-          - name: order_interval_frequency
-            description: ""
-          - name: order_interval_unit
-            description: ""
-          - name: original_timestamp
-            description: ""
-          - name: products
-            description: ""
-          - name: received_at
-            description: ""
-          - name: sent_at
-            description: ""
-          - name: sku_override
-            description: ""
-          - name: started_at
-            description: ""
-          - name: status
-            description: ""
-          - name: timestamp
-            description: ""
-          - name: updated_at
-            description: ""
-          - name: user_id
-            description: ""
-          - name: uuid_ts
-            description: ""
-          - name: order_products
+          - name: order_status
             description: ""
           - name: order_billing_address_first_name
             description: ""
-          - name: order_status
+          - name: original_timestamp
             description: ""
-          - name: order_billing_address_email
-            description: ""
-          - name: order_billing_address_address
-            description: ""
-          - name: order_discount
-            description: ""
-          - name: order_billing_address_state
-            description: ""
-          - name: order_order_id
-            description: ""
-          - name: order_tax
-            description: ""
-          - name: order_currency
-            description: ""
-          - name: order_billing_address_country
-            description: ""
-          - name: order_billing_address_last_name
-            description: ""
-          - name: order_billing_address_phone
-            description: ""
-          - name: order_total
-            description: ""
-          - name: order_id
-            description: ""
-          - name: order_revenue
-            description: ""
-          - name: order_billing_address_city
-            description: ""
-          - name: order_subtotal
-            description: ""
-          - name: order_value
+          - name: sent_at
             description: ""
           - name: order_billing_address_postal_code
             description: ""
+          - name: event_text
+            description: ""
+          - name: order_discount
+            description: ""
           - name: order_type
+            description: ""
+          - name: sku_override
+            description: ""
+          - name: order_billing_address_email
+            description: ""
+          - name: charge_interval_frequency
+            description: ""
+          - name: order_currency
+            description: ""
+          - name: channel
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: order_revenue
+            description: ""
+          - name: order_interval_unit
+            description: ""
+          - name: is_skippable
+            description: ""
+          - name: products
+            description: ""
+          - name: order_tax
+            description: ""
+          - name: order_id
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: next_charge_scheduled_at
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: order_billing_address_city
+            description: ""
+          - name: order_order_id
+            description: ""
+          - name: updated_at
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: order_billing_address_phone
+            description: ""
+          - name: order_billing_address_last_name
+            description: ""
+          - name: order_value
+            description: ""
+          - name: order_billing_address_state
+            description: ""
+          - name: started_at
+            description: ""
+          - name: created_at
+            description: ""
+          - name: order_billing_address_country
+            description: ""
+          - name: has_queued_charges
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: context_source
+            description: ""
+          - name: received_at
+            description: ""
+          - name: order_total
+            description: ""
+          - name: max_retries_reached
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: order_billing_address_address
+            description: ""
+          - name: order_products
+            description: ""
+          - name: order_interval_frequency
+            description: ""
+          - name: status
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: is_swappable
+            description: ""
+          - name: id
+            description: ""
+          - name: user_id
+            description: ""
+          - name: order_subtotal
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: event
             description: ""
           - name: order_coupon
             description: ""
           - name: order_billing_address_company
             description: ""
 
-      - name: subscription_deleted
+      - name: subscription_created_view
         description: ""
         columns:
-          - name: channel
-            description: ""
-          - name: charge_interval_frequency
-            description: ""
-          - name: context_destination_id
-            description: ""
-          - name: context_destination_type
-            description: ""
-          - name: context_ip
-            description: ""
-          - name: context_library_name
-            description: ""
-          - name: context_library_version
-            description: ""
-          - name: context_request_ip
-            description: ""
-          - name: context_rudderstack_source
-            description: ""
-          - name: context_source
-            description: ""
-          - name: context_source_id
-            description: ""
-          - name: context_source_type
-            description: ""
-          - name: created_at
-            description: ""
-          - name: ended_at
-            description: ""
-          - name: event
-            description: ""
-          - name: event_text
-            description: ""
-          - name: has_queued_charges
-            description: ""
-          - name: id
-            description: ""
-          - name: is_skippable
-            description: ""
-          - name: is_swappable
-            description: ""
-          - name: max_retries_reached
-            description: ""
-          - name: next_charge_scheduled_at
-            description: ""
-          - name: order_interval_frequency
-            description: ""
-          - name: order_interval_unit
-            description: ""
-          - name: original_timestamp
-            description: ""
-          - name: products
-            description: ""
-          - name: received_at
-            description: ""
-          - name: sent_at
-            description: ""
-          - name: sku_override
-            description: ""
-          - name: started_at
-            description: ""
-          - name: status
-            description: ""
-          - name: timestamp
-            description: ""
-          - name: updated_at
-            description: ""
-          - name: user_id
-            description: ""
-          - name: uuid_ts
-            description: ""
-          - name: order_billing_address_postal_code
-            description: ""
-          - name: order_cart_id
-            description: ""
-          - name: order_coupon
-            description: ""
-          - name: order_revenue
-            description: ""
-          - name: order_products
-            description: ""
-          - name: order_billing_address_email
-            description: ""
-          - name: order_type
-            description: ""
-          - name: order_billing_address_state
-            description: ""
-          - name: order_subtotal
-            description: ""
-          - name: order_billing_address_city
-            description: ""
           - name: order_status
-            description: ""
-          - name: order_billing_address_country
-            description: ""
-          - name: order_billing_address_last_name
-            description: ""
-          - name: order_billing_address_phone
-            description: ""
-          - name: order_total
-            description: ""
-          - name: order_discount
             description: ""
           - name: order_billing_address_first_name
             description: ""
-          - name: order_id
+          - name: original_timestamp
             description: ""
-          - name: order_billing_address_address
+          - name: sent_at
             description: ""
-          - name: end_reason
+          - name: order_billing_address_postal_code
             description: ""
-          - name: order_order_id
+          - name: event_text
             description: ""
-          - name: order_value
+          - name: order_discount
+            description: ""
+          - name: order_type
+            description: ""
+          - name: sku_override
+            description: ""
+          - name: order_billing_address_email
+            description: ""
+          - name: charge_interval_frequency
             description: ""
           - name: order_currency
             description: ""
+          - name: channel
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: order_revenue
+            description: ""
+          - name: order_interval_unit
+            description: ""
+          - name: is_skippable
+            description: ""
+          - name: products
+            description: ""
           - name: order_tax
             description: ""
-          - name: order_billing_address_company
+          - name: order_id
+            description: ""
+          - name: loaded_at
+            description: ""
+          - name: next_charge_scheduled_at
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: order_billing_address_city
+            description: ""
+          - name: order_order_id
+            description: ""
+          - name: updated_at
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: order_billing_address_phone
+            description: ""
+          - name: order_billing_address_last_name
+            description: ""
+          - name: order_value
+            description: ""
+          - name: order_billing_address_state
+            description: ""
+          - name: started_at
+            description: ""
+          - name: created_at
+            description: ""
+          - name: order_billing_address_country
+            description: ""
+          - name: has_queued_charges
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: context_source
+            description: ""
+          - name: received_at
+            description: ""
+          - name: order_total
+            description: ""
+          - name: max_retries_reached
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: order_billing_address_address
+            description: ""
+          - name: order_products
+            description: ""
+          - name: order_interval_frequency
+            description: ""
+          - name: status
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: is_swappable
+            description: ""
+          - name: id
+            description: ""
+          - name: user_id
+            description: ""
+          - name: order_subtotal
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: event
             description: ""
 
       - name: tracks
         description: ""
         columns:
-          - name: channel
+          - name: loaded_at
             description: ""
-          - name: context_destination_id
+          - name: user_id
+            description: ""
+          - name: context_source
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: context_source_id
             description: ""
           - name: context_destination_type
             description: ""
           - name: context_ip
             description: ""
-          - name: context_library_name
+          - name: uuid_ts
+            description: ""
+          - name: received_at
+            description: ""
+          - name: context_destination_id
             description: ""
           - name: context_library_version
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: id
+            description: ""
+          - name: event_text
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: channel
+            description: ""
+          - name: event
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: context_anonymous_id
+            description: ""
+          - name: context_user_agent
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: context_passed_ip
+            description: ""
+          - name: context_locale
+            description: ""
+
+      - name: tracks_view
+        description: ""
+        columns:
+          - name: loaded_at
+            description: ""
+          - name: user_id
+            description: ""
+          - name: context_source
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: received_at
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: context_source_type
+            description: ""
+          - name: original_timestamp
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: id
+            description: ""
+          - name: event_text
+            description: ""
+          - name: timestamp
+            description: ""
+          - name: channel
+            description: ""
+          - name: event
+            description: ""
+          - name: sent_at
+            description: ""
+          - name: context_request_ip
+            description: ""
+
+      - name: users
+        description: ""
+        columns:
+          - name: context_source_type
+            description: ""
+          - name: phone
+            description: ""
+          - name: first_name
+            description: ""
+          - name: context_passed_ip
+            description: ""
+          - name: context_traits_email
+            description: ""
+          - name: context_traits_first_name
+            description: ""
+          - name: context_library_name
+            description: ""
+          - name: email
+            description: ""
+          - name: created_at
+            description: ""
+          - name: context_traits_phone
+            description: ""
+          - name: context_destination_type
+            description: ""
+          - name: context_user_agent
+            description: ""
+          - name: context_source
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: context_traits_external_customer_id
+            description: ""
+          - name: id
+            description: ""
+          - name: context_traits_created_at
+            description: ""
+          - name: context_traits_last_name
+            description: ""
+          - name: context_locale
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: received_at
+            description: ""
+          - name: context_anonymous_id
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: external_customer_id
+            description: ""
+          - name: last_name
+            description: ""
+          - name: context_ip
             description: ""
           - name: context_request_ip
             description: ""
           - name: context_rudderstack_source
             description: ""
-          - name: context_source
+          - name: loaded_at
             description: ""
-          - name: context_source_id
+          - name: context_traits_address_country_code
             description: ""
+          - name: context_traits_name
+            description: ""
+          - name: context_traits_address_city
+            description: ""
+          - name: context_traits_context_anonymous_id
+            description: ""
+          - name: context_traits_address_street
+            description: ""
+          - name: context_traits_address_state
+            description: ""
+          - name: name
+            description: ""
+          - name: context_traits_context_client_id
+            description: ""
+          - name: address_state
+            description: ""
+          - name: context_traits_address_postal_code
+            description: ""
+          - name: address_country_code
+            description: ""
+          - name: address_street
+            description: ""
+          - name: address_city
+            description: ""
+          - name: address_postal_code
+            description: ""
+          - name: context_traits_context_ip
+            description: ""
+          - name: context_traits_context_session_id
+            description: ""
+          - name: addresses
+            description: ""
+          - name: context_traits_addresses
+            description: ""
+          - name: context_traits_context_page_title
+            description: ""
+          - name: context_page_width
+            description: ""
+          - name: context_traits_context_page_url
+            description: ""
+          - name: context_traits_context_referrer
+            description: ""
+          - name: context_traits_context_os_name
+            description: ""
+          - name: context_traits_context_locale
+            description: ""
+          - name: context_page_referrer
+            description: ""
+          - name: context_traits_context_library_name
+            description: ""
+          - name: context_app
+            description: ""
+          - name: context_os_name
+            description: ""
+          - name: context_page_path
+            description: ""
+          - name: context_page_height
+            description: ""
+          - name: context_traits_context_initialized
+            description: ""
+          - name: context_page_search
+            description: ""
+          - name: context_initialized
+            description: ""
+          - name: context_offline
+            description: ""
+          - name: context_debug
+            description: ""
+          - name: context_traits_context_app
+            description: ""
+          - name: context_traits_context_page_referrer
+            description: ""
+          - name: context_traits_context_page_search
+            description: ""
+          - name: context_traits_context_library_version
+            description: ""
+          - name: context_traits_context_debug
+            description: ""
+          - name: context_traits_context_user_agent
+            description: ""
+          - name: context_traits_context_timezone
+            description: ""
+          - name: context_traits_context_offline
+            description: ""
+          - name: context_traits_context_page_height
+            description: ""
+          - name: context_timezone
+            description: ""
+          - name: context_referrer
+            description: ""
+          - name: context_traits_context_page_path
+            description: ""
+          - name: context_page_title
+            description: ""
+          - name: context_traits_context_page_width
+            description: ""
+          - name: context_page_url
+            description: ""
+          - name: context_campaign_gclid
+            description: ""
+          - name: context_traits_context_campaign_gclid
+            description: ""
+          - name: context_traits_context_page_hash
+            description: ""
+          - name: context_page_hash
+            description: ""
+          - name: context_traits_context_campaign_source
+            description: ""
+          - name: context_campaign_term
+            description: ""
+          - name: context_traits_context_campaign_name
+            description: ""
+          - name: context_campaign_source
+            description: ""
+          - name: context_traits_context_campaign_medium
+            description: ""
+          - name: context_traits_context_campaign_term
+            description: ""
+          - name: context_campaign_medium
+            description: ""
+          - name: context_campaign_name
+            description: ""
+          - name: context_campaign_profile
+            description: ""
+          - name: context_traits_context_campaign_profile
+            description: ""
+          - name: context_traits_context_campaign_id
+            description: ""
+          - name: context_campaign_id
+            description: ""
+
+      - name: users_view
+        description: ""
+        columns:
           - name: context_source_type
             description: ""
-          - name: event
+          - name: phone
             description: ""
-          - name: event_text
-            description: ""
-          - name: id
-            description: ""
-          - name: original_timestamp
-            description: ""
-          - name: received_at
-            description: ""
-          - name: sent_at
-            description: ""
-          - name: timestamp
-            description: ""
-          - name: user_id
-            description: ""
-          - name: uuid_ts
+          - name: first_name
             description: ""
           - name: context_passed_ip
             description: ""
-          - name: context_session_id
+          - name: context_traits_email
             description: ""
-          - name: context_locale
+          - name: context_traits_first_name
             description: ""
-          - name: context_client_id
+          - name: context_library_name
+            description: ""
+          - name: email
+            description: ""
+          - name: created_at
+            description: ""
+          - name: context_traits_phone
+            description: ""
+          - name: context_destination_type
             description: ""
           - name: context_user_agent
             description: ""
+          - name: context_source
+            description: ""
+          - name: context_client_id
+            description: ""
+          - name: context_source_id
+            description: ""
+          - name: context_traits_external_customer_id
+            description: ""
+          - name: id
+            description: ""
+          - name: context_traits_created_at
+            description: ""
+          - name: context_traits_last_name
+            description: ""
+          - name: context_locale
+            description: ""
+          - name: context_session_id
+            description: ""
+          - name: uuid_ts
+            description: ""
+          - name: context_destination_id
+            description: ""
+          - name: received_at
+            description: ""
           - name: context_anonymous_id
+            description: ""
+          - name: context_library_version
+            description: ""
+          - name: external_customer_id
+            description: ""
+          - name: last_name
+            description: ""
+          - name: context_ip
+            description: ""
+          - name: context_request_ip
+            description: ""
+          - name: context_rudderstack_source
+            description: ""
+          - name: loaded_at
             description: ""
