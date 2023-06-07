@@ -46,7 +46,7 @@ currently building out Fueled for merchants leveraging Redshift, BigQuery, and S
 - Fueled's [dbt-fueled-utils](https://github.com/fueled-io/dbt-fueled-utils) package.
 - dbt-core version 1.4.0 or greater
 
-# Copyright and License
+### Copyright and License
 
 Copyright Fueled, Inc. 2023.
 
