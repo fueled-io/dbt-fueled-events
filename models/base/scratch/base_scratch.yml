@@ -1,0 +1,2273 @@
+version: 2
+
+models:
+  - name: fueled_events_base_cart_viewed
+    description: '{{ doc("table_base_cart_viewed") }}'
+    columns:
+      - name: products
+        description: '{{ doc("col_products") }}'
+
+      - name: total
+        description: '{{ doc("col_total") }}'
+
+      - name: anonymous_id
+        description: '{{ doc("col_anonymous_id") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: context_ip
+        description: '{{ doc("col_context_ip") }}'
+
+      - name: context_source
+        description: '{{ doc("col_context_source") }}'
+
+      - name: context_library_version
+        description: '{{ doc("col_context_library_version") }}'
+
+      - name: context_library_name
+        description: '{{ doc("col_context_library_name") }}'
+
+      - name: context_referrer
+        description: '{{ doc("col_context_referrer") }}'
+
+      - name: context_page_title
+        description: '{{ doc("col_context_page_title") }}'
+
+      - name: context_user_agent
+        description: '{{ doc("col_context_user_agent") }}'
+
+      - name: context_page_height
+        description: '{{ doc("col_context_page_height") }}'
+
+      - name: context_debug
+        description: '{{ doc("col_context_debug") }}'
+
+      - name: context_page_referrer
+        description: '{{ doc("col_context_page_referrer") }}'
+
+      - name: context_page_path
+        description: '{{ doc("col_context_page_path") }}'
+
+      - name: context_os_name
+        description: '{{ doc("col_context_os_name") }}'
+
+      - name: context_page_url
+        description: '{{ doc("col_context_page_url") }}'
+
+      - name: context_locale
+        description: '{{ doc("col_context_locale") }}'
+
+      - name: context_timezone
+        description: '{{ doc("col_context_timezone") }}'
+
+      - name: context_page_width
+        description: '{{ doc("col_context_page_width") }}'
+
+      - name: context_campaign_name
+        description: '{{ doc("col_context_campaign_name") }}'
+
+      - name: context_campaign_medium
+        description: '{{ doc("col_context_campaign_medium") }}'
+
+      - name: context_campaign_source
+        description: '{{ doc("col_context_campaign_source") }}'
+
+      - name: context_page_search
+        description: '{{ doc("col_context_page_search") }}'
+
+      - name: context_page_hash
+        description: '{{ doc("col_context_page_hash") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+  - name: fueled_events_base_checkout_created
+    description: '{{ doc("table_base_checkout_created") }}'
+    columns:
+      - name: affiliation
+        description: '{{ doc("col_affiliation") }}'
+
+      - name: coupon
+        description: '{{ doc("col_coupon") }}'
+
+      - name: currency
+        description: '{{ doc("col_currency") }}'
+
+      - name: discount
+        description: '{{ doc("col_discount") }}'
+
+      - name: products
+        description: '{{ doc("col_products") }}'
+
+      - name: tax
+        description: '{{ doc("col_tax") }}'
+
+      - name: value
+        description: '{{ doc("col_value") }}'
+
+      - name: anonymous_id
+        description: '{{ doc("col_anonymous_id") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: context_library_name
+        description: '{{ doc("col_context_library_name") }}'
+
+      - name: context_locale
+        description: '{{ doc("col_context_locale") }}'
+
+      - name: context_user_agent
+        description: '{{ doc("col_context_user_agent") }}'
+
+      - name: context_source
+        description: '{{ doc("col_context_source") }}'
+
+      - name: context_library_version
+        description: '{{ doc("col_context_library_version") }}'
+
+      - name: context_ip
+        description: '{{ doc("col_context_ip") }}'
+
+      - name: context_passed_ip
+        description: '{{ doc("col_context_passed_ip") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+  - name: fueled_events_base_checkout_updated
+    description: '{{ doc("table_base_checkout_updated") }}'
+    columns:
+      - name: affiliation
+        description: '{{ doc("col_affiliation") }}'
+
+      - name: coupon
+        description: '{{ doc("col_coupon") }}'
+
+      - name: currency
+        description: '{{ doc("col_currency") }}'
+
+      - name: discount
+        description: '{{ doc("col_discount") }}'
+
+      - name: products
+        description: '{{ doc("col_products") }}'
+
+      - name: tax
+        description: '{{ doc("col_tax") }}'
+
+      - name: value
+        description: '{{ doc("col_value") }}'
+
+      - name: anonymous_id
+        description: '{{ doc("col_anonymous_id") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: context_source
+        description: '{{ doc("col_context_source") }}'
+
+      - name: context_locale
+        description: '{{ doc("col_context_locale") }}'
+
+      - name: context_user_agent
+        description: '{{ doc("col_context_user_agent") }}'
+
+      - name: context_library_name
+        description: '{{ doc("col_context_library_name") }}'
+
+      - name: context_ip
+        description: '{{ doc("col_context_ip") }}'
+
+      - name: context_library_version
+        description: '{{ doc("col_context_library_version") }}'
+
+      - name: context_passed_ip
+        description: '{{ doc("col_context_passed_ip") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+  - name: fueled_events_base_identifies
+    description: '{{ doc("table_base_identifies") }}'
+    columns:
+      - name: address_city
+        description: '{{ doc("col_address_city") }}'
+
+      - name: address_street
+        description: '{{ doc("col_address_street") }}'
+
+      - name: email
+        description: '{{ doc("col_email") }}'
+
+      - name: first_name
+        description: '{{ doc("col_first_name") }}'
+
+      - name: last_name
+        description: '{{ doc("col_last_name") }}'
+
+      - name: name
+        description: '{{ doc("col_name") }}'
+
+      - name: phone
+        description: '{{ doc("col_phone") }}'
+
+      - name: anonymous_id
+        description: '{{ doc("col_anonymous_id") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: external_customer_id
+        description: '{{ doc("col_external_customer_id") }}'
+
+      - name: created_at
+        description: '{{ doc("col_created_at") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: context_traits_first_name
+        description: '{{ doc("col_context_traits_first_name") }}'
+
+      - name: context_traits_phone
+        description: '{{ doc("col_context_traits_phone") }}'
+
+      - name: context_locale
+        description: '{{ doc("col_context_locale") }}'
+
+      - name: context_library_name
+        description: '{{ doc("col_context_library_name") }}'
+
+      - name: context_passed_ip
+        description: '{{ doc("col_context_passed_ip") }}'
+
+      - name: context_user_agent
+        description: '{{ doc("col_context_user_agent") }}'
+
+      - name: context_ip
+        description: '{{ doc("col_context_ip") }}'
+
+      - name: context_source
+        description: '{{ doc("col_context_source") }}'
+
+      - name: context_traits_email
+        description: '{{ doc("col_context_traits_email") }}'
+
+      - name: context_traits_last_name
+        description: '{{ doc("col_context_traits_last_name") }}'
+
+      - name: context_traits_created_at
+        description: '{{ doc("col_context_traits_created_at") }}'
+
+      - name: context_traits_external_customer_id
+        description: '{{ doc("col_context_traits_external_customer_id") }}'
+
+      - name: context_library_version
+        description: '{{ doc("col_context_library_version") }}'
+
+      - name: context_traits_name
+        description: '{{ doc("col_context_traits_name") }}'
+
+      - name: context_traits_context_session_id
+        description: '{{ doc("col_context_traits_context_session_id") }}'
+
+      - name: context_traits_address_street
+        description: '{{ doc("col_context_traits_address_street") }}'
+
+      - name: context_traits_context_ip
+        description: '{{ doc("col_context_traits_context_ip") }}'
+
+      - name: context_traits_address_country_code
+        description: '{{ doc("col_context_traits_address_country_code") }}'
+
+      - name: context_traits_address_state
+        description: '{{ doc("col_context_traits_address_state") }}'
+
+      - name: context_traits_context_client_id
+        description: '{{ doc("col_context_traits_context_client_id") }}'
+
+      - name: context_traits_context_anonymous_id
+        description: '{{ doc("col_context_traits_context_anonymous_id") }}'
+
+      - name: context_traits_address_postal_code
+        description: '{{ doc("col_context_traits_address_postal_code") }}'
+
+      - name: context_traits_address_city
+        description: '{{ doc("col_context_traits_address_city") }}'
+
+      - name: context_traits_addresses
+        description: '{{ doc("col_context_traits_addresses") }}'
+
+      - name: context_traits_context_page_url
+        description: '{{ doc("col_context_traits_context_page_url") }}'
+
+      - name: context_page_path
+        description: '{{ doc("col_context_page_path") }}'
+
+      - name: context_traits_context_page_search
+        description: '{{ doc("col_context_traits_context_page_search") }}'
+
+      - name: context_traits_context_debug
+        description: '{{ doc("col_context_traits_context_debug") }}'
+
+      - name: context_traits_context_os_name
+        description: '{{ doc("col_context_traits_context_os_name") }}'
+
+      - name: context_traits_context_page_width
+        description: '{{ doc("col_context_traits_context_page_width") }}'
+
+      - name: context_page_width
+        description: '{{ doc("col_context_page_width") }}'
+
+      - name: context_traits_context_page_title
+        description: '{{ doc("col_context_traits_context_page_title") }}'
+
+      - name: context_traits_context_page_referrer
+        description: '{{ doc("col_context_traits_context_page_referrer") }}'
+
+      - name: context_os_name
+        description: '{{ doc("col_context_os_name") }}'
+
+      - name: context_referrer
+        description: '{{ doc("col_context_referrer") }}'
+
+      - name: context_page_height
+        description: '{{ doc("col_context_page_height") }}'
+
+      - name: context_traits_context_library_version
+        description: '{{ doc("col_context_traits_context_library_version") }}'
+
+      - name: context_page_search
+        description: '{{ doc("col_context_page_search") }}'
+
+      - name: context_traits_context_locale
+        description: '{{ doc("col_context_traits_context_locale") }}'
+
+      - name: context_traits_context_page_height
+        description: '{{ doc("col_context_traits_context_page_height") }}'
+
+      - name: context_traits_context_user_agent
+        description: '{{ doc("col_context_traits_context_user_agent") }}'
+
+      - name: context_page_url
+        description: '{{ doc("col_context_page_url") }}'
+
+      - name: context_timezone
+        description: '{{ doc("col_context_timezone") }}'
+
+      - name: context_page_referrer
+        description: '{{ doc("col_context_page_referrer") }}'
+
+      - name: context_traits_context_app
+        description: '{{ doc("col_context_traits_context_app") }}'
+
+      - name: context_traits_context_library_name
+        description: '{{ doc("col_context_traits_context_library_name") }}'
+
+      - name: context_page_title
+        description: '{{ doc("col_context_page_title") }}'
+
+      - name: context_traits_context_referrer
+        description: '{{ doc("col_context_traits_context_referrer") }}'
+
+      - name: context_traits_context_initialized
+        description: '{{ doc("col_context_traits_context_initialized") }}'
+
+      - name: context_debug
+        description: '{{ doc("col_context_debug") }}'
+
+      - name: context_traits_context_timezone
+        description: '{{ doc("col_context_traits_context_timezone") }}'
+
+      - name: context_traits_context_page_path
+        description: '{{ doc("col_context_traits_context_page_path") }}'
+
+      - name: context_traits_context_offline
+        description: '{{ doc("col_context_traits_context_offline") }}'
+
+      - name: context_campaign_gclid
+        description: '{{ doc("col_context_campaign_gclid") }}'
+
+      - name: context_traits_context_campaign_gclid
+        description: '{{ doc("col_context_traits_context_campaign_gclid") }}'
+
+      - name: context_traits_context_page_hash
+        description: '{{ doc("col_context_traits_context_page_hash") }}'
+
+      - name: context_page_hash
+        description: '{{ doc("col_context_page_hash") }}'
+
+      - name: context_campaign_term
+        description: '{{ doc("col_context_campaign_term") }}'
+
+      - name: context_traits_context_campaign_source
+        description: '{{ doc("col_context_traits_context_campaign_source") }}'
+
+      - name: context_traits_context_campaign_term
+        description: '{{ doc("col_context_traits_context_campaign_term") }}'
+
+      - name: context_traits_context_campaign_medium
+        description: '{{ doc("col_context_traits_context_campaign_medium") }}'
+
+      - name: context_campaign_name
+        description: '{{ doc("col_context_campaign_name") }}'
+
+      - name: context_campaign_source
+        description: '{{ doc("col_context_campaign_source") }}'
+
+      - name: context_traits_context_campaign_name
+        description: '{{ doc("col_context_traits_context_campaign_name") }}'
+
+      - name: context_campaign_medium
+        description: '{{ doc("col_context_campaign_medium") }}'
+
+      - name: context_campaign_profile
+        description: '{{ doc("col_context_campaign_profile") }}'
+
+      - name: context_campaign_id
+        description: '{{ doc("col_context_campaign_id") }}'
+
+      - name: context_traits_context_campaign_id
+        description: '{{ doc("col_context_traits_context_campaign_id") }}'
+
+      - name: context_traits_context_campaign_profile
+        description: '{{ doc("col_context_traits_context_campaign_profile") }}'
+
+      - name: context_campaign_content
+        description: '{{ doc("col_context_campaign_content") }}'
+
+      - name: context_traits_context_campaign_content
+        description: '{{ doc("col_context_traits_context_campaign_content") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+  - name: fueled_events_base_logged_in
+    description: '{{ doc("table_base_logged_in") }}'
+    columns:
+      - name: anonymous_id
+        description: '{{ doc("col_anonymous_id") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: context_ip
+        description: '{{ doc("col_context_ip") }}'
+
+      - name: context_library_name
+        description: '{{ doc("col_context_library_name") }}'
+
+      - name: context_source
+        description: '{{ doc("col_context_source") }}'
+
+      - name: context_library_version
+        description: '{{ doc("col_context_library_version") }}'
+
+      - name: context_page_width
+        description: '{{ doc("col_context_page_width") }}'
+
+      - name: context_timezone
+        description: '{{ doc("col_context_timezone") }}'
+
+      - name: context_user_agent
+        description: '{{ doc("col_context_user_agent") }}'
+
+      - name: context_page_url
+        description: '{{ doc("col_context_page_url") }}'
+
+      - name: context_page_referrer
+        description: '{{ doc("col_context_page_referrer") }}'
+
+      - name: context_os_name
+        description: '{{ doc("col_context_os_name") }}'
+
+      - name: context_debug
+        description: '{{ doc("col_context_debug") }}'
+
+      - name: context_page_title
+        description: '{{ doc("col_context_page_title") }}'
+
+      - name: context_page_height
+        description: '{{ doc("col_context_page_height") }}'
+
+      - name: context_locale
+        description: '{{ doc("col_context_locale") }}'
+
+      - name: context_referrer
+        description: '{{ doc("col_context_referrer") }}'
+
+      - name: context_page_path
+        description: '{{ doc("col_context_page_path") }}'
+
+      - name: context_page_search
+        description: '{{ doc("col_context_page_search") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+  - name: fueled_events_base_order_cancelled
+    description: '{{ doc("table_base_order_cancelled") }}'
+    columns:
+      - name: billing_address_address
+        description: '{{ doc("col_billing_address_address") }}'
+
+      - name: billing_address_city
+        description: '{{ doc("col_billing_address_city") }}'
+
+      - name: billing_address_country
+        description: '{{ doc("col_billing_address_country") }}'
+
+      - name: billing_address_first_name
+        description: '{{ doc("col_billing_address_first_name") }}'
+
+      - name: billing_address_last_name
+        description: '{{ doc("col_billing_address_last_name") }}'
+
+      - name: billing_address_postal_code
+        description: '{{ doc("col_billing_address_postal_code") }}'
+
+      - name: billing_address_state
+        description: '{{ doc("col_billing_address_state") }}'
+
+      - name: currency
+        description: '{{ doc("col_currency") }}'
+
+      - name: order_id
+        description: '{{ doc("col_order_id") }}'
+
+      - name: revenue
+        description: '{{ doc("col_revenue") }}'
+
+      - name: shipping
+        description: '{{ doc("col_shipping") }}'
+
+      - name: status
+        description: '{{ doc("col_status") }}'
+
+      - name: subtotal
+        description: '{{ doc("col_subtotal") }}'
+
+      - name: total
+        description: '{{ doc("col_total") }}'
+
+      - name: type
+        description: '{{ doc("col_type") }}'
+
+      - name: value
+        description: '{{ doc("col_value") }}'
+
+      - name: anonymous_id
+        description: '{{ doc("col_anonymous_id") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: context_library_name
+        description: '{{ doc("col_context_library_name") }}'
+
+      - name: context_source
+        description: '{{ doc("col_context_source") }}'
+
+      - name: context_library_version
+        description: '{{ doc("col_context_library_version") }}'
+
+      - name: context_ip
+        description: '{{ doc("col_context_ip") }}'
+
+      - name: context_passed_ip
+        description: '{{ doc("col_context_passed_ip") }}'
+
+      - name: context_locale
+        description: '{{ doc("col_context_locale") }}'
+
+      - name: context_user_agent
+        description: '{{ doc("col_context_user_agent") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+  - name: fueled_events_base_order_completed
+    description: '{{ doc("table_base_order_completed") }}'
+    columns:
+      - name: affiliation
+        description: '{{ doc("col_affiliation") }}'
+
+      - name: billing_address_address
+        description: '{{ doc("col_billing_address_address") }}'
+
+      - name: billing_address_city
+        description: '{{ doc("col_billing_address_city") }}'
+
+      - name: billing_address_country
+        description: '{{ doc("col_billing_address_country") }}'
+
+      - name: billing_address_first_name
+        description: '{{ doc("col_billing_address_first_name") }}'
+
+      - name: billing_address_last_name
+        description: '{{ doc("col_billing_address_last_name") }}'
+
+      - name: billing_address_phone
+        description: '{{ doc("col_billing_address_phone") }}'
+
+      - name: billing_address_postal_code
+        description: '{{ doc("col_billing_address_postal_code") }}'
+
+      - name: billing_address_state
+        description: '{{ doc("col_billing_address_state") }}'
+
+      - name: cart_id
+        description: '{{ doc("col_cart_id") }}'
+
+      - name: coupon
+        description: '{{ doc("col_coupon") }}'
+
+      - name: currency
+        description: '{{ doc("col_currency") }}'
+
+      - name: discount
+        description: '{{ doc("col_discount") }}'
+
+      - name: event_text
+        description: '{{ doc("col_event_text") }}'
+
+      - name: order_id
+        description: '{{ doc("col_order_id") }}'
+
+      - name: payment_type
+        description: '{{ doc("col_payment_type") }}'
+
+      - name: products
+        description: '{{ doc("col_products") }}'
+
+      - name: revenue
+        description: '{{ doc("col_revenue") }}'
+
+      - name: shipping
+        description: '{{ doc("col_shipping") }}'
+
+      - name: status
+        description: '{{ doc("col_status") }}'
+
+      - name: subtotal
+        description: '{{ doc("col_subtotal") }}'
+
+      - name: tax
+        description: '{{ doc("col_tax") }}'
+
+      - name: total
+        description: '{{ doc("col_total") }}'
+
+      - name: type
+        description: '{{ doc("col_type") }}'
+
+      - name: value
+        description: '{{ doc("col_value") }}'
+
+      - name: anonymous_id
+        description: '{{ doc("col_anonymous_id") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: context_passed_ip
+        description: '{{ doc("col_context_passed_ip") }}'
+
+      - name: context_user_agent
+        description: '{{ doc("col_context_user_agent") }}'
+
+      - name: context_source
+        description: '{{ doc("col_context_source") }}'
+
+      - name: context_library_name
+        description: '{{ doc("col_context_library_name") }}'
+
+      - name: context_library_version
+        description: '{{ doc("col_context_library_version") }}'
+
+      - name: context_locale
+        description: '{{ doc("col_context_locale") }}'
+
+      - name: context_ip
+        description: '{{ doc("col_context_ip") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+  - name: fueled_events_base_order_updated
+    description: '{{ doc("table_base_order_updated") }}'
+    columns:
+      - name: affiliation
+        description: '{{ doc("col_affiliation") }}'
+
+      - name: billing_address_address
+        description: '{{ doc("col_billing_address_address") }}'
+
+      - name: billing_address_city
+        description: '{{ doc("col_billing_address_city") }}'
+
+      - name: billing_address_country
+        description: '{{ doc("col_billing_address_country") }}'
+
+      - name: billing_address_first_name
+        description: '{{ doc("col_billing_address_first_name") }}'
+
+      - name: billing_address_last_name
+        description: '{{ doc("col_billing_address_last_name") }}'
+
+      - name: billing_address_phone
+        description: '{{ doc("col_billing_address_phone") }}'
+
+      - name: billing_address_postal_code
+        description: '{{ doc("col_billing_address_postal_code") }}'
+
+      - name: billing_address_state
+        description: '{{ doc("col_billing_address_state") }}'
+
+      - name: cart_id
+        description: '{{ doc("col_cart_id") }}'
+
+      - name: coupon
+        description: '{{ doc("col_coupon") }}'
+
+      - name: currency
+        description: '{{ doc("col_currency") }}'
+
+      - name: discount
+        description: '{{ doc("col_discount") }}'
+
+      - name: event_text
+        description: '{{ doc("col_event_text") }}'
+
+      - name: order_id
+        description: '{{ doc("col_order_id") }}'
+
+      - name: payment_type
+        description: '{{ doc("col_payment_type") }}'
+
+      - name: products
+        description: '{{ doc("col_products") }}'
+
+      - name: revenue
+        description: '{{ doc("col_revenue") }}'
+
+      - name: shipping
+        description: '{{ doc("col_shipping") }}'
+
+      - name: status
+        description: '{{ doc("col_status") }}'
+
+      - name: subtotal
+        description: '{{ doc("col_subtotal") }}'
+
+      - name: tax
+        description: '{{ doc("col_tax") }}'
+
+      - name: total
+        description: '{{ doc("col_total") }}'
+
+      - name: type
+        description: '{{ doc("col_type") }}'
+
+      - name: value
+        description: '{{ doc("col_value") }}'
+
+      - name: anonymous_id
+        description: '{{ doc("col_anonymous_id") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: context_user_agent
+        description: '{{ doc("col_context_user_agent") }}'
+
+      - name: context_ip
+        description: '{{ doc("col_context_ip") }}'
+
+      - name: context_locale
+        description: '{{ doc("col_context_locale") }}'
+
+      - name: context_library_name
+        description: '{{ doc("col_context_library_name") }}'
+
+      - name: context_passed_ip
+        description: '{{ doc("col_context_passed_ip") }}'
+
+      - name: context_source
+        description: '{{ doc("col_context_source") }}'
+
+      - name: context_library_version
+        description: '{{ doc("col_context_library_version") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+  - name: fueled_events_base_pages
+    description: '{{ doc("table_base_pages") }}'
+    columns:
+      - name: _hash
+        description: '{{ doc("col__hash") }}'
+
+      - name: height
+        description: '{{ doc("col_height") }}'
+
+      - name: name
+        description: '{{ doc("col_name") }}'
+
+      - name: path
+        description: '{{ doc("col_path") }}'
+
+      - name: referrer
+        description: '{{ doc("col_referrer") }}'
+
+      - name: search
+        description: '{{ doc("col_search") }}'
+
+      - name: title
+        description: '{{ doc("col_title") }}'
+
+      - name: url
+        description: '{{ doc("col_url") }}'
+
+      - name: width
+        description: '{{ doc("col_width") }}'
+
+      - name: anonymous_id
+        description: '{{ doc("col_anonymous_id") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: context_ip
+        description: '{{ doc("col_context_ip") }}'
+
+      - name: context_library_version
+        description: '{{ doc("col_context_library_version") }}'
+
+      - name: context_library_name
+        description: '{{ doc("col_context_library_name") }}'
+
+      - name: context_timezone
+        description: '{{ doc("col_context_timezone") }}'
+
+      - name: context_page_hash
+        description: '{{ doc("col_context_page_hash") }}'
+
+      - name: context_page_search
+        description: '{{ doc("col_context_page_search") }}'
+
+      - name: context_page_height
+        description: '{{ doc("col_context_page_height") }}'
+
+      - name: context_locale
+        description: '{{ doc("col_context_locale") }}'
+
+      - name: context_page_url
+        description: '{{ doc("col_context_page_url") }}'
+
+      - name: context_page_referrer
+        description: '{{ doc("col_context_page_referrer") }}'
+
+      - name: context_campaign_medium
+        description: '{{ doc("col_context_campaign_medium") }}'
+
+      - name: context_campaign_name
+        description: '{{ doc("col_context_campaign_name") }}'
+
+      - name: context_debug
+        description: '{{ doc("col_context_debug") }}'
+
+      - name: context_os_name
+        description: '{{ doc("col_context_os_name") }}'
+
+      - name: context_referrer
+        description: '{{ doc("col_context_referrer") }}'
+
+      - name: context_campaign_gclid
+        description: '{{ doc("col_context_campaign_gclid") }}'
+
+      - name: context_page_title
+        description: '{{ doc("col_context_page_title") }}'
+
+      - name: context_page_path
+        description: '{{ doc("col_context_page_path") }}'
+
+      - name: context_user_agent
+        description: '{{ doc("col_context_user_agent") }}'
+
+      - name: context_campaign_term
+        description: '{{ doc("col_context_campaign_term") }}'
+
+      - name: context_campaign_source
+        description: '{{ doc("col_context_campaign_source") }}'
+
+      - name: context_page_width
+        description: '{{ doc("col_context_page_width") }}'
+
+      - name: context_campaign_content
+        description: '{{ doc("col_context_campaign_content") }}'
+
+      - name: context_campaign_profile
+        description: '{{ doc("col_context_campaign_profile") }}'
+
+      - name: context_campaign_id
+        description: '{{ doc("col_context_campaign_id") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+  - name: fueled_events_base_product_added
+    description: '{{ doc("table_base_product_added") }}'
+    columns:
+      - name: brand
+        description: '{{ doc("col_brand") }}'
+
+      - name: category
+        description: '{{ doc("col_category") }}'
+
+      - name: image_url
+        description: '{{ doc("col_image_url") }}'
+
+      - name: name
+        description: '{{ doc("col_name") }}'
+
+      - name: position
+        description: '{{ doc("col_position") }}'
+
+      - name: price
+        description: '{{ doc("col_price") }}'
+
+      - name: product_id
+        description: '{{ doc("col_product_id") }}'
+
+      - name: quantity
+        description: '{{ doc("col_quantity") }}'
+
+      - name: sku
+        description: '{{ doc("col_sku") }}'
+
+      - name: url
+        description: '{{ doc("col_url") }}'
+
+      - name: variant
+        description: '{{ doc("col_variant") }}'
+
+      - name: anonymous_id
+        description: '{{ doc("col_anonymous_id") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: context_library_name
+        description: '{{ doc("col_context_library_name") }}'
+
+      - name: context_ip
+        description: '{{ doc("col_context_ip") }}'
+
+      - name: context_library_version
+        description: '{{ doc("col_context_library_version") }}'
+
+      - name: context_source
+        description: '{{ doc("col_context_source") }}'
+
+      - name: context_page_height
+        description: '{{ doc("col_context_page_height") }}'
+
+      - name: context_page_path
+        description: '{{ doc("col_context_page_path") }}'
+
+      - name: context_os_name
+        description: '{{ doc("col_context_os_name") }}'
+
+      - name: context_debug
+        description: '{{ doc("col_context_debug") }}'
+
+      - name: context_locale
+        description: '{{ doc("col_context_locale") }}'
+
+      - name: context_page_url
+        description: '{{ doc("col_context_page_url") }}'
+
+      - name: context_referrer
+        description: '{{ doc("col_context_referrer") }}'
+
+      - name: context_page_search
+        description: '{{ doc("col_context_page_search") }}'
+
+      - name: context_timezone
+        description: '{{ doc("col_context_timezone") }}'
+
+      - name: context_user_agent
+        description: '{{ doc("col_context_user_agent") }}'
+
+      - name: context_page_referrer
+        description: '{{ doc("col_context_page_referrer") }}'
+
+      - name: context_page_width
+        description: '{{ doc("col_context_page_width") }}'
+
+      - name: context_page_title
+        description: '{{ doc("col_context_page_title") }}'
+
+      - name: context_campaign_gclid
+        description: '{{ doc("col_context_campaign_gclid") }}'
+
+      - name: context_campaign_content
+        description: '{{ doc("col_context_campaign_content") }}'
+
+      - name: context_campaign_medium
+        description: '{{ doc("col_context_campaign_medium") }}'
+
+      - name: context_campaign_name
+        description: '{{ doc("col_context_campaign_name") }}'
+
+      - name: context_campaign_source
+        description: '{{ doc("col_context_campaign_source") }}'
+
+      - name: context_campaign_term
+        description: '{{ doc("col_context_campaign_term") }}'
+
+      - name: context_page_hash
+        description: '{{ doc("col_context_page_hash") }}'
+
+      - name: context_campaign_profile
+        description: '{{ doc("col_context_campaign_profile") }}'
+
+      - name: context_campaign_id
+        description: '{{ doc("col_context_campaign_id") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+  - name: fueled_events_base_product_list_viewed
+    description: '{{ doc("table_base_product_list_viewed") }}'
+    columns:
+      - name: category
+        description: '{{ doc("col_category") }}'
+
+      - name: list_id
+        description: '{{ doc("col_list_id") }}'
+
+      - name: products
+        description: '{{ doc("col_products") }}'
+
+      - name: anonymous_id
+        description: '{{ doc("col_anonymous_id") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: context_source
+        description: '{{ doc("col_context_source") }}'
+
+      - name: context_library_name
+        description: '{{ doc("col_context_library_name") }}'
+
+      - name: context_ip
+        description: '{{ doc("col_context_ip") }}'
+
+      - name: context_library_version
+        description: '{{ doc("col_context_library_version") }}'
+
+      - name: context_campaign_name
+        description: '{{ doc("col_context_campaign_name") }}'
+
+      - name: context_page_title
+        description: '{{ doc("col_context_page_title") }}'
+
+      - name: context_page_width
+        description: '{{ doc("col_context_page_width") }}'
+
+      - name: context_campaign_medium
+        description: '{{ doc("col_context_campaign_medium") }}'
+
+      - name: context_timezone
+        description: '{{ doc("col_context_timezone") }}'
+
+      - name: context_locale
+        description: '{{ doc("col_context_locale") }}'
+
+      - name: context_os_name
+        description: '{{ doc("col_context_os_name") }}'
+
+      - name: context_page_referrer
+        description: '{{ doc("col_context_page_referrer") }}'
+
+      - name: context_page_height
+        description: '{{ doc("col_context_page_height") }}'
+
+      - name: context_page_search
+        description: '{{ doc("col_context_page_search") }}'
+
+      - name: context_debug
+        description: '{{ doc("col_context_debug") }}'
+
+      - name: context_user_agent
+        description: '{{ doc("col_context_user_agent") }}'
+
+      - name: context_referrer
+        description: '{{ doc("col_context_referrer") }}'
+
+      - name: context_page_url
+        description: '{{ doc("col_context_page_url") }}'
+
+      - name: context_campaign_source
+        description: '{{ doc("col_context_campaign_source") }}'
+
+      - name: context_page_path
+        description: '{{ doc("col_context_page_path") }}'
+
+      - name: context_campaign_term
+        description: '{{ doc("col_context_campaign_term") }}'
+
+      - name: context_campaign_gclid
+        description: '{{ doc("col_context_campaign_gclid") }}'
+
+      - name: context_campaign_content
+        description: '{{ doc("col_context_campaign_content") }}'
+
+      - name: context_page_hash
+        description: '{{ doc("col_context_page_hash") }}'
+
+      - name: context_campaign_profile
+        description: '{{ doc("col_context_campaign_profile") }}'
+
+      - name: context_campaign_id
+        description: '{{ doc("col_context_campaign_id") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+  - name: fueled_events_base_product_removed
+    description: '{{ doc("table_base_product_removed") }}'
+    columns:
+      - name: position
+        description: '{{ doc("col_position") }}'
+
+      - name: anonymous_id
+        description: '{{ doc("col_anonymous_id") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: context_ip
+        description: '{{ doc("col_context_ip") }}'
+
+      - name: context_library_name
+        description: '{{ doc("col_context_library_name") }}'
+
+      - name: context_library_version
+        description: '{{ doc("col_context_library_version") }}'
+
+      - name: context_source
+        description: '{{ doc("col_context_source") }}'
+
+      - name: context_user_agent
+        description: '{{ doc("col_context_user_agent") }}'
+
+      - name: context_locale
+        description: '{{ doc("col_context_locale") }}'
+
+      - name: context_page_url
+        description: '{{ doc("col_context_page_url") }}'
+
+      - name: context_page_path
+        description: '{{ doc("col_context_page_path") }}'
+
+      - name: context_page_referrer
+        description: '{{ doc("col_context_page_referrer") }}'
+
+      - name: context_page_title
+        description: '{{ doc("col_context_page_title") }}'
+
+      - name: context_os_name
+        description: '{{ doc("col_context_os_name") }}'
+
+      - name: context_debug
+        description: '{{ doc("col_context_debug") }}'
+
+      - name: context_referrer
+        description: '{{ doc("col_context_referrer") }}'
+
+      - name: context_page_height
+        description: '{{ doc("col_context_page_height") }}'
+
+      - name: context_timezone
+        description: '{{ doc("col_context_timezone") }}'
+
+      - name: context_page_width
+        description: '{{ doc("col_context_page_width") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+  - name: fueled_events_base_products_searched
+    description: '{{ doc("table_base_products_searched") }}'
+    columns:
+      - name: query
+        description: '{{ doc("col_query") }}'
+
+      - name: anonymous_id
+        description: '{{ doc("col_anonymous_id") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: context_source
+        description: '{{ doc("col_context_source") }}'
+
+      - name: context_ip
+        description: '{{ doc("col_context_ip") }}'
+
+      - name: context_library_version
+        description: '{{ doc("col_context_library_version") }}'
+
+      - name: context_library_name
+        description: '{{ doc("col_context_library_name") }}'
+
+      - name: context_page_search
+        description: '{{ doc("col_context_page_search") }}'
+
+      - name: context_os_name
+        description: '{{ doc("col_context_os_name") }}'
+
+      - name: context_locale
+        description: '{{ doc("col_context_locale") }}'
+
+      - name: context_referrer
+        description: '{{ doc("col_context_referrer") }}'
+
+      - name: context_page_referrer
+        description: '{{ doc("col_context_page_referrer") }}'
+
+      - name: context_page_height
+        description: '{{ doc("col_context_page_height") }}'
+
+      - name: context_timezone
+        description: '{{ doc("col_context_timezone") }}'
+
+      - name: context_page_title
+        description: '{{ doc("col_context_page_title") }}'
+
+      - name: context_page_path
+        description: '{{ doc("col_context_page_path") }}'
+
+      - name: context_page_url
+        description: '{{ doc("col_context_page_url") }}'
+
+      - name: context_user_agent
+        description: '{{ doc("col_context_user_agent") }}'
+
+      - name: context_debug
+        description: '{{ doc("col_context_debug") }}'
+
+      - name: context_page_width
+        description: '{{ doc("col_context_page_width") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+  - name: fueled_events_base_signed_up
+    description: '{{ doc("table_base_signed_up") }}'
+    columns:
+      - name: email
+        description: '{{ doc("col_email") }}'
+
+      - name: first_name
+        description: '{{ doc("col_first_name") }}'
+
+      - name: last_name
+        description: '{{ doc("col_last_name") }}'
+
+      - name: anonymous_id
+        description: '{{ doc("col_anonymous_id") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: context_library_name
+        description: '{{ doc("col_context_library_name") }}'
+
+      - name: context_library_version
+        description: '{{ doc("col_context_library_version") }}'
+
+      - name: context_ip
+        description: '{{ doc("col_context_ip") }}'
+
+      - name: context_source
+        description: '{{ doc("col_context_source") }}'
+
+      - name: context_timezone
+        description: '{{ doc("col_context_timezone") }}'
+
+      - name: context_referrer
+        description: '{{ doc("col_context_referrer") }}'
+
+      - name: context_os_name
+        description: '{{ doc("col_context_os_name") }}'
+
+      - name: context_page_height
+        description: '{{ doc("col_context_page_height") }}'
+
+      - name: context_user_agent
+        description: '{{ doc("col_context_user_agent") }}'
+
+      - name: context_locale
+        description: '{{ doc("col_context_locale") }}'
+
+      - name: context_debug
+        description: '{{ doc("col_context_debug") }}'
+
+      - name: context_page_referrer
+        description: '{{ doc("col_context_page_referrer") }}'
+
+      - name: context_page_url
+        description: '{{ doc("col_context_page_url") }}'
+
+      - name: context_page_width
+        description: '{{ doc("col_context_page_width") }}'
+
+      - name: context_page_title
+        description: '{{ doc("col_context_page_title") }}'
+
+      - name: context_page_path
+        description: '{{ doc("col_context_page_path") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+  - name: fueled_events_base_subscription_activated
+    description: '{{ doc("table_base_subscription_activated") }}'
+    columns:
+      - name: charge_interval_frequency
+        description: '{{ doc("col_charge_interval_frequency") }}'
+
+      - name: created_at
+        description: '{{ doc("col_created_at") }}'
+
+      - name: has_queued_charges
+        description: '{{ doc("col_has_queued_charges") }}'
+
+      - name: is_skippable
+        description: '{{ doc("col_is_skippable") }}'
+
+      - name: is_swappable
+        description: '{{ doc("col_is_swappable") }}'
+
+      - name: max_retries_reached
+        description: '{{ doc("col_max_retries_reached") }}'
+
+      - name: next_charge_scheduled_at
+        description: '{{ doc("col_next_charge_scheduled_at") }}'
+
+      - name: order_billing_address_address
+        description: '{{ doc("col_order_billing_address_address") }}'
+
+      - name: order_billing_address_city
+        description: '{{ doc("col_order_billing_address_city") }}'
+
+      - name: order_billing_address_country
+        description: '{{ doc("col_order_billing_address_country") }}'
+
+      - name: order_billing_address_email
+        description: '{{ doc("col_order_billing_address_email") }}'
+
+      - name: order_billing_address_first_name
+        description: '{{ doc("col_order_billing_address_first_name") }}'
+
+      - name: order_billing_address_last_name
+        description: '{{ doc("col_order_billing_address_last_name") }}'
+
+      - name: order_billing_address_phone
+        description: '{{ doc("col_order_billing_address_phone") }}'
+
+      - name: order_billing_address_postal_code
+        description: '{{ doc("col_order_billing_address_postal_code") }}'
+
+      - name: order_billing_address_state
+        description: '{{ doc("col_order_billing_address_state") }}'
+
+      - name: order_coupon
+        description: '{{ doc("col_order_coupon") }}'
+
+      - name: order_currency
+        description: '{{ doc("col_order_currency") }}'
+
+      - name: order_discount
+        description: '{{ doc("col_order_discount") }}'
+
+      - name: order_id
+        description: '{{ doc("col_order_id") }}'
+
+      - name: order_interval_frequency
+        description: '{{ doc("col_order_interval_frequency") }}'
+
+      - name: order_interval_unit
+        description: '{{ doc("col_order_interval_unit") }}'
+
+      - name: order_order_id
+        description: '{{ doc("col_order_order_id") }}'
+
+      - name: order_products
+        description: '{{ doc("col_order_products") }}'
+
+      - name: order_revenue
+        description: '{{ doc("col_order_revenue") }}'
+
+      - name: order_status
+        description: '{{ doc("col_order_status") }}'
+
+      - name: order_subtotal
+        description: '{{ doc("col_order_subtotal") }}'
+
+      - name: order_tax
+        description: '{{ doc("col_order_tax") }}'
+
+      - name: order_total
+        description: '{{ doc("col_order_total") }}'
+
+      - name: order_type
+        description: '{{ doc("col_order_type") }}'
+
+      - name: order_value
+        description: '{{ doc("col_order_value") }}'
+
+      - name: products
+        description: '{{ doc("col_products") }}'
+
+      - name: sku_override
+        description: '{{ doc("col_sku_override") }}'
+
+      - name: started_at
+        description: '{{ doc("col_started_at") }}'
+
+      - name: status
+        description: '{{ doc("col_status") }}'
+
+      - name: updated_at
+        description: '{{ doc("col_updated_at") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: context_source
+        description: '{{ doc("col_context_source") }}'
+
+      - name: context_library_version
+        description: '{{ doc("col_context_library_version") }}'
+
+      - name: context_ip
+        description: '{{ doc("col_context_ip") }}'
+
+      - name: context_library_name
+        description: '{{ doc("col_context_library_name") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+  - name: fueled_events_base_subscription_cancelled
+    description: '{{ doc("table_base_subscription_cancelled") }}'
+    columns:
+      - name: charge_interval_frequency
+        description: '{{ doc("col_charge_interval_frequency") }}'
+
+      - name: created_at
+        description: '{{ doc("col_created_at") }}'
+
+      - name: end_reason
+        description: '{{ doc("col_end_reason") }}'
+
+      - name: ended_at
+        description: '{{ doc("col_ended_at") }}'
+
+      - name: has_queued_charges
+        description: '{{ doc("col_has_queued_charges") }}'
+
+      - name: is_skippable
+        description: '{{ doc("col_is_skippable") }}'
+
+      - name: is_swappable
+        description: '{{ doc("col_is_swappable") }}'
+
+      - name: max_retries_reached
+        description: '{{ doc("col_max_retries_reached") }}'
+
+      - name: order_billing_address_address
+        description: '{{ doc("col_order_billing_address_address") }}'
+
+      - name: order_billing_address_city
+        description: '{{ doc("col_order_billing_address_city") }}'
+
+      - name: order_billing_address_country
+        description: '{{ doc("col_order_billing_address_country") }}'
+
+      - name: order_billing_address_email
+        description: '{{ doc("col_order_billing_address_email") }}'
+
+      - name: order_billing_address_first_name
+        description: '{{ doc("col_order_billing_address_first_name") }}'
+
+      - name: order_billing_address_last_name
+        description: '{{ doc("col_order_billing_address_last_name") }}'
+
+      - name: order_billing_address_phone
+        description: '{{ doc("col_order_billing_address_phone") }}'
+
+      - name: order_billing_address_postal_code
+        description: '{{ doc("col_order_billing_address_postal_code") }}'
+
+      - name: order_billing_address_state
+        description: '{{ doc("col_order_billing_address_state") }}'
+
+      - name: order_cart_id
+        description: '{{ doc("col_order_cart_id") }}'
+
+      - name: order_coupon
+        description: '{{ doc("col_order_coupon") }}'
+
+      - name: order_currency
+        description: '{{ doc("col_order_currency") }}'
+
+      - name: order_discount
+        description: '{{ doc("col_order_discount") }}'
+
+      - name: order_id
+        description: '{{ doc("col_order_id") }}'
+
+      - name: order_interval_frequency
+        description: '{{ doc("col_order_interval_frequency") }}'
+
+      - name: order_interval_unit
+        description: '{{ doc("col_order_interval_unit") }}'
+
+      - name: order_order_id
+        description: '{{ doc("col_order_order_id") }}'
+
+      - name: order_products
+        description: '{{ doc("col_order_products") }}'
+
+      - name: order_revenue
+        description: '{{ doc("col_order_revenue") }}'
+
+      - name: order_status
+        description: '{{ doc("col_order_status") }}'
+
+      - name: order_subtotal
+        description: '{{ doc("col_order_subtotal") }}'
+
+      - name: order_tax
+        description: '{{ doc("col_order_tax") }}'
+
+      - name: order_total
+        description: '{{ doc("col_order_total") }}'
+
+      - name: order_type
+        description: '{{ doc("col_order_type") }}'
+
+      - name: order_value
+        description: '{{ doc("col_order_value") }}'
+
+      - name: products
+        description: '{{ doc("col_products") }}'
+
+      - name: sku_override
+        description: '{{ doc("col_sku_override") }}'
+
+      - name: started_at
+        description: '{{ doc("col_started_at") }}'
+
+      - name: status
+        description: '{{ doc("col_status") }}'
+
+      - name: updated_at
+        description: '{{ doc("col_updated_at") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: context_source
+        description: '{{ doc("col_context_source") }}'
+
+      - name: context_library_name
+        description: '{{ doc("col_context_library_name") }}'
+
+      - name: context_library_version
+        description: '{{ doc("col_context_library_version") }}'
+
+      - name: context_ip
+        description: '{{ doc("col_context_ip") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+  - name: fueled_events_base_subscription_created
+    description: '{{ doc("table_base_subscription_created") }}'
+    columns:
+      - name: charge_interval_frequency
+        description: '{{ doc("col_charge_interval_frequency") }}'
+
+      - name: created_at
+        description: '{{ doc("col_created_at") }}'
+
+      - name: has_queued_charges
+        description: '{{ doc("col_has_queued_charges") }}'
+
+      - name: is_skippable
+        description: '{{ doc("col_is_skippable") }}'
+
+      - name: is_swappable
+        description: '{{ doc("col_is_swappable") }}'
+
+      - name: max_retries_reached
+        description: '{{ doc("col_max_retries_reached") }}'
+
+      - name: next_charge_scheduled_at
+        description: '{{ doc("col_next_charge_scheduled_at") }}'
+
+      - name: order_billing_address_address
+        description: '{{ doc("col_order_billing_address_address") }}'
+
+      - name: order_billing_address_city
+        description: '{{ doc("col_order_billing_address_city") }}'
+
+      - name: order_billing_address_country
+        description: '{{ doc("col_order_billing_address_country") }}'
+
+      - name: order_billing_address_email
+        description: '{{ doc("col_order_billing_address_email") }}'
+
+      - name: order_billing_address_first_name
+        description: '{{ doc("col_order_billing_address_first_name") }}'
+
+      - name: order_billing_address_last_name
+        description: '{{ doc("col_order_billing_address_last_name") }}'
+
+      - name: order_billing_address_phone
+        description: '{{ doc("col_order_billing_address_phone") }}'
+
+      - name: order_billing_address_postal_code
+        description: '{{ doc("col_order_billing_address_postal_code") }}'
+
+      - name: order_billing_address_state
+        description: '{{ doc("col_order_billing_address_state") }}'
+
+      - name: order_coupon
+        description: '{{ doc("col_order_coupon") }}'
+
+      - name: order_currency
+        description: '{{ doc("col_order_currency") }}'
+
+      - name: order_discount
+        description: '{{ doc("col_order_discount") }}'
+
+      - name: order_id
+        description: '{{ doc("col_order_id") }}'
+
+      - name: order_interval_frequency
+        description: '{{ doc("col_order_interval_frequency") }}'
+
+      - name: order_interval_unit
+        description: '{{ doc("col_order_interval_unit") }}'
+
+      - name: order_order_id
+        description: '{{ doc("col_order_order_id") }}'
+
+      - name: order_products
+        description: '{{ doc("col_order_products") }}'
+
+      - name: order_revenue
+        description: '{{ doc("col_order_revenue") }}'
+
+      - name: order_status
+        description: '{{ doc("col_order_status") }}'
+
+      - name: order_subtotal
+        description: '{{ doc("col_order_subtotal") }}'
+
+      - name: order_tax
+        description: '{{ doc("col_order_tax") }}'
+
+      - name: order_total
+        description: '{{ doc("col_order_total") }}'
+
+      - name: order_type
+        description: '{{ doc("col_order_type") }}'
+
+      - name: order_value
+        description: '{{ doc("col_order_value") }}'
+
+      - name: products
+        description: '{{ doc("col_products") }}'
+
+      - name: sku_override
+        description: '{{ doc("col_sku_override") }}'
+
+      - name: started_at
+        description: '{{ doc("col_started_at") }}'
+
+      - name: status
+        description: '{{ doc("col_status") }}'
+
+      - name: updated_at
+        description: '{{ doc("col_updated_at") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: context_library_name
+        description: '{{ doc("col_context_library_name") }}'
+
+      - name: context_ip
+        description: '{{ doc("col_context_ip") }}'
+
+      - name: context_source
+        description: '{{ doc("col_context_source") }}'
+
+      - name: context_library_version
+        description: '{{ doc("col_context_library_version") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+  - name: fueled_events_base_tracks
+    description: '{{ doc("table_base_tracks") }}'
+    columns:
+      - name: event
+        description: '{{ doc("col_event") }}'
+
+      - name: event_text
+        description: '{{ doc("col_event_text") }}'
+
+      - name: anonymous_id
+        description: '{{ doc("col_anonymous_id") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: context_source
+        description: '{{ doc("col_context_source") }}'
+
+      - name: context_ip
+        description: '{{ doc("col_context_ip") }}'
+
+      - name: context_library_version
+        description: '{{ doc("col_context_library_version") }}'
+
+      - name: context_library_name
+        description: '{{ doc("col_context_library_name") }}'
+
+      - name: context_user_agent
+        description: '{{ doc("col_context_user_agent") }}'
+
+      - name: context_passed_ip
+        description: '{{ doc("col_context_passed_ip") }}'
+
+      - name: context_locale
+        description: '{{ doc("col_context_locale") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+  - name: fueled_events_base_users
+    description: '{{ doc("table_base_users") }}'
+    columns:
+      - name: address_city
+        description: '{{ doc("col_address_city") }}'
+
+      - name: address_country_code
+        description: '{{ doc("col_address_country_code") }}'
+
+      - name: address_postal_code
+        description: '{{ doc("col_address_postal_code") }}'
+
+      - name: address_state
+        description: '{{ doc("col_address_state") }}'
+
+      - name: address_street
+        description: '{{ doc("col_address_street") }}'
+
+      - name: addresses
+        description: '{{ doc("col_addresses") }}'
+
+      - name: created_at
+        description: '{{ doc("col_created_at") }}'
+
+      - name: email
+        description: '{{ doc("col_email") }}'
+
+      - name: external_customer_id
+        description: '{{ doc("col_external_customer_id") }}'
+
+      - name: first_name
+        description: '{{ doc("col_first_name") }}'
+
+      - name: last_name
+        description: '{{ doc("col_last_name") }}'
+
+      - name: name
+        description: '{{ doc("col_name") }}'
+
+      - name: phone
+        description: '{{ doc("col_phone") }}'
+
+      - name: anonymous_id
+        description: '{{ doc("col_anonymous_id") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: context_passed_ip
+        description: '{{ doc("col_context_passed_ip") }}'
+
+      - name: context_traits_email
+        description: '{{ doc("col_context_traits_email") }}'
+
+      - name: context_traits_first_name
+        description: '{{ doc("col_context_traits_first_name") }}'
+
+      - name: context_library_name
+        description: '{{ doc("col_context_library_name") }}'
+
+      - name: context_traits_phone
+        description: '{{ doc("col_context_traits_phone") }}'
+
+      - name: context_user_agent
+        description: '{{ doc("col_context_user_agent") }}'
+
+      - name: context_source
+        description: '{{ doc("col_context_source") }}'
+
+      - name: context_traits_external_customer_id
+        description: '{{ doc("col_context_traits_external_customer_id") }}'
+
+      - name: context_traits_created_at
+        description: '{{ doc("col_context_traits_created_at") }}'
+
+      - name: context_traits_last_name
+        description: '{{ doc("col_context_traits_last_name") }}'
+
+      - name: context_locale
+        description: '{{ doc("col_context_locale") }}'
+
+      - name: context_library_version
+        description: '{{ doc("col_context_library_version") }}'
+
+      - name: context_ip
+        description: '{{ doc("col_context_ip") }}'
+
+      - name: context_traits_address_country_code
+        description: '{{ doc("col_context_traits_address_country_code") }}'
+
+      - name: context_traits_name
+        description: '{{ doc("col_context_traits_name") }}'
+
+      - name: context_traits_address_city
+        description: '{{ doc("col_context_traits_address_city") }}'
+
+      - name: context_traits_context_anonymous_id
+        description: '{{ doc("col_context_traits_context_anonymous_id") }}'
+
+      - name: context_traits_address_street
+        description: '{{ doc("col_context_traits_address_street") }}'
+
+      - name: context_traits_address_state
+        description: '{{ doc("col_context_traits_address_state") }}'
+
+      - name: context_traits_context_client_id
+        description: '{{ doc("col_context_traits_context_client_id") }}'
+
+      - name: context_traits_address_postal_code
+        description: '{{ doc("col_context_traits_address_postal_code") }}'
+
+      - name: context_traits_context_ip
+        description: '{{ doc("col_context_traits_context_ip") }}'
+
+      - name: context_traits_context_session_id
+        description: '{{ doc("col_context_traits_context_session_id") }}'
+
+      - name: context_traits_addresses
+        description: '{{ doc("col_context_traits_addresses") }}'
+
+      - name: context_traits_context_page_title
+        description: '{{ doc("col_context_traits_context_page_title") }}'
+
+      - name: context_page_width
+        description: '{{ doc("col_context_page_width") }}'
+
+      - name: context_traits_context_page_url
+        description: '{{ doc("col_context_traits_context_page_url") }}'
+
+      - name: context_traits_context_referrer
+        description: '{{ doc("col_context_traits_context_referrer") }}'
+
+      - name: context_traits_context_os_name
+        description: '{{ doc("col_context_traits_context_os_name") }}'
+
+      - name: context_traits_context_locale
+        description: '{{ doc("col_context_traits_context_locale") }}'
+
+      - name: context_page_referrer
+        description: '{{ doc("col_context_page_referrer") }}'
+
+      - name: context_traits_context_library_name
+        description: '{{ doc("col_context_traits_context_library_name") }}'
+
+      - name: context_os_name
+        description: '{{ doc("col_context_os_name") }}'
+
+      - name: context_page_path
+        description: '{{ doc("col_context_page_path") }}'
+
+      - name: context_page_height
+        description: '{{ doc("col_context_page_height") }}'
+
+      - name: context_traits_context_initialized
+        description: '{{ doc("col_context_traits_context_initialized") }}'
+
+      - name: context_page_search
+        description: '{{ doc("col_context_page_search") }}'
+
+      - name: context_debug
+        description: '{{ doc("col_context_debug") }}'
+
+      - name: context_traits_context_app
+        description: '{{ doc("col_context_traits_context_app") }}'
+
+      - name: context_traits_context_page_referrer
+        description: '{{ doc("col_context_traits_context_page_referrer") }}'
+
+      - name: context_traits_context_page_search
+        description: '{{ doc("col_context_traits_context_page_search") }}'
+
+      - name: context_traits_context_library_version
+        description: '{{ doc("col_context_traits_context_library_version") }}'
+
+      - name: context_traits_context_debug
+        description: '{{ doc("col_context_traits_context_debug") }}'
+
+      - name: context_traits_context_user_agent
+        description: '{{ doc("col_context_traits_context_user_agent") }}'
+
+      - name: context_traits_context_timezone
+        description: '{{ doc("col_context_traits_context_timezone") }}'
+
+      - name: context_traits_context_offline
+        description: '{{ doc("col_context_traits_context_offline") }}'
+
+      - name: context_traits_context_page_height
+        description: '{{ doc("col_context_traits_context_page_height") }}'
+
+      - name: context_timezone
+        description: '{{ doc("col_context_timezone") }}'
+
+      - name: context_referrer
+        description: '{{ doc("col_context_referrer") }}'
+
+      - name: context_traits_context_page_path
+        description: '{{ doc("col_context_traits_context_page_path") }}'
+
+      - name: context_page_title
+        description: '{{ doc("col_context_page_title") }}'
+
+      - name: context_traits_context_page_width
+        description: '{{ doc("col_context_traits_context_page_width") }}'
+
+      - name: context_page_url
+        description: '{{ doc("col_context_page_url") }}'
+
+      - name: context_campaign_gclid
+        description: '{{ doc("col_context_campaign_gclid") }}'
+
+      - name: context_traits_context_campaign_gclid
+        description: '{{ doc("col_context_traits_context_campaign_gclid") }}'
+
+      - name: context_traits_context_page_hash
+        description: '{{ doc("col_context_traits_context_page_hash") }}'
+
+      - name: context_page_hash
+        description: '{{ doc("col_context_page_hash") }}'
+
+      - name: context_traits_context_campaign_source
+        description: '{{ doc("col_context_traits_context_campaign_source") }}'
+
+      - name: context_campaign_term
+        description: '{{ doc("col_context_campaign_term") }}'
+
+      - name: context_traits_context_campaign_name
+        description: '{{ doc("col_context_traits_context_campaign_name") }}'
+
+      - name: context_campaign_source
+        description: '{{ doc("col_context_campaign_source") }}'
+
+      - name: context_traits_context_campaign_medium
+        description: '{{ doc("col_context_traits_context_campaign_medium") }}'
+
+      - name: context_traits_context_campaign_term
+        description: '{{ doc("col_context_traits_context_campaign_term") }}'
+
+      - name: context_campaign_medium
+        description: '{{ doc("col_context_campaign_medium") }}'
+
+      - name: context_campaign_name
+        description: '{{ doc("col_context_campaign_name") }}'
+
+      - name: context_campaign_profile
+        description: '{{ doc("col_context_campaign_profile") }}'
+
+      - name: context_traits_context_campaign_profile
+        description: '{{ doc("col_context_traits_context_campaign_profile") }}'
+
+      - name: context_traits_context_campaign_id
+        description: '{{ doc("col_context_traits_context_campaign_id") }}'
+
+      - name: context_campaign_id
+        description: '{{ doc("col_context_campaign_id") }}'
+
+      - name: context_traits_context_campaign_content
+        description: '{{ doc("col_context_traits_context_campaign_content") }}'
+
+      - name: context_campaign_content
+        description: '{{ doc("col_context_campaign_content") }}'
+
+  - name: fueled_events_base_cart_line_items
+    description: '{{ doc("table_base_cart_line_items") }}'
+    columns:
+      - name: event_type
+        description: '{{ doc("col_event_type") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+      - name: cart_id
+        description: '{{ doc("col_cart_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: brand
+        description: '{{ doc("col_brand") }}'
+
+      - name: category
+        description: '{{ doc("col_category") }}'
+
+      - name: imageurl
+        description: '{{ doc("col_imageurl") }}'
+
+      - name: name
+        description: '{{ doc("col_name") }}'
+
+      - name: position
+        description: '{{ doc("col_position") }}'
+
+      - name: price
+        description: '{{ doc("col_price") }}'
+
+      - name: product_id
+        description: '{{ doc("col_product_id") }}'
+
+      - name: quantity
+        description: '{{ doc("col_quantity") }}'
+
+      - name: sku
+        description: '{{ doc("col_sku") }}'
+
+      - name: url
+        description: '{{ doc("col_url") }}'
+
+      - name: variant
+        description: '{{ doc("col_variant") }}'
+
+      - name: unnested_product_column
+        description: '{{ doc("col_unnested_product_column") }}'
+
+  - name: fueled_events_base_checkout_line_items
+    description: '{{ doc("table_base_checkout_line_items") }}'
+    columns:
+      - name: event_type
+        description: '{{ doc("col_event_type") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+      - name: cart_id
+        description: '{{ doc("col_cart_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: is_refunded
+        description: '{{ doc("col_is_refunded") }}'
+
+      - name: line_item_id
+        description: '{{ doc("col_line_item_id") }}'
+
+      - name: name
+        description: '{{ doc("col_name") }}'
+
+      - name: position
+        description: '{{ doc("col_position") }}'
+
+      - name: price
+        description: '{{ doc("col_price") }}'
+
+      - name: product_id
+        description: '{{ doc("col_product_id") }}'
+
+      - name: quantity
+        description: '{{ doc("col_quantity") }}'
+
+      - name: sku
+        description: '{{ doc("col_sku") }}'
+
+      - name: variant
+        description: '{{ doc("col_variant") }}'
+
+      - name: unnested_product_column
+        description: '{{ doc("col_unnested_product_column") }}'
+
+  - name: fueled_events_base_order_line_items
+    description: '{{ doc("table_base_order_line_items") }}'
+    columns:
+      - name: event_type
+        description: '{{ doc("col_event_type") }}'
+
+      - name: order_id
+        description: '{{ doc("col_order_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: is_refunded
+        description: '{{ doc("col_is_refunded") }}'
+
+      - name: line_item_id
+        description: '{{ doc("col_line_item_id") }}'
+
+      - name: name
+        description: '{{ doc("col_name") }}'
+
+      - name: position
+        description: '{{ doc("col_position") }}'
+
+      - name: price
+        description: '{{ doc("col_price") }}'
+
+      - name: product_id
+        description: '{{ doc("col_product_id") }}'
+
+      - name: quantity
+        description: '{{ doc("col_quantity") }}'
+
+      - name: sku
+        description: '{{ doc("col_sku") }}'
+
+      - name: variant
+        description: '{{ doc("col_variant") }}'
+
+      - name: unnested_product_column
+        description: '{{ doc("col_unnested_product_column") }}'
+
+  - name: fueled_events_base_product_list_viewed_products
+    description: '{{ doc("table_base_product_list_viewed_products") }}'
+    columns:
+      - name: event_type
+        description: '{{ doc("col_event_type") }}'
+
+      - name: event_id
+        description: '{{ doc("col_event_id") }}'
+
+      - name: original_timestamp
+        description: '{{ doc("col_original_timestamp") }}'
+
+      - name: list_id
+        description: '{{ doc("col_list_id") }}'
+
+      - name: brand
+        description: '{{ doc("col_brand") }}'
+
+      - name: category
+        description: '{{ doc("col_category") }}'
+
+      - name: imageurl
+        description: '{{ doc("col_imageurl") }}'
+
+      - name: name
+        description: '{{ doc("col_name") }}'
+
+      - name: position
+        description: '{{ doc("col_position") }}'
+
+      - name: price
+        description: '{{ doc("col_price") }}'
+
+      - name: product_id
+        description: '{{ doc("col_product_id") }}'
+
+      - name: quantity
+        description: '{{ doc("col_quantity") }}'
+
+      - name: sku
+        description: '{{ doc("col_sku") }}'
+
+      - name: url
+        description: '{{ doc("col_url") }}'
+
+      - name: variant
+        description: '{{ doc("col_variant") }}'
+
+      - name: unnested_product_column
+        description: '{{ doc("col_unnested_product_column") }}'
