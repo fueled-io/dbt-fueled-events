@@ -28,7 +28,7 @@
 
     {%- for column_name in column_names -%}
         {%- if not loop.last -%}
-            {%- if "context_" in column_name %}, {{ column_name }}{%- endif %}
+            {%- if "context_" in column_name -%}, {{ column_name }}{%- endif %}
         {%- else %} {%- if "context_" in column_name %}, {{ column_name }} {%- endif %}
         {%- endif -%}
 
