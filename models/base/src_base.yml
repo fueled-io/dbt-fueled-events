@@ -3,2270 +3,2033 @@ version: 2
 sources:
   - name: fueled_events_atomic
     schema: "{{ var('fueled__atomic_schema', 'fueled_atomic') }}"
-    description: "Raw event data from Fueled client-side and server-side Source integrations"
     tables:
       - name: cart_viewed
-        description: "Client-side event. (Note: for now, only fires on the main cart page for Shopify and BigCommerce. Side carts are not supported out out-of-the-box at this time, but can be supported with a small amount of client-side javascript customizations.)"
+        description: '{{ doc("table_cart_viewed")}}'
         columns:
           - name: context_request_ip
-            description: ""
+            description: '{{ doc("col_context_request_ip")}}'
           - name: total
-            description: ""
+            description: '{{ doc("col_total")}}'
           - name: uuid_ts
-            description: ""
+            description: '{{ doc("col_uuid_ts")}}'
           - name: context_client_id
-            description: ""
+            description: '{{ doc("col_context_client_id")}}'
           - name: context_source_id
-            description: ""
+            description: '{{ doc("col_context_source_id")}}'
           - name: loaded_at
-            description: ""
+            description: '{{ doc("col_loaded_at")}}'
           - name: received_at
-            description: ""
+            description: '{{ doc("col_received_at")}}'
           - name: context_source_type
-            description: ""
+            description: '{{ doc("col_context_source_type")}}'
           - name: context_anonymous_id
-            description: ""
+            description: '{{ doc("col_context_anonymous_id")}}'
           - name: id
-            description: ""
+            description: '{{ doc("col_id")}}'
           - name: timestamp
-            description: ""
+            description: '{{ doc("col_timestamp")}}'
           - name: context_ip
-            description: ""
+            description: '{{ doc("col_context_ip")}}'
           - name: context_source
-            description: ""
+            description: '{{ doc("col_context_source")}}'
           - name: user_id
-            description: ""
+            description: '{{ doc("col_user_id")}}'
           - name: context_session_id
-            description: ""
+            description: '{{ doc("col_context_session_id")}}'
           - name: event
-            description: ""
+            description: '{{ doc("col_event")}}'
           - name: context_library_version
-            description: ""
+            description: '{{ doc("col_context_library_version")}}'
           - name: context_rudderstack_source
-            description: ""
+            description: '{{ doc("col_context_rudderstack_source")}}'
           - name: products
-            description: ""
+            description: '{{ doc("col_products")}}'
           - name: original_timestamp
-            description: ""
+            description: '{{ doc("col_original_timestamp")}}'
           - name: sent_at
-            description: ""
+            description: '{{ doc("col_sent_at")}}'
           - name: event_text
-            description: ""
+            description: '{{ doc("col_event_text")}}'
           - name: context_destination_id
-            description: ""
+            description: '{{ doc("col_context_destination_id")}}'
           - name: channel
-            description: ""
+            description: '{{ doc("col_channel")}}'
           - name: context_library_name
-            description: ""
+            description: '{{ doc("col_context_library_name")}}'
           - name: context_destination_type
-            description: ""
+            description: '{{ doc("col_context_destination_type")}}'
           - name: context_referrer
-            description: ""
+            description: '{{ doc("col_context_referrer")}}'
           - name: context_page_title
-            description: ""
+            description: '{{ doc("col_context_page_title")}}'
           - name: context_user_agent
-            description: ""
+            description: '{{ doc("col_context_user_agent")}}'
           - name: context_page_height
-            description: ""
+            description: '{{ doc("col_context_page_height")}}'
           - name: context_debug
-            description: ""
+            description: '{{ doc("col_context_debug")}}'
           - name: context_page_referrer
-            description: ""
+            description: '{{ doc("col_context_page_referrer")}}'
           - name: context_page_path
-            description: ""
+            description: '{{ doc("col_context_page_path")}}'
           - name: context_os_name
-            description: ""
+            description: '{{ doc("col_context_os_name")}}'
           - name: context_page_url
-            description: ""
+            description: '{{ doc("col_context_page_url")}}'
           - name: context_offline
-            description: ""
+            description: '{{ doc("col_context_offline")}}'
           - name: context_initialized
-            description: ""
+            description: '{{ doc("col_context_initialized")}}'
           - name: context_locale
-            description: ""
+            description: '{{ doc("col_context_locale")}}'
           - name: context_timezone
-            description: ""
+            description: '{{ doc("col_context_timezone")}}'
           - name: context_page_width
-            description: ""
+            description: '{{ doc("col_context_page_width")}}'
           - name: context_app
-            description: ""
+            description: '{{ doc("col_context_app")}}'
           - name: context_campaign_name
-            description: ""
+            description: '{{ doc("col_context_campaign_name")}}'
           - name: context_campaign_medium
-            description: ""
+            description: '{{ doc("col_context_campaign_medium")}}'
           - name: context_campaign_source
-            description: ""
+            description: '{{ doc("col_context_campaign_source")}}'
           - name: context_page_search
-            description: ""
+            description: '{{ doc("col_context_page_search")}}'
           - name: context_page_hash
-            description: ""
+            description: '{{ doc("col_context_page_hash")}}'
 
       - name: checkout_created
-        description: "Generally a server-side event - but our specification does support client-side implementations. Fueled Event Attributes are pulled from the JSON payloads sent to Fueled's Datahub."
+        description: '{{ doc("table_checkout_created")}}'
         columns:
           - name: context_client_id
-            description: ""
+            description: '{{ doc("col_context_client_id")}}'
           - name: context_library_name
-            description: ""
+            description: '{{ doc("col_context_library_name")}}'
           - name: context_destination_id
-            description: ""
+            description: '{{ doc("col_context_destination_id")}}'
           - name: discount
-            description: ""
+            description: '{{ doc("col_discount")}}'
           - name: context_source_id
-            description: ""
+            description: '{{ doc("col_context_source_id")}}'
           - name: context_request_ip
-            description: ""
+            description: '{{ doc("col_context_request_ip")}}'
           - name: context_locale
-            description: ""
+            description: '{{ doc("col_context_locale")}}'
           - name: loaded_at
-            description: ""
+            description: '{{ doc("col_loaded_at")}}'
           - name: products
-            description: ""
+            description: '{{ doc("col_products")}}'
           - name: context_user_agent
-            description: ""
+            description: '{{ doc("col_context_user_agent")}}'
           - name: id
-            description: ""
+            description: '{{ doc("col_id")}}'
           - name: affiliation
-            description: ""
+            description: '{{ doc("col_affiliation")}}'
           - name: context_source
-            description: ""
+            description: '{{ doc("col_context_source")}}'
           - name: context_rudderstack_source
-            description: ""
+            description: '{{ doc("col_context_rudderstack_source")}}'
           - name: tax
-            description: ""
+            description: '{{ doc("col_tax")}}'
           - name: currency
-            description: ""
+            description: '{{ doc("col_currency")}}'
           - name: original_timestamp
-            description: ""
+            description: '{{ doc("col_original_timestamp")}}'
           - name: sent_at
-            description: ""
+            description: '{{ doc("col_sent_at")}}'
           - name: context_session_id
-            description: ""
+            description: '{{ doc("col_context_session_id")}}'
           - name: context_anonymous_id
-            description: ""
+            description: '{{ doc("col_context_anonymous_id")}}'
           - name: context_library_version
-            description: ""
+            description: '{{ doc("col_context_library_version")}}'
           - name: channel
-            description: ""
+            description: '{{ doc("col_channel")}}'
           - name: context_ip
-            description: ""
+            description: '{{ doc("col_context_ip")}}'
           - name: event
-            description: ""
+            description: '{{ doc("col_event")}}'
           - name: user_id
-            description: ""
+            description: '{{ doc("col_user_id")}}'
           - name: context_destination_type
-            description: ""
+            description: '{{ doc("col_context_destination_type")}}'
           - name: context_source_type
-            description: ""
+            description: '{{ doc("col_context_source_type")}}'
           - name: value
-            description: ""
+            description: '{{ doc("col_value")}}'
           - name: timestamp
-            description: ""
+            description: '{{ doc("col_timestamp")}}'
           - name: context_passed_ip
-            description: ""
+            description: '{{ doc("col_context_passed_ip")}}'
           - name: event_text
-            description: ""
+            description: '{{ doc("col_event_text")}}'
           - name: uuid_ts
-            description: ""
+            description: '{{ doc("col_uuid_ts")}}'
           - name: received_at
-            description: ""
+            description: '{{ doc("col_received_at")}}'
           - name: coupon
-            description: ""
+            description: '{{ doc("col_coupon")}}'
 
       - name: checkout_updated
-        description: "A server-side event. Fueled Event Attributes are pulled from the JSON payloads sent to Fueled's Datahub."
+        description: '{{ doc("table_checkout_updated")}}'
         columns:
           - name: context_source
-            description: ""
+            description: '{{ doc("col_context_source")}}'
           - name: currency
-            description: ""
+            description: '{{ doc("col_currency")}}'
           - name: context_locale
-            description: ""
+            description: '{{ doc("col_context_locale")}}'
           - name: uuid_ts
-            description: ""
+            description: '{{ doc("col_uuid_ts")}}'
           - name: loaded_at
-            description: ""
+            description: '{{ doc("col_loaded_at")}}'
           - name: context_destination_id
-            description: ""
+            description: '{{ doc("col_context_destination_id")}}'
           - name: value
-            description: ""
+            description: '{{ doc("col_value")}}'
           - name: user_id
-            description: ""
+            description: '{{ doc("col_user_id")}}'
           - name: received_at
-            description: ""
+            description: '{{ doc("col_received_at")}}'
           - name: context_request_ip
-            description: ""
+            description: '{{ doc("col_context_request_ip")}}'
           - name: context_session_id
-            description: ""
+            description: '{{ doc("col_context_session_id")}}'
           - name: context_source_type
-            description: ""
+            description: '{{ doc("col_context_source_type")}}'
           - name: event_text
-            description: ""
+            description: '{{ doc("col_event_text")}}'
           - name: context_source_id
-            description: ""
+            description: '{{ doc("col_context_source_id")}}'
           - name: id
-            description: ""
+            description: '{{ doc("col_id")}}'
           - name: sent_at
-            description: ""
+            description: '{{ doc("col_sent_at")}}'
           - name: channel
-            description: ""
+            description: '{{ doc("col_channel")}}'
           - name: context_anonymous_id
-            description: ""
+            description: '{{ doc("col_context_anonymous_id")}}'
           - name: context_rudderstack_source
-            description: ""
+            description: '{{ doc("col_context_rudderstack_source")}}'
           - name: context_user_agent
-            description: ""
+            description: '{{ doc("col_context_user_agent")}}'
           - name: context_library_name
-            description: ""
+            description: '{{ doc("col_context_library_name")}}'
           - name: products
-            description: ""
+            description: '{{ doc("col_products")}}'
           - name: event
-            description: ""
+            description: '{{ doc("col_event")}}'
           - name: context_ip
-            description: ""
+            description: '{{ doc("col_context_ip")}}'
           - name: context_client_id
-            description: ""
+            description: '{{ doc("col_context_client_id")}}'
           - name: discount
-            description: ""
+            description: '{{ doc("col_discount")}}'
           - name: tax
-            description: ""
+            description: '{{ doc("col_tax")}}'
           - name: timestamp
-            description: ""
+            description: '{{ doc("col_timestamp")}}'
           - name: original_timestamp
-            description: ""
+            description: '{{ doc("col_original_timestamp")}}'
           - name: coupon
-            description: ""
+            description: '{{ doc("col_coupon")}}'
           - name: context_library_version
-            description: ""
+            description: '{{ doc("col_context_library_version")}}'
           - name: context_destination_type
-            description: ""
+            description: '{{ doc("col_context_destination_type")}}'
           - name: affiliation
-            description: ""
+            description: '{{ doc("col_affiliation")}}'
           - name: context_passed_ip
-            description: ""
+            description: '{{ doc("col_context_passed_ip")}}'
 
       - name: identifies
-        description: "`identify` events fire whenever a user is identified on a website by providing PII. This can happen at checkout, log in, a newsletter sign-up, and so forth. There are no standard identify “traits”, other than a `user_id` and an `anonyous_id`, which are used together to stitch un-identified and identified engagement with a website or eCommerce store."
+        description: '{{ doc("table_identifies")}}'
         columns:
           - name: channel
-            description: ""
+            description: '{{ doc("col_channel")}}'
           - name: sent_at
-            description: ""
-          - name: context_traits_first_name
-            description: ""
-          - name: context_traits_phone
-            description: ""
+            description: '{{ doc("col_sent_at")}}'
           - name: context_rudderstack_source
-            description: ""
+            description: '{{ doc("col_context_rudderstack_source")}}'
           - name: context_client_id
-            description: ""
+            description: '{{ doc("col_context_client_id")}}'
           - name: timestamp
-            description: ""
+            description: '{{ doc("col_timestamp")}}'
           - name: context_locale
-            description: ""
+            description: '{{ doc("col_context_locale")}}'
           - name: context_library_name
-            description: ""
+            description: '{{ doc("col_context_library_name")}}'
           - name: context_session_id
-            description: ""
+            description: '{{ doc("col_context_session_id")}}'
           - name: last_name
-            description: ""
+            description: '{{ doc("col_last_name")}}'
           - name: created_at
-            description: ""
+            description: '{{ doc("col_created_at")}}'
           - name: context_passed_ip
-            description: ""
+            description: '{{ doc("col_context_passed_ip")}}'
           - name: context_user_agent
-            description: ""
+            description: '{{ doc("col_context_user_agent")}}'
           - name: context_ip
-            description: ""
+            description: '{{ doc("col_context_ip")}}'
           - name: context_destination_id
-            description: ""
+            description: '{{ doc("col_context_destination_id")}}'
           - name: original_timestamp
-            description: ""
+            description: '{{ doc("col_original_timestamp")}}'
           - name: uuid_ts
-            description: ""
+            description: '{{ doc("col_uuid_ts")}}'
           - name: context_source
-            description: ""
+            description: '{{ doc("col_context_source")}}'
           - name: user_id
-            description: ""
+            description: '{{ doc("col_user_id")}}'
           - name: received_at
-            description: ""
+            description: '{{ doc("col_received_at")}}'
           - name: external_customer_id
-            description: ""
+            description: '{{ doc("col_external_customer_id")}}'
           - name: context_source_id
-            description: ""
-          - name: context_traits_email
-            description: ""
-          - name: context_traits_last_name
-            description: ""
+            description: '{{ doc("col_context_source_id")}}'
           - name: context_request_ip
-            description: ""
+            description: '{{ doc("col_context_request_ip")}}'
           - name: first_name
-            description: ""
+            description: '{{ doc("col_first_name")}}'
           - name: id
-            description: ""
-          - name: context_traits_created_at
-            description: ""
-          - name: context_traits_external_customer_id
-            description: ""
+            description: '{{ doc("col_id")}}'
           - name: email
-            description: ""
+            description: '{{ doc("col_email")}}'
           - name: context_anonymous_id
-            description: ""
+            description: '{{ doc("col_context_anonymous_id")}}'
           - name: loaded_at
-            description: ""
+            description: '{{ doc("col_loaded_at")}}'
           - name: phone
-            description: ""
+            description: '{{ doc("col_phone")}}'
           - name: context_source_type
-            description: ""
+            description: '{{ doc("col_context_source_type")}}'
           - name: context_destination_type
-            description: ""
+            description: '{{ doc("col_context_destination_type")}}'
           - name: context_library_version
-            description: ""
-          - name: context_traits_name
-            description: ""
-          - name: context_traits_context_session_id
-            description: ""
+            description: '{{ doc("col_context_library_version")}}'
           - name: address_country_code
-            description: ""
+            description: '{{ doc("col_address_country_code")}}'
           - name: address_city
-            description: ""
+            description: '{{ doc("col_address_city")}}'
           - name: address_postal_code
-            description: ""
-          - name: context_traits_address_street
-            description: ""
-          - name: context_traits_context_ip
-            description: ""
-          - name: context_traits_address_country_code
-            description: ""
-          - name: context_traits_address_state
-            description: ""
+            description: '{{ doc("col_address_postal_code")}}'
           - name: address_state
-            description: ""
+            description: '{{ doc("col_address_state")}}'
           - name: address_street
-            description: ""
+            description: '{{ doc("col_address_street")}}'
           - name: name
-            description: ""
-          - name: context_traits_context_client_id
-            description: ""
-          - name: context_traits_context_anonymous_id
-            description: ""
-          - name: context_traits_address_postal_code
-            description: ""
-          - name: context_traits_address_city
-            description: ""
+            description: '{{ doc("col_name")}}'
           - name: addresses
-            description: ""
-          - name: context_traits_addresses
-            description: ""
-          - name: context_traits_context_page_url
-            description: ""
+            description: '{{ doc("col_addresses")}}'
           - name: context_page_path
-            description: ""
-          - name: context_traits_context_page_search
-            description: ""
-          - name: context_traits_context_debug
-            description: ""
-          - name: context_traits_context_os_name
-            description: ""
-          - name: context_traits_context_page_width
-            description: ""
+            description: '{{ doc("col_context_page_path")}}'
           - name: context_page_width
-            description: ""
-          - name: context_traits_context_page_title
-            description: ""
-          - name: context_traits_context_page_referrer
-            description: ""
+            description: '{{ doc("col_context_page_width")}}'
           - name: context_os_name
-            description: ""
+            description: '{{ doc("col_context_os_name")}}'
           - name: context_referrer
-            description: ""
+            description: '{{ doc("col_context_referrer")}}'
           - name: context_page_height
-            description: ""
-          - name: context_traits_context_library_version
-            description: ""
+            description: '{{ doc("col_context_page_height")}}'
           - name: context_page_search
-            description: ""
-          - name: context_traits_context_locale
-            description: ""
-          - name: context_traits_context_page_height
-            description: ""
-          - name: context_traits_context_user_agent
-            description: ""
+            description: '{{ doc("col_context_page_search")}}'
           - name: context_page_url
-            description: ""
+            description: '{{ doc("col_context_page_url")}}'
           - name: context_app
-            description: ""
+            description: '{{ doc("col_context_app")}}'
           - name: context_timezone
-            description: ""
+            description: '{{ doc("col_context_timezone")}}'
           - name: context_page_referrer
-            description: ""
-          - name: context_traits_context_app
-            description: ""
-          - name: context_traits_context_library_name
-            description: ""
+            description: '{{ doc("col_context_page_referrer")}}'
           - name: context_initialized
-            description: ""
+            description: '{{ doc("col_context_initialized")}}'
           - name: context_page_title
-            description: ""
+            description: '{{ doc("col_context_page_title")}}'
           - name: context_offline
-            description: ""
-          - name: context_traits_context_referrer
-            description: ""
-          - name: context_traits_context_initialized
-            description: ""
+            description: '{{ doc("col_context_offline")}}'
           - name: context_debug
-            description: ""
-          - name: context_traits_context_timezone
-            description: ""
-          - name: context_traits_context_page_path
-            description: ""
-          - name: context_traits_context_offline
-            description: ""
+            description: '{{ doc("col_context_debug")}}'
           - name: context_campaign_gclid
-            description: ""
-          - name: context_traits_context_campaign_gclid
-            description: ""
-          - name: context_traits_context_page_hash
-            description: ""
+            description: '{{ doc("col_context_campaign_gclid")}}'
           - name: context_page_hash
-            description: ""
+            description: '{{ doc("col_context_page_hash")}}'
           - name: context_campaign_term
-            description: ""
-          - name: context_traits_context_campaign_source
-            description: ""
-          - name: context_traits_context_campaign_term
-            description: ""
-          - name: context_traits_context_campaign_medium
-            description: ""
+            description: '{{ doc("col_context_campaign_term")}}'
           - name: context_campaign_name
-            description: ""
+            description: '{{ doc("col_context_campaign_name")}}'
           - name: context_campaign_source
-            description: ""
-          - name: context_traits_context_campaign_name
-            description: ""
+            description: '{{ doc("col_context_campaign_source")}}'
           - name: context_campaign_medium
-            description: ""
+            description: '{{ doc("col_context_campaign_medium")}}'
           - name: context_campaign_profile
-            description: ""
+            description: '{{ doc("col_context_campaign_profile")}}'
           - name: context_campaign_id
-            description: ""
-          - name: context_traits_context_campaign_id
-            description: ""
-          - name: context_traits_context_campaign_profile
-            description: ""
+            description: '{{ doc("col_context_campaign_id")}}'
 
       - name: logged_in
-        description: "Client-side event. Does not have any event attributes, beyond the standard and context-provided attributes."
+        description: '{{ doc("table_logged_in")}}'
         columns:
           - name: context_request_ip
-            description: ""
+            description: '{{ doc("col_context_request_ip")}}'
           - name: user_id
-            description: ""
+            description: '{{ doc("col_user_id")}}'
           - name: id
-            description: ""
+            description: '{{ doc("col_id")}}'
           - name: context_source_type
-            description: ""
+            description: '{{ doc("col_context_source_type")}}'
           - name: received_at
-            description: ""
+            description: '{{ doc("col_received_at")}}'
           - name: context_destination_type
-            description: ""
+            description: '{{ doc("col_context_destination_type")}}'
           - name: context_client_id
-            description: ""
+            description: '{{ doc("col_context_client_id")}}'
           - name: context_ip
-            description: ""
+            description: '{{ doc("col_context_ip")}}'
           - name: event_text
-            description: ""
+            description: '{{ doc("col_event_text")}}'
           - name: context_library_name
-            description: ""
+            description: '{{ doc("col_context_library_name")}}'
           - name: loaded_at
-            description: ""
+            description: '{{ doc("col_loaded_at")}}'
           - name: context_anonymous_id
-            description: ""
+            description: '{{ doc("col_context_anonymous_id")}}'
           - name: uuid_ts
-            description: ""
+            description: '{{ doc("col_uuid_ts")}}'
           - name: context_source
-            description: ""
+            description: '{{ doc("col_context_source")}}'
           - name: original_timestamp
-            description: ""
+            description: '{{ doc("col_original_timestamp")}}'
           - name: context_destination_id
-            description: ""
+            description: '{{ doc("col_context_destination_id")}}'
           - name: context_library_version
-            description: ""
+            description: '{{ doc("col_context_library_version")}}'
           - name: event
-            description: ""
+            description: '{{ doc("col_event")}}'
           - name: context_source_id
-            description: ""
+            description: '{{ doc("col_context_source_id")}}'
           - name: context_rudderstack_source
-            description: ""
+            description: '{{ doc("col_context_rudderstack_source")}}'
           - name: timestamp
-            description: ""
+            description: '{{ doc("col_timestamp")}}'
           - name: sent_at
-            description: ""
+            description: '{{ doc("col_sent_at")}}'
           - name: channel
-            description: ""
+            description: '{{ doc("col_channel")}}'
           - name: context_session_id
-            description: ""
+            description: '{{ doc("col_context_session_id")}}'
           - name: context_page_width
-            description: ""
+            description: '{{ doc("col_context_page_width")}}'
           - name: context_timezone
-            description: ""
+            description: '{{ doc("col_context_timezone")}}'
           - name: context_offline
-            description: ""
+            description: '{{ doc("col_context_offline")}}'
           - name: context_user_agent
-            description: ""
+            description: '{{ doc("col_context_user_agent")}}'
           - name: context_page_url
-            description: ""
+            description: '{{ doc("col_context_page_url")}}'
           - name: context_page_referrer
-            description: ""
+            description: '{{ doc("col_context_page_referrer")}}'
           - name: context_os_name
-            description: ""
+            description: '{{ doc("col_context_os_name")}}'
           - name: context_debug
-            description: ""
+            description: '{{ doc("col_context_debug")}}'
           - name: context_initialized
-            description: ""
+            description: '{{ doc("col_context_initialized")}}'
           - name: context_page_title
-            description: ""
+            description: '{{ doc("col_context_page_title")}}'
           - name: context_page_height
-            description: ""
+            description: '{{ doc("col_context_page_height")}}'
           - name: context_locale
-            description: ""
+            description: '{{ doc("col_context_locale")}}'
           - name: context_referrer
-            description: ""
+            description: '{{ doc("col_context_referrer")}}'
           - name: context_page_path
-            description: ""
+            description: '{{ doc("col_context_page_path")}}'
           - name: context_app
-            description: ""
+            description: '{{ doc("col_context_app")}}'
           - name: context_page_search
-            description: ""
+            description: '{{ doc("col_context_page_search")}}'
 
       - name: order_cancelled
-        description: "Server-side event. Fires when a store admin cancels an order through the store admin UI."
+        description: '{{ doc("table_order_cancelled")}}'
         columns:
           - name: context_source_type
-            description: ""
+            description: '{{ doc("col_context_source_type")}}'
           - name: id
-            description: ""
+            description: '{{ doc("col_id")}}'
           - name: value
-            description: ""
+            description: '{{ doc("col_value")}}'
           - name: context_library_name
-            description: ""
+            description: '{{ doc("col_context_library_name")}}'
           - name: billing_address_city
-            description: ""
+            description: '{{ doc("col_billing_address_city")}}'
           - name: user_id
-            description: ""
+            description: '{{ doc("col_user_id")}}'
           - name: context_rudderstack_source
-            description: ""
+            description: '{{ doc("col_context_rudderstack_source")}}'
           - name: total
-            description: ""
+            description: '{{ doc("col_total")}}'
           - name: revenue
-            description: ""
+            description: '{{ doc("col_revenue")}}'
           - name: context_source
-            description: ""
+            description: '{{ doc("col_context_source")}}'
           - name: context_request_ip
-            description: ""
+            description: '{{ doc("col_context_request_ip")}}'
           - name: shipping
-            description: ""
+            description: '{{ doc("col_shipping")}}'
           - name: subtotal
-            description: ""
+            description: '{{ doc("col_subtotal")}}'
           - name: billing_address_country
-            description: ""
+            description: '{{ doc("col_billing_address_country")}}'
           - name: billing_address_state
-            description: ""
+            description: '{{ doc("col_billing_address_state")}}'
           - name: billing_address_first_name
-            description: ""
+            description: '{{ doc("col_billing_address_first_name")}}'
           - name: order_id
-            description: ""
+            description: '{{ doc("col_order_id")}}'
           - name: status
-            description: ""
+            description: '{{ doc("col_status")}}'
           - name: received_at
-            description: ""
+            description: '{{ doc("col_received_at")}}'
           - name: context_library_version
-            description: ""
+            description: '{{ doc("col_context_library_version")}}'
           - name: context_ip
-            description: ""
+            description: '{{ doc("col_context_ip")}}'
           - name: event
-            description: ""
+            description: '{{ doc("col_event")}}'
           - name: context_source_id
-            description: ""
+            description: '{{ doc("col_context_source_id")}}'
           - name: currency
-            description: ""
+            description: '{{ doc("col_currency")}}'
           - name: billing_address_address
-            description: ""
+            description: '{{ doc("col_billing_address_address")}}'
           - name: type
-            description: ""
+            description: '{{ doc("col_type")}}'
           - name: billing_address_last_name
-            description: ""
+            description: '{{ doc("col_billing_address_last_name")}}'
           - name: billing_address_postal_code
-            description: ""
+            description: '{{ doc("col_billing_address_postal_code")}}'
           - name: event_text
-            description: ""
+            description: '{{ doc("col_event_text")}}'
           - name: products
-            description: ""
+            description: '{{ doc("col_products")}}'
           - name: channel
-            description: ""
+            description: '{{ doc("col_channel")}}'
           - name: sent_at
-            description: ""
+            description: '{{ doc("col_sent_at")}}'
           - name: uuid_ts
-            description: ""
+            description: '{{ doc("col_uuid_ts")}}'
           - name: context_destination_type
-            description: ""
+            description: '{{ doc("col_context_destination_type")}}'
           - name: cart_id
-            description: ""
+            description: '{{ doc("col_cart_id")}}'
           - name: billing_address_phone
-            description: ""
+            description: '{{ doc("col_billing_address_phone")}}'
           - name: timestamp
-            description: ""
+            description: '{{ doc("col_timestamp")}}'
           - name: context_destination_id
-            description: ""
+            description: '{{ doc("col_context_destination_id")}}'
           - name: tax
-            description: ""
+            description: '{{ doc("col_tax")}}'
           - name: original_timestamp
-            description: ""
+            description: '{{ doc("col_original_timestamp")}}'
           - name: affiliation
-            description: ""
+            description: '{{ doc("col_affiliation")}}'
           - name: payment_type
-            description: ""
+            description: '{{ doc("col_payment_type")}}'
           - name: discount
-            description: ""
+            description: '{{ doc("col_discount")}}'
           - name: loaded_at
-            description: ""
+            description: '{{ doc("col_loaded_at")}}'
           - name: context_anonymous_id
-            description: ""
+            description: '{{ doc("col_context_anonymous_id")}}'
           - name: coupon
-            description: ""
+            description: '{{ doc("col_coupon")}}'
           - name: context_passed_ip
-            description: ""
+            description: '{{ doc("col_context_passed_ip")}}'
           - name: context_session_id
-            description: ""
+            description: '{{ doc("col_context_session_id")}}'
           - name: context_locale
-            description: ""
+            description: '{{ doc("col_context_locale")}}'
           - name: context_client_id
-            description: ""
+            description: '{{ doc("col_context_client_id")}}'
           - name: context_user_agent
-            description: ""
+            description: '{{ doc("col_context_user_agent")}}'
           - name: billing_address_company
-            description: ""
+            description: '{{ doc("col_billing_address_company")}}'
           - name: billing_address_email
-            description: ""
+            description: '{{ doc("col_billing_address_email")}}'
 
       - name: order_completed
-        description: "Generally a server-side event - but our specification supports client-side implementations. Fueled Event Attributes are pulled from the JSON payloads sent to Fueled's Datahub."
+        description: '{{ doc("table_order_completed")}}'
         columns:
           - name: billing_address_state
-            description: ""
+            description: '{{ doc("col_billing_address_state")}}'
           - name: context_passed_ip
-            description: ""
+            description: '{{ doc("col_context_passed_ip")}}'
           - name: context_source_type
-            description: ""
+            description: '{{ doc("col_context_source_type")}}'
           - name: event
-            description: ""
+            description: '{{ doc("col_event")}}'
           - name: billing_address_first_name
-            description: ""
+            description: '{{ doc("col_billing_address_first_name")}}'
           - name: context_user_agent
-            description: ""
+            description: '{{ doc("col_context_user_agent")}}'
           - name: revenue
-            description: ""
+            description: '{{ doc("col_revenue")}}'
           - name: discount
-            description: ""
+            description: '{{ doc("col_discount")}}'
           - name: id
-            description: ""
+            description: '{{ doc("col_id")}}'
           - name: billing_address_country
-            description: ""
+            description: '{{ doc("col_billing_address_country")}}'
           - name: received_at
-            description: ""
+            description: '{{ doc("col_received_at")}}'
           - name: value
-            description: ""
+            description: '{{ doc("col_value")}}'
           - name: original_timestamp
-            description: ""
+            description: '{{ doc("col_original_timestamp")}}'
           - name: coupon
-            description: ""
+            description: '{{ doc("col_coupon")}}'
           - name: context_source
-            description: ""
+            description: '{{ doc("col_context_source")}}'
           - name: type
-            description: ""
+            description: '{{ doc("col_type")}}'
           - name: context_library_name
-            description: ""
+            description: '{{ doc("col_context_library_name")}}'
           - name: tax
-            description: ""
+            description: '{{ doc("col_tax")}}'
           - name: event_text
-            description: ""
+            description: '{{ doc("col_event_text")}}'
           - name: status
-            description: ""
+            description: '{{ doc("col_status")}}'
           - name: timestamp
-            description: ""
+            description: '{{ doc("col_timestamp")}}'
           - name: total
-            description: ""
+            description: '{{ doc("col_total")}}'
           - name: context_request_ip
-            description: ""
+            description: '{{ doc("col_context_request_ip")}}'
           - name: context_source_id
-            description: ""
+            description: '{{ doc("col_context_source_id")}}'
           - name: context_rudderstack_source
-            description: ""
+            description: '{{ doc("col_context_rudderstack_source")}}'
           - name: context_destination_type
-            description: ""
+            description: '{{ doc("col_context_destination_type")}}'
           - name: billing_address_address
-            description: ""
+            description: '{{ doc("col_billing_address_address")}}'
           - name: subtotal
-            description: ""
+            description: '{{ doc("col_subtotal")}}'
           - name: payment_type
-            description: ""
+            description: '{{ doc("col_payment_type")}}'
           - name: billing_address_postal_code
-            description: ""
+            description: '{{ doc("col_billing_address_postal_code")}}'
           - name: context_library_version
-            description: ""
+            description: '{{ doc("col_context_library_version")}}'
           - name: cart_id
-            description: ""
+            description: '{{ doc("col_cart_id")}}'
           - name: context_session_id
-            description: ""
+            description: '{{ doc("col_context_session_id")}}'
           - name: billing_address_phone
-            description: ""
+            description: '{{ doc("col_billing_address_phone")}}'
           - name: currency
-            description: ""
+            description: '{{ doc("col_currency")}}'
           - name: affiliation
-            description: ""
+            description: '{{ doc("col_affiliation")}}'
           - name: sent_at
-            description: ""
+            description: '{{ doc("col_sent_at")}}'
           - name: user_id
-            description: ""
+            description: '{{ doc("col_user_id")}}'
           - name: channel
-            description: ""
+            description: '{{ doc("col_channel")}}'
           - name: context_destination_id
-            description: ""
+            description: '{{ doc("col_context_destination_id")}}'
           - name: order_id
-            description: ""
+            description: '{{ doc("col_order_id")}}'
           - name: context_client_id
-            description: ""
+            description: '{{ doc("col_context_client_id")}}'
           - name: loaded_at
-            description: ""
+            description: '{{ doc("col_loaded_at")}}'
           - name: shipping
-            description: ""
+            description: '{{ doc("col_shipping")}}'
           - name: context_anonymous_id
-            description: ""
+            description: '{{ doc("col_context_anonymous_id")}}'
           - name: billing_address_last_name
-            description: ""
+            description: '{{ doc("col_billing_address_last_name")}}'
           - name: context_locale
-            description: ""
+            description: '{{ doc("col_context_locale")}}'
           - name: uuid_ts
-            description: ""
+            description: '{{ doc("col_uuid_ts")}}'
           - name: billing_address_city
-            description: ""
+            description: '{{ doc("col_billing_address_city")}}'
           - name: products
-            description: ""
+            description: '{{ doc("col_products")}}'
           - name: context_ip
-            description: ""
+            description: '{{ doc("col_context_ip")}}'
           - name: billing_address_company
-            description: ""
+            description: '{{ doc("col_billing_address_company")}}'
 
       - name: order_updated
-        description: "Always a server-side event. Fires as an order moves through various order statuses."
+        description: '{{ doc("table_order_updated")}}'
         columns:
           - name: loaded_at
-            description: ""
+            description: '{{ doc("col_loaded_at")}}'
           - name: billing_address_city
-            description: ""
+            description: '{{ doc("col_billing_address_city")}}'
           - name: context_rudderstack_source
-            description: ""
+            description: '{{ doc("col_context_rudderstack_source")}}'
           - name: discount
-            description: ""
+            description: '{{ doc("col_discount")}}'
           - name: event_text
-            description: ""
+            description: '{{ doc("col_event_text")}}'
           - name: user_id
-            description: ""
+            description: '{{ doc("col_user_id")}}'
           - name: original_timestamp
-            description: ""
+            description: '{{ doc("col_original_timestamp")}}'
           - name: billing_address_first_name
-            description: ""
+            description: '{{ doc("col_billing_address_first_name")}}'
           - name: affiliation
-            description: ""
+            description: '{{ doc("col_affiliation")}}'
           - name: billing_address_address
-            description: ""
+            description: '{{ doc("col_billing_address_address")}}'
           - name: context_source_type
-            description: ""
+            description: '{{ doc("col_context_source_type")}}'
           - name: coupon
-            description: ""
+            description: '{{ doc("col_coupon")}}'
           - name: billing_address_postal_code
-            description: ""
+            description: '{{ doc("col_billing_address_postal_code")}}'
           - name: shipping
-            description: ""
+            description: '{{ doc("col_shipping")}}'
           - name: context_anonymous_id
-            description: ""
+            description: '{{ doc("col_context_anonymous_id")}}'
           - name: context_user_agent
-            description: ""
+            description: '{{ doc("col_context_user_agent")}}'
           - name: context_destination_id
-            description: ""
+            description: '{{ doc("col_context_destination_id")}}'
           - name: type
-            description: ""
+            description: '{{ doc("col_type")}}'
           - name: total
-            description: ""
+            description: '{{ doc("col_total")}}'
           - name: billing_address_last_name
-            description: ""
+            description: '{{ doc("col_billing_address_last_name")}}'
           - name: status
-            description: ""
+            description: '{{ doc("col_status")}}'
           - name: received_at
-            description: ""
+            description: '{{ doc("col_received_at")}}'
           - name: context_ip
-            description: ""
+            description: '{{ doc("col_context_ip")}}'
           - name: sent_at
-            description: ""
+            description: '{{ doc("col_sent_at")}}'
           - name: value
-            description: ""
+            description: '{{ doc("col_value")}}'
           - name: context_locale
-            description: ""
+            description: '{{ doc("col_context_locale")}}'
           - name: payment_type
-            description: ""
+            description: '{{ doc("col_payment_type")}}'
           - name: id
-            description: ""
+            description: '{{ doc("col_id")}}'
           - name: uuid_ts
-            description: ""
+            description: '{{ doc("col_uuid_ts")}}'
           - name: order_id
-            description: ""
+            description: '{{ doc("col_order_id")}}'
           - name: context_destination_type
-            description: ""
+            description: '{{ doc("col_context_destination_type")}}'
           - name: channel
-            description: ""
+            description: '{{ doc("col_channel")}}'
           - name: currency
-            description: ""
+            description: '{{ doc("col_currency")}}'
           - name: context_library_name
-            description: ""
+            description: '{{ doc("col_context_library_name")}}'
           - name: tax
-            description: ""
+            description: '{{ doc("col_tax")}}'
           - name: context_client_id
-            description: ""
+            description: '{{ doc("col_context_client_id")}}'
           - name: timestamp
-            description: ""
+            description: '{{ doc("col_timestamp")}}'
           - name: context_passed_ip
-            description: ""
+            description: '{{ doc("col_context_passed_ip")}}'
           - name: context_session_id
-            description: ""
+            description: '{{ doc("col_context_session_id")}}'
           - name: event
-            description: ""
+            description: '{{ doc("col_event")}}'
           - name: context_source
-            description: ""
+            description: '{{ doc("col_context_source")}}'
           - name: billing_address_state
-            description: ""
+            description: '{{ doc("col_billing_address_state")}}'
           - name: cart_id
-            description: ""
+            description: '{{ doc("col_cart_id")}}'
           - name: billing_address_phone
-            description: ""
+            description: '{{ doc("col_billing_address_phone")}}'
           - name: context_request_ip
-            description: ""
+            description: '{{ doc("col_context_request_ip")}}'
           - name: products
-            description: ""
+            description: '{{ doc("col_products")}}'
           - name: context_source_id
-            description: ""
+            description: '{{ doc("col_context_source_id")}}'
           - name: context_library_version
-            description: ""
+            description: '{{ doc("col_context_library_version")}}'
           - name: billing_address_country
-            description: ""
+            description: '{{ doc("col_billing_address_country")}}'
           - name: billing_address_company
-            description: ""
+            description: '{{ doc("col_billing_address_company")}}'
           - name: subtotal
-            description: ""
+            description: '{{ doc("col_subtotal")}}'
           - name: revenue
-            description: ""
+            description: '{{ doc("col_revenue")}}'
           - name: billing_address_email
-            description: ""
+            description: '{{ doc("col_billing_address_email")}}'
 
       - name: pages
-        description: "`page_view` is a client-side event that fires on all page loads."
+        description: '{{ doc("table_pages")}}'
         columns:
           - name: path
-            description: ""
+            description: '{{ doc("col_path")}}'
           - name: channel
-            description: ""
+            description: '{{ doc("col_channel")}}'
           - name: context_ip
-            description: ""
+            description: '{{ doc("col_context_ip")}}'
           - name: context_anonymous_id
-            description: ""
+            description: '{{ doc("col_context_anonymous_id")}}'
           - name: search
-            description: ""
+            description: '{{ doc("col_search")}}'
           - name: context_source_type
-            description: ""
+            description: '{{ doc("col_context_source_type")}}'
           - name: context_library_version
-            description: ""
+            description: '{{ doc("col_context_library_version")}}'
           - name: original_timestamp
-            description: ""
+            description: '{{ doc("col_original_timestamp")}}'
           - name: sent_at
-            description: ""
+            description: '{{ doc("col_sent_at")}}'
           - name: context_session_id
-            description: ""
+            description: '{{ doc("col_context_session_id")}}'
           - name: height
-            description: ""
+            description: '{{ doc("col_height")}}'
           - name: width
-            description: ""
+            description: '{{ doc("col_width")}}'
           - name: name
-            description: ""
+            description: '{{ doc("col_name")}}'
           - name: timestamp
-            description: ""
+            description: '{{ doc("col_timestamp")}}'
           - name: user_id
-            description: ""
+            description: '{{ doc("col_user_id")}}'
           - name: received_at
-            description: ""
+            description: '{{ doc("col_received_at")}}'
           - name: url
-            description: ""
+            description: '{{ doc("col_url")}}'
           - name: context_source_id
-            description: ""
+            description: '{{ doc("col_context_source_id")}}'
           - name: context_request_ip
-            description: ""
+            description: '{{ doc("col_context_request_ip")}}'
           - name: context_client_id
-            description: ""
+            description: '{{ doc("col_context_client_id")}}'
           - name: context_library_name
-            description: ""
+            description: '{{ doc("col_context_library_name")}}'
           - name: id
-            description: ""
+            description: '{{ doc("col_id")}}'
           - name: context_destination_type
-            description: ""
+            description: '{{ doc("col_context_destination_type")}}'
           - name: title
-            description: ""
+            description: '{{ doc("col_title")}}'
           - name: loaded_at
-            description: ""
+            description: '{{ doc("col_loaded_at")}}'
           - name: context_destination_id
-            description: ""
+            description: '{{ doc("col_context_destination_id")}}'
           - name: referrer
-            description: ""
+            description: '{{ doc("col_referrer")}}'
           - name: uuid_ts
-            description: ""
+            description: '{{ doc("col_uuid_ts")}}'
           - name: _hash
-            description: ""
+            description: '{{ doc("col__hash")}}'
           - name: context_timezone
-            description: ""
+            description: '{{ doc("col_context_timezone")}}'
           - name: context_page_hash
-            description: ""
+            description: '{{ doc("col_context_page_hash")}}'
           - name: context_page_search
-            description: ""
+            description: '{{ doc("col_context_page_search")}}'
           - name: context_page_height
-            description: ""
+            description: '{{ doc("col_context_page_height")}}'
           - name: context_locale
-            description: ""
+            description: '{{ doc("col_context_locale")}}'
           - name: context_page_url
-            description: ""
+            description: '{{ doc("col_context_page_url")}}'
           - name: context_page_referrer
-            description: ""
+            description: '{{ doc("col_context_page_referrer")}}'
           - name: context_app
-            description: ""
+            description: '{{ doc("col_context_app")}}'
           - name: context_campaign_medium
-            description: ""
+            description: '{{ doc("col_context_campaign_medium")}}'
           - name: context_campaign_name
-            description: ""
+            description: '{{ doc("col_context_campaign_name")}}'
           - name: context_debug
-            description: ""
+            description: '{{ doc("col_context_debug")}}'
           - name: context_os_name
-            description: ""
+            description: '{{ doc("col_context_os_name")}}'
           - name: context_referrer
-            description: ""
+            description: '{{ doc("col_context_referrer")}}'
           - name: context_campaign_gclid
-            description: ""
+            description: '{{ doc("col_context_campaign_gclid")}}'
           - name: context_page_title
-            description: ""
+            description: '{{ doc("col_context_page_title")}}'
           - name: context_page_path
-            description: ""
+            description: '{{ doc("col_context_page_path")}}'
           - name: context_user_agent
-            description: ""
+            description: '{{ doc("col_context_user_agent")}}'
           - name: context_campaign_term
-            description: ""
+            description: '{{ doc("col_context_campaign_term")}}'
           - name: context_campaign_source
-            description: ""
+            description: '{{ doc("col_context_campaign_source")}}'
           - name: context_page_width
-            description: ""
+            description: '{{ doc("col_context_page_width")}}'
           - name: context_offline
-            description: ""
+            description: '{{ doc("col_context_offline")}}'
           - name: context_initialized
-            description: ""
+            description: '{{ doc("col_context_initialized")}}'
           - name: context_campaign_content
-            description: ""
+            description: '{{ doc("col_context_campaign_content")}}'
           - name: context_campaign_profile
-            description: ""
+            description: '{{ doc("col_context_campaign_profile")}}'
           - name: context_campaign_id
-            description: ""
+            description: '{{ doc("col_context_campaign_id")}}'
 
       - name: product_added
-        description: "Client-side event. Fires when a shopper adds a product to their shopping cart."
+        description: '{{ doc("table_product_added")}}'
         columns:
           - name: context_client_id
-            description: ""
+            description: '{{ doc("col_context_client_id")}}'
           - name: context_source_type
-            description: ""
+            description: '{{ doc("col_context_source_type")}}'
           - name: name
-            description: ""
+            description: '{{ doc("col_name")}}'
           - name: context_rudderstack_source
-            description: ""
+            description: '{{ doc("col_context_rudderstack_source")}}'
           - name: context_destination_type
-            description: ""
+            description: '{{ doc("col_context_destination_type")}}'
           - name: quantity
-            description: ""
+            description: '{{ doc("col_quantity")}}'
           - name: original_timestamp
-            description: ""
+            description: '{{ doc("col_original_timestamp")}}'
           - name: context_library_name
-            description: ""
+            description: '{{ doc("col_context_library_name")}}'
           - name: product_id
-            description: ""
+            description: '{{ doc("col_product_id")}}'
           - name: event_text
-            description: ""
+            description: '{{ doc("col_event_text")}}'
           - name: context_source_id
-            description: ""
+            description: '{{ doc("col_context_source_id")}}'
           - name: channel
-            description: ""
+            description: '{{ doc("col_channel")}}'
           - name: brand
-            description: ""
+            description: '{{ doc("col_brand")}}'
           - name: image_url
-            description: ""
+            description: '{{ doc("col_image_url")}}'
           - name: sku
-            description: ""
+            description: '{{ doc("col_sku")}}'
           - name: context_destination_id
-            description: ""
+            description: '{{ doc("col_context_destination_id")}}'
           - name: context_session_id
-            description: ""
+            description: '{{ doc("col_context_session_id")}}'
           - name: context_ip
-            description: ""
+            description: '{{ doc("col_context_ip")}}'
           - name: event
-            description: ""
+            description: '{{ doc("col_event")}}'
           - name: price
-            description: ""
+            description: '{{ doc("col_price")}}'
           - name: context_request_ip
-            description: ""
+            description: '{{ doc("col_context_request_ip")}}'
           - name: category
-            description: ""
+            description: '{{ doc("col_category")}}'
           - name: timestamp
-            description: ""
+            description: '{{ doc("col_timestamp")}}'
           - name: loaded_at
-            description: ""
+            description: '{{ doc("col_loaded_at")}}'
           - name: sent_at
-            description: ""
+            description: '{{ doc("col_sent_at")}}'
           - name: variant
-            description: ""
+            description: '{{ doc("col_variant")}}'
           - name: context_library_version
-            description: ""
+            description: '{{ doc("col_context_library_version")}}'
           - name: id
-            description: ""
+            description: '{{ doc("col_id")}}'
           - name: user_id
-            description: ""
+            description: '{{ doc("col_user_id")}}'
           - name: uuid_ts
-            description: ""
+            description: '{{ doc("col_uuid_ts")}}'
           - name: context_source
-            description: ""
+            description: '{{ doc("col_context_source")}}'
           - name: context_anonymous_id
-            description: ""
+            description: '{{ doc("col_context_anonymous_id")}}'
           - name: received_at
-            description: ""
+            description: '{{ doc("col_received_at")}}'
           - name: url
-            description: ""
+            description: '{{ doc("col_url")}}'
           - name: position
-            description: ""
+            description: '{{ doc("col_position")}}'
           - name: context_page_height
-            description: ""
+            description: '{{ doc("col_context_page_height")}}'
           - name: context_page_path
-            description: ""
+            description: '{{ doc("col_context_page_path")}}'
           - name: context_os_name
-            description: ""
+            description: '{{ doc("col_context_os_name")}}'
           - name: context_debug
-            description: ""
+            description: '{{ doc("col_context_debug")}}'
           - name: context_app
-            description: ""
+            description: '{{ doc("col_context_app")}}'
           - name: context_locale
-            description: ""
+            description: '{{ doc("col_context_locale")}}'
           - name: context_page_url
-            description: ""
+            description: '{{ doc("col_context_page_url")}}'
           - name: context_referrer
-            description: ""
+            description: '{{ doc("col_context_referrer")}}'
           - name: context_page_search
-            description: ""
+            description: '{{ doc("col_context_page_search")}}'
           - name: context_timezone
-            description: ""
+            description: '{{ doc("col_context_timezone")}}'
           - name: context_initialized
-            description: ""
+            description: '{{ doc("col_context_initialized")}}'
           - name: context_user_agent
-            description: ""
+            description: '{{ doc("col_context_user_agent")}}'
           - name: context_page_referrer
-            description: ""
+            description: '{{ doc("col_context_page_referrer")}}'
           - name: context_offline
-            description: ""
+            description: '{{ doc("col_context_offline")}}'
           - name: context_page_width
-            description: ""
+            description: '{{ doc("col_context_page_width")}}'
           - name: context_page_title
-            description: ""
+            description: '{{ doc("col_context_page_title")}}'
           - name: context_campaign_gclid
-            description: ""
+            description: '{{ doc("col_context_campaign_gclid")}}'
           - name: context_campaign_content
-            description: ""
+            description: '{{ doc("col_context_campaign_content")}}'
           - name: context_campaign_medium
-            description: ""
+            description: '{{ doc("col_context_campaign_medium")}}'
           - name: context_campaign_name
-            description: ""
+            description: '{{ doc("col_context_campaign_name")}}'
           - name: context_campaign_source
-            description: ""
+            description: '{{ doc("col_context_campaign_source")}}'
           - name: context_campaign_term
-            description: ""
+            description: '{{ doc("col_context_campaign_term")}}'
           - name: context_page_hash
-            description: ""
+            description: '{{ doc("col_context_page_hash")}}'
           - name: context_campaign_profile
-            description: ""
+            description: '{{ doc("col_context_campaign_profile")}}'
           - name: context_campaign_id
-            description: ""
+            description: '{{ doc("col_context_campaign_id")}}'
 
       - name: product_list_viewed
-        description: "Client-side event. Fires when a shopper visits a Product Collections page."
+        description: '{{ doc("table_product_list_viewed")}}'
         columns:
           - name: list_id
-            description: ""
+            description: '{{ doc("col_list_id")}}'
           - name: sent_at
-            description: ""
+            description: '{{ doc("col_sent_at")}}'
           - name: context_destination_id
-            description: ""
+            description: '{{ doc("col_context_destination_id")}}'
           - name: context_source
-            description: ""
+            description: '{{ doc("col_context_source")}}'
           - name: original_timestamp
-            description: ""
+            description: '{{ doc("col_original_timestamp")}}'
           - name: context_source_id
-            description: ""
+            description: '{{ doc("col_context_source_id")}}'
           - name: context_session_id
-            description: ""
+            description: '{{ doc("col_context_session_id")}}'
           - name: context_rudderstack_source
-            description: ""
+            description: '{{ doc("col_context_rudderstack_source")}}'
           - name: context_anonymous_id
-            description: ""
+            description: '{{ doc("col_context_anonymous_id")}}'
           - name: category
-            description: ""
+            description: '{{ doc("col_category")}}'
           - name: context_library_name
-            description: ""
+            description: '{{ doc("col_context_library_name")}}'
           - name: timestamp
-            description: ""
+            description: '{{ doc("col_timestamp")}}'
           - name: context_client_id
-            description: ""
+            description: '{{ doc("col_context_client_id")}}'
           - name: uuid_ts
-            description: ""
+            description: '{{ doc("col_uuid_ts")}}'
           - name: event_text
-            description: ""
+            description: '{{ doc("col_event_text")}}'
           - name: context_source_type
-            description: ""
+            description: '{{ doc("col_context_source_type")}}'
           - name: products
-            description: ""
+            description: '{{ doc("col_products")}}'
           - name: id
-            description: ""
+            description: '{{ doc("col_id")}}'
           - name: event
-            description: ""
+            description: '{{ doc("col_event")}}'
           - name: context_ip
-            description: ""
+            description: '{{ doc("col_context_ip")}}'
           - name: context_library_version
-            description: ""
+            description: '{{ doc("col_context_library_version")}}'
           - name: channel
-            description: ""
+            description: '{{ doc("col_channel")}}'
           - name: received_at
-            description: ""
+            description: '{{ doc("col_received_at")}}'
           - name: context_destination_type
-            description: ""
+            description: '{{ doc("col_context_destination_type")}}'
           - name: context_request_ip
-            description: ""
+            description: '{{ doc("col_context_request_ip")}}'
           - name: loaded_at
-            description: ""
+            description: '{{ doc("col_loaded_at")}}'
           - name: user_id
-            description: ""
+            description: '{{ doc("col_user_id")}}'
           - name: context_campaign_name
-            description: ""
+            description: '{{ doc("col_context_campaign_name")}}'
           - name: context_page_title
-            description: ""
+            description: '{{ doc("col_context_page_title")}}'
           - name: context_page_width
-            description: ""
+            description: '{{ doc("col_context_page_width")}}'
           - name: context_campaign_medium
-            description: ""
+            description: '{{ doc("col_context_campaign_medium")}}'
           - name: context_timezone
-            description: ""
+            description: '{{ doc("col_context_timezone")}}'
           - name: context_locale
-            description: ""
+            description: '{{ doc("col_context_locale")}}'
           - name: context_os_name
-            description: ""
+            description: '{{ doc("col_context_os_name")}}'
           - name: context_page_referrer
-            description: ""
+            description: '{{ doc("col_context_page_referrer")}}'
           - name: context_app
-            description: ""
+            description: '{{ doc("col_context_app")}}'
           - name: context_page_height
-            description: ""
+            description: '{{ doc("col_context_page_height")}}'
           - name: context_page_search
-            description: ""
+            description: '{{ doc("col_context_page_search")}}'
           - name: context_offline
-            description: ""
+            description: '{{ doc("col_context_offline")}}'
           - name: context_debug
-            description: ""
+            description: '{{ doc("col_context_debug")}}'
           - name: context_initialized
-            description: ""
+            description: '{{ doc("col_context_initialized")}}'
           - name: context_user_agent
-            description: ""
+            description: '{{ doc("col_context_user_agent")}}'
           - name: context_referrer
-            description: ""
+            description: '{{ doc("col_context_referrer")}}'
           - name: context_page_url
-            description: ""
+            description: '{{ doc("col_context_page_url")}}'
           - name: context_campaign_source
-            description: ""
+            description: '{{ doc("col_context_campaign_source")}}'
           - name: context_page_path
-            description: ""
+            description: '{{ doc("col_context_page_path")}}'
           - name: context_campaign_term
-            description: ""
+            description: '{{ doc("col_context_campaign_term")}}'
           - name: context_campaign_gclid
-            description: ""
+            description: '{{ doc("col_context_campaign_gclid")}}'
           - name: context_campaign_content
-            description: ""
+            description: '{{ doc("col_context_campaign_content")}}'
           - name: context_page_hash
-            description: ""
+            description: '{{ doc("col_context_page_hash")}}'
           - name: context_campaign_profile
-            description: ""
+            description: '{{ doc("col_context_campaign_profile")}}'
           - name: context_campaign_id
-            description: ""
+            description: '{{ doc("col_context_campaign_id")}}'
 
       - name: product_removed
-        description: "Client-side event. Fires when a shopper removes an item from their shopping cart. (Note: for now, listens for events on the main cart page. Side carts are not supported out out-of-the-box at this time, but can be supported with a small amount of client-side javascript customizations.)"
+        description: '{{ doc("table_product_removed")}}'
         columns:
           - name: context_source_id
-            description: ""
+            description: '{{ doc("col_context_source_id")}}'
           - name: received_at
-            description: ""
+            description: '{{ doc("col_received_at")}}'
           - name: context_destination_type
-            description: ""
+            description: '{{ doc("col_context_destination_type")}}'
           - name: original_timestamp
-            description: ""
+            description: '{{ doc("col_original_timestamp")}}'
           - name: sent_at
-            description: ""
+            description: '{{ doc("col_sent_at")}}'
           - name: context_destination_id
-            description: ""
+            description: '{{ doc("col_context_destination_id")}}'
           - name: context_request_ip
-            description: ""
+            description: '{{ doc("col_context_request_ip")}}'
           - name: context_rudderstack_source
-            description: ""
+            description: '{{ doc("col_context_rudderstack_source")}}'
           - name: context_client_id
-            description: ""
+            description: '{{ doc("col_context_client_id")}}'
           - name: context_session_id
-            description: ""
+            description: '{{ doc("col_context_session_id")}}'
           - name: context_source_type
-            description: ""
+            description: '{{ doc("col_context_source_type")}}'
           - name: context_ip
-            description: ""
+            description: '{{ doc("col_context_ip")}}'
           - name: event_text
-            description: ""
+            description: '{{ doc("col_event_text")}}'
           - name: position
-            description: ""
+            description: '{{ doc("col_position")}}'
           - name: loaded_at
-            description: ""
+            description: '{{ doc("col_loaded_at")}}'
           - name: timestamp
-            description: ""
+            description: '{{ doc("col_timestamp")}}'
           - name: context_anonymous_id
-            description: ""
+            description: '{{ doc("col_context_anonymous_id")}}'
           - name: context_library_name
-            description: ""
+            description: '{{ doc("col_context_library_name")}}'
           - name: user_id
-            description: ""
+            description: '{{ doc("col_user_id")}}'
           - name: channel
-            description: ""
+            description: '{{ doc("col_channel")}}'
           - name: uuid_ts
-            description: ""
+            description: '{{ doc("col_uuid_ts")}}'
           - name: context_library_version
-            description: ""
+            description: '{{ doc("col_context_library_version")}}'
           - name: id
-            description: ""
+            description: '{{ doc("col_id")}}'
           - name: event
-            description: ""
+            description: '{{ doc("col_event")}}'
           - name: context_source
-            description: ""
+            description: '{{ doc("col_context_source")}}'
           - name: context_initialized
-            description: ""
+            description: '{{ doc("col_context_initialized")}}'
           - name: context_user_agent
-            description: ""
+            description: '{{ doc("col_context_user_agent")}}'
           - name: context_locale
-            description: ""
+            description: '{{ doc("col_context_locale")}}'
           - name: context_page_url
-            description: ""
+            description: '{{ doc("col_context_page_url")}}'
           - name: context_app
-            description: ""
+            description: '{{ doc("col_context_app")}}'
           - name: context_page_path
-            description: ""
+            description: '{{ doc("col_context_page_path")}}'
           - name: context_page_referrer
-            description: ""
+            description: '{{ doc("col_context_page_referrer")}}'
           - name: context_page_title
-            description: ""
+            description: '{{ doc("col_context_page_title")}}'
           - name: context_os_name
-            description: ""
+            description: '{{ doc("col_context_os_name")}}'
           - name: context_debug
-            description: ""
+            description: '{{ doc("col_context_debug")}}'
           - name: context_referrer
-            description: ""
+            description: '{{ doc("col_context_referrer")}}'
           - name: context_page_height
-            description: ""
+            description: '{{ doc("col_context_page_height")}}'
           - name: context_offline
-            description: ""
+            description: '{{ doc("col_context_offline")}}'
           - name: context_timezone
-            description: ""
+            description: '{{ doc("col_context_timezone")}}'
           - name: context_page_width
-            description: ""
+            description: '{{ doc("col_context_page_width")}}'
 
       - name: product_viewed
-        description: "Client-side event. Fires when someone visits a Product Description Page."
+        description: '{{ doc("table_product_viewed")}}'
         columns:
           - name: image_url
-            description: ""
+            description: '{{ doc("col_image_url")}}'
           - name: user_id
-            description: ""
+            description: '{{ doc("col_user_id")}}'
           - name: context_anonymous_id
-            description: ""
+            description: '{{ doc("col_context_anonymous_id")}}'
           - name: channel
-            description: ""
+            description: '{{ doc("col_channel")}}'
           - name: variant
-            description: ""
+            description: '{{ doc("col_variant")}}'
           - name: context_source
-            description: ""
+            description: '{{ doc("col_context_source")}}'
           - name: original_timestamp
-            description: ""
+            description: '{{ doc("col_original_timestamp")}}'
           - name: context_ip
-            description: ""
+            description: '{{ doc("col_context_ip")}}'
           - name: context_session_id
-            description: ""
+            description: '{{ doc("col_context_session_id")}}'
           - name: loaded_at
-            description: ""
+            description: '{{ doc("col_loaded_at")}}'
           - name: id
-            description: ""
+            description: '{{ doc("col_id")}}'
           - name: name
-            description: ""
+            description: '{{ doc("col_name")}}'
           - name: received_at
-            description: ""
+            description: '{{ doc("col_received_at")}}'
           - name: sent_at
-            description: ""
+            description: '{{ doc("col_sent_at")}}'
           - name: context_request_ip
-            description: ""
+            description: '{{ doc("col_context_request_ip")}}'
           - name: context_destination_type
-            description: ""
+            description: '{{ doc("col_context_destination_type")}}'
           - name: sku
-            description: ""
+            description: '{{ doc("col_sku")}}'
           - name: event
-            description: ""
+            description: '{{ doc("col_event")}}'
           - name: event_text
-            description: ""
+            description: '{{ doc("col_event_text")}}'
           - name: price
-            description: ""
+            description: '{{ doc("col_price")}}'
           - name: brand
-            description: ""
+            description: '{{ doc("col_brand")}}'
           - name: context_client_id
-            description: ""
+            description: '{{ doc("col_context_client_id")}}'
           - name: uuid_ts
-            description: ""
+            description: '{{ doc("col_uuid_ts")}}'
           - name: context_rudderstack_source
-            description: ""
+            description: '{{ doc("col_context_rudderstack_source")}}'
           - name: context_source_type
-            description: ""
+            description: '{{ doc("col_context_source_type")}}'
           - name: context_destination_id
-            description: ""
+            description: '{{ doc("col_context_destination_id")}}'
           - name: context_library_name
-            description: ""
+            description: '{{ doc("col_context_library_name")}}'
           - name: product_id
-            description: ""
+            description: '{{ doc("col_product_id")}}'
           - name: timestamp
-            description: ""
+            description: '{{ doc("col_timestamp")}}'
           - name: category
-            description: ""
+            description: '{{ doc("col_category")}}'
           - name: context_source_id
-            description: ""
+            description: '{{ doc("col_context_source_id")}}'
           - name: context_library_version
-            description: ""
+            description: '{{ doc("col_context_library_version")}}'
           - name: context_page_url
-            description: ""
+            description: '{{ doc("col_context_page_url")}}'
           - name: context_page_height
-            description: ""
+            description: '{{ doc("col_context_page_height")}}'
           - name: context_campaign_source
-            description: ""
+            description: '{{ doc("col_context_campaign_source")}}'
           - name: context_initialized
-            description: ""
+            description: '{{ doc("col_context_initialized")}}'
           - name: context_referrer
-            description: ""
+            description: '{{ doc("col_context_referrer")}}'
           - name: context_campaign_name
-            description: ""
+            description: '{{ doc("col_context_campaign_name")}}'
           - name: context_page_title
-            description: ""
+            description: '{{ doc("col_context_page_title")}}'
           - name: context_offline
-            description: ""
+            description: '{{ doc("col_context_offline")}}'
           - name: context_campaign_gclid
-            description: ""
+            description: '{{ doc("col_context_campaign_gclid")}}'
           - name: context_page_search
-            description: ""
+            description: '{{ doc("col_context_page_search")}}'
           - name: context_campaign_medium
-            description: ""
+            description: '{{ doc("col_context_campaign_medium")}}'
           - name: context_debug
-            description: ""
+            description: '{{ doc("col_context_debug")}}'
           - name: context_page_path
-            description: ""
+            description: '{{ doc("col_context_page_path")}}'
           - name: context_campaign_content
-            description: ""
+            description: '{{ doc("col_context_campaign_content")}}'
           - name: context_page_width
-            description: ""
+            description: '{{ doc("col_context_page_width")}}'
           - name: context_os_name
-            description: ""
+            description: '{{ doc("col_context_os_name")}}'
           - name: context_page_referrer
-            description: ""
+            description: '{{ doc("col_context_page_referrer")}}'
           - name: context_user_agent
-            description: ""
+            description: '{{ doc("col_context_user_agent")}}'
           - name: context_app
-            description: ""
+            description: '{{ doc("col_context_app")}}'
           - name: context_timezone
-            description: ""
+            description: '{{ doc("col_context_timezone")}}'
           - name: context_locale
-            description: ""
+            description: '{{ doc("col_context_locale")}}'
           - name: context_campaign_term
-            description: ""
+            description: '{{ doc("col_context_campaign_term")}}'
           - name: context_campaign_profile
-            description: ""
+            description: '{{ doc("col_context_campaign_profile")}}'
           - name: context_campaign_id
-            description: ""
+            description: '{{ doc("col_context_campaign_id")}}'
 
       - name: products_searched
-        description: "Client-side event. Fires when a shopper uses the site-wide search feature."
+        description: '{{ doc("table_products_searched")}}'
         columns:
           - name: event
-            description: ""
+            description: '{{ doc("col_event")}}'
           - name: context_source
-            description: ""
+            description: '{{ doc("col_context_source")}}'
           - name: sent_at
-            description: ""
+            description: '{{ doc("col_sent_at")}}'
           - name: received_at
-            description: ""
+            description: '{{ doc("col_received_at")}}'
           - name: context_request_ip
-            description: ""
+            description: '{{ doc("col_context_request_ip")}}'
           - name: user_id
-            description: ""
+            description: '{{ doc("col_user_id")}}'
           - name: context_ip
-            description: ""
+            description: '{{ doc("col_context_ip")}}'
           - name: timestamp
-            description: ""
+            description: '{{ doc("col_timestamp")}}'
           - name: context_session_id
-            description: ""
+            description: '{{ doc("col_context_session_id")}}'
           - name: context_source_type
-            description: ""
+            description: '{{ doc("col_context_source_type")}}'
           - name: original_timestamp
-            description: ""
+            description: '{{ doc("col_original_timestamp")}}'
           - name: event_text
-            description: ""
+            description: '{{ doc("col_event_text")}}'
           - name: context_client_id
-            description: ""
+            description: '{{ doc("col_context_client_id")}}'
           - name: context_destination_type
-            description: ""
+            description: '{{ doc("col_context_destination_type")}}'
           - name: context_destination_id
-            description: ""
+            description: '{{ doc("col_context_destination_id")}}'
           - name: uuid_ts
-            description: ""
+            description: '{{ doc("col_uuid_ts")}}'
           - name: context_anonymous_id
-            description: ""
+            description: '{{ doc("col_context_anonymous_id")}}'
           - name: context_rudderstack_source
-            description: ""
+            description: '{{ doc("col_context_rudderstack_source")}}'
           - name: context_source_id
-            description: ""
+            description: '{{ doc("col_context_source_id")}}'
           - name: context_library_version
-            description: ""
+            description: '{{ doc("col_context_library_version")}}'
           - name: channel
-            description: ""
+            description: '{{ doc("col_channel")}}'
           - name: context_library_name
-            description: ""
+            description: '{{ doc("col_context_library_name")}}'
           - name: id
-            description: ""
+            description: '{{ doc("col_id")}}'
           - name: loaded_at
-            description: ""
+            description: '{{ doc("col_loaded_at")}}'
           - name: query
-            description: ""
+            description: '{{ doc("col_query")}}'
           - name: context_page_search
-            description: ""
+            description: '{{ doc("col_context_page_search")}}'
           - name: context_os_name
-            description: ""
+            description: '{{ doc("col_context_os_name")}}'
           - name: context_locale
-            description: ""
+            description: '{{ doc("col_context_locale")}}'
           - name: context_app
-            description: ""
+            description: '{{ doc("col_context_app")}}'
           - name: context_referrer
-            description: ""
+            description: '{{ doc("col_context_referrer")}}'
           - name: context_page_referrer
-            description: ""
+            description: '{{ doc("col_context_page_referrer")}}'
           - name: context_page_height
-            description: ""
+            description: '{{ doc("col_context_page_height")}}'
           - name: context_timezone
-            description: ""
+            description: '{{ doc("col_context_timezone")}}'
           - name: context_page_title
-            description: ""
+            description: '{{ doc("col_context_page_title")}}'
           - name: context_offline
-            description: ""
+            description: '{{ doc("col_context_offline")}}'
           - name: context_initialized
-            description: ""
+            description: '{{ doc("col_context_initialized")}}'
           - name: context_page_path
-            description: ""
+            description: '{{ doc("col_context_page_path")}}'
           - name: context_page_url
-            description: ""
+            description: '{{ doc("col_context_page_url")}}'
           - name: context_user_agent
-            description: ""
+            description: '{{ doc("col_context_user_agent")}}'
           - name: context_debug
-            description: ""
+            description: '{{ doc("col_context_debug")}}'
           - name: context_page_width
-            description: ""
+            description: '{{ doc("col_context_page_width")}}'
 
       - name: signed_up
-        description: "Generally a client-side event. Fires when a shopper creates an account. Almost always accompanied with an `identify` event."
+        description: '{{ doc("table_signed_up")}}'
         columns:
           - name: id
-            description: ""
+            description: '{{ doc("col_id")}}'
           - name: context_rudderstack_source
-            description: ""
+            description: '{{ doc("col_context_rudderstack_source")}}'
           - name: uuid_ts
-            description: ""
+            description: '{{ doc("col_uuid_ts")}}'
           - name: context_request_ip
-            description: ""
+            description: '{{ doc("col_context_request_ip")}}'
           - name: email
-            description: ""
+            description: '{{ doc("col_email")}}'
           - name: user_id
-            description: ""
+            description: '{{ doc("col_user_id")}}'
           - name: context_anonymous_id
-            description: ""
+            description: '{{ doc("col_context_anonymous_id")}}'
           - name: sent_at
-            description: ""
+            description: '{{ doc("col_sent_at")}}'
           - name: loaded_at
-            description: ""
+            description: '{{ doc("col_loaded_at")}}'
           - name: context_client_id
-            description: ""
+            description: '{{ doc("col_context_client_id")}}'
           - name: context_session_id
-            description: ""
+            description: '{{ doc("col_context_session_id")}}'
           - name: context_library_name
-            description: ""
+            description: '{{ doc("col_context_library_name")}}'
           - name: context_source_id
-            description: ""
+            description: '{{ doc("col_context_source_id")}}'
           - name: event_text
-            description: ""
+            description: '{{ doc("col_event_text")}}'
           - name: first_name
-            description: ""
+            description: '{{ doc("col_first_name")}}'
           - name: received_at
-            description: ""
+            description: '{{ doc("col_received_at")}}'
           - name: channel
-            description: ""
+            description: '{{ doc("col_channel")}}'
           - name: context_library_version
-            description: ""
+            description: '{{ doc("col_context_library_version")}}'
           - name: original_timestamp
-            description: ""
+            description: '{{ doc("col_original_timestamp")}}'
           - name: context_destination_id
-            description: ""
+            description: '{{ doc("col_context_destination_id")}}'
           - name: timestamp
-            description: ""
+            description: '{{ doc("col_timestamp")}}'
           - name: context_source_type
-            description: ""
+            description: '{{ doc("col_context_source_type")}}'
           - name: last_name
-            description: ""
+            description: '{{ doc("col_last_name")}}'
           - name: event
-            description: ""
+            description: '{{ doc("col_event")}}'
           - name: context_ip
-            description: ""
+            description: '{{ doc("col_context_ip")}}'
           - name: context_source
-            description: ""
+            description: '{{ doc("col_context_source")}}'
           - name: context_destination_type
-            description: ""
+            description: '{{ doc("col_context_destination_type")}}'
           - name: context_offline
-            description: ""
+            description: '{{ doc("col_context_offline")}}'
           - name: context_timezone
-            description: ""
+            description: '{{ doc("col_context_timezone")}}'
           - name: context_referrer
-            description: ""
+            description: '{{ doc("col_context_referrer")}}'
           - name: context_app
-            description: ""
+            description: '{{ doc("col_context_app")}}'
           - name: context_os_name
-            description: ""
+            description: '{{ doc("col_context_os_name")}}'
           - name: context_page_height
-            description: ""
+            description: '{{ doc("col_context_page_height")}}'
           - name: context_user_agent
-            description: ""
+            description: '{{ doc("col_context_user_agent")}}'
           - name: context_locale
-            description: ""
+            description: '{{ doc("col_context_locale")}}'
           - name: context_initialized
-            description: ""
+            description: '{{ doc("col_context_initialized")}}'
           - name: context_debug
-            description: ""
+            description: '{{ doc("col_context_debug")}}'
           - name: context_page_referrer
-            description: ""
+            description: '{{ doc("col_context_page_referrer")}}'
           - name: context_page_url
-            description: ""
+            description: '{{ doc("col_context_page_url")}}'
           - name: context_page_width
-            description: ""
+            description: '{{ doc("col_context_page_width")}}'
           - name: context_page_title
-            description: ""
+            description: '{{ doc("col_context_page_title")}}'
           - name: context_page_path
-            description: ""
+            description: '{{ doc("col_context_page_path")}}'
 
       - name: subscription_activated
-        description: "Our ReCharge Payments integration for the Subscription Activated event. The Subscription Activated event is triggered when a user activates a subscription via API or UI."
+        description: '{{ doc("table_subscription_activated")}}'
         columns:
           - name: is_swappable
-            description: ""
+            description: '{{ doc("col_is_swappable")}}'
           - name: loaded_at
-            description: ""
+            description: '{{ doc("col_loaded_at")}}'
           - name: order_subtotal
-            description: ""
+            description: '{{ doc("col_order_subtotal")}}'
           - name: order_revenue
-            description: ""
+            description: '{{ doc("col_order_revenue")}}'
           - name: max_retries_reached
-            description: ""
+            description: '{{ doc("col_max_retries_reached")}}'
           - name: is_skippable
-            description: ""
+            description: '{{ doc("col_is_skippable")}}'
           - name: event
-            description: ""
+            description: '{{ doc("col_event")}}'
           - name: order_type
-            description: ""
+            description: '{{ doc("col_order_type")}}'
           - name: context_source
-            description: ""
+            description: '{{ doc("col_context_source")}}'
           - name: order_discount
-            description: ""
+            description: '{{ doc("col_order_discount")}}'
           - name: updated_at
-            description: ""
+            description: '{{ doc("col_updated_at")}}'
           - name: context_destination_type
-            description: ""
+            description: '{{ doc("col_context_destination_type")}}'
           - name: products
-            description: ""
+            description: '{{ doc("col_products")}}'
           - name: event_text
-            description: ""
+            description: '{{ doc("col_event_text")}}'
           - name: order_status
-            description: ""
+            description: '{{ doc("col_order_status")}}'
           - name: order_billing_address_postal_code
-            description: ""
+            description: '{{ doc("col_order_billing_address_postal_code")}}'
           - name: sku_override
-            description: ""
+            description: '{{ doc("col_sku_override")}}'
           - name: context_request_ip
-            description: ""
+            description: '{{ doc("col_context_request_ip")}}'
           - name: order_total
-            description: ""
+            description: '{{ doc("col_order_total")}}'
           - name: original_timestamp
-            description: ""
+            description: '{{ doc("col_original_timestamp")}}'
           - name: context_library_version
-            description: ""
+            description: '{{ doc("col_context_library_version")}}'
           - name: uuid_ts
-            description: ""
+            description: '{{ doc("col_uuid_ts")}}'
           - name: context_source_type
-            description: ""
+            description: '{{ doc("col_context_source_type")}}'
           - name: context_rudderstack_source
-            description: ""
+            description: '{{ doc("col_context_rudderstack_source")}}'
           - name: id
-            description: ""
+            description: '{{ doc("col_id")}}'
           - name: order_billing_address_last_name
-            description: ""
+            description: '{{ doc("col_order_billing_address_last_name")}}'
           - name: has_queued_charges
-            description: ""
+            description: '{{ doc("col_has_queued_charges")}}'
           - name: channel
-            description: ""
+            description: '{{ doc("col_channel")}}'
           - name: created_at
-            description: ""
+            description: '{{ doc("col_created_at")}}'
           - name: order_billing_address_address
-            description: ""
+            description: '{{ doc("col_order_billing_address_address")}}'
           - name: order_billing_address_email
-            description: ""
+            description: '{{ doc("col_order_billing_address_email")}}'
           - name: order_tax
-            description: ""
+            description: '{{ doc("col_order_tax")}}'
           - name: context_ip
-            description: ""
+            description: '{{ doc("col_context_ip")}}'
           - name: order_products
-            description: ""
+            description: '{{ doc("col_order_products")}}'
           - name: order_billing_address_first_name
-            description: ""
+            description: '{{ doc("col_order_billing_address_first_name")}}'
           - name: status
-            description: ""
+            description: '{{ doc("col_status")}}'
           - name: next_charge_scheduled_at
-            description: ""
+            description: '{{ doc("col_next_charge_scheduled_at")}}'
           - name: context_library_name
-            description: ""
+            description: '{{ doc("col_context_library_name")}}'
           - name: started_at
-            description: ""
+            description: '{{ doc("col_started_at")}}'
           - name: order_interval_unit
-            description: ""
+            description: '{{ doc("col_order_interval_unit")}}'
           - name: order_currency
-            description: ""
+            description: '{{ doc("col_order_currency")}}'
           - name: order_order_id
-            description: ""
+            description: '{{ doc("col_order_order_id")}}'
           - name: received_at
-            description: ""
+            description: '{{ doc("col_received_at")}}'
           - name: timestamp
-            description: ""
+            description: '{{ doc("col_timestamp")}}'
           - name: context_source_id
-            description: ""
+            description: '{{ doc("col_context_source_id")}}'
           - name: order_billing_address_state
-            description: ""
+            description: '{{ doc("col_order_billing_address_state")}}'
           - name: order_billing_address_city
-            description: ""
+            description: '{{ doc("col_order_billing_address_city")}}'
           - name: order_billing_address_country
-            description: ""
+            description: '{{ doc("col_order_billing_address_country")}}'
           - name: order_interval_frequency
-            description: ""
+            description: '{{ doc("col_order_interval_frequency")}}'
           - name: order_value
-            description: ""
+            description: '{{ doc("col_order_value")}}'
           - name: charge_interval_frequency
-            description: ""
+            description: '{{ doc("col_charge_interval_frequency")}}'
           - name: order_billing_address_phone
-            description: ""
+            description: '{{ doc("col_order_billing_address_phone")}}'
           - name: user_id
-            description: ""
+            description: '{{ doc("col_user_id")}}'
           - name: order_id
-            description: ""
+            description: '{{ doc("col_order_id")}}'
           - name: context_destination_id
-            description: ""
+            description: '{{ doc("col_context_destination_id")}}'
           - name: sent_at
-            description: ""
+            description: '{{ doc("col_sent_at")}}'
           - name: order_coupon
-            description: ""
+            description: '{{ doc("col_order_coupon")}}'
           - name: order_cart_id
-            description: ""
+            description: '{{ doc("col_order_cart_id")}}'
 
       - name: subscription_cancelled
-        description: "Our ReCharge Payments integration for the Subscription Cancelled event. This event will trigger when a user cancels a subscription via API or UI. An involuntary subscription cancelled due to max retries reached will only trigger the charge/max_retries_reached webhook and not the subscription/cancelled webhook."
+        description: '{{ doc("table_subscription_cancelled")}}'
         columns:
           - name: order_order_id
-            description: ""
+            description: '{{ doc("col_order_order_id")}}'
           - name: max_retries_reached
-            description: ""
+            description: '{{ doc("col_max_retries_reached")}}'
           - name: order_interval_unit
-            description: ""
+            description: '{{ doc("col_order_interval_unit")}}'
           - name: order_discount
-            description: ""
+            description: '{{ doc("col_order_discount")}}'
           - name: sku_override
-            description: ""
+            description: '{{ doc("col_sku_override")}}'
           - name: id
-            description: ""
+            description: '{{ doc("col_id")}}'
           - name: order_billing_address_postal_code
-            description: ""
+            description: '{{ doc("col_order_billing_address_postal_code")}}'
           - name: context_source_id
-            description: ""
+            description: '{{ doc("col_context_source_id")}}'
           - name: order_tax
-            description: ""
+            description: '{{ doc("col_order_tax")}}'
           - name: context_rudderstack_source
-            description: ""
+            description: '{{ doc("col_context_rudderstack_source")}}'
           - name: is_skippable
-            description: ""
+            description: '{{ doc("col_is_skippable")}}'
           - name: order_type
-            description: ""
+            description: '{{ doc("col_order_type")}}'
           - name: order_interval_frequency
-            description: ""
+            description: '{{ doc("col_order_interval_frequency")}}'
           - name: context_request_ip
-            description: ""
+            description: '{{ doc("col_context_request_ip")}}'
           - name: context_source
-            description: ""
+            description: '{{ doc("col_context_source")}}'
           - name: event_text
-            description: ""
+            description: '{{ doc("col_event_text")}}'
           - name: order_billing_address_email
-            description: ""
+            description: '{{ doc("col_order_billing_address_email")}}'
           - name: is_swappable
-            description: ""
+            description: '{{ doc("col_is_swappable")}}'
           - name: user_id
-            description: ""
+            description: '{{ doc("col_user_id")}}'
           - name: timestamp
-            description: ""
+            description: '{{ doc("col_timestamp")}}'
           - name: order_total
-            description: ""
+            description: '{{ doc("col_order_total")}}'
           - name: products
-            description: ""
+            description: '{{ doc("col_products")}}'
           - name: order_billing_address_state
-            description: ""
+            description: '{{ doc("col_order_billing_address_state")}}'
           - name: updated_at
-            description: ""
+            description: '{{ doc("col_updated_at")}}'
           - name: order_subtotal
-            description: ""
+            description: '{{ doc("col_order_subtotal")}}'
           - name: order_products
-            description: ""
+            description: '{{ doc("col_order_products")}}'
           - name: order_revenue
-            description: ""
+            description: '{{ doc("col_order_revenue")}}'
           - name: uuid_ts
-            description: ""
+            description: '{{ doc("col_uuid_ts")}}'
           - name: context_library_name
-            description: ""
+            description: '{{ doc("col_context_library_name")}}'
           - name: context_library_version
-            description: ""
+            description: '{{ doc("col_context_library_version")}}'
           - name: order_billing_address_last_name
-            description: ""
+            description: '{{ doc("col_order_billing_address_last_name")}}'
           - name: original_timestamp
-            description: ""
+            description: '{{ doc("col_original_timestamp")}}'
           - name: created_at
-            description: ""
+            description: '{{ doc("col_created_at")}}'
           - name: sent_at
-            description: ""
+            description: '{{ doc("col_sent_at")}}'
           - name: ended_at
-            description: ""
+            description: '{{ doc("col_ended_at")}}'
           - name: received_at
-            description: ""
+            description: '{{ doc("col_received_at")}}'
           - name: channel
-            description: ""
+            description: '{{ doc("col_channel")}}'
           - name: order_status
-            description: ""
+            description: '{{ doc("col_order_status")}}'
           - name: has_queued_charges
-            description: ""
+            description: '{{ doc("col_has_queued_charges")}}'
           - name: order_currency
-            description: ""
+            description: '{{ doc("col_order_currency")}}'
           - name: order_id
-            description: ""
+            description: '{{ doc("col_order_id")}}'
           - name: charge_interval_frequency
-            description: ""
+            description: '{{ doc("col_charge_interval_frequency")}}'
           - name: order_value
-            description: ""
+            description: '{{ doc("col_order_value")}}'
           - name: event
-            description: ""
+            description: '{{ doc("col_event")}}'
           - name: context_source_type
-            description: ""
+            description: '{{ doc("col_context_source_type")}}'
           - name: order_billing_address_address
-            description: ""
+            description: '{{ doc("col_order_billing_address_address")}}'
           - name: loaded_at
-            description: ""
+            description: '{{ doc("col_loaded_at")}}'
           - name: context_destination_type
-            description: ""
+            description: '{{ doc("col_context_destination_type")}}'
           - name: order_billing_address_country
-            description: ""
+            description: '{{ doc("col_order_billing_address_country")}}'
           - name: context_ip
-            description: ""
+            description: '{{ doc("col_context_ip")}}'
           - name: order_billing_address_city
-            description: ""
+            description: '{{ doc("col_order_billing_address_city")}}'
           - name: order_billing_address_first_name
-            description: ""
+            description: '{{ doc("col_order_billing_address_first_name")}}'
           - name: context_destination_id
-            description: ""
+            description: '{{ doc("col_context_destination_id")}}'
           - name: started_at
-            description: ""
+            description: '{{ doc("col_started_at")}}'
           - name: order_billing_address_phone
-            description: ""
+            description: '{{ doc("col_order_billing_address_phone")}}'
           - name: end_reason
-            description: ""
+            description: '{{ doc("col_end_reason")}}'
           - name: status
-            description: ""
+            description: '{{ doc("col_status")}}'
           - name: order_cart_id
-            description: ""
+            description: '{{ doc("col_order_cart_id")}}'
           - name: order_coupon
-            description: ""
+            description: '{{ doc("col_order_coupon")}}'
           - name: order_billing_address_company
-            description: ""
+            description: '{{ doc("col_order_billing_address_company")}}'
 
       - name: subscription_created
-        description: "Our ReCharge Payments integration for the Subscription Created event. This will trigger when a user creates a subscription via API or when a shopper goes through the checkout on UI."
+        description: '{{ doc("table_subscription_created")}}'
         columns:
           - name: order_status
-            description: ""
+            description: '{{ doc("col_order_status")}}'
           - name: order_billing_address_first_name
-            description: ""
+            description: '{{ doc("col_order_billing_address_first_name")}}'
           - name: original_timestamp
-            description: ""
+            description: '{{ doc("col_original_timestamp")}}'
           - name: sent_at
-            description: ""
+            description: '{{ doc("col_sent_at")}}'
           - name: order_billing_address_postal_code
-            description: ""
+            description: '{{ doc("col_order_billing_address_postal_code")}}'
           - name: event_text
-            description: ""
+            description: '{{ doc("col_event_text")}}'
           - name: order_discount
-            description: ""
+            description: '{{ doc("col_order_discount")}}'
           - name: order_type
-            description: ""
+            description: '{{ doc("col_order_type")}}'
           - name: sku_override
-            description: ""
+            description: '{{ doc("col_sku_override")}}'
           - name: order_billing_address_email
-            description: ""
+            description: '{{ doc("col_order_billing_address_email")}}'
           - name: charge_interval_frequency
-            description: ""
+            description: '{{ doc("col_charge_interval_frequency")}}'
           - name: order_currency
-            description: ""
+            description: '{{ doc("col_order_currency")}}'
           - name: channel
-            description: ""
+            description: '{{ doc("col_channel")}}'
           - name: context_destination_id
-            description: ""
+            description: '{{ doc("col_context_destination_id")}}'
           - name: order_revenue
-            description: ""
+            description: '{{ doc("col_order_revenue")}}'
           - name: order_interval_unit
-            description: ""
+            description: '{{ doc("col_order_interval_unit")}}'
           - name: is_skippable
-            description: ""
+            description: '{{ doc("col_is_skippable")}}'
           - name: products
-            description: ""
+            description: '{{ doc("col_products")}}'
           - name: order_tax
-            description: ""
+            description: '{{ doc("col_order_tax")}}'
           - name: order_id
-            description: ""
+            description: '{{ doc("col_order_id")}}'
           - name: loaded_at
-            description: ""
+            description: '{{ doc("col_loaded_at")}}'
           - name: next_charge_scheduled_at
-            description: ""
+            description: '{{ doc("col_next_charge_scheduled_at")}}'
           - name: context_request_ip
-            description: ""
+            description: '{{ doc("col_context_request_ip")}}'
           - name: context_library_name
-            description: ""
+            description: '{{ doc("col_context_library_name")}}'
           - name: order_billing_address_city
-            description: ""
+            description: '{{ doc("col_order_billing_address_city")}}'
           - name: order_order_id
-            description: ""
+            description: '{{ doc("col_order_order_id")}}'
           - name: updated_at
-            description: ""
+            description: '{{ doc("col_updated_at")}}'
           - name: context_source_id
-            description: ""
+            description: '{{ doc("col_context_source_id")}}'
           - name: order_billing_address_phone
-            description: ""
+            description: '{{ doc("col_order_billing_address_phone")}}'
           - name: order_billing_address_last_name
-            description: ""
+            description: '{{ doc("col_order_billing_address_last_name")}}'
           - name: order_value
-            description: ""
+            description: '{{ doc("col_order_value")}}'
           - name: order_billing_address_state
-            description: ""
+            description: '{{ doc("col_order_billing_address_state")}}'
           - name: started_at
-            description: ""
+            description: '{{ doc("col_started_at")}}'
           - name: created_at
-            description: ""
+            description: '{{ doc("col_created_at")}}'
           - name: order_billing_address_country
-            description: ""
+            description: '{{ doc("col_order_billing_address_country")}}'
           - name: has_queued_charges
-            description: ""
+            description: '{{ doc("col_has_queued_charges")}}'
           - name: context_rudderstack_source
-            description: ""
+            description: '{{ doc("col_context_rudderstack_source")}}'
           - name: context_ip
-            description: ""
+            description: '{{ doc("col_context_ip")}}'
           - name: context_source
-            description: ""
+            description: '{{ doc("col_context_source")}}'
           - name: received_at
-            description: ""
+            description: '{{ doc("col_received_at")}}'
           - name: order_total
-            description: ""
+            description: '{{ doc("col_order_total")}}'
           - name: max_retries_reached
-            description: ""
+            description: '{{ doc("col_max_retries_reached")}}'
           - name: timestamp
-            description: ""
+            description: '{{ doc("col_timestamp")}}'
           - name: order_billing_address_address
-            description: ""
+            description: '{{ doc("col_order_billing_address_address")}}'
           - name: order_products
-            description: ""
+            description: '{{ doc("col_order_products")}}'
           - name: order_interval_frequency
-            description: ""
+            description: '{{ doc("col_order_interval_frequency")}}'
           - name: status
-            description: ""
+            description: '{{ doc("col_status")}}'
           - name: context_destination_type
-            description: ""
+            description: '{{ doc("col_context_destination_type")}}'
           - name: uuid_ts
-            description: ""
+            description: '{{ doc("col_uuid_ts")}}'
           - name: context_source_type
-            description: ""
+            description: '{{ doc("col_context_source_type")}}'
           - name: is_swappable
-            description: ""
+            description: '{{ doc("col_is_swappable")}}'
           - name: id
-            description: ""
+            description: '{{ doc("col_id")}}'
           - name: user_id
-            description: ""
+            description: '{{ doc("col_user_id")}}'
           - name: order_subtotal
-            description: ""
+            description: '{{ doc("col_order_subtotal")}}'
           - name: context_library_version
-            description: ""
+            description: '{{ doc("col_context_library_version")}}'
           - name: event
-            description: ""
+            description: '{{ doc("col_event")}}'
           - name: order_coupon
-            description: ""
+            description: '{{ doc("col_order_coupon")}}'
           - name: order_billing_address_company
-            description: ""
+            description: '{{ doc("col_order_billing_address_company")}}'
 
       - name: tracks
-        description: "The `tracks` table in Fueled's data warehouse destination does not have any unique columns. It is simply a summary of all track events that fire. It does include a `anonymous_id` and (optionally) a user_id, making it a good tables for quickly calculating event counts by track event type."
+        description: '{{ doc("table_tracks")}}'
         columns:
           - name: loaded_at
-            description: ""
+            description: '{{ doc("col_loaded_at")}}'
           - name: user_id
-            description: ""
+            description: '{{ doc("col_user_id")}}'
           - name: context_source
-            description: ""
+            description: '{{ doc("col_context_source")}}'
           - name: context_rudderstack_source
-            description: ""
+            description: '{{ doc("col_context_rudderstack_source")}}'
           - name: context_source_id
-            description: ""
+            description: '{{ doc("col_context_source_id")}}'
           - name: context_destination_type
-            description: ""
+            description: '{{ doc("col_context_destination_type")}}'
           - name: context_ip
-            description: ""
+            description: '{{ doc("col_context_ip")}}'
           - name: uuid_ts
-            description: ""
+            description: '{{ doc("col_uuid_ts")}}'
           - name: received_at
-            description: ""
+            description: '{{ doc("col_received_at")}}'
           - name: context_destination_id
-            description: ""
+            description: '{{ doc("col_context_destination_id")}}'
           - name: context_library_version
-            description: ""
+            description: '{{ doc("col_context_library_version")}}'
           - name: context_source_type
-            description: ""
+            description: '{{ doc("col_context_source_type")}}'
           - name: original_timestamp
-            description: ""
+            description: '{{ doc("col_original_timestamp")}}'
           - name: context_library_name
-            description: ""
+            description: '{{ doc("col_context_library_name")}}'
           - name: id
-            description: ""
+            description: '{{ doc("col_id")}}'
           - name: event_text
-            description: ""
+            description: '{{ doc("col_event_text")}}'
           - name: timestamp
-            description: ""
+            description: '{{ doc("col_timestamp")}}'
           - name: channel
-            description: ""
+            description: '{{ doc("col_channel")}}'
           - name: event
-            description: ""
+            description: '{{ doc("col_event")}}'
           - name: sent_at
-            description: ""
+            description: '{{ doc("col_sent_at")}}'
           - name: context_request_ip
-            description: ""
+            description: '{{ doc("col_context_request_ip")}}'
           - name: context_client_id
-            description: ""
+            description: '{{ doc("col_context_client_id")}}'
           - name: context_anonymous_id
-            description: ""
+            description: '{{ doc("col_context_anonymous_id")}}'
           - name: context_user_agent
-            description: ""
+            description: '{{ doc("col_context_user_agent")}}'
           - name: context_session_id
-            description: ""
+            description: '{{ doc("col_context_session_id")}}'
           - name: context_passed_ip
-            description: ""
+            description: '{{ doc("col_context_passed_ip")}}'
           - name: context_locale
-            description: ""
+            description: '{{ doc("col_context_locale")}}'
 
       - name: users
-        description: "Fueled's ELT solution stores all unique users in this table, including all of their user traits. Only the latest user traits used to identify a user are stored, including the latest anonymous ID. This is a useful table to quickly look up current metadata and traits for identified users."
+        description: '{{ doc("table_users")}}'
         columns:
           - name: context_source_type
-            description: ""
+            description: '{{ doc("col_context_source_type")}}'
           - name: phone
-            description: ""
+            description: '{{ doc("col_phone")}}'
           - name: first_name
-            description: ""
+            description: '{{ doc("col_first_name")}}'
           - name: context_passed_ip
-            description: ""
-          - name: context_traits_email
-            description: ""
-          - name: context_traits_first_name
-            description: ""
+            description: '{{ doc("col_context_passed_ip")}}'
           - name: context_library_name
-            description: ""
+            description: '{{ doc("col_context_library_name")}}'
           - name: email
-            description: ""
+            description: '{{ doc("col_email")}}'
           - name: created_at
-            description: ""
-          - name: context_traits_phone
-            description: ""
+            description: '{{ doc("col_created_at")}}'
           - name: context_destination_type
-            description: ""
+            description: '{{ doc("col_context_destination_type")}}'
           - name: context_user_agent
-            description: ""
+            description: '{{ doc("col_context_user_agent")}}'
           - name: context_source
-            description: ""
+            description: '{{ doc("col_context_source")}}'
           - name: context_client_id
-            description: ""
+            description: '{{ doc("col_context_client_id")}}'
           - name: context_source_id
-            description: ""
-          - name: context_traits_external_customer_id
-            description: ""
+            description: '{{ doc("col_context_source_id")}}'
           - name: id
-            description: ""
-          - name: context_traits_created_at
-            description: ""
-          - name: context_traits_last_name
-            description: ""
+            description: '{{ doc("col_id")}}'
           - name: context_locale
-            description: ""
+            description: '{{ doc("col_context_locale")}}'
           - name: context_session_id
-            description: ""
+            description: '{{ doc("col_context_session_id")}}'
           - name: uuid_ts
-            description: ""
+            description: '{{ doc("col_uuid_ts")}}'
           - name: context_destination_id
-            description: ""
+            description: '{{ doc("col_context_destination_id")}}'
           - name: received_at
-            description: ""
+            description: '{{ doc("col_received_at")}}'
           - name: context_anonymous_id
-            description: ""
+            description: '{{ doc("col_context_anonymous_id")}}'
           - name: context_library_version
-            description: ""
+            description: '{{ doc("col_context_library_version")}}'
           - name: external_customer_id
-            description: ""
+            description: '{{ doc("col_external_customer_id")}}'
           - name: last_name
-            description: ""
+            description: '{{ doc("col_last_name")}}'
           - name: context_ip
-            description: ""
+            description: '{{ doc("col_context_ip")}}'
           - name: context_request_ip
-            description: ""
+            description: '{{ doc("col_context_request_ip")}}'
           - name: context_rudderstack_source
-            description: ""
+            description: '{{ doc("col_context_rudderstack_source")}}'
           - name: loaded_at
-            description: ""
-          - name: context_traits_address_country_code
-            description: ""
-          - name: context_traits_name
-            description: ""
-          - name: context_traits_address_city
-            description: ""
-          - name: context_traits_context_anonymous_id
-            description: ""
-          - name: context_traits_address_street
-            description: ""
-          - name: context_traits_address_state
-            description: ""
+            description: '{{ doc("col_loaded_at")}}'
           - name: name
-            description: ""
-          - name: context_traits_context_client_id
-            description: ""
+            description: '{{ doc("col_name")}}'
           - name: address_state
-            description: ""
-          - name: context_traits_address_postal_code
-            description: ""
+            description: '{{ doc("col_address_state")}}'
           - name: address_country_code
-            description: ""
+            description: '{{ doc("col_address_country_code")}}'
           - name: address_street
-            description: ""
+            description: '{{ doc("col_address_street")}}'
           - name: address_city
-            description: ""
+            description: '{{ doc("col_address_city")}}'
           - name: address_postal_code
-            description: ""
-          - name: context_traits_context_ip
-            description: ""
-          - name: context_traits_context_session_id
-            description: ""
+            description: '{{ doc("col_address_postal_code")}}'
           - name: addresses
-            description: ""
-          - name: context_traits_addresses
-            description: ""
-          - name: context_traits_context_page_title
-            description: ""
+            description: '{{ doc("col_addresses")}}'
           - name: context_page_width
-            description: ""
-          - name: context_traits_context_page_url
-            description: ""
-          - name: context_traits_context_referrer
-            description: ""
-          - name: context_traits_context_os_name
-            description: ""
-          - name: context_traits_context_locale
-            description: ""
+            description: '{{ doc("col_context_page_width")}}'
           - name: context_page_referrer
-            description: ""
-          - name: context_traits_context_library_name
-            description: ""
+            description: '{{ doc("col_context_page_referrer")}}'
           - name: context_app
-            description: ""
+            description: '{{ doc("col_context_app")}}'
           - name: context_os_name
-            description: ""
+            description: '{{ doc("col_context_os_name")}}'
           - name: context_page_path
-            description: ""
+            description: '{{ doc("col_context_page_path")}}'
           - name: context_page_height
-            description: ""
-          - name: context_traits_context_initialized
-            description: ""
+            description: '{{ doc("col_context_page_height")}}'
           - name: context_page_search
-            description: ""
+            description: '{{ doc("col_context_page_search")}}'
           - name: context_initialized
-            description: ""
+            description: '{{ doc("col_context_initialized")}}'
           - name: context_offline
-            description: ""
+            description: '{{ doc("col_context_offline")}}'
           - name: context_debug
-            description: ""
-          - name: context_traits_context_app
-            description: ""
-          - name: context_traits_context_page_referrer
-            description: ""
-          - name: context_traits_context_page_search
-            description: ""
-          - name: context_traits_context_library_version
-            description: ""
-          - name: context_traits_context_debug
-            description: ""
-          - name: context_traits_context_user_agent
-            description: ""
-          - name: context_traits_context_timezone
-            description: ""
-          - name: context_traits_context_offline
-            description: ""
-          - name: context_traits_context_page_height
-            description: ""
+            description: '{{ doc("col_context_debug")}}'
           - name: context_timezone
-            description: ""
+            description: '{{ doc("col_context_timezone")}}'
           - name: context_referrer
-            description: ""
-          - name: context_traits_context_page_path
-            description: ""
+            description: '{{ doc("col_context_referrer")}}'
           - name: context_page_title
-            description: ""
-          - name: context_traits_context_page_width
-            description: ""
+            description: '{{ doc("col_context_page_title")}}'
           - name: context_page_url
-            description: ""
+            description: '{{ doc("col_context_page_url")}}'
           - name: context_campaign_gclid
-            description: ""
-          - name: context_traits_context_campaign_gclid
-            description: ""
-          - name: context_traits_context_page_hash
-            description: ""
+            description: '{{ doc("col_context_campaign_gclid")}}'
           - name: context_page_hash
-            description: ""
-          - name: context_traits_context_campaign_source
-            description: ""
+            description: '{{ doc("col_context_page_hash")}}'
           - name: context_campaign_term
-            description: ""
-          - name: context_traits_context_campaign_name
-            description: ""
+            description: '{{ doc("col_context_campaign_term")}}'
           - name: context_campaign_source
-            description: ""
-          - name: context_traits_context_campaign_medium
-            description: ""
-          - name: context_traits_context_campaign_term
-            description: ""
+            description: '{{ doc("col_context_campaign_source")}}'
           - name: context_campaign_medium
-            description: ""
+            description: '{{ doc("col_context_campaign_medium")}}'
           - name: context_campaign_name
-            description: ""
+            description: '{{ doc("col_context_campaign_name")}}'
           - name: context_campaign_profile
-            description: ""
-          - name: context_traits_context_campaign_profile
-            description: ""
-          - name: context_traits_context_campaign_id
-            description: ""
+            description: '{{ doc("col_context_campaign_profile")}}'
           - name: context_campaign_id
-            description: ""
-          - name: context_source_type
-            description: ""
-          - name: phone
-            description: ""
-          - name: first_name
-            description: ""
-          - name: context_passed_ip
-            description: ""
-          - name: context_traits_email
-            description: ""
-          - name: context_traits_first_name
-            description: ""
-          - name: context_library_name
-            description: ""
-          - name: email
-            description: ""
-          - name: created_at
-            description: ""
-          - name: context_traits_phone
-            description: ""
-          - name: context_destination_type
-            description: ""
-          - name: context_user_agent
-            description: ""
-          - name: context_source
-            description: ""
-          - name: context_client_id
-            description: ""
-          - name: context_source_id
-            description: ""
-          - name: context_traits_external_customer_id
-            description: ""
-          - name: id
-            description: ""
-          - name: context_traits_created_at
-            description: ""
-          - name: context_traits_last_name
-            description: ""
-          - name: context_locale
-            description: ""
-          - name: context_session_id
-            description: ""
-          - name: uuid_ts
-            description: ""
-          - name: context_destination_id
-            description: ""
-          - name: received_at
-            description: ""
-          - name: context_anonymous_id
-            description: ""
-          - name: context_library_version
-            description: ""
-          - name: external_customer_id
-            description: ""
-          - name: last_name
-            description: ""
-          - name: context_ip
-            description: ""
-          - name: context_request_ip
-            description: ""
-          - name: context_rudderstack_source
-            description: ""
-          - name: loaded_at
-            description: ""
+            description: '{{ doc("col_context_campaign_id")}}'
