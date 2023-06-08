@@ -15,9 +15,9 @@ events, build rollups of engagement metrics on a per-customer basis, and more.
 Fueled has "Source Integrations" for capturing 1st-party events from the following applications. Those with check markers are supported by this DBT
 package at this time. The unchecked Sources will soon have DBT support.
 
-- [ ] Shopify
-- [ ] BigCommerce
-- [ ] ReCharge Payments
+- [x] Shopify
+- [x] BigCommerce
+- [x] ReCharge Payments
 - [ ] Yotpo Reviews
 - [ ] Gorgias
 - [ ] Loop Returns
