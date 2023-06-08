@@ -3,8 +3,10 @@ name: 'fueled_events'
 version: '1.0.0'
 config-version: 2
 
+require-dbt-version: [">=1.4.0", "<2.0.0"]
+
 # This setting configures which "profile" dbt uses for this project.
-profile: 'dev' # Default is generally `default`.
+profile: 'dev' # Set to your DTB Profile.
 
 # These configurations specify where dbt should look for different types of files.
 # The `source-paths` config, for example, states that models in this project can be
@@ -26,6 +28,12 @@ vars:
   fueled_events:
     # Sources
     fueled__atomic_schema: 'fueled' # If not `fueled_atomic`, set to to the schema written by Fueled's warehouse adapter
+    # Source Integrations - TODO - Make turning on/off source integrations configurable.
+    #fueled__source_gorgias: false # Set to `true` if the Gorgias integration is enabled.
+    #fueled__source_loop: false # Set to `true` if the Loop Returns integration is enabled.
+    #fueled__source_recharge: true # Set to `true` if the ReCharge Payments integration is enabled.
+    #fueled__source_yotpo_reviews: false # Set to `true` if the Yotpo Reviews integration is enabled.
+
 
 models:
   fueled_events:
@@ -33,3 +41,5 @@ models:
       scratch:
         +schema: "scratch"
         +tags: "scratch"
+        bigquery:
+          enabled: "{{ target.type == 'bigquery' | as_bool() }}"
