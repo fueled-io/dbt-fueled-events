@@ -1,0 +1,8 @@
+packages:
+  - git: https://github.com/fueled-io/dbt-fueled-utils.git
+    revision: 7cd87bf883eef4112854c9a5738129a02edca2de
+  - package: dbt-labs/codegen
+    version: 0.9.0
+  - package: dbt-labs/dbt_utils
+    version: 1.3.0
+sha1_hash: 59f697b35505068fcb9a87331b50b7e83464a27c
