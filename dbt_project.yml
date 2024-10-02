@@ -48,3 +48,9 @@ models:
         bigquery:
           fueled_events_base_checkout_line_items:
             +enabled: false
+    intermediate:
+      +schema: "intermediate"
+      +materialized: table
+    mart:
+      +schema: "mart"
+      +materialized: table
