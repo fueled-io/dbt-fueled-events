@@ -46,9 +46,11 @@ order by context_anonymous_id, timestamp
 
 select 
   * except(landing_page_url),
-  case when landing_page_url like '%checkout%' then 'https://shop.cutsclothing.com/checkouts/'
-  when landing_page_url like '%account%' then 'https://www.cutsclothing.com/account/'
-  else landing_page_url end as landing_page_url
+  case
+  when landing_page_url like '%checkout%' then '{{ var('landing_page_checkout') }}'
+  when landing_page_url like '%account%' then '{{ var('landing_page_account') }}'
+  else landing_page_url
+end as landing_page_url
 from final
 qualify row_number() over(partition by session_id order by timestamp asc) = 1
 
