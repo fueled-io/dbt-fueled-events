@@ -268,4 +268,8 @@
 {% docs col_value %} `value` can mean different things in different contexts. On `product_viewed` or `product_added` events, it is the value of the product. {% enddocs %}
 {% docs col_variant %} A product variant ID. {% enddocs %}
 {% docs col_width %} The page width on a `page_view` event. {% enddocs %}
+{% docs col_marketing_source %} The source by which a user landed on website to start events. {% enddocs %}
+{% docs col_marketing_medium %} The medium by which a user landed on website to start events. {% enddocs %}
+{% docs col_session_marketing_source %} The source by which a user landed on website to start sessions. {% enddocs %}
+{% docs col_session_marketing_medium %} The medium by which a user landed on website to start sessions. {% enddocs %}
 {% docs col_unnested_product_column %}{% enddocs %}

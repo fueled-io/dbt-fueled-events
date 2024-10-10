@@ -32,8 +32,8 @@ vars:
 models:
   fueled_events:
     base:
+      +schema: "base"
       scratch:
-        +schema: "scratch"
         +tags: "scratch"
         fueled_events_base_order_updated:
           +enabled: false
@@ -53,6 +53,6 @@ models:
     intermediate:
       +schema: "intermediate"
       +materialized: table
-    mart:
-      +schema: "mart"
+    marts:
+      +schema: "marts"
       +materialized: table

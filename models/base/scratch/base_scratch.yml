@@ -2271,3 +2271,55 @@ models:
 
       - name: unnested_product_column
         description: '{{ doc("col_unnested_product_column") }}'
+
+
+  - name: fueled_events_base_session_info
+    description: 'Information related to a user session'
+    columns:
+      - name: context_anonymous_id
+        description: '{{ doc("col_anonymous_id") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: context_page_url
+        description: '{{ doc("col_context_page_url") }}'
+
+      - name: context_campaign_medium
+        description: '{{ doc("col_context_campaign_medium") }}'
+
+      - name: context_campaign_name
+        description: '{{ doc("col_context_campaign_name") }}'
+
+      - name: context_referrer
+        description: '{{ doc("col_context_referrer") }}'
+
+      - name: context_campaign_term
+        description: '{{ doc("col_context_campaign_term") }}'
+
+      - name: context_campaign_source
+        description: '{{ doc("col_context_campaign_source") }}'
+
+      - name: title
+        description: '{{ doc("col_title") }}'
+
+      - name: timestamp
+        description: 'Timestamp of when a page was viewed in a session'
+
+      - name: new_session_flag
+        description: 'Flag to identify the start of a new session'
+
+      - name: session_id
+        description: 'ID of a particular session'
+        tests:
+          - unique
+          - not_null
+
+      - name: session_start
+        description: 'Timestamp of when a session started'
+
+      - name: session_id
+        description: 'Timestamp of when a session ended'
+
+      - name: landing_page_url
+        description: 'Landing_page_url of a session'
