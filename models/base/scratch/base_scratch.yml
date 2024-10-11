@@ -2274,7 +2274,7 @@ models:
 
 
   - name: fueled_events_base_session_info
-    description: 'Information related to a user session'
+    description: 'This table has information related to a session that user starts when landed on the website'
     columns:
       - name: context_anonymous_id
         description: '{{ doc("col_anonymous_id") }}'
@@ -2307,10 +2307,10 @@ models:
         description: 'Timestamp of when a page was viewed in a session'
 
       - name: new_session_flag
-        description: 'Flag to identify the start of a new session'
+        description: 'Flag to identify the start of a new session. A new session is identified when someone lands on the website or view a page atleast after 60 minute of previous pageview'
 
       - name: session_id
-        description: 'ID of a particular session'
+        description: 'This is the id of a new session for a user when they lands on a page for the first time in last 60 minutes'
         tests:
           - unique
           - not_null
