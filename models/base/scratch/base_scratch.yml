@@ -2271,3 +2271,55 @@ models:
 
       - name: unnested_product_column
         description: '{{ doc("col_unnested_product_column") }}'
+
+
+  - name: fueled_events_base_session_info
+    description: 'This table has information related to a session that user starts when landed on the website'
+    columns:
+      - name: context_anonymous_id
+        description: '{{ doc("col_anonymous_id") }}'
+
+      - name: user_id
+        description: '{{ doc("col_user_id") }}'
+
+      - name: context_page_url
+        description: '{{ doc("col_context_page_url") }}'
+
+      - name: context_campaign_medium
+        description: '{{ doc("col_context_campaign_medium") }}'
+
+      - name: context_campaign_name
+        description: '{{ doc("col_context_campaign_name") }}'
+
+      - name: context_referrer
+        description: '{{ doc("col_context_referrer") }}'
+
+      - name: context_campaign_term
+        description: '{{ doc("col_context_campaign_term") }}'
+
+      - name: context_campaign_source
+        description: '{{ doc("col_context_campaign_source") }}'
+
+      - name: title
+        description: '{{ doc("col_title") }}'
+
+      - name: timestamp
+        description: 'Timestamp of when a page was viewed in a session'
+
+      - name: new_session_flag
+        description: 'Flag to identify the start of a new session. A new session is identified when someone lands on the website or view a page atleast after 60 minute of previous pageview'
+
+      - name: session_id
+        description: 'This is the id of a new session for a user when they lands on a page for the first time in last 60 minutes'
+        tests:
+          - unique
+          - not_null
+
+      - name: session_start
+        description: 'Timestamp of when a session started'
+
+      - name: session_id
+        description: 'Timestamp of when a session ended'
+
+      - name: landing_page_url
+        description: 'Landing_page_url of a session'
