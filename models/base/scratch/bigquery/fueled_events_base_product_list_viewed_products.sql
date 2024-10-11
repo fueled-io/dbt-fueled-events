@@ -1,6 +1,6 @@
 with
     unnested_product_list_viewed_products as (
-        select "product_list_viewed" as event_type, id, list_id, original_timestamp, unnested_product_column
+        select "product_list_viewed" as event_type, id, original_timestamp, unnested_product_column
         from
             {{ source("fueled_events_atomic", "product_list_viewed") }},
             unnest(json_extract_array(products)) as unnested_product_column
@@ -10,7 +10,6 @@ select
     event_type,
     id as event_id,
     original_timestamp,
-    list_id,
     json_extract_scalar(unnested_product_column, '$.brand') as brand,
     json_extract_scalar(unnested_product_column, '$.category') as category,
     json_extract_scalar(unnested_product_column, '$.imageUrl') as imageUrl,

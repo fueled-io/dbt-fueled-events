@@ -6,7 +6,7 @@ with
         select
             brand,
             category,
-            image_url,
+            image,
             name,
             position,
             price,

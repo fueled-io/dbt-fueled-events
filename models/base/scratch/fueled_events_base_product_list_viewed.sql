@@ -9,7 +9,6 @@ with
 
         select
             category,
-            list_id,
             products,
             context_anonymous_id as anonymous_id,
             user_id,

@@ -25,11 +25,34 @@ clean-targets:         # directories to be removed by `dbt clean`
 vars:
   fueled_events:
     # Sources
-    fueled__atomic_schema: 'fueled' # If not `fueled_atomic`, set to to the schema written by Fueled's warehouse adapter
+    fueled__atomic_schema: 'fueled_events' # If not `fueled_atomic`, set to to the schema written by Fueled's warehouse adapter
+    landing_page_checkout: 'https://shop.cutsclothing.com/checkouts/'
+    landing_page_account: 'https://www.cutsclothing.com/account/'
 
 models:
   fueled_events:
     base:
+      +schema: "base"
       scratch:
-        +schema: "scratch"
         +tags: "scratch"
+        fueled_events_base_order_updated:
+          +enabled: false
+        fueled_events_base_checkout_updated:
+          +enabled: false
+        fueled_events_base_users:
+          +enabled: false
+        fueled_events_base_subscription_created:
+          +enabled: false
+        fueled_events_base_subscription_cancelled:
+          +enabled: false
+        fueled_events_base_subscription_activated:
+          +enabled: false
+        bigquery:
+          fueled_events_base_checkout_line_items:
+            +enabled: false
+    intermediate:
+      +schema: "intermediate"
+      +materialized: table
+    marts:
+      +schema: "marts"
+      +materialized: table
