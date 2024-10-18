@@ -8,7 +8,7 @@ with
             category,
             image_url,
             name,
-            {% if 'position' in adapter.get_columns_in_relation(ref('fueled_events_atomic')) %}
+            {% if 'position' in adapter.get_columns_in_relation(source('fueled_events_atomic', 'product_added')) %}
                 position,
             {% endif %}
             price,
