@@ -8,7 +8,7 @@ with
             category,
             image_url,
             name,
-            position,
+            coalesce(position, null) as position,
             price,
             product_id,
             quantity,
