@@ -8,7 +8,9 @@ with
             category,
             image_url,
             name,
-            coalesce(position, null) as position,
+            {% if 'position' in adapter.get_columns_in_relation(ref('fueled_events_atomic')) %}
+                position,
+            {% endif %}
             price,
             product_id,
             quantity,
