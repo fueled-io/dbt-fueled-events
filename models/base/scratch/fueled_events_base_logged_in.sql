@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('logged_in', true)
+) }}
+
 with
     source as (select * from {{ source("fueled_events_atomic", "logged_in") }}),
 
