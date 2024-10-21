@@ -5,3 +5,7 @@ macros:
     description: "Helper for adding `context_*` columns to source and base events."
     docs:
       show: true
+  - name: handle_optional_columns
+    description: "Helper for handling optional columns in events by adding the columns if they don't exist with a default value."
+    docs:
+      show: true
