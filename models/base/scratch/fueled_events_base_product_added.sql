@@ -6,8 +6,10 @@ with
         select
             brand,
             category,
+            -- TODO: coalesce(image, image_url)
             image_url,
             name,
+            -- TODO: coalesce(position, 0)
             {% if 'position' in adapter.get_columns_in_relation(source('fueled_events_atomic', 'product_added')) %}
                 position,
             {% endif %}

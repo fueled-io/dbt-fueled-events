@@ -1,5 +1,4 @@
 {{ config(
-    -- TODO: We need a variable to enable this model to be transformed    
     enabled=true
 ) }}
 

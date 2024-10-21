@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('fueled_events.enable_checkout_created', true)
+) }}
+
 select 
   s.session_id,
   p.*,

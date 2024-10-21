@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('fueled_events.enable_checkout_created', true)
+) }}
+
 select  
   *,
   {{ get_marketing_source('context_referrer') }} as marketing_source,
