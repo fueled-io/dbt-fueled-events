@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('order_completed', true)
+) }}
+
 select 
   *
 from {{ ref('fueled_events_intermediate_order_completed') }}
