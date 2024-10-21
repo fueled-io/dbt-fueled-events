@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('order_completed', true)
+) }}
+
 with
     source as (select * from {{ source("fueled_events_atomic", "order_completed") }}),
 
