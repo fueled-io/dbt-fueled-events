@@ -1,6 +1,7 @@
 {{ config(
-    enabled=true
+    enabled = var('fueled_events.enable_checkout_created', true)
 ) }}
+
 
 with
     source as (select * from {{ source("fueled_events_atomic", "pages") }}),
