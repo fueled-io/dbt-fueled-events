@@ -1,3 +1,8 @@
+{{ config(
+    enabled = var('product_viewed', true)
+) }}
+
+
 select 
   s.session_id,
   pv.*,
