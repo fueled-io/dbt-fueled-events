@@ -1,5 +1,5 @@
 {{ config(
-    enabled = var('product_removesd', true)
+    enabled = var('product_removed', true)
 ) }}
 
 

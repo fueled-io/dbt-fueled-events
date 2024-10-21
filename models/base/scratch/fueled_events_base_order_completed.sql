@@ -1,5 +1,5 @@
 {{ config(
-    enabled = var('order_completed', true)
+    enabled = var('enable_order_completed', true)
 ) }}
 
 with

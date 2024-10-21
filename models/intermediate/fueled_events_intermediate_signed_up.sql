@@ -1,5 +1,5 @@
 {{ config(
-    enabled = var('signed_up', true)
+    enabled = var('enable_signed_up', true)
 ) }}
 
 select  

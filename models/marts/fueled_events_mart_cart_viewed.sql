@@ -1,5 +1,5 @@
 {{ config(
-    enabled = var('cart_viewed', true)
+    enabled = var('enable_cart_viewed', true)
 ) }}
 
 select 

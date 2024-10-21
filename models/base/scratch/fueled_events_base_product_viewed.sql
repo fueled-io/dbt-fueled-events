@@ -1,5 +1,5 @@
 {{ config(
-    enabled = var('product_viewed', true)
+    enabled = var('enable_product_viewed', true)
 ) }}
 
 with
