@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('logged_in', true)
+) }}
+
 select  
   *,
   {{ get_marketing_source('context_referrer') }} as marketing_source,
