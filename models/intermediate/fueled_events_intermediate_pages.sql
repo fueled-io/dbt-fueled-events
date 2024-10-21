@@ -1,5 +1,5 @@
 {{ config(
-    enabled = var('fueled_events.enable_checkout_created', true)
+    enabled = var('enable_pages', true)
 ) }}
 
 select  
