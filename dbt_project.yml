@@ -29,32 +29,16 @@ vars:
     landing_page_checkout: 'https://shop.cutsclothing.com/checkouts/'
     landing_page_account: 'https://www.cutsclothing.com/account/'
     enable_checkout_created: true
-    enable_customer: true
     enable_order_completed: true
     enable_cart_viewed: true
-    enable_checkout_updated: true
-    enable_identifies: true
     enable_logged_in: true
-    enable_order_cancelled: true
-    enable_order_updated: true
     enable_pages: true
     enable_product_added: true
     enable_product_list_viewed: true
     enable_product_removed: true
     enable_product_viewed: true
     enable_products_searched: true
-    enable_session_info: true
     enable_signed_up: true
-    enable_subscription_created: true
-    enable_subscription_activated: true
-    enable_subscription_cancelled: true
-    enable_subscription_deleted: true
-    enable_tracks: true
-    enable_users: true
-    enable_cart_line_items: true
-    enable_checkout_line_items: true
-    enable_order_line_items: true
-    enable_product_list_viewed_products: true
     enable_user_attribution: true
 
 models:
