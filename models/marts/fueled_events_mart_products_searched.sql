@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('product_searched', true)
+) }}
+
 select 
   s.session_id,
   ps.*,
