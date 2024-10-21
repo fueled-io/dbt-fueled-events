@@ -12,7 +12,7 @@ with
             category,
             image_url,
             name,
-            IFNULL(SAFE.position, 0) as position,
+            {{ handle_optional_column(source("fueled_events_atomic", "product_added"), 'position', 0) }},
             price,
             product_id,
             quantity,
