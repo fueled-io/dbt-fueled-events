@@ -1,6 +1,9 @@
 {{ config(
-    enabled = var('fueled_events.enable_pages', true)
+    enabled = var('enable_pages', true)
 ) }}
+
+{% do log('enable_pages: ' ~ var('fueled_events.enable_pages', true), info=true) %}
+
 
 with
     source as (select * from {{ source("fueled_events_atomic", "pages") }}),
