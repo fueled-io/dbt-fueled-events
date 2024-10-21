@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('product_added', true)
+) }}
+
 with
     source as (select * from {{ source("fueled_events_atomic", "product_added") }}),
 
