@@ -2,7 +2,6 @@
     enabled = var('enable_product_removed', true)
 ) }}
 
-
 select 
   s.session_id,
   pr.*,
