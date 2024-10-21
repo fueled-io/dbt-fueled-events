@@ -1,7 +1,6 @@
 {{ config(
-    enabled = var('product_removed', true)
+    enabled = var('enable_product_removed', true)
 ) }}
-
 
 select  
   *,
