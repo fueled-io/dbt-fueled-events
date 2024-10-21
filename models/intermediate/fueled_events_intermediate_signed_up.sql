@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('signed_up', true)
+) }}
+
 select  
   *,
   {{ get_marketing_source('context_referrer') }} as marketing_source,
