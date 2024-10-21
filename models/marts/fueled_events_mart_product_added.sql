@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('product_added', true)
+) }}
+
 select 
   s.session_id,
   pa.*,
