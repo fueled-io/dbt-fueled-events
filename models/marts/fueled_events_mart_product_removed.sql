@@ -1,3 +1,8 @@
+{{ config(
+    enabled = var('product_removesd', true)
+) }}
+
+
 select 
   s.session_id,
   pr.*,
