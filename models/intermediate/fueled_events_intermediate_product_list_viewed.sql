@@ -1,5 +1,5 @@
 {{ config(
-    enabled = var('product_list_viewed', true)
+    enabled = var('enable_product_list_viewed', true)
 ) }}
 
 select  

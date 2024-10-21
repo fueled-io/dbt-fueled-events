@@ -1,5 +1,5 @@
 {{ config(
-    enabled = var('checkout_created', true)
+    enabled = var('enable_checkout_created', true)
 ) }}
 
 select  

@@ -1,5 +1,5 @@
 {{ config(
-    enabled = var('product_added', true)
+    enabled = var('enable_product_added', true)
 ) }}
 
 select  

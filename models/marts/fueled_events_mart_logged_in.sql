@@ -1,5 +1,5 @@
 {{ config(
-    enabled = var('logged_in', true)
+    enabled = var('enable_logged_in', true)
 ) }}
 
 select 
