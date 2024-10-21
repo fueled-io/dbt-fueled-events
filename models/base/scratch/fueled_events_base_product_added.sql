@@ -12,7 +12,7 @@ with
             category,
             image_url,
             name,
-            COALESCE(position, 0) as position,
+            IFNULL(SAFE.position, 0) as position,
             price,
             product_id,
             quantity,
