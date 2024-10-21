@@ -63,9 +63,9 @@ limitations under the License.
 
 [license]: http://www.apache.org/licenses/LICENSE-2.0
 
-### Enabling Certain Data in Fueled's DBT Package
+### Data Enablement Customization
 
-To customize the data transformations provided by the Fueled DBT package, you can easily enable or disable specific event transformations. This flexibility allows you to focus on the data that is most relevant to your business needs, without processing unnecessary data.
+To customize the data transformations provided by this package, you can easily enable or disable specific event transformations. This flexibility allows you to focus on the data that is most relevant to your business needs, without processing unnecessary data.
 
 To do this, Fueled provides a set of boolean flags that can be set in your `dbt_project.yml` file. Each flag corresponds to a different type of event or data source integration. By setting these flags, you control which models are included in your DBT runs.
 
