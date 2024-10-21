@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('cart_viewed', true)
+) }}
+
 with
     source as (select * from {{ source("fueled_events_atomic", "cart_viewed") }}),
 
