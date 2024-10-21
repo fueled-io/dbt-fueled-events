@@ -1,3 +1,8 @@
+{{ config(
+    enabled = var('signed_up', true)
+) }}
+
+
 select 
   s.session_id,
   su.*,
