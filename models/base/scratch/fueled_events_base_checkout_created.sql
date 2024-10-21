@@ -1,3 +1,8 @@
+{{ config(
+    -- TODO: We need a variable to enable this model to be transformed    
+    enabled=true
+) }}
+
 with
     source as (select * from {{ source("fueled_events_atomic", "checkout_created") }}),
 
