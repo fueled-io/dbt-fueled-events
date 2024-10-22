@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('enable_pages', true)
+) }}
+
 select 
   s.session_id,
   p.*,

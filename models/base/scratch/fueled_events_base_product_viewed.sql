@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('enable_product_viewed', true)
+) }}
+
 with
     source as (select * from {{ source("fueled_events_atomic", "product_viewed") }}),
 
@@ -6,7 +10,7 @@ with
         select
             brand,
             category,
-            image,
+            image_url,
             name,
             price,
             product_id,

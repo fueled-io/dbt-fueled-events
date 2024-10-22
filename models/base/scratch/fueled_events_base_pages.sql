@@ -1,5 +1,5 @@
 {{ config(
-    enabled=true
+    enabled = var('enable_pages', true)
 ) }}
 
 with

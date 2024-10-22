@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('enable_user_attribution', true)
+) }}
+
 WITH ranked_sessions AS (
     SELECT
         context_anonymous_id,

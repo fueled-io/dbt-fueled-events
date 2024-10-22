@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('enable_cart_viewed', true)
+) }}
+
 select 
   s.session_id,
   cv.*,

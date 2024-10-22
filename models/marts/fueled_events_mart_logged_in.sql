@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('enable_logged_in', true)
+) }}
+
 select 
   s.session_id,
   li.*,

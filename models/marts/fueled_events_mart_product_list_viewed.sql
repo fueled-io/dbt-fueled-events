@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('enable_product_list_viewed', true)
+) }}
+
 select 
   s.session_id,
   plv.*,

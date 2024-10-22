@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('enable_checkout_created', true)
+) }}
+
 select 
   *
 from {{ ref('fueled_events_intermediate_checkout_created') }}

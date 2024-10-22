@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('enable_product_added', true)
+) }}
+
 with
     source as (select * from {{ source("fueled_events_atomic", "product_added") }}),
 
@@ -6,9 +10,9 @@ with
         select
             brand,
             category,
-            image,
+            image_url,
             name,
-            position,
+            {{ handle_optional_column(source("fueled_events_atomic", "product_added"), 'position', 0) }},
             price,
             product_id,
             quantity,
