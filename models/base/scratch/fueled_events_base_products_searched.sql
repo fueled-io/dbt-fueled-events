@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('enable_products_searched', true)
+) }}
+
 with
     source as (select * from {{ source("fueled_events_atomic", "products_searched") }}),
 

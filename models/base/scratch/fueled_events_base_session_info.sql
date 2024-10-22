@@ -1,3 +1,8 @@
+{{ config(
+    enabled = var('enable_user_attribution', true)
+) }}
+
+
 WITH events AS (
   SELECT
     context_anonymous_id,

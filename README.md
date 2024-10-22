@@ -62,3 +62,39 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 [license]: http://www.apache.org/licenses/LICENSE-2.0
+
+### Data Enablement Customization
+
+To customize the data transformations provided by this package, you can easily enable or disable specific event transformations. This flexibility allows you to focus on the data that is most relevant to your business needs, without processing unnecessary data.
+
+To do this, Fueled provides a set of boolean flags that can be set in your `dbt_project.yml` file. Each flag corresponds to a different type of event or data source integration. By setting these flags, you control which models are included in your DBT runs.
+
+#### Configuration Example
+Below is an example of how you can use these flags in your `dbt_project.yml` file to enable or disable specific transformations:
+
+```yaml
+vars:
+  fueled_events:
+    enable_cart_viewed: true
+    enable_checkout_created: true
+    enable_logged_in: false  # Disable logged-in event transformations
+    enable_order_completed: true
+    enable_product_added: false  # Disable product added transformations
+    enable_product_viewed: true
+    enable_user_attribution: true
+```
+
+#### List of Flags
+Here are the available flags you can use to control the transformations:
+
+- **enable_cart_viewed**: Enable transformations related to cart views.
+- **enable_checkout_created**: Enable transformations related to checkout creation events.
+- **enable_logged_in**: Enable transformations related to logged-in events.
+- **enable_order_completed**: Enable transformations for completed orders.
+- **enable_product_added**: Enable transformations for products added to cart.
+- **enable_product_list_viewed**: Enable transformations for viewing product lists.
+- **enable_product_removed**: Enable transformations for products removed from cart.
+- **enable_product_viewed**: Enable transformations for individual product views.
+- **enable_products_searched**: Enable transformations for product search events.
+- **enable_signed_up**: Enable transformations for user sign-ups.
+- **enable_user_attribution**: Enable user attribution transformations for deeper engagement analysis.

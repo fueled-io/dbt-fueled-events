@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('enable_product_added', true)
+) }}
+
 select  
   *,
   {{ get_marketing_source('context_referrer') }} as marketing_source,

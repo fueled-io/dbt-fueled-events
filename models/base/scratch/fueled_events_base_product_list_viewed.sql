@@ -1,3 +1,8 @@
+{{ config(
+    enabled = var('enable_product_list_viewed', true)
+) }}
+
+
 with
     source as (
 

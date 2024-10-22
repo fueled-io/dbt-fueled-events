@@ -1,3 +1,7 @@
+{{ config(
+    enabled = var('enable_user_attribution', true)
+) }}
+
 select  
   *,
   {{ get_marketing_source('context_referrer') }} as marketing_source,
