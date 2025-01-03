@@ -11,7 +11,7 @@ with
             last_name,
             name,
             phone,
-            context_anonymous_id as anonymous_id,
+            coalesce(context_fueled_external_id, context_anonymous_id) as anonymous_id,
             user_id,
             external_customer_id,
             created_at,
