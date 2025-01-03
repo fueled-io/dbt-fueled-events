@@ -5,7 +5,7 @@
 
 WITH events AS (
   SELECT
-    context_anonymous_id,
+    coalesce(context_fueled_external_id, context_anonymous_id) as context_anonymous_id,
     user_id,
     context_fueled_external_id,
     context_session_id,
