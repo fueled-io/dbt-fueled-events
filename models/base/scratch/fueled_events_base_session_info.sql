@@ -27,7 +27,7 @@ WITH events AS (
 session_ids AS (
   SELECT
     *,
-    IF(time_diff IS NULL OR time_diff > INTERVAL 60 MINUTE, 1, 0) AS new_session_flag
+    IF(time_diff IS NULL OR time_diff > INTERVAL {{ var('session_interval') }} MINUTE, 1, 0) AS new_session_flag
   FROM
     events
 ),
