@@ -41,6 +41,7 @@ vars:
     enable_products_searched: true
     enable_signed_up: true
     enable_user_attribution: true
+    session_interval: 60
 
 models:
   fueled_events:
