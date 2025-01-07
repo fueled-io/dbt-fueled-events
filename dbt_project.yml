@@ -28,6 +28,7 @@ vars:
     fueled__atomic_schema: 'fueled_events' # If not `fueled_atomic`, set to to the schema written by Fueled's warehouse adapter
     landing_page_checkout: 'https://shop.cutsclothing.com/checkouts/'
     landing_page_account: 'https://www.cutsclothing.com/account/'
+    direct_channel: 'cutsclothing'
     enable_cart_viewed: true
     enable_checkout_created: true
     enable_logged_in: true

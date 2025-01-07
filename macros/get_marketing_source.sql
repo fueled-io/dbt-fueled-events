@@ -4,6 +4,7 @@
 (
     SELECT
         CASE
+            WHEN REGEXP_SUBSTR(referrer_host, '([^\\.]+)\\.[a-z]+$') LIKE '%{{ var("direct_channel") }}%' THEN 'direct'
             WHEN gclid IS NOT NULL THEN 'google'
             WHEN fbclid IS NOT NULL THEN 'meta'
             WHEN utm_source IS NOT NULL THEN utm_source
