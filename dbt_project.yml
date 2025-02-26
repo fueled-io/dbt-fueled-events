@@ -45,28 +45,28 @@ vars:
 
 models:
   fueled_events:
-    base:
-      +schema: "base"
+    bronze:
+      +schema: "bronze"
       scratch:
         +tags: "scratch"
-        fueled_events_base_order_updated:
+        fueled_events_bronze_order_updated:
           +enabled: false
-        fueled_events_base_checkout_updated:
+        fueled_events_bronze_checkout_updated:
           +enabled: false
-        fueled_events_base_users:
+        fueled_events_bronze_users:
           +enabled: false
-        fueled_events_base_subscription_created:
+        fueled_events_bronze_subscription_created:
           +enabled: false
-        fueled_events_base_subscription_cancelled:
+        fueled_events_bronze_subscription_cancelled:
           +enabled: false
-        fueled_events_base_subscription_activated:
+        fueled_events_bronze_subscription_activated:
           +enabled: false
         bigquery:
-          fueled_events_base_checkout_line_items:
+          fueled_events_bronze_checkout_line_items:
             +enabled: false
-    intermediate:
-      +schema: "intermediate"
+    silver:
+      +schema: "silver"
       +materialized: table
-    marts:
-      +schema: "marts"
+    gold:
+      +schema: "gold"
       +materialized: table
