@@ -98,3 +98,13 @@ Here are the available flags you can use to control the transformations:
 - **enable_products_searched**: Enable transformations for product search events.
 - **enable_signed_up**: Enable transformations for user sign-ups.
 - **enable_user_attribution**: Enable user attribution transformations for deeper engagement analysis.
+
+#### List of Variables
+Here are the available variables you can tweak to control you analysis:
+
+**fueled__atomic_schema**: Defines the schema (or dataset) where Fueled’s raw (atomic) events are stored.
+**landing_page_checkout**: The URL prefix to identify and categorize checkout-related events.
+**landing_page_account**:The URL prefix for account management pages, used to classify sign-up, login, and other account-related events.
+**direct_channel**: Specifies your primary or direct sales channel. Useful for attribution and tracking direct traffic. Mention your domain to identify
+**session_interval**: Determines the session timeout window (in minutes) to group user events into sessions or session id.
+
