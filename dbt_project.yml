@@ -42,31 +42,3 @@ vars:
     enable_signed_up: true
     enable_user_attribution: true
     session_interval: 60
-
-models:
-  fueled_events:
-    bronze:
-      +schema: "bronze"
-      scratch:
-        +tags: "scratch"
-        fueled_events_bronze_order_updated:
-          +enabled: false
-        fueled_events_bronze_checkout_updated:
-          +enabled: false
-        fueled_events_bronze_users:
-          +enabled: false
-        fueled_events_bronze_subscription_created:
-          +enabled: false
-        fueled_events_bronze_subscription_cancelled:
-          +enabled: false
-        fueled_events_bronze_subscription_activated:
-          +enabled: false
-        bigquery:
-          fueled_events_bronze_checkout_line_items:
-            +enabled: false
-    silver:
-      +schema: "silver"
-      +materialized: table
-    gold:
-      +schema: "gold"
-      +materialized: table
