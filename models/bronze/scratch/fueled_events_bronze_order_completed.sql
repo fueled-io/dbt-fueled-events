@@ -1,5 +1,6 @@
 {{ config(
-    enabled = var('enable_order_completed', true)
+    enabled = var('enable_order_completed', true),
+    materialized='ephemeral'
 ) }}
 
 with

@@ -1,5 +1,6 @@
 {{ config(
-    enabled = var('enable_product_added', true)
+    enabled = var('enable_product_added', true),
+    materialized='table'
 ) }}
 
 select 

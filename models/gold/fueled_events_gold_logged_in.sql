@@ -1,5 +1,6 @@
 {{ config(
-    enabled = var('enable_logged_in', true)
+    enabled = var('enable_logged_in', true),
+    materialized='table'
 ) }}
 
 select 

@@ -1,5 +1,6 @@
 {{ config(
-    enabled = var('enable_user_attribution', true)
+    enabled = var('enable_user_attribution', true),
+    materialized='table'
 ) }}
 
 WITH ranked_sessions AS (

@@ -1,6 +1,7 @@
 {{
     config(
         enabled=false,
+        materialized='ephemeral'
     )
 }}
 

@@ -1,5 +1,6 @@
 {{ config(
-    enabled = var('enable_signed_up', true)
+    enabled = var('enable_signed_up', true),
+    materialized='ephemeral'
 ) }}
 
 with
