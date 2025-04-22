@@ -1,5 +1,6 @@
 {{ config(
-    enabled = var('enable_pages', true)
+    enabled = var('enable_pages', true),
+    materialized='view'
 ) }}
 
 select  

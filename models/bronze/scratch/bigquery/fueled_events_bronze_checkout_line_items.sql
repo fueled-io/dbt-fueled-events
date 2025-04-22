@@ -1,3 +1,7 @@
+{{ config(
+    materialized='ephemeral'
+) }}
+
 with
     unnested_checkout_created_products as (
         select "checkout_created" as event_type, id, original_timestamp, unnested_product_column

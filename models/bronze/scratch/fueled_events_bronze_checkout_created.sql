@@ -1,5 +1,6 @@
 {{ config(
-    enabled = var('enable_checkout_created', true)
+    enabled = var('enable_checkout_created', true),
+    materialized='ephemeral'
 ) }}
 
 with
