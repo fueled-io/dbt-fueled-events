@@ -1,5 +1,6 @@
 {{ config(
-    enabled = var('enable_products_searched', true)
+    enabled = var('enable_products_searched', true),
+    materialized='view'
 ) }}
 
 select  
