@@ -1,3 +1,6 @@
+{{ config(
+    materialized='ephemeral'
+) }}
 with
     unnested_cart_viewed_products as (
         select "cart_viewed" as event_type, id, original_timestamp, unnested_product_column

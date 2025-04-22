@@ -1,5 +1,6 @@
 {{ config(
-    enabled = var('enable_product_viewed', true)
+    enabled = var('enable_product_viewed', true),
+    materialized='ephemeral'
 ) }}
 
 with

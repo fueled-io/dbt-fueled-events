@@ -1,3 +1,6 @@
+{{ config(
+    materialized='ephemeral'
+) }}
 with
     unnested_order_completed_products as (
         select "order_completed" as event_type, order_id, original_timestamp, unnested_product_column
