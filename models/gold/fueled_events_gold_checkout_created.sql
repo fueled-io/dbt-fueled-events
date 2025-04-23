@@ -1,7 +1,10 @@
 {{ config(
-    enabled = var('enable_checkout_created', true),
-    materialized='table'
+    enabled = var('enable_checkout_created', true) and check_dependencies([
+      {"schema": var("fueled_events_atomic", 'default_schema'), "table": "checkout_created"}
+    ]),
+    materialized = 'table'
 ) }}
+
 
 select 
   s.session_id,
