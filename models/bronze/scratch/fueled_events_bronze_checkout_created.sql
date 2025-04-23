@@ -1,7 +1,10 @@
 {{ config(
-    enabled = var('enable_checkout_created', true),
-    materialized='ephemeral'
+    enabled = var('enable_checkout_created', true) and check_dependencies([
+      {"schema": var("fueled_events_atomic", 'default_schema'), "table": "checkout_created"}
+    ]),
+    materialized = 'ephemeral'
 ) }}
+
 
 with
     source as (select * from {{ source("fueled_events_atomic", "checkout_created") }}),
