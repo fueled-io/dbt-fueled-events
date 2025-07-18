@@ -1,6 +1,7 @@
 version: 2
 
 models:
+  - name: s3_destination_order_completed_raw
   - name: fueled_events_bronze_cart_viewed
     description: '{{ doc("table_bronze_cart_viewed") }}'
     columns:

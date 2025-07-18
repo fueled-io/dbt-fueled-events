@@ -30,8 +30,9 @@ vars:
     landing_page_account: 'https://www.yourwebsite.com/account/'
     direct_channel: 'yourwebsite'
     enable_cart_viewed: true
-    enable_checkout_created: true
+    enable_checkout_created: false
     enable_logged_in: true
+    enable_newsletter_signup_completed: true
     enable_order_completed: true
     enable_pages: true
     enable_product_added: true
