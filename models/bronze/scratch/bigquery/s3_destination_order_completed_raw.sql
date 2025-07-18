@@ -93,5 +93,5 @@ SELECT
   CAST(NULL AS BOOL) AS context_category_preferences_functional,
   CAST(NULL AS BOOL) AS context_category_preferences_advertising,
   CAST(NULL AS BOOL) AS context_category_preferences_data_sharing
-FROM {{ source("s3_destination_fueled_events", "fueled_events") }}
+FROM {{ source("s3_destination_fueled_events_", "fueled_events") }}
 WHERE event_name = 'Order Completed'
