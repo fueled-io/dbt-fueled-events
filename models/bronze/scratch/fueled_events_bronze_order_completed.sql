@@ -1,5 +1,3 @@
--- depends_on: {{ ref('s3_destination_order_completed_raw') }}
-
 {{ config(
     enabled = var('enable_order_completed', true),
     materialized='ephemeral'
@@ -8,7 +6,7 @@
 with
     source as (
         select * from {{ source("fueled_events_atomic", "order_completed") }}
-        {% if adapter.get_relation(this.database, 's3_destination_fueled_events', 'fueled_events') is not none %}
+        {% if var('include_s3_destination_data', false) %}
             union all
             select * from {{ref("s3_destination_order_completed_raw")}}
         {% endif %}
