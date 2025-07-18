@@ -3,6 +3,8 @@ version: 2
 sources:
   - name: s3_destination_fueled_events
     schema: s3_destination_fueled_events
+    config:
+      enabled: "{{ var('include_s3_destination_data', false) }}"
     tables: 
       - name: fueled_events
 

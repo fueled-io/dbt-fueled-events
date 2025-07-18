@@ -1,5 +1,6 @@
 {{ config(
-    materialized='ephemeral'
+    materialized='ephemeral',
+    enabled=var('include_s3_destination_data', false)
 ) }}
 
 SELECT
