@@ -1,7 +1,8 @@
 {{ config(
-    materialized='ephemeral',
-    enabled=var('include_s3_destination_data', false)
+    materialized='ephemeral'
 ) }}
+
+{% if var('include_s3_destination_data', false) %}
 
 SELECT
   TIMESTAMP_SECONDS(hydration_timestamp) AS received_at,
@@ -93,5 +94,102 @@ SELECT
   CAST(NULL AS BOOL) AS context_category_preferences_functional,
   CAST(NULL AS BOOL) AS context_category_preferences_advertising,
   CAST(NULL AS BOOL) AS context_category_preferences_data_sharing
-FROM {{ source("s3_destination_fueled_events_", "fueled_events") }}
+FROM {{ source("s3_destination_fueled_events", "fueled_events") }}
 WHERE event_name = 'Order Completed'
+
+{% else %}
+
+-- Return an empty result set with matching column structure when S3 data is disabled
+SELECT
+  CAST(NULL AS TIMESTAMP) AS received_at,
+  CAST(NULL AS STRING) AS billing_address_city,
+  CAST(NULL AS FLOAT64) AS subtotal,
+  CAST(NULL AS STRING) AS context_ga4_session_id,
+  CAST(NULL AS STRING) AS products,
+  CAST(NULL AS STRING) AS context_fueled_external_id,
+  CAST(NULL AS STRING) AS id,
+  CAST(NULL AS STRING) AS billing_address_first_name,
+  CAST(NULL AS STRING) AS billing_address_postal_code,
+  CAST(NULL AS STRING) AS context_source_type,
+  CAST(NULL AS STRING) AS billing_address_phone,
+  CAST(NULL AS STRING) AS status,
+  CAST(NULL AS STRING) AS event_text,
+  CAST(NULL AS STRING) AS order_id,
+  CAST(NULL AS STRING) AS context_ga4_user_id,
+  CAST(NULL AS STRING) AS cart_id,
+  CAST(NULL AS STRING) AS context_ip,
+  CAST(NULL AS FLOAT64) AS revenue,
+  CAST(NULL AS STRING) AS context_country_code,
+  CAST(NULL AS STRING) AS billing_address_state_code,
+  CAST(NULL AS STRING) AS context_user_agent,
+  CAST(NULL AS STRING) AS billing_address_country_code,
+  CAST(NULL AS FLOAT64) AS shipping,
+  CAST(NULL AS STRING) AS context_locale,
+  CAST(NULL AS STRING) AS billing_address_country,
+  CAST(NULL AS STRING) AS context_passed_ip,
+  CAST(NULL AS FLOAT64) AS tax,
+  CAST(NULL AS FLOAT64) AS value,
+  CAST(NULL AS TIMESTAMP) AS original_timestamp,
+  CAST(NULL AS STRING) AS context_source_id,
+  CAST(NULL AS STRING) AS context_fb_fbc,
+  CAST(NULL AS TIMESTAMP) AS sent_at,
+  CAST(NULL AS STRING) AS coupon,
+  CAST(NULL AS STRING) AS context_anonymous_id,
+  CAST(NULL AS STRING) AS context_ga4_client_id,
+  CAST(NULL AS STRING) AS currency,
+  CAST(NULL AS TIMESTAMP) AS loaded_at,
+  CAST(NULL AS STRING) AS billing_address_address,
+  CAST(NULL AS TIMESTAMP) AS timestamp,
+  CAST(NULL AS STRING) AS affiliation,
+  CAST(NULL AS STRING) AS context_user_id,
+  CAST(NULL AS STRING) AS type,
+  CAST(NULL AS STRING) AS context_request_ip,
+  CAST(NULL AS TIMESTAMP) AS uuid_ts,
+  CAST(NULL AS STRING) AS channel,
+  CAST(NULL AS STRING) AS context_url,
+  CAST(NULL AS STRING) AS context_library_name,
+  CAST(NULL AS FLOAT64) AS total,
+  CAST(NULL AS STRING) AS payment_type,
+  CAST(NULL AS STRING) AS context_destination_type,
+  CAST(NULL AS STRING) AS billing_address_state,
+  CAST(NULL AS STRING) AS context_destination_id,
+  CAST(NULL AS FLOAT64) AS discount,
+  CAST(NULL AS STRING) AS context_library_version,
+  CAST(NULL AS STRING) AS context_rudderstack_source,
+  CAST(NULL AS STRING) AS context_fb_external_id,
+  CAST(NULL AS STRING) AS user_id,
+  CAST(NULL AS STRING) AS context_endpoint_version,
+  CAST(NULL AS STRING) AS billing_address_last_name,
+  CAST(NULL AS STRING) AS event,
+  CAST(NULL AS STRING) AS context_source,
+  CAST(NULL AS STRING) AS context_fb_fbp,
+  CAST(NULL AS BOOL) AS context_tracking_consent,
+  CAST(NULL AS STRING) AS billing_address_company,
+  CAST(NULL AS STRING) AS context_klaviyo_exchange_id,
+  CAST(NULL AS STRING) AS context_referrer,
+  CAST(NULL AS STRING) AS context_campaign_term,
+  CAST(NULL AS STRING) AS context_campaign_id,
+  CAST(NULL AS STRING) AS context_campaign_source,
+  CAST(NULL AS STRING) AS context_campaign_content,
+  CAST(NULL AS STRING) AS context_session_id,
+  CAST(NULL AS BOOL) AS context_offline,
+  CAST(NULL AS STRING) AS context_timezone,
+  CAST(NULL AS STRING) AS context_app,
+  CAST(NULL AS STRING) AS context_campaign_medium,
+  CAST(NULL AS STRING) AS context_campaign_klaviyo_id,
+  CAST(NULL AS BOOL) AS context_initialized,
+  CAST(NULL AS STRING) AS context_os_name,
+  CAST(NULL AS BOOL) AS context_debug,
+  CAST(NULL AS STRING) AS context_campaign_name,
+  CAST(NULL AS STRING) AS context_version,
+  CAST(NULL AS BOOL) AS context_tracking_consent_analytics,
+  CAST(NULL AS BOOL) AS context_tracking_consent_marketing,
+  CAST(NULL AS BOOL) AS context_tracking_consent_sale_of_data,
+  CAST(NULL AS BOOL) AS context_tracking_consent_preferences,
+  CAST(NULL AS BOOL) AS context_category_preferences_analytics,
+  CAST(NULL AS BOOL) AS context_category_preferences_functional,
+  CAST(NULL AS BOOL) AS context_category_preferences_advertising,
+  CAST(NULL AS BOOL) AS context_category_preferences_data_sharing
+WHERE FALSE
+
+{% endif %}
