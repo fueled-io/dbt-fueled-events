@@ -190,6 +190,7 @@ SELECT
   CAST(NULL AS BOOL) AS context_category_preferences_functional,
   CAST(NULL AS BOOL) AS context_category_preferences_advertising,
   CAST(NULL AS BOOL) AS context_category_preferences_data_sharing
+FROM (SELECT 1) as dummy
 WHERE FALSE
 
 {% endif %}
