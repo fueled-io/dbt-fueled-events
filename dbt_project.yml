@@ -29,6 +29,9 @@ vars:
     landing_page_checkout: 'https://shop.yourwebsite.com/checkouts/'
     landing_page_account: 'https://www.yourwebsite.com/account/'
     direct_channel: 'yourwebsite'
+    # Control whether to include S3 destination data
+    include_s3_destination_data: false  # Set to false for projects without S3 data
+    # Enable/disable specific models
     enable_cart_viewed: true
     enable_checkout_created: false
     enable_logged_in: true
