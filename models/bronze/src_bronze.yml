@@ -1,9 +1,15 @@
 version: 2
 
 sources:
+  - name: s3_destination_fueled_events
+    schema: s3_destination_fueled_events
+    tables: 
+      - name: fueled_events
+
   - name: fueled_events_atomic
     schema: "{{ var('fueled__atomic_schema', 'fueled_atomic') }}"
     tables:
+      - name: newsletter_signup_completed
       - name: cart_viewed
         description: '{{ doc("table_cart_viewed")}}'
         columns:
