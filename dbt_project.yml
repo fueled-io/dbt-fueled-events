@@ -30,7 +30,8 @@ vars:
     landing_page_account: 'https://www.yourwebsite.com/account/'
     direct_channel: 'yourwebsite'
     # Control whether to include S3 destination data
-    include_s3_destination_data: false  # Set to false for projects without S3 data
+    include_s3_destination_data: true  # Set to false for projects without S3 data
+    s3_destination_date: '2025-07-21'
     # Enable/disable specific models
     enable_cart_viewed: true
     enable_checkout_created: false
