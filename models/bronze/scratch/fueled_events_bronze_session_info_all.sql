@@ -4,7 +4,7 @@
 ) }}
 
 
-WITH events AS (
+WITH atomic_events AS (
   SELECT
     coalesce(context_fueled_external_id, context_anonymous_id) as context_anonymous_id,
     user_id,
@@ -25,7 +25,46 @@ WITH events AS (
     timestamp - LAG(timestamp) OVER (PARTITION BY context_anonymous_id ORDER BY timestamp) AS time_diff
   FROM
     {{ source("fueled_events_atomic", "pages") }}
+  {% if var('include_s3_destination_data', false) %}
+    WHERE timestamp < TIMESTAMP('{{var('s3_destination_date', '2025-07-21')}}')
+  {% endif %}
 ),
+
+{% if var('include_s3_destination_data', false) %}
+s3_events AS (
+  SELECT
+    coalesce(context_fueled_external_id, context_anonymous_id) as context_anonymous_id,
+    user_id,
+    context_fueled_external_id,
+    context_session_id,
+    context_campaign_name,
+    context_campaign_source,
+    context_campaign_term,
+    context_campaign_medium,
+    {{  get_decoded_url('context_referrer')  }} as context_referrer,
+    split({{  get_decoded_url('(context_page_url)')  }}, '?') [safe_offset(0)] as landing_page_url,
+    {{  get_decoded_url('(context_page_url)')  }} as context_page_url,
+    {{get_attribution_click_ids("context_referrer")}},
+    context_os_name,
+    title,
+    timestamp,
+    -- Calculate the time difference between consecutive events
+    timestamp - LAG(timestamp) OVER (PARTITION BY context_anonymous_id ORDER BY timestamp) AS time_diff
+  FROM
+    {{ref("s3_destination_pages")}}
+  WHERE timestamp >= TIMESTAMP('{{var('s3_destination_date', '2025-07-21')}}')
+),
+
+events AS (
+  SELECT * FROM atomic_events
+  UNION ALL
+  SELECT * FROM s3_events
+),
+{% else %}
+events AS (
+  SELECT * FROM atomic_events
+),
+{% endif %}
 session_ids AS (
   SELECT
     *,
