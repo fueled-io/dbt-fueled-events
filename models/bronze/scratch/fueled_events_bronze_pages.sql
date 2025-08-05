@@ -43,7 +43,7 @@ with
                 original_timestamp
                 {{ get_shared_event_attributes("fueled_events_atomic", "pages") }},
                 id as event_id,
-                {{get_attribution_click_ids("context_referrer")}}
+                {{get_attribution_click_ids("context_page_url")}}
             from {{ref("s3_destination_pages")}}
             where original_timestamp >= '{{var('s3_destination_date', '2025-07-21')}}'
         {% endif %}
