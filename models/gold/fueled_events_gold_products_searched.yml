@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: fueled_events_gold_products_searched
+    description: "Gold layer model for product search events, providing a clean and business-ready view of search activity data with complete marketing attribution."
+    columns:
+      - name: event_id
+        description: "Unique identifier for this specific product search event."
+        
+      - name: anonymous_id
+        description: "Unique identifier for the user, coalesced from either context_fueled_external_id or context_anonymous_id to ensure consistent user tracking."
+        
+      - name: user_id
+        description: "Unique identifier for authenticated users who performed the product search."
+        
+      - name: timestamp
+        description: "Timestamp when the product search event occurred, normalized for analysis."
+        
+      - name: date
+        description: "Date when the product search event occurred, extracted from the timestamp."
+        
+      - name: query
+        description: "Search query term(s) entered by the user to search for products."
+        
+      - name: marketing_source
+        description: "Identified source of the marketing campaign that drove the search event."
+        
+      - name: marketing_medium
+        description: "Identified medium of the marketing campaign that drove the search event."
+        
+      - name: marketing_campaign
+        description: "Identified campaign that drove the search event, if available."
+        
+      - name: marketing_term
+        description: "Identified search term or keywords that drove the user to the site before this search, if available."
+        
+      - name: marketing_content
+        description: "Identified content variation that drove the user to the site before this search, if available."
+        
+      - name: session_id
+        description: "Identifier for the user session during which this search was performed."
+        
+      - name: landing_page
+        description: "First page the user visited in the session where this search was performed."
+        
+      - name: referrer
+        description: "URL of the referring page that led to the page where the search was performed."
+        
+      - name: device_type
+        description: "Type of device used during the search (mobile, tablet, desktop)."
+        
+      - name: browser
+        description: "Browser used during the search."
+        
+      - name: browser_version
+        description: "Version of the browser used during the search."
+        
+      - name: os
+        description: "Operating system used during the search."
+        
+      - name: os_version
+        description: "Version of the operating system used during the search."

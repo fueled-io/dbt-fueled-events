@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: fueled_events_bronze_product_list_viewed
+    description: "Bronze layer model that processes product list view events from both fueled_events_atomic source and s3_destination_product_list_viewed reference model, combining data when users view product collections or category pages."
+    columns:
+      - name: category
+        description: "Category or collection name of the product list that was viewed."
+        
+      - name: products
+        description: "JSON array containing details of products included in the viewed list or collection."
+        
+      - name: anonymous_id
+        description: "Anonymous identifier for the user, coalesced from context_fueled_external_id or context_anonymous_id to ensure user tracking across sessions."
+        
+      - name: user_id
+        description: "Unique identifier for the authenticated user who viewed the product list, if available."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the product list viewed event occurred."
+        
+      - name: event_id
+        description: "Unique identifier for this product list viewed event, derived from the id field in the source tables."
+        
+      # Shared event attributes from the get_shared_event_attributes macro will include
+      # fields like campaign information, page data, user traits, and other context
+      # that are standardized across all event types.
+      
+      # Attribution click IDs from get_attribution_click_ids macro will include 
+      # fields related to marketing attribution extracted from the referrer.
+      
+      # Note: This model combines data from both the fueled_events_atomic.product_list_viewed source
+      # and the s3_destination_product_list_viewed reference model when include_s3_destination_data
+      # variable is set to true, with data split based on the s3_destination_date variable.

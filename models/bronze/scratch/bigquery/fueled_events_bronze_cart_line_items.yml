@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: fueled_events_bronze_cart_line_items
+    description: "Bronze layer model that unnests cart line item details from the cart_viewed events, providing individual product information within shopping carts."
+    columns:
+      - name: event_type
+        description: "Fixed identifier indicating the source event type, set to 'cart_viewed' for all records in this model."
+        
+      - name: event_id
+        description: "Unique identifier for the cart viewed event, references the id field from the source cart_viewed table."
+        
+      - name: cart_id
+        description: "Identifier for the shopping cart, currently set to NULL as it needs to be added to the cart_viewed schema as noted in the SQL code."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the cart viewed event occurred, used for ordering and tracking when products were viewed in carts."
+        
+      - name: brand
+        description: "Brand name of the product in the cart line item, extracted from the JSON product object."
+        
+      - name: category
+        description: "Category classification of the product in the cart line item, extracted from the JSON product object."
+        
+      - name: imageUrl
+        description: "URL to the product image for the cart line item, extracted from the JSON product object."
+        
+      - name: name
+        description: "Product name of the cart line item, extracted from the JSON product object."
+        
+      - name: position
+        description: "Position of the product in the cart or display order, extracted from the JSON product object."
+        
+      - name: price
+        description: "Price of the individual product in the cart line item, extracted from the JSON product object."
+        
+      - name: product_id
+        description: "Unique identifier for the product in the cart line item, extracted from the productId field in the JSON product object."
+        
+      - name: quantity
+        description: "Number of units of this product in the cart, extracted from the JSON product object."
+        
+      - name: sku
+        description: "Stock Keeping Unit (SKU) of the product in the cart line item, extracted from the JSON product object."
+        
+      - name: url
+        description: "URL to the product page for the cart line item, extracted from the JSON product object."
+        
+      - name: variant
+        description: "Product variant information for the cart line item (such as size, color, etc.), extracted from the JSON product object."
+        
+      - name: unnested_product_column
+        description: "Raw JSON of the entire unnested product object, preserved for debugging or accessing additional fields not explicitly extracted."

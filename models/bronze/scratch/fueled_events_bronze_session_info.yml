@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: fueled_events_bronze_session_info
+    description: "Bronze layer model that filters the fueled_events_bronze_session_info_all model to only include records where session_first_touch is 1, representing the initial touchpoint of each user session."
+    columns:
+      # This model selects all columns from fueled_events_bronze_session_info_all with the session_first_touch filter
+      - name: session_first_touch
+        description: "Flag indicating if this record represents the first touch in a session. This model filters to only include records where this value is 1."
+        
+      # The model inherits all other columns from the fueled_events_bronze_session_info_all model
+      # These likely include session identifiers, user identifiers, timestamps, and attribution data

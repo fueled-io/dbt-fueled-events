@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: fueled_events_silver_newsletter_signup_completed
+    description: "Silver layer model for newsletter signup events, extending the bronze layer data with enriched marketing attribution data."
+    columns:
+      - name: email
+        description: "Email address provided by the user for newsletter subscription."
+        
+      - name: anonymous_id
+        description: "Unique identifier for the user, coalesced from either context_fueled_external_id or context_anonymous_id to ensure consistent user tracking."
+        
+      - name: user_id
+        description: "Unique identifier for authenticated users who signed up for the newsletter."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the newsletter signup event occurred, before any processing."
+        
+      - name: event_id
+        description: "Unique identifier for this specific newsletter signup event."
+        
+      - name: google_click_id
+        description: "Google Click ID (gclid) for tracking ad conversions related to the newsletter signup."
+        
+      - name: facebook_click_id
+        description: "Facebook Click ID (fbclid) for tracking ad conversions related to the newsletter signup."
+        
+      - name: linkedin_click_id
+        description: "LinkedIn Click ID for tracking ad conversions related to the newsletter signup."
+        
+      - name: bing_click_id
+        description: "Microsoft Bing Ads Click ID for tracking ad conversions related to the newsletter signup."
+        
+      - name: marketo_token
+        description: "Marketo tracking token for marketing automation related to the newsletter signup."
+        
+      - name: floodlight_remarketing_id
+        description: "Google Floodlight remarketing ID for tracking conversions related to the newsletter signup."
+        
+      - name: marketing_source
+        description: "Identified source of the marketing campaign that drove the newsletter signup, normalized using the get_campaign_source macro."
+        
+      - name: marketing_medium
+        description: "Identified medium of the marketing campaign that drove the newsletter signup, normalized using the get_marketing_medium macro."
+        
+      # Additional context fields from the get_shared_event_attributes macro

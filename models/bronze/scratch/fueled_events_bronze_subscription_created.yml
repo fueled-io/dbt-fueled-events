@@ -1,0 +1,126 @@
+version: 2
+
+models:
+  - name: fueled_events_bronze_subscription_created
+    description: "Bronze layer model that processes subscription creation events from the fueled_events_atomic source, capturing detailed information about newly created subscriptions."
+    columns:
+      - name: charge_interval_frequency
+        description: "Frequency of billing charges for the created subscription (e.g., monthly, quarterly)."
+        
+      - name: created_at
+        description: "Timestamp when the subscription was created."
+        
+      - name: has_queued_charges
+        description: "Flag indicating whether the subscription has pending charges queued for processing."
+        
+      - name: is_skippable
+        description: "Flag indicating whether the subscription allows customers to skip scheduled deliveries."
+        
+      - name: is_swappable
+        description: "Flag indicating whether the subscription allows customers to swap products."
+        
+      - name: max_retries_reached
+        description: "Flag indicating whether the maximum number of payment retry attempts has been reached."
+        
+      - name: next_charge_scheduled_at
+        description: "Timestamp when the next charge for this subscription is scheduled."
+        
+      - name: order_billing_address_address
+        description: "Street address from the billing address associated with the subscription."
+        
+      - name: order_billing_address_city
+        description: "City from the billing address associated with the subscription."
+        
+      - name: order_billing_address_country
+        description: "Country from the billing address associated with the subscription."
+        
+      - name: order_billing_address_email
+        description: "Email address from the billing address associated with the subscription."
+        
+      - name: order_billing_address_first_name
+        description: "First name from the billing address associated with the subscription."
+        
+      - name: order_billing_address_last_name
+        description: "Last name from the billing address associated with the subscription."
+        
+      - name: order_billing_address_phone
+        description: "Phone number from the billing address associated with the subscription."
+        
+      - name: order_billing_address_postal_code
+        description: "Postal code from the billing address associated with the subscription."
+        
+      - name: order_billing_address_state
+        description: "State or province from the billing address associated with the subscription."
+        
+      - name: order_coupon
+        description: "Coupon code applied to the subscription order, if any."
+        
+      - name: order_currency
+        description: "Currency code used for the subscription's monetary values (e.g., USD, EUR)."
+        
+      - name: order_discount
+        description: "Discount amount applied to the subscription order, in the specified currency."
+        
+      - name: order_id
+        description: "Unique identifier for the order associated with this subscription."
+        
+      - name: order_interval_frequency
+        description: "Frequency of subscription delivery intervals (e.g., 1 for monthly, 3 for quarterly)."
+        
+      - name: order_interval_unit
+        description: "Unit of time for subscription intervals (e.g., month, week)."
+        
+      - name: order_order_id
+        description: "Secondary identifier for the order associated with this subscription, possibly from an external system."
+        
+      - name: order_products
+        description: "JSON array containing details of products included in the subscription."
+        
+      - name: order_revenue
+        description: "Revenue generated from the subscription order, in the specified currency."
+        
+      - name: order_status
+        description: "Status of the order associated with this subscription."
+        
+      - name: order_subtotal
+        description: "Subtotal amount of the subscription order before tax, in the specified currency."
+        
+      - name: order_tax
+        description: "Tax amount applied to the subscription order, in the specified currency."
+        
+      - name: order_total
+        description: "Total amount of the subscription order including tax, in the specified currency."
+        
+      - name: order_type
+        description: "Type classification of the subscription order."
+        
+      - name: order_value
+        description: "Value of the subscription order, typically equivalent to total or revenue, in the specified currency."
+        
+      - name: products
+        description: "JSON array containing details of products included in the created subscription."
+        
+      - name: sku_override
+        description: "Override SKU for the subscription, if different from the original product SKU."
+        
+      - name: started_at
+        description: "Timestamp when the subscription was started, typically equivalent to created_at."
+        
+      - name: status
+        description: "Initial status of the created subscription."
+        
+      - name: updated_at
+        description: "Timestamp when the subscription was last updated, if applicable after creation."
+        
+      - name: user_id
+        description: "Unique identifier for the user who owns the subscription."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the subscription creation event occurred."
+        
+      - name: event_id
+        description: "Unique identifier for this subscription creation event, derived from the id field in the source table."
+        
+      # Shared event attributes from the get_shared_event_attributes macro will include
+      # fields like campaign information, page data, user traits, and other context
+      # that are standardized across all event types.

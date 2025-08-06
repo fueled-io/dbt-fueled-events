@@ -1,0 +1,70 @@
+version: 2
+
+models:
+  - name: fueled_events_silver_product_added
+    description: "Silver layer model for product added to cart events, extending the bronze layer data with enriched marketing attribution data."
+    columns:
+      - name: anonymous_id
+        description: "Unique identifier for the user, coalesced from either context_fueled_external_id or context_anonymous_id to ensure consistent user tracking."
+        
+      - name: user_id
+        description: "Unique identifier for authenticated users who added the product to cart."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the product added event was captured, before any processing."
+        
+      - name: event_id
+        description: "Unique identifier for this specific product added event."
+        
+      - name: cart_id
+        description: "Identifier for the cart to which the product was added."
+        
+      - name: name
+        description: "Name of the product that was added to the cart."
+        
+      - name: product_id
+        description: "Unique identifier for the product that was added to cart."
+        
+      - name: sku
+        description: "Stock keeping unit code for the product that was added to cart."
+        
+      - name: category
+        description: "Category or type of the product that was added to cart."
+        
+      - name: brand
+        description: "Brand of the product that was added to cart."
+        
+      - name: variant
+        description: "Variant or version of the product that was added to cart."
+        
+      - name: price
+        description: "Price of the product that was added to cart."
+        
+      - name: quantity
+        description: "Quantity of the product that was added to cart."
+        
+      - name: google_click_id
+        description: "Google Click ID (gclid) for tracking ad conversions related to the product added event."
+        
+      - name: facebook_click_id
+        description: "Facebook Click ID (fbclid) for tracking ad conversions related to the product added event."
+        
+      - name: linkedin_click_id
+        description: "LinkedIn Click ID for tracking ad conversions related to the product added event."
+        
+      - name: bing_click_id
+        description: "Microsoft Bing Ads Click ID for tracking ad conversions related to the product added event."
+        
+      - name: marketo_token
+        description: "Marketo tracking token for marketing automation related to the product added event."
+        
+      - name: floodlight_remarketing_id
+        description: "Google Floodlight remarketing ID for tracking conversions related to the product added event."
+        
+      - name: marketing_source
+        description: "Identified source of the marketing campaign that drove the product added event, normalized using the get_campaign_source macro."
+        
+      - name: marketing_medium
+        description: "Identified medium of the marketing campaign that drove the product added event, normalized using the get_marketing_medium macro."
+        
+      # Additional context fields from the bronze model

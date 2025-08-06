@@ -1,0 +1,69 @@
+version: 2
+
+models:
+  - name: fueled_events_bronze_order_cancelled
+    description: "Bronze layer model that processes order cancellation events from the fueled_events_atomic source, capturing details of cancelled orders."
+    columns:
+      - name: billing_address_address
+        description: "Street address from the billing address associated with the cancelled order."
+        
+      - name: billing_address_city
+        description: "City from the billing address associated with the cancelled order."
+        
+      - name: billing_address_country
+        description: "Country from the billing address associated with the cancelled order."
+        
+      - name: billing_address_first_name
+        description: "First name from the billing address associated with the cancelled order."
+        
+      - name: billing_address_last_name
+        description: "Last name from the billing address associated with the cancelled order."
+        
+      - name: billing_address_postal_code
+        description: "Postal code from the billing address associated with the cancelled order."
+        
+      - name: billing_address_state
+        description: "State or province from the billing address associated with the cancelled order."
+        
+      - name: currency
+        description: "Currency code used for the cancelled order's monetary values (e.g., USD, EUR)."
+        
+      - name: order_id
+        description: "Unique identifier for the cancelled order in the e-commerce system."
+        
+      - name: revenue
+        description: "Total revenue amount that would have been generated from the cancelled order, in the specified currency."
+        
+      - name: shipping
+        description: "Shipping cost for the cancelled order, in the specified currency."
+        
+      - name: status
+        description: "Current status of the cancelled order, typically set to 'cancelled' or a similar status code."
+        
+      - name: subtotal
+        description: "Subtotal amount of the cancelled order before tax and shipping, in the specified currency."
+        
+      - name: total
+        description: "Total amount of the cancelled order including tax and shipping, in the specified currency."
+        
+      - name: type
+        description: "Type classification of the cancelled order, if applicable."
+        
+      - name: value
+        description: "Value of the cancelled order, typically equivalent to total or revenue, in the specified currency."
+        
+      - name: anonymous_id
+        description: "Anonymous identifier for the user, coalesced from context_fueled_external_id or context_anonymous_id to ensure user tracking across sessions."
+        
+      - name: user_id
+        description: "Unique identifier for the authenticated user who cancelled the order."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the order cancellation event occurred."
+        
+      - name: event_id
+        description: "Unique identifier for this order cancellation event, derived from the id field in the source table."
+        
+      # Shared event attributes from the get_shared_event_attributes macro will include
+      # fields like campaign information, page data, user traits, and other context
+      # that are standardized across all event types.

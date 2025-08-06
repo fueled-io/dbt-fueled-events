@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: fueled_events_bronze_product_added
+    description: "Bronze layer model that processes product added events from both fueled_events_atomic source and s3_destination_product_added reference model, combining data when products are added to cart."
+    columns:
+      - name: brand
+        description: "Brand name of the product that was added to the cart."
+        
+      - name: category
+        description: "Category classification of the product that was added to the cart."
+        
+      - name: image_url
+        description: "URL to the image of the product that was added to the cart."
+        
+      - name: name
+        description: "Name or title of the product that was added to the cart."
+        
+      - name: position
+        description: "Position or order of the product in a list or collection when it was added, defaulting to 0 if not provided."
+        
+      - name: price
+        description: "Price of the product that was added to the cart, typically in the store's default currency."
+        
+      - name: product_id
+        description: "Unique identifier for the product that was added to the cart in the e-commerce system."
+        
+      - name: quantity
+        description: "Number of units of the product that were added to the cart in this event."
+        
+      - name: sku
+        description: "Stock Keeping Unit (SKU) identifier for the specific product variant that was added to the cart."
+        
+      - name: url
+        description: "URL to the product detail page of the product that was added to the cart."
+        
+      - name: variant
+        description: "Specific variant of the product that was added to the cart (e.g., color, size)."
+        
+      - name: anonymous_id
+        description: "Anonymous identifier for the user, coalesced from context_fueled_external_id or context_anonymous_id to ensure user tracking across sessions."
+        
+      - name: user_id
+        description: "Unique identifier for the authenticated user who added the product to the cart, if available."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the product added event occurred."
+        
+      - name: event_id
+        description: "Unique identifier for this product added event, derived from the id field in the source tables."
+        
+      # Shared event attributes from the get_shared_event_attributes macro will include
+      # fields like campaign information, page data, user traits, and other context
+      # that are standardized across all event types.
+      
+      # Attribution click IDs from get_attribution_click_ids macro will include 
+      # fields related to marketing attribution extracted from the referrer.
+      
+      # Note: This model combines data from both the fueled_events_atomic.product_added source
+      # and the s3_destination_product_added reference model when include_s3_destination_data
+      # variable is set to true, with data split based on the s3_destination_date variable.

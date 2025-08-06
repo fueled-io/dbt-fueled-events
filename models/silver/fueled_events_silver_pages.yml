@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: fueled_events_silver_pages
+    description: "Silver layer model for page view events, extending the bronze layer data with enriched marketing attribution data."
+    columns:
+      - name: anonymous_id
+        description: "Unique identifier for the user, coalesced from either context_fueled_external_id or context_anonymous_id to ensure consistent user tracking."
+        
+      - name: user_id
+        description: "Unique identifier for authenticated users who viewed the page."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the page view event was captured, before any processing."
+        
+      - name: event_id
+        description: "Unique identifier for this specific page view event."
+        
+      - name: name
+        description: "Name or identifier of the page that was viewed."
+        
+      - name: path
+        description: "URL path of the viewed page, excluding domain and query parameters."
+        
+      - name: referrer
+        description: "URL of the referring page that led the user to this page."
+        
+      - name: search
+        description: "Search query parameters extracted from the page URL."
+        
+      - name: title
+        description: "Title of the viewed page, typically from the HTML title tag."
+        
+      - name: url
+        description: "Full URL of the viewed page, including domain and query parameters."
+        
+      - name: google_click_id
+        description: "Google Click ID (gclid) for tracking ad conversions related to the page view."
+        
+      - name: facebook_click_id
+        description: "Facebook Click ID (fbclid) for tracking ad conversions related to the page view."
+        
+      - name: linkedin_click_id
+        description: "LinkedIn Click ID for tracking ad conversions related to the page view."
+        
+      - name: bing_click_id
+        description: "Microsoft Bing Ads Click ID for tracking ad conversions related to the page view."
+        
+      - name: marketo_token
+        description: "Marketo tracking token for marketing automation related to the page view."
+        
+      - name: floodlight_remarketing_id
+        description: "Google Floodlight remarketing ID for tracking conversions related to the page view."
+        
+      - name: marketing_source
+        description: "Identified source of the marketing campaign that drove the page view, normalized using the get_campaign_source macro."
+        
+      - name: marketing_medium
+        description: "Identified medium of the marketing campaign that drove the page view, normalized using the get_marketing_medium macro."
+        
+      # Additional context fields from the get_shared_event_attributes macro

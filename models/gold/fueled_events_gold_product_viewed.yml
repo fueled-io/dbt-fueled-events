@@ -1,0 +1,200 @@
+version: 2
+
+models:
+  - name: fueled_events_gold_product_viewed
+    description: "Gold layer model for product viewed events, joining silver product viewed data with session-level marketing attribution data for comprehensive analysis."
+    columns:
+      - name: session_id
+        description: "Unique identifier for the user session during which the product was viewed, joined from session touch level attributes."
+      
+      - name: anonymous_id
+        description: "Unique identifier for the user, coalesced from either context_fueled_external_id or context_anonymous_id to ensure consistent user tracking."
+        
+      - name: user_id
+        description: "Unique identifier for authenticated users who triggered the product view event."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the product viewed event was created, before any processing."
+        
+      - name: context_anonymous_id
+        description: "Anonymous identifier assigned to users who are not authenticated when viewing the product."
+        
+      - name: context_user_agent
+        description: "User agent string from the browser or device that triggered the product view event."
+        
+      - name: context_locale
+        description: "Locale setting of the user's browser or device when viewing the product (e.g., en-US)."
+        
+      - name: context_page_path
+        description: "Path portion of the URL where the product view event occurred, excluding domain."
+        
+      - name: context_ip
+        description: "IP address of the user when the product view event was triggered."
+        
+      - name: context_page_title
+        description: "Title of the page where the product view event occurred."
+        
+      - name: context_page_url
+        description: "Full URL of the page where the product view event occurred."
+        
+      - name: context_page_referrer
+        description: "Full URL of the referring page that led to the product view page."
+        
+      - name: context_library_name
+        description: "Name of the tracking library used to capture the product view event."
+        
+      - name: context_library_version
+        description: "Version of the tracking library that captured the product view event."
+        
+      - name: context_timezone
+        description: "Timezone of the user when the product view event was recorded."
+        
+      - name: context_os_name
+        description: "Name of the operating system where the product view event occurred."
+        
+      - name: context_campaign_medium
+        description: "Marketing medium through which the campaign was delivered that led to product view (e.g., email, cpc, social)."
+        
+      - name: context_campaign_name
+        description: "Name of the marketing campaign associated with this product view event."
+        
+      - name: context_campaign_source
+        description: "Original source of the marketing campaign that drove this user to view the product."
+        
+      - name: context_campaign_content
+        description: "Content identifier of the marketing campaign, used for A/B testing and content-targeted ads that led to product view."
+        
+      - name: context_campaign_term
+        description: "Search terms associated with the campaign that led to product view, typically for paid search campaigns."
+        
+      - name: context_campaign_id
+        description: "Unique identifier for the marketing campaign related to this product view event."
+        
+      - name: context_app
+        description: "Application identifier from which the product view event originated."
+        
+      - name: context_version
+        description: "Version identifier for the context object structure in the product view event."
+        
+      - name: context_fueled_external_id
+        description: "External identifier used by Fueled to track the user across platforms during product view."
+        
+      - name: context_fb_fbp
+        description: "Facebook browser identifier cookie value for ad attribution during product view."
+        
+      - name: context_fb_fbc
+        description: "Facebook click identifier cookie value for ad attribution during product view."
+        
+      - name: context_fb_external_id
+        description: "Facebook external identifier used for ad attribution related to product view."
+        
+      - name: context_ga4_client_id
+        description: "Google Analytics 4 client identifier for the user who viewed the product."
+        
+      - name: context_ga4_session_id
+        description: "Session identifier from Google Analytics 4 during product view."
+        
+      - name: context_ga4_user_id
+        description: "Google Analytics 4 user identifier for the user who viewed the product."
+        
+      - name: context_source
+        description: "Source of the product view event data within the tracking system."
+        
+      - name: context_source_id
+        description: "Identifier for the data source endpoint that captured this product view event."
+        
+      - name: context_source_type
+        description: "Type of source that generated this product view event."
+        
+      - name: context_destination_id
+        description: "Identifier for the destination where this product view event data is being sent."
+        
+      - name: context_destination_type
+        description: "Type of destination where this product view event data is being sent."
+        
+      - name: context_endpoint_version
+        description: "Version of the endpoint that captured this product view event."
+        
+      - name: context_request_ip
+        description: "IP address of the request that triggered this product view event."
+        
+      - name: context_rudderstack_source
+        description: "Source identifier if using Rudderstack as a CDP for this product view event."
+        
+      - name: context_session_id
+        description: "Unique identifier for the user's session during which they viewed the product."
+        
+      - name: context_debug
+        description: "Boolean flag indicating if the product view event was sent in debug mode."
+        
+      - name: context_initialized
+        description: "Boolean flag indicating if the tracking library was properly initialized during product view."
+        
+      - name: context_offline
+        description: "Boolean flag indicating if the product view event was captured while offline."
+        
+      - name: context_traits_email
+        description: "User's email address, collected from profile data during product view."
+        
+      - name: context_traits_phone
+        description: "User's phone number, collected from profile data during product view."
+        
+      - name: product_id
+        description: "Unique identifier for the product that was viewed."
+        
+      - name: sku
+        description: "Stock Keeping Unit - unique identifier for the specific variant of the product viewed."
+        
+      - name: category
+        description: "Category or taxonomy classification of the product that was viewed."
+        
+      - name: name
+        description: "Name or title of the product that was viewed."
+        
+      - name: brand
+        description: "Brand name of the product that was viewed."
+        
+      - name: variant
+        description: "Specific variant of the product that was viewed (e.g., color, size)."
+        
+      - name: price
+        description: "Price of the product at the time it was viewed."
+        
+      - name: currency
+        description: "Currency code for the monetary values of the product (e.g., USD, EUR)."
+        
+      - name: event_id
+        description: "Unique identifier for this specific product view event, sourced from the id field in raw data."
+        
+      - name: marketing_source
+        description: "Identified source of the marketing campaign that drove the product view event, normalized using the get_campaign_source macro."
+        
+      - name: marketing_medium
+        description: "Identified medium of the marketing campaign that drove the product view event, normalized using the get_marketing_medium macro."
+        
+      - name: adwords_id
+        description: "Google AdWords ID for click tracking and conversion attribution related to product view."
+        
+      - name: bing_id
+        description: "Microsoft Bing Ads ID for click tracking and conversion attribution related to product view."
+        
+      - name: facebook_click_id
+        description: "Facebook Click ID (fbclid) for tracking ad conversions related to product view."
+        
+      - name: gclid
+        description: "Google Click ID (gclid) for tracking ad conversions related to product view."
+        
+      - name: twitter_click_id
+        description: "Twitter Click ID for tracking ad conversions related to product view."
+        
+      - name: session_first_touch_marketing_source
+        description: "Marketing source that initiated the user's first interaction in the current session, useful for attribution modeling."
+        
+      - name: session_last_touch_marketing_source
+        description: "Marketing source of the user's most recent interaction in the current session before this product view."
+        
+      - name: session_first_touch_marketing_medium
+        description: "Marketing medium that initiated the user's first interaction in the current session, useful for attribution modeling."
+        
+      - name: session_last_touch_marketing_medium
+        description: "Marketing medium of the user's most recent interaction in the current session before this product view."

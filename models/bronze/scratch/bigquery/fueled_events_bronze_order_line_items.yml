@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: fueled_events_bronze_order_line_items
+    description: "Bronze layer model that unnests product line items from order_completed and order_cancelled events, providing individual product details from orders."
+    columns:
+      - name: event_type
+        description: "Identifier indicating the source event type, either 'order_completed' or 'order_cancelled'."
+        
+      - name: order_id
+        description: "Unique identifier for the order, extracted from the source order_completed or order_cancelled tables."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the order event occurred, used for ordering and tracking when order actions happened."
+        
+      - name: is_refunded
+        description: "Boolean flag indicating whether this line item has been refunded, extracted from the JSON product object."
+        
+      - name: line_item_id
+        description: "Unique identifier for the specific line item in the order, extracted from the JSON product object."
+        
+      - name: name
+        description: "Product name of the order line item, extracted from the JSON product object."
+        
+      - name: position
+        description: "Position of the product in the order display sequence, extracted from the JSON product object."
+        
+      - name: price
+        description: "Price of the individual product in the order line item, extracted from the JSON product object."
+        
+      - name: product_id
+        description: "Unique identifier for the product in the order line item, extracted from the product_id field in the JSON product object."
+        
+      - name: quantity
+        description: "Number of units of this product in the order, extracted from the JSON product object."
+        
+      - name: sku
+        description: "Stock Keeping Unit (SKU) of the product in the order line item, extracted from the JSON product object."
+        
+      - name: variant
+        description: "Product variant information for the order line item (such as size, color, etc.), extracted from the JSON product object."
+        
+      - name: unnested_product_column
+        description: "Raw JSON of the entire unnested product object, preserved for debugging or accessing additional fields not explicitly extracted."

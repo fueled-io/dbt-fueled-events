@@ -1,0 +1,293 @@
+version: 2
+
+models:
+  - name: s3_destination_products_searched
+    description: "Raw product search event data from S3 destination sources, capturing information about customer product search activities on ecommerce platforms."
+    columns:
+      - name: context_session_id
+        description: "Unique identifier for the user's session during which they performed the product search, coalesced from sessionId or context.sessionId."
+
+      - name: context_fb_fbc
+        description: "Facebook click identifier cookie value for ad attribution related to this product search event."
+
+      - name: context_traits_address_country_code
+        description: "Country code from the user's address in the context traits object."
+
+      - name: context_anonymous_id
+        description: "Anonymous identifier for the user, coalesced from anonymousId or context.anonymousId fields."
+
+      - name: context_campaign_content
+        description: "Content identifier of the marketing campaign, used for A/B testing and content-targeted ads related to this product search."
+
+      - name: context_campaign_term
+        description: "Search terms associated with the campaign that relates to this product search event."
+
+      - name: context_destination_id
+        description: "Identifier for the destination where this product search event data is being sent, typically null in raw data."
+
+      - name: context_campaign_medium
+        description: "Marketing medium through which the campaign was delivered that relates to the product search."
+
+      - name: user_id
+        description: "Unique identifier for the authenticated user who performed the product search, from userId."
+
+      - name: context_campaign_name
+        description: "Name of the marketing campaign associated with this product search event."
+
+      - name: context_user_agent
+        description: "User agent string from the browser or device that triggered the product search event."
+
+      - name: context_campaign_id
+        description: "Unique identifier for the marketing campaign related to this product search event."
+
+      - name: context_fb_fbp
+        description: "Facebook browser identifier cookie value for ad attribution related to this product search."
+
+      - name: loaded_at
+        description: "Timestamp when the data was loaded into the destination, derived from hydration_timestamp."
+
+      - name: context_page_url
+        description: "Full URL of the page where the product search was performed."
+
+      - name: context_fb_event_id
+        description: "Facebook event identifier for tracking this specific product search event."
+
+      - name: context_endpoint_version
+        description: "Version of the endpoint that captured this product search event, derived from schema_version."
+
+      - name: context_klaviyo_exchange_id
+        description: "Klaviyo exchange identifier for email marketing attribution related to the product search event."
+
+      - name: context_traits_visitor_type
+        description: "Type of visitor classification (e.g., new, returning) from context traits."
+
+      - name: context_rudderstack_source
+        description: "Source identifier if using Rudderstack as a CDP for this product search event."
+
+      - name: channel
+        description: "Channel through which the product search event was processed, set to 'server' for server-side events."
+
+      - name: products
+        description: "JSON string representation of the products that were included in the search results."
+
+      - name: context_offline
+        description: "Boolean flag indicating if the product search event was captured while offline."
+
+      - name: timestamp
+        description: "Timestamp when the product search event occurred, derived from original_timestamp."
+
+      - name: context_fueled_external_id
+        description: "External identifier used by Fueled to track the user across platforms during product search."
+
+      - name: event
+        description: "Type of event that occurred, set to 'Products Searched'."
+
+      - name: context_campaign_source
+        description: "Original source of the marketing campaign that relates to this product search."
+
+      - name: context_page_height
+        description: "Height of the browser viewport in pixels during the product search event, cast as INT64."
+
+      - name: context_page_path
+        description: "Path component of the URL where the product search event occurred (without domain)."
+
+      - name: id
+        description: "Unique identifier for this specific product search event, sourced from event_id."
+
+      - name: context_campaign_gclid
+        description: "Google Click Identifier (gclid) used for tracking Google Ads clicks that led to the product search."
+
+      - name: context_ga4_session_id
+        description: "Session identifier from Google Analytics 4 during the product search event."
+
+      - name: context_source_type
+        description: "Type of source that generated this product search event, typically null in raw data."
+
+      - name: context_library_name
+        description: "Name of the tracking library used to capture the product search event."
+
+      - name: context_version
+        description: "Version identifier for the context object structure in the product search event."
+
+      - name: context_library_version
+        description: "Version of the tracking library that captured the product search event."
+
+      - name: context_ip
+        description: "IP address of the user when the product search event was triggered."
+
+      - name: context_os_name
+        description: "Name of the operating system where the product search event occurred."
+
+      - name: context_ga4_user_id
+        description: "Google Analytics 4 user identifier for the user who performed the product search."
+
+      - name: context_campaign_klaviyo_id
+        description: "Klaviyo campaign identifier for email marketing attribution related to the product search event."
+
+      - name: context_referrer
+        description: "URL of the referring page that led the user to the page where they performed the search."
+
+      - name: context_page_width
+        description: "Width of the browser viewport in pixels during the product search event, cast as INT64."
+
+      - name: original_timestamp
+        description: "Original timestamp when the product search event was created, before any processing."
+
+      - name: event_text
+        description: "Text description of the event, typically 'Products Searched'."
+
+      - name: received_at
+        description: "Timestamp when the event was received by the data collection system."
+
+      - name: context_source_id
+        description: "Identifier for the data source endpoint that captured this product search event."
+
+      - name: context_request_ip
+        description: "IP address of the request that triggered this product search event."
+
+      - name: context_app
+        description: "Application identifier from which the product search event originated."
+
+      - name: context_locale
+        description: "Locale setting of the user's browser or device when performing the product search (e.g., en-US)."
+
+      - name: query
+        description: "The actual search query or keywords entered by the user for the product search."
+
+      - name: context_initialized
+        description: "Boolean flag indicating if the tracking library was properly initialized during product search."
+
+      - name: context_source
+        description: "Source of the product search event data within the tracking system."
+
+      - name: context_page_title
+        description: "Title of the webpage as shown in the browser title bar during the product search event."
+
+      - name: context_fb_external_id
+        description: "Facebook external identifier used for ad attribution related to the product search event."
+
+      - name: context_destination_type
+        description: "Type of destination where this product search event data is being sent."
+
+      - name: currency
+        description: "Currency code for the monetary values associated with the search results (e.g., USD, EUR)."
+
+      - name: context_ga4_client_id
+        description: "Google Analytics 4 client identifier for the user who performed the product search."
+
+      - name: context_page_search
+        description: "Search query parameters from the URL during the product search event."
+
+      - name: sent_at
+        description: "Timestamp when the product search event was sent to the collection system."
+
+      - name: context_timezone
+        description: "Timezone of the user when the product search event was recorded."
+
+      - name: context_debug
+        description: "Boolean flag indicating if the product search event was sent in debug mode."
+
+      - name: uuid_ts
+        description: "Timestamp derived from the original timestamp, used for uniqueness in identifiers."
+
+      - name: context_page_referrer
+        description: "URL of the referring page from the page context object."
+
+      - name: context_traits_email
+        description: "Email address of the user, coalesced from properties, customer, or context.traits objects."
+
+      - name: context_traits_phone
+        description: "Phone number of the user, coalesced from properties, customer, or context.traits objects."
+
+      - name: context_traits_address_postal_code
+        description: "Postal or ZIP code from the user's address in the context traits object."
+
+      - name: context_traits_address_country
+        description: "Country name from the user's address in the context traits object."
+
+      - name: context_traits_address_street
+        description: "Street address from the user's address in the context traits object."
+
+      - name: context_campaign_source_platform
+        description: "Source platform of the marketing campaign that drove this user to perform the product search."
+
+      - name: context_traits_name
+        description: "Full name of the user from the context traits object."
+
+      - name: context_traits_address_state
+        description: "State or province from the user's address in the context traits object."
+
+      - name: context_traits_first_name
+        description: "First name of the user from the context traits object."
+
+      - name: context_traits_external_customer_id
+        description: "External customer identifier, coalesced from context.traits or customer objects."
+
+      - name: context_traits_address_city
+        description: "City from the user's address in the context traits object."
+
+      - name: context_traits_last_name
+        description: "Last name of the user from the context traits object."
+
+      - name: context_traits_shopify_customer_id
+        description: "Shopify customer identifier associated with the user."
+
+      - name: context_traits_address_state_code
+        description: "State or province code from the user's address in the context traits object."
+
+      - name: context_campaign_redirect
+        description: "Redirect identifier for the campaign that led to this product search."
+
+      - name: context_page_hash
+        description: "Hash identifier for the specific page being viewed during product search."
+
+      - name: referrer
+        description: "URL of the referring page that led the user to perform the product search, possibly different from context_referrer."
+
+      - name: context_campaign_audience
+        description: "Target audience identifier for the campaign that led to this product search."
+
+      - name: context_campaign_agid
+        description: "Ad group identifier for the campaign that led to this product search."
+
+      - name: context_campaign_marketing_tactic
+        description: "Marketing tactic used in the campaign that led to this product search."
+
+      - name: context_ipv6
+        description: "IPv6 address of the user during the product search event."
+
+      - name: context_ipv4
+        description: "IPv4 address of the user during the product search event."
+
+      - name: context_tracking_consent_marketing
+        description: "Boolean flag indicating if the user consented to marketing tracking during product search."
+
+      - name: context_tracking_consent_analytics
+        description: "Boolean flag indicating if the user consented to analytics tracking during product search."
+
+      - name: context_tracking_consent_preferences
+        description: "Boolean flag indicating if the user consented to preferences tracking during product search."
+
+      - name: context_tracking_consent_sale_of_data
+        description: "Boolean flag indicating if the user consented to sale of data during product search."
+
+      - name: context_category_preferences_advertising
+        description: "Boolean flag indicating the user's consent preference for advertising category during product search."
+
+      - name: context_category_preferences_data_sharing
+        description: "Boolean flag indicating the user's consent preference for data sharing category during product search."
+
+      - name: context_category_preferences_analytics
+        description: "Boolean flag indicating the user's consent preference for analytics category during product search."
+
+      - name: context_category_preferences_functional
+        description: "Boolean flag indicating the user's consent preference for functional category during product search."
+
+      - name: context_campaign_segm
+        description: "Segment identifier for the campaign that led to this product search."
+
+      - name: context_opensend_persistent_id
+        description: "Persistent identifier used by the OpenSend email service."
+
+      - name: context_opensend_id_token
+        description: "Token identifier used by the OpenSend email service."

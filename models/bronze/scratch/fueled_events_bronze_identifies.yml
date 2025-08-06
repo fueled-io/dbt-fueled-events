@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: fueled_events_bronze_identifies
+    description: "Bronze layer model that processes identification events from the fueled_events_atomic source, capturing user identity and profile information."
+    columns:
+      - name: address_city
+        description: "City component of the user's address."
+        
+      - name: address_street
+        description: "Street address component of the user's address."
+        
+      - name: email
+        description: "Email address of the identified user."
+        
+      - name: first_name
+        description: "First name of the identified user."
+        
+      - name: last_name
+        description: "Last name of the identified user."
+        
+      - name: name
+        description: "Full name of the identified user, typically combining first and last names."
+        
+      - name: phone
+        description: "Phone number associated with the identified user."
+        
+      - name: anonymous_id
+        description: "Anonymous identifier for the user, coalesced from context_fueled_external_id or context_anonymous_id to ensure user tracking across sessions."
+        
+      - name: user_id
+        description: "Unique identifier for the authenticated user."
+        
+      - name: external_customer_id
+        description: "External customer identifier, typically from an external system like a CRM or e-commerce platform."
+        
+      - name: created_at
+        description: "Timestamp when the user profile was initially created."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the identify event occurred."
+        
+      - name: event_id
+        description: "Unique identifier for this identify event, derived from the id field in the source table."
+        
+      # Shared event attributes from the get_shared_event_attributes macro will include
+      # fields like campaign information, page data, user traits, and other context
+      # that are standardized across all event types.
+      
+      # Attribution click IDs from get_attribution_click_ids macro will include 
+      # fields related to marketing attribution extracted from the referrer.

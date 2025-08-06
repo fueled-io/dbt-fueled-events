@@ -1,0 +1,59 @@
+version: 2
+
+models:
+  - name: fueled_events_gold_signed_up
+    description: "Gold layer model for user signup events, providing a clean and business-ready view of registration data with complete marketing attribution."
+    columns:
+      - name: event_id
+        description: "Unique identifier for this specific user signup event."
+        
+      - name: anonymous_id
+        description: "Unique identifier for the user, coalesced from either context_fueled_external_id or context_anonymous_id to ensure consistent user tracking."
+        
+      - name: user_id
+        description: "Unique identifier assigned to the user upon registration."
+        
+      - name: email
+        description: "Email address provided by the user during signup."
+        
+      - name: timestamp
+        description: "Timestamp when the signup event occurred, normalized for analysis."
+        
+      - name: date
+        description: "Date when the signup event occurred, extracted from the timestamp."
+        
+      - name: marketing_source
+        description: "Identified source of the marketing campaign that drove the signup event."
+        
+      - name: marketing_medium
+        description: "Identified medium of the marketing campaign that drove the signup event."
+        
+      - name: marketing_campaign
+        description: "Identified campaign that drove the signup event, if available."
+        
+      - name: marketing_term
+        description: "Identified search term or keywords that drove the signup event, if available."
+        
+      - name: marketing_content
+        description: "Identified content variation that drove the signup event, if available."
+        
+      - name: landing_page
+        description: "First page the user visited in the session where they signed up."
+        
+      - name: referrer
+        description: "URL of the referring site that led the user to the page where they signed up."
+        
+      - name: device_type
+        description: "Type of device used during the signup (mobile, tablet, desktop)."
+        
+      - name: browser
+        description: "Browser used during the signup."
+        
+      - name: browser_version
+        description: "Version of the browser used during the signup."
+        
+      - name: os
+        description: "Operating system used during the signup."
+        
+      - name: os_version
+        description: "Version of the operating system used during the signup."

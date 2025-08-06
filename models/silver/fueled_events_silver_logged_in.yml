@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: fueled_events_silver_logged_in
+    description: "Silver layer model for login events, extending the bronze layer data with enriched marketing attribution data."
+    columns:
+      - name: anonymous_id
+        description: "Unique identifier for the user, coalesced from either context_fueled_external_id or context_anonymous_id to ensure consistent user tracking."
+        
+      - name: user_id
+        description: "Unique identifier for the authenticated user who logged in."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the login event occurred, before any processing."
+        
+      - name: event_id
+        description: "Unique identifier for this specific login event."
+        
+      - name: email
+        description: "Email address of the user who logged in."
+        
+      - name: google_click_id
+        description: "Google Click ID (gclid) for tracking ad conversions related to the login event."
+        
+      - name: facebook_click_id
+        description: "Facebook Click ID (fbclid) for tracking ad conversions related to the login event."
+        
+      - name: linkedin_click_id
+        description: "LinkedIn Click ID for tracking ad conversions related to the login event."
+        
+      - name: bing_click_id
+        description: "Microsoft Bing Ads Click ID for tracking ad conversions related to the login event."
+        
+      - name: marketo_token
+        description: "Marketo tracking token for marketing automation related to the login event."
+        
+      - name: floodlight_remarketing_id
+        description: "Google Floodlight remarketing ID for tracking conversions related to the login event."
+        
+      - name: marketing_source
+        description: "Identified source of the marketing campaign that drove the login event, normalized using the get_campaign_source macro."
+        
+      - name: marketing_medium
+        description: "Identified medium of the marketing campaign that drove the login event, normalized using the get_marketing_medium macro."
+        
+      # Additional context fields from the get_shared_event_attributes macro

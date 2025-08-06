@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: fueled_events_silver_product_list_viewed
+    description: "Silver layer model for product list view events, extending the bronze layer data with enriched marketing attribution data."
+    columns:
+      - name: anonymous_id
+        description: "Unique identifier for the user, coalesced from either context_fueled_external_id or context_anonymous_id to ensure consistent user tracking."
+        
+      - name: user_id
+        description: "Unique identifier for authenticated users who viewed the product list."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the product list view event was captured, before any processing."
+        
+      - name: event_id
+        description: "Unique identifier for this specific product list view event."
+        
+      - name: category
+        description: "Category of the product list that was viewed."
+        
+      - name: list_id
+        description: "Unique identifier for the product list that was viewed."
+        
+      - name: products
+        description: "JSON string representation of the products array in the viewed list, including product details."
+        
+      - name: google_click_id
+        description: "Google Click ID (gclid) for tracking ad conversions related to the product list view event."
+        
+      - name: facebook_click_id
+        description: "Facebook Click ID (fbclid) for tracking ad conversions related to the product list view event."
+        
+      - name: linkedin_click_id
+        description: "LinkedIn Click ID for tracking ad conversions related to the product list view event."
+        
+      - name: bing_click_id
+        description: "Microsoft Bing Ads Click ID for tracking ad conversions related to the product list view event."
+        
+      - name: marketo_token
+        description: "Marketo tracking token for marketing automation related to the product list view event."
+        
+      - name: floodlight_remarketing_id
+        description: "Google Floodlight remarketing ID for tracking conversions related to the product list view event."
+        
+      - name: marketing_source
+        description: "Identified source of the marketing campaign that drove the product list view event, normalized using the get_campaign_source macro."
+        
+      - name: marketing_medium
+        description: "Identified medium of the marketing campaign that drove the product list view event, normalized using the get_marketing_medium macro."
+        
+      # Additional context fields from the bronze model

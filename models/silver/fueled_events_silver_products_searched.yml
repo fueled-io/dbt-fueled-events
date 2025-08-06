@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: fueled_events_silver_products_searched
+    description: "Silver layer model for product search events, extending the bronze layer data with enriched marketing attribution data."
+    columns:
+      - name: anonymous_id
+        description: "Unique identifier for the user, coalesced from either context_fueled_external_id or context_anonymous_id to ensure consistent user tracking."
+        
+      - name: user_id
+        description: "Unique identifier for authenticated users who performed the product search."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the product search event was captured, before any processing."
+        
+      - name: event_id
+        description: "Unique identifier for this specific product search event."
+        
+      - name: query
+        description: "Search query term(s) entered by the user to search for products."
+        
+      - name: google_click_id
+        description: "Google Click ID (gclid) for tracking ad conversions related to the search event."
+        
+      - name: facebook_click_id
+        description: "Facebook Click ID (fbclid) for tracking ad conversions related to the search event."
+        
+      - name: linkedin_click_id
+        description: "LinkedIn Click ID for tracking ad conversions related to the search event."
+        
+      - name: bing_click_id
+        description: "Microsoft Bing Ads Click ID for tracking ad conversions related to the search event."
+        
+      - name: marketo_token
+        description: "Marketo tracking token for marketing automation related to the search event."
+        
+      - name: floodlight_remarketing_id
+        description: "Google Floodlight remarketing ID for tracking conversions related to the search event."
+        
+      - name: marketing_source
+        description: "Identified source of the marketing campaign that drove the search event, normalized using the get_campaign_source macro."
+        
+      - name: marketing_medium
+        description: "Identified medium of the marketing campaign that drove the search event, normalized using the get_marketing_medium macro."
+        
+      # Additional context fields from the bronze model

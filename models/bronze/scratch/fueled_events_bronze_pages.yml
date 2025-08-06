@@ -1,0 +1,57 @@
+version: 2
+
+models:
+  - name: fueled_events_bronze_pages
+    description: "Bronze layer model that processes page view events from both fueled_events_atomic source and s3_destination_pages reference model, combining page view data from multiple sources."
+    columns:
+      - name: _hash
+        description: "Hash value generated for the page view, used for deduplication or validation purposes."
+        
+      - name: height
+        description: "Height of the viewport in pixels when the page was viewed."
+        
+      - name: name
+        description: "Name of the page as defined in the tracking implementation."
+        
+      - name: path
+        description: "URL path component of the viewed page, excluding domain and query parameters."
+        
+      - name: referrer
+        description: "URL of the referring page that led the user to this page."
+        
+      - name: search
+        description: "Query string portion of the URL, containing search parameters."
+        
+      - name: title
+        description: "Title of the webpage from the HTML document title element."
+        
+      - name: url
+        description: "Complete URL of the viewed page, including protocol, domain, path, and query parameters."
+        
+      - name: width
+        description: "Width of the viewport in pixels when the page was viewed."
+        
+      - name: anonymous_id
+        description: "Anonymous identifier for the user, coalesced from context_fueled_external_id or context_anonymous_id to ensure user tracking across sessions."
+        
+      - name: user_id
+        description: "Unique identifier for the authenticated user viewing the page, if available."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the page view event occurred."
+        
+      - name: event_id
+        description: "Unique identifier for this page view event, derived from the id field in the source tables."
+        
+      # Shared event attributes from the get_shared_event_attributes macro will include
+      # fields like campaign information, page data, user traits, and other context
+      # that are standardized across all event types.
+      
+      # Attribution click IDs from get_attribution_click_ids macro will include 
+      # fields related to marketing attribution extracted from the URL.
+      # Note that the source table uses 'url' field for extraction while the
+      # s3_destination_pages reference model uses 'context_page_url'.
+      
+      # Note: This model combines data from both the fueled_events_atomic.pages source
+      # and the s3_destination_pages reference model when include_s3_destination_data
+      # variable is set to true, with data split based on the s3_destination_date variable.

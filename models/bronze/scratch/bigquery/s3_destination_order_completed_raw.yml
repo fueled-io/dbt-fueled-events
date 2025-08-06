@@ -1,0 +1,257 @@
+version: 2
+
+models:
+  - name: s3_destination_order_completed_raw
+    description: "Raw order completion events from S3 destination sources, specifically structured to align columns for consistent unioning with other data sources in the bronze layer."
+    columns:
+      - name: affiliation
+        description: "Store or business affiliation for the completed order."
+        
+      - name: billing_address_address
+        description: "Street address from the billing address associated with the completed order."
+        
+      - name: billing_address_city
+        description: "City from the billing address associated with the completed order."
+        
+      - name: billing_address_company
+        description: "Company name from the billing address associated with the completed order."
+        
+      - name: billing_address_country
+        description: "Country name from the billing address associated with the completed order."
+        
+      - name: billing_address_first_name
+        description: "First name from the billing address associated with the completed order."
+        
+      - name: billing_address_last_name
+        description: "Last name from the billing address associated with the completed order."
+        
+      - name: billing_address_phone
+        description: "Phone number from the billing address associated with the completed order."
+        
+      - name: billing_address_postal_code
+        description: "Postal or ZIP code from the billing address associated with the completed order."
+        
+      - name: billing_address_state
+        description: "State or province from the billing address associated with the completed order."
+        
+      - name: cart_id
+        description: "Unique identifier for the shopping cart that was converted into this completed order."
+        
+      - name: coupon
+        description: "Coupon or promo code applied to the completed order."
+        
+      - name: currency
+        description: "Currency code for the monetary values in the completed order (e.g., USD, EUR)."
+        
+      - name: discount
+        description: "Discount amount applied to the completed order, often as a result of using a coupon, cast as FLOAT64."
+        
+      - name: event_text
+        description: "Text description of the event, set to 'Order Completed'."
+        
+      - name: order_id
+        description: "Unique identifier for the order that was completed, sourced from properties.id."
+        
+      - name: payment_type
+        description: "Payment method used for the completed order, such as credit card or PayPal."
+        
+      - name: products
+        description: "JSON string representation of the products array in the completed order, including product details."
+        
+      - name: revenue
+        description: "Total revenue associated with the completed order, cast as FLOAT64."
+        
+      - name: shipping
+        description: "Shipping cost associated with the completed order, cast as FLOAT64."
+        
+      - name: status
+        description: "Status of the completed order, typically indicating the completion state."
+        
+      - name: subtotal
+        description: "Subtotal monetary value of all products in the completed order, excluding tax and shipping, cast as FLOAT64."
+        
+      - name: tax
+        description: "Tax amount applied to the completed order, cast as FLOAT64."
+        
+      - name: total
+        description: "Total monetary value of the completed order, including all products, tax, and shipping, cast as FLOAT64."
+        
+      - name: type
+        description: "Type of the order completion, providing additional context about the order type or method."
+        
+      - name: value
+        description: "Monetary value of the completed order, equivalent to the total amount, cast as FLOAT64."
+        
+      - name: anonymous_id
+        description: "Anonymous identifier for the user who completed the order, coalesced from context_fueled_external_id or context_anonymous_id."
+        
+      - name: user_id
+        description: "Unique identifier for the authenticated user who completed the order, sourced from userId."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the order completed event was created, before any processing."
+        
+      - name: context_anonymous_id
+        description: "Anonymous identifier assigned to users who are not authenticated when completing the order."
+        
+      - name: context_campaign_content
+        description: "Content identifier of the marketing campaign, used for A/B testing and content-targeted ads."
+        
+      - name: context_campaign_id
+        description: "Unique identifier for the marketing campaign related to this order completed event."
+        
+      - name: context_campaign_klaviyo_id
+        description: "Klaviyo campaign identifier for email marketing attribution related to the completed order."
+        
+      - name: context_campaign_medium
+        description: "Marketing medium through which the campaign was delivered that led to order completion."
+        
+      - name: context_campaign_name
+        description: "Name of the marketing campaign associated with this order completed event."
+        
+      - name: context_campaign_source
+        description: "Original source of the marketing campaign that drove this user to complete the order."
+        
+      - name: context_campaign_term
+        description: "Search terms associated with the campaign that led to order completion."
+        
+      - name: context_country_code
+        description: "Country code from the context object, indicating the user's location during order completion."
+        
+      - name: context_fb_external_id
+        description: "Facebook external identifier used for ad attribution related to the completed order."
+        
+      - name: context_fb_fbc
+        description: "Facebook click identifier cookie value for ad attribution during order completion."
+        
+      - name: context_fb_fbp
+        description: "Facebook browser identifier cookie value for ad attribution during order completion."
+        
+      - name: context_fueled_external_id
+        description: "External identifier used by Fueled to track the user across platforms during order completion."
+        
+      - name: context_ga4_client_id
+        description: "Google Analytics 4 client identifier for the user who completed the order."
+        
+      - name: context_ga4_session_id
+        description: "Session identifier from Google Analytics 4 during order completion."
+        
+      - name: context_ga4_user_id
+        description: "Google Analytics 4 user identifier for the user who completed the order."
+        
+      - name: context_ga_4_client_id
+        description: "Alternate Google Analytics 4 client identifier field for compatibility with different naming conventions."
+        
+      - name: context_ga_4_session_id
+        description: "Alternate session identifier from Google Analytics 4 for compatibility with different naming conventions."
+        
+      - name: context_ga_4_user_id
+        description: "Alternate Google Analytics 4 user identifier for compatibility with different naming conventions."
+        
+      - name: context_ip
+        description: "IP address of the user when the order completed event was triggered."
+        
+      - name: context_klaviyo_exchange_id
+        description: "Klaviyo exchange identifier for email marketing attribution related to the completed order."
+        
+      - name: context_locale
+        description: "Locale setting of the user's browser or device when completing the order (e.g., en-US)."
+        
+      - name: context_os_name
+        description: "Name of the operating system where the order completed event occurred."
+        
+      - name: context_referrer
+        description: "URL of the referring page that led the user to the page where they completed the order."
+        
+      - name: context_source_id
+        description: "Identifier for the data source endpoint that captured this order completed event."
+        
+      - name: context_source_type
+        description: "Type of source that generated this order completed event, set to 'S3'."
+        
+      - name: context_tracking_consent
+        description: "Boolean flag indicating if the user consented to tracking during order completion, set to TRUE."
+        
+      - name: context_tracking_consent_analytics
+        description: "Boolean flag indicating if the user consented to analytics tracking during order completion."
+        
+      - name: context_tracking_consent_marketing
+        description: "Boolean flag indicating if the user consented to marketing tracking during order completion."
+        
+      - name: context_tracking_consent_preferences
+        description: "Boolean flag indicating if the user consented to preferences tracking during order completion."
+        
+      - name: context_tracking_consent_sale_of_data
+        description: "Boolean flag indicating if the user consented to sale of data during order completion."
+        
+      - name: context_timezone
+        description: "Timezone of the user when the order completed event was recorded."
+        
+      - name: context_url
+        description: "Full URL of the page where the order completion event occurred."
+        
+      - name: context_user_agent
+        description: "User agent string from the browser or device that triggered the order completed event."
+        
+      - name: context_user_id
+        description: "User identifier from the context object, potentially different from the top-level user_id field."
+        
+      - name: context_version
+        description: "Version identifier for the context object structure in the order completed event."
+        
+      - name: context_library_version
+        description: "Version of the tracking library that captured the order completed event."
+        
+      - name: context_library_name
+        description: "Name of the tracking library used to capture the order completed event."
+        
+      - name: context_endpoint_version
+        description: "Version of the endpoint that captured this order completed event."
+        
+      - name: context_passed_ip
+        description: "IP address passed in the context when the order was completed."
+        
+      - name: context_source
+        description: "Source of the order completed event data within the tracking system."
+        
+      - name: context_debug
+        description: "Boolean flag indicating if the order completed event was sent in debug mode."
+        
+      - name: context_app
+        description: "Application identifier from which the order completed event originated."
+        
+      - name: context_request_ip
+        description: "IP address of the request that triggered this order completed event."
+        
+      - name: context_session_id
+        description: "Unique identifier for the user's session during which they completed the order."
+        
+      - name: context_destination_type
+        description: "Type of destination where this order completed event data is being sent."
+        
+      - name: context_destination_id
+        description: "Identifier for the destination where this order completed event data is being sent."
+        
+      - name: context_rudderstack_source
+        description: "Source identifier if using Rudderstack as a CDP for this order completed event."
+        
+      - name: context_offline
+        description: "Boolean flag indicating if the order completed event was captured while offline."
+        
+      - name: context_initialized
+        description: "Boolean flag indicating if the tracking library was properly initialized during order completion."
+        
+      - name: context_category_preferences_functional
+        description: "Boolean flag indicating the user's consent preference for functional category during order completion."
+        
+      - name: context_category_preferences_data_sharing
+        description: "Boolean flag indicating the user's consent preference for data sharing category during order completion."
+        
+      - name: context_category_preferences_analytics
+        description: "Boolean flag indicating the user's consent preference for analytics category during order completion."
+        
+      - name: context_category_preferences_advertising
+        description: "Boolean flag indicating the user's consent preference for advertising category during order completion."
+        
+      - name: event_id
+        description: "Unique identifier for this specific order completed event, sourced from properties.id."

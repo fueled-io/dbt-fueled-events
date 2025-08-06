@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: fueled_events_bronze_product_viewed
+    description: "Bronze layer model that processes product view events from both fueled_events_atomic source and s3_destination_product_viewed reference model, combining data when users view product detail pages."
+    columns:
+      - name: brand
+        description: "Brand name of the product that was viewed."
+        
+      - name: category
+        description: "Category classification of the product that was viewed."
+        
+      - name: image_url
+        description: "URL to the image of the product that was viewed."
+        
+      - name: name
+        description: "Name or title of the product that was viewed."
+        
+      - name: price
+        description: "Price of the product that was viewed, typically in the store's default currency."
+        
+      - name: product_id
+        description: "Unique identifier for the product that was viewed in the e-commerce system."
+        
+      - name: sku
+        description: "Stock Keeping Unit (SKU) identifier for the specific product variant that was viewed."
+        
+      - name: variant
+        description: "Specific variant of the product that was viewed (e.g., color, size)."
+        
+      - name: anonymous_id
+        description: "Anonymous identifier for the user, coalesced from context_fueled_external_id or context_anonymous_id to ensure user tracking across sessions."
+        
+      - name: user_id
+        description: "Unique identifier for the authenticated user who viewed the product, if available."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the product view event occurred."
+        
+      - name: event_id
+        description: "Unique identifier for this product view event, derived from the id field in the source tables."
+        
+      # Shared event attributes from the get_shared_event_attributes macro will include
+      # fields like campaign information, page data, user traits, and other context
+      # that are standardized across all event types.
+      
+      # Attribution click IDs from get_attribution_click_ids macro will include 
+      # fields related to marketing attribution extracted from the referrer.
+      
+      # Note: This model combines data from both the fueled_events_atomic.product_viewed source
+      # and the s3_destination_product_viewed reference model when include_s3_destination_data
+      # variable is set to true, with data split based on the s3_destination_date variable.

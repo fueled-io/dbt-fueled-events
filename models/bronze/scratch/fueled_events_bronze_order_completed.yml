@@ -1,0 +1,103 @@
+version: 2
+
+models:
+  - name: fueled_events_bronze_order_completed
+    description: "Bronze layer model that processes completed order events from both fueled_events_atomic source and s3_destination_order_completed_raw reference model, combining order data from multiple sources."
+    columns:
+      - name: affiliation
+        description: "Store or affiliation through which the order was placed."
+        
+      - name: billing_address_address
+        description: "Street address from the billing address associated with the completed order."
+        
+      - name: billing_address_city
+        description: "City from the billing address associated with the completed order."
+        
+      - name: billing_address_company
+        description: "Company name from the billing address associated with the completed order, if applicable."
+        
+      - name: billing_address_country
+        description: "Country from the billing address associated with the completed order."
+        
+      - name: billing_address_first_name
+        description: "First name from the billing address associated with the completed order."
+        
+      - name: billing_address_last_name
+        description: "Last name from the billing address associated with the completed order."
+        
+      - name: billing_address_phone
+        description: "Phone number from the billing address associated with the completed order."
+        
+      - name: billing_address_postal_code
+        description: "Postal code from the billing address associated with the completed order."
+        
+      - name: billing_address_state
+        description: "State or province from the billing address associated with the completed order."
+        
+      - name: cart_id
+        description: "Identifier for the shopping cart that was converted into this order."
+        
+      - name: coupon
+        description: "Coupon code applied to the completed order, if any."
+        
+      - name: currency
+        description: "Currency code used for the order's monetary values (e.g., USD, EUR)."
+        
+      - name: discount
+        description: "Discount amount applied to the completed order, in the specified currency."
+        
+      - name: event_text
+        description: "Text description of the order completed event."
+        
+      - name: order_id
+        description: "Unique identifier for the completed order in the e-commerce system."
+        
+      - name: payment_type
+        description: "Method of payment used for the completed order (e.g., credit card, PayPal)."
+        
+      - name: products
+        description: "JSON array containing details of products included in the completed order."
+        
+      - name: revenue
+        description: "Total revenue generated from the completed order, in the specified currency."
+        
+      - name: shipping
+        description: "Shipping cost for the completed order, in the specified currency."
+        
+      - name: status
+        description: "Current status of the completed order, typically 'completed' or similar."
+        
+      - name: subtotal
+        description: "Subtotal amount of the completed order before tax and shipping, in the specified currency."
+        
+      - name: tax
+        description: "Tax amount applied to the completed order, in the specified currency."
+        
+      - name: total
+        description: "Total amount of the completed order including tax and shipping, in the specified currency."
+        
+      - name: type
+        description: "Type classification of the completed order, if applicable."
+        
+      - name: value
+        description: "Value of the completed order, typically equivalent to total or revenue, in the specified currency."
+        
+      - name: anonymous_id
+        description: "Anonymous identifier for the user, coalesced from context_fueled_external_id or context_anonymous_id to ensure user tracking across sessions."
+        
+      - name: user_id
+        description: "Unique identifier for the authenticated user who placed the order."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the order completion event occurred."
+        
+      - name: event_id
+        description: "Unique identifier for this order completion event, derived from the id field in the source tables."
+        
+      # Shared event attributes from the get_shared_event_attributes macro will include
+      # fields like campaign information, page data, user traits, and other context
+      # that are standardized across all event types.
+      
+      # Note: This model combines data from both the fueled_events_atomic.order_completed source
+      # and the s3_destination_order_completed_raw reference model when include_s3_destination_data
+      # variable is set to true, with data split based on the s3_destination_date variable.

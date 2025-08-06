@@ -1,0 +1,89 @@
+version: 2
+
+models:
+  - name: fueled_events_silver_session_info
+    description: "Silver layer model for first-touch session information, extending the bronze layer with enriched marketing attribution data."
+    columns:
+      - name: context_anonymous_id
+        description: "Unique anonymous identifier for the user, coalesced from either context_fueled_external_id or context_anonymous_id to ensure consistent user tracking."
+        
+      - name: user_id
+        description: "Unique identifier for authenticated users who started the session."
+        
+      - name: context_fueled_external_id
+        description: "External identifier used by Fueled to track the user across platforms during the session."
+        
+      - name: context_session_id
+        description: "Original session identifier provided by the tracking system."
+        
+      - name: context_campaign_name
+        description: "Name of the marketing campaign associated with the first-touch session."
+        
+      - name: context_campaign_source
+        description: "Original source of the marketing campaign that drove this user to start the session."
+        
+      - name: context_campaign_medium
+        description: "Marketing medium through which the campaign was delivered that led to session start."
+        
+      - name: context_referrer
+        description: "Full URL of the referring page that led to the session's first page view, decoded for readability."
+        
+      - name: landing_page_url
+        description: "URL of the landing page for this session, with categorization for checkout and account pages based on URL patterns."
+        
+      - name: context_page_url
+        description: "Full URL of the page where the session started, decoded for readability."
+        
+      - name: google_click_id
+        description: "Google Click ID (gclid) for tracking ad conversions related to the session."
+        
+      - name: facebook_click_id
+        description: "Facebook Click ID (fbclid) for tracking ad conversions related to the session."
+        
+      - name: linkedin_click_id
+        description: "LinkedIn Click ID for tracking ad conversions related to the session."
+        
+      - name: bing_click_id
+        description: "Microsoft Bing Ads Click ID for tracking ad conversions related to the session."
+        
+      - name: marketo_token
+        description: "Marketo tracking token for marketing automation related to the session."
+        
+      - name: floodlight_remarketing_id
+        description: "Google Floodlight remarketing ID for tracking conversions related to the session."
+        
+      - name: context_os_name
+        description: "Name of the operating system where the session started."
+        
+      - name: title
+        description: "Title of the page where the session started."
+        
+      - name: timestamp
+        description: "Timestamp when the event within the session occurred."
+        
+      - name: time_diff
+        description: "Time difference between consecutive events for the same user, used to determine session boundaries."
+        
+      - name: new_session_flag
+        description: "Flag (0 or 1) indicating whether this event starts a new session based on time thresholds."
+        
+      - name: session_id
+        description: "Unique session identifier generated as MD5 hash of anonymous ID and session number."
+        
+      - name: session_start
+        description: "Timestamp when the session started (first event in the session)."
+        
+      - name: session_end
+        description: "Timestamp when the session ended (last event in the session)."
+        
+      - name: session_first_touch
+        description: "Sequence number of events within a session, with 1 indicating the first event in the session (all records in this model have value 1)."
+        
+      - name: session_last_touch
+        description: "Sequence number of events in reverse order, with 1 indicating the last event in a session."
+        
+      - name: marketing_source
+        description: "Identified source of the marketing campaign that drove the session start, normalized using the get_campaign_source macro."
+        
+      - name: marketing_medium
+        description: "Identified medium of the marketing campaign that drove the session start, normalized using the get_marketing_medium macro."

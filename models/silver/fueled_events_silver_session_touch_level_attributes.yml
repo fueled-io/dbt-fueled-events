@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: fueled_events_silver_session_touch_level_attributes
+    description: "Silver layer model combining first-touch and last-touch session attribution data for comprehensive marketing attribution analysis."
+    columns:
+      - name: user_id
+        description: "Unique identifier for authenticated users, coalesced from first-touch and last-touch session data."
+        
+      - name: session_id
+        description: "Unique session identifier, coalesced from first-touch and last-touch session data."
+        
+      - name: session_start
+        description: "Timestamp when the session started, coalesced from first-touch and last-touch session data."
+        
+      - name: context_anonymous_id
+        description: "Unique anonymous identifier for the user, coalesced from first-touch and last-touch session data."
+        
+      - name: context_session_id
+        description: "Original session identifier provided by the tracking system, coalesced from first-touch and last-touch session data."
+        
+      - name: context_fueled_external_id
+        description: "External identifier used by Fueled to track the user across platforms, coalesced from first-touch and last-touch session data."
+        
+      - name: session_first_touch_marketing_source
+        description: "Identified source of the marketing campaign that drove the session's first touch point, normalized using the get_campaign_source macro."
+        
+      - name: session_last_touch_marketing_source
+        description: "Identified source of the marketing campaign associated with the session's last touch point, normalized using the get_campaign_source macro."
+        
+      - name: session_first_touch_marketing_medium
+        description: "Identified medium of the marketing campaign that drove the session's first touch point, normalized using the get_marketing_medium macro."
+        
+      - name: session_last_touch_marketing_medium
+        description: "Identified medium of the marketing campaign associated with the session's last touch point, normalized using the get_marketing_medium macro."

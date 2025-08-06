@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: fueled_events_bronze_tracks
+    description: "Bronze layer model that processes generic tracking events from the fueled_events_atomic source, capturing custom events that don't fit into other predefined event categories."
+    columns:
+      - name: event
+        description: "Name or type of the custom event that was tracked."
+        
+      - name: event_text
+        description: "Descriptive text associated with the tracked event, providing additional context about the event."
+        
+      - name: anonymous_id
+        description: "Anonymous identifier for the user, coalesced from context_fueled_external_id or context_anonymous_id to ensure user tracking across sessions."
+        
+      - name: user_id
+        description: "Unique identifier for the authenticated user associated with this track event, if available."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the track event occurred."
+        
+      - name: event_id
+        description: "Unique identifier for this track event, derived from the id field in the source table."
+        
+      # Shared event attributes from the get_shared_event_attributes macro will include
+      # fields like campaign information, page data, user traits, and other context
+      # that are standardized across all event types.

@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: fueled_events_silver_checkout_created
+    description: "Silver layer model for checkout creation events, extending the bronze layer data."
+    columns:
+      - name: checkout_id
+        description: "Unique identifier for the checkout session."
+        
+      - name: anonymous_id
+        description: "Unique identifier for the user, coalesced from either context_fueled_external_id or context_anonymous_id to ensure consistent user tracking."
+        
+      - name: user_id
+        description: "Unique identifier for authenticated users who created the checkout."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the checkout created event was captured, before any processing."
+        
+      - name: event_id
+        description: "Unique identifier for this specific checkout created event."
+        
+      - name: currency
+        description: "Currency code for the checkout (e.g., USD, EUR)."
+        
+      - name: value
+        description: "Total monetary value of the checkout."
+        
+      - name: shipping
+        description: "Shipping cost associated with the checkout."
+        
+      - name: tax
+        description: "Tax amount associated with the checkout."
+        
+      - name: discount
+        description: "Discount amount applied to the checkout."
+        
+      - name: order_id
+        description: "Associated order identifier if the checkout is linked to an order."
+        
+      - name: products
+        description: "JSON string representation of the products array in the checkout, including product details."
+        
+      # Additional shared event attributes from the bronze model

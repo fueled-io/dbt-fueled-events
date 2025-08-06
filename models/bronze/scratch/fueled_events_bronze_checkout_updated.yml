@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: fueled_events_bronze_checkout_updated
+    description: "Bronze layer model that processes checkout update events from the fueled_events_atomic source, capturing changes made to existing checkouts."
+    columns:
+      - name: affiliation
+        description: "Store or affiliation associated with this updated checkout."
+        
+      - name: coupon
+        description: "Coupon code applied to the checkout during the update, if any."
+        
+      - name: currency
+        description: "Currency code used for the checkout (e.g., USD, EUR)."
+        
+      - name: discount
+        description: "Discount amount applied to the checkout after updates, in the specified currency."
+        
+      - name: products
+        description: "JSON array containing details of products included in the updated checkout."
+        
+      - name: tax
+        description: "Tax amount applied to the checkout after updates, in the specified currency."
+        
+      - name: value
+        description: "Total value of the checkout after updates, in the specified currency."
+        
+      - name: anonymous_id
+        description: "Anonymous identifier for the user, coalesced from context_fueled_external_id or context_anonymous_id to ensure user tracking across sessions."
+        
+      - name: user_id
+        description: "Unique identifier for the authenticated user who updated the checkout."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the checkout update event occurred."
+        
+      - name: event_id
+        description: "Unique identifier for this checkout update event, derived from the id field in the source table."
+        
+      # Shared event attributes from the get_shared_event_attributes macro will include
+      # fields like campaign information, page data, user traits, and other context
+      # that are standardized across all event types.

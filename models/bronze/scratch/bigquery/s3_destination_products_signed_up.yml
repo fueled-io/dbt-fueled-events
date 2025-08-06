@@ -1,0 +1,266 @@
+version: 2
+
+models:
+  - name: s3_destination_products_signed_up
+    description: "Raw user signup event data from S3 destination sources, capturing when users create new accounts on ecommerce platforms."
+    columns:
+      - name: timestamp
+        description: "Timestamp when the signup event occurred, derived from original_timestamp."
+
+      - name: context_anonymous_id
+        description: "Anonymous identifier for the user, coalesced from anonymousId or context.anonymousId fields."
+
+      - name: context_locale
+        description: "Locale setting of the user's browser or device when signing up (e.g., en-US)."
+
+      - name: context_fueled_external_id
+        description: "External identifier used by Fueled to track the user across platforms."
+
+      - name: context_ga4_session_id
+        description: "Session identifier from Google Analytics 4 during the signup event."
+
+      - name: context_traits_visitor_type
+        description: "Type of visitor classification (e.g., new, returning) from context traits."
+
+      - name: context_traits_first_name
+        description: "First name of the user, coalesced from properties.first_name or customer.firstName."
+
+      - name: context_timezone
+        description: "Timezone of the user when the signup event was recorded."
+
+      - name: context_page_title
+        description: "Title of the webpage as shown in the browser title bar during the signup event."
+
+      - name: original_timestamp
+        description: "Original timestamp when the signup event was created, before any processing."
+
+      - name: context_traits_address_country_code
+        description: "Country code from the user's address in the context traits object."
+
+      - name: context_user_agent
+        description: "User agent string from the browser or device that triggered the signup event."
+
+      - name: context_os_name
+        description: "Name of the operating system where the signup event occurred."
+
+      - name: email
+        description: "Email address of the user who signed up, coalesced from properties.email or customer.email."
+
+      - name: context_session_id
+        description: "Unique identifier for the user's session during which they signed up, coalesced from sessionId or context.sessionId."
+
+      - name: context_source_id
+        description: "Identifier for the data source endpoint that captured this signup event, from sourceEndpointId."
+
+      - name: context_app
+        description: "Application identifier from which the signup event originated."
+
+      - name: id
+        description: "Unique identifier for this specific signup event, sourced from event_id."
+
+      - name: context_traits_external_customer_id
+        description: "External customer identifier, coalesced from customer.externalCustomerId."
+
+      - name: user_id
+        description: "Unique identifier for the authenticated user who completed the signup, from userId."
+
+      - name: context_library_version
+        description: "Version of the tracking library that captured the signup event."
+
+      - name: context_page_width
+        description: "Width of the browser viewport in pixels during the signup event, cast as INT64."
+
+      - name: context_debug
+        description: "Boolean flag indicating if the signup event was sent in debug mode."
+
+      - name: context_page_url
+        description: "Full URL of the page where the user signed up."
+
+      - name: context_referrer
+        description: "URL of the referring page that led the user to the signup page."
+
+      - name: context_page_height
+        description: "Height of the browser viewport in pixels during the signup event, cast as INT64."
+
+      - name: loaded_at
+        description: "Timestamp when the data was loaded into the destination, derived from hydration_timestamp."
+
+      - name: event_text
+        description: "Text description of the event, typically null for raw signup events."
+
+      - name: sent_at
+        description: "Timestamp when the signup event was sent to the collection system, derived from original_timestamp."
+
+      - name: context_offline
+        description: "Boolean flag indicating if the signup event was captured while offline."
+
+      - name: event
+        description: "Type of event that occurred, set to 'Signed Up'."
+
+      - name: context_fb_fbp
+        description: "Facebook browser identifier cookie value for ad attribution related to this signup."
+
+      - name: context_source_type
+        description: "Type of source that generated this signup event, typically null in raw data."
+
+      - name: context_endpoint_version
+        description: "Version of the endpoint that captured this signup event, from schema_version."
+
+      - name: received_at
+        description: "Timestamp when the event was received by the data collection system, derived from hydration_timestamp."
+
+      - name: context_fb_event_id
+        description: "Facebook event identifier for tracking this specific signup event."
+
+      - name: last_name
+        description: "Last name of the user who signed up, coalesced from properties.last_name or customer.lastName."
+
+      - name: first_name
+        description: "First name of the user who signed up, coalesced from properties.first_name or customer.firstName."
+
+      - name: context_destination_id
+        description: "Identifier for the destination where this signup event data is being sent, typically null in raw data."
+
+      - name: channel
+        description: "Channel through which the signup event was processed, set to 'server' for server-side events."
+
+      - name: context_ga4_user_id
+        description: "Google Analytics 4 user identifier for the user who signed up."
+
+      - name: context_destination_type
+        description: "Type of destination where this signup event data is being sent, typically null in raw data."
+
+      - name: context_traits_last_name
+        description: "Last name of the user, coalesced from properties.last_name or customer.lastName."
+
+      - name: uuid_ts
+        description: "Timestamp derived from the original timestamp, used for uniqueness in identifiers."
+
+      - name: context_traits_name
+        description: "Full name of the user, typically null in raw signup events."
+
+      - name: context_traits_email
+        description: "Email address of the user who signed up, coalesced from properties.email or customer.email."
+
+      - name: context_ga4_client_id
+        description: "Google Analytics 4 client identifier for the user who signed up."
+
+      - name: context_page_path
+        description: "Path component of the URL where the signup event occurred (without domain)."
+
+      - name: context_version
+        description: "Version identifier for the context object structure in the signup event."
+
+      - name: context_fb_external_id
+        description: "Facebook external identifier used for ad attribution related to the signup event."
+
+      - name: context_rudderstack_source
+        description: "Source identifier if using Rudderstack as a CDP for this signup event."
+
+      - name: context_ip
+        description: "IP address of the user when the signup event was triggered."
+
+      - name: context_traits_shopify_customer_id
+        description: "Shopify customer identifier associated with the user who signed up."
+
+      - name: context_request_ip
+        description: "IP address of the request that triggered this signup event."
+
+      - name: context_library_name
+        description: "Name of the tracking library used to capture the signup event."
+
+      - name: context_source
+        description: "Source of the signup event data within the tracking system, derived from context.app."
+
+      - name: context_page_referrer
+        description: "URL of the referring page from the page context object."
+
+      - name: context_initialized
+        description: "Boolean flag indicating if the tracking library was properly initialized during signup."
+
+      - name: context_klaviyo_exchange_id
+        description: "Klaviyo exchange identifier for email marketing attribution related to the signup event."
+
+      - name: context_fb_fbc
+        description: "Facebook click identifier cookie value for ad attribution during signup."
+
+      - name: context_traits_phone
+        description: "Phone number of the user who signed up."
+
+      - name: context_campaign_source
+        description: "Original source of the marketing campaign that relates to this signup."
+
+      - name: context_campaign_gclid
+        description: "Google Click Identifier (gclid) used for tracking Google Ads clicks that led to the signup."
+
+      - name: context_campaign_medium
+        description: "Marketing medium through which the campaign was delivered that led to signup."
+
+      - name: context_campaign_name
+        description: "Name of the marketing campaign associated with this signup event."
+
+      - name: context_campaign_term
+        description: "Search terms associated with the campaign that led to the signup."
+
+      - name: context_campaign_id
+        description: "Unique identifier for the marketing campaign related to this signup event."
+
+      - name: context_campaign_content
+        description: "Content identifier of the marketing campaign, used for A/B testing and content-targeted ads."
+
+      - name: context_campaign_klaviyo_id
+        description: "Klaviyo campaign identifier for email marketing attribution related to the signup event."
+
+      - name: context_page_search
+        description: "Search query parameters from the URL during the signup event."
+
+      - name: context_traits_address_city
+        description: "City from the user's address in the context traits object."
+
+      - name: context_traits_address_state_code
+        description: "State or province code from the user's address in the context traits object."
+
+      - name: context_traits_address_postal_code
+        description: "Postal or ZIP code from the user's address in the context traits object."
+
+      - name: context_traits_address_state
+        description: "State or province from the user's address in the context traits object."
+
+      - name: context_traits_address_country
+        description: "Country name from the user's address in the context traits object."
+
+      - name: context_traits_address_street
+        description: "Street address from the user's address in the context traits object."
+
+      - name: context_campaign_agid
+        description: "Ad group identifier for the campaign that led to this signup."
+
+      - name: context_ipv6
+        description: "IPv6 address of the user during the signup event."
+
+      - name: context_ipv4
+        description: "IPv4 address of the user during the signup event."
+
+      - name: context_tracking_consent_sale_of_data
+        description: "Boolean flag indicating if the user consented to sale of data during signup."
+
+      - name: context_tracking_consent_analytics
+        description: "Boolean flag indicating if the user consented to analytics tracking during signup."
+
+      - name: context_tracking_consent_marketing
+        description: "Boolean flag indicating if the user consented to marketing tracking during signup."
+
+      - name: context_tracking_consent_preferences
+        description: "Boolean flag indicating if the user consented to preferences tracking during signup."
+
+      - name: context_category_preferences_data_sharing
+        description: "Boolean flag indicating the user's consent preference for data sharing category during signup."
+
+      - name: context_category_preferences_advertising
+        description: "Boolean flag indicating the user's consent preference for advertising category during signup."
+
+      - name: context_category_preferences_analytics
+        description: "Boolean flag indicating the user's consent preference for analytics category during signup."
+
+      - name: context_category_preferences_functional
+        description: "Boolean flag indicating the user's consent preference for functional category during signup."

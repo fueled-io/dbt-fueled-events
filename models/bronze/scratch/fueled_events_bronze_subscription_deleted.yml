@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: fueled_events_bronze_subscription_deleted
+    description: "Bronze layer model that processes subscription deletion events from the fueled_events_atomic source. Currently disabled in the dbt project configuration."
+    columns:
+      # This model passes through all columns from the source table without transformation
+      # Since the model is currently disabled (enabled=false in config), it serves as a placeholder for future implementation
+      
+      # Assuming common subscription fields would be included if enabled:
+      - name: user_id
+        description: "Unique identifier for the user who owned the deleted subscription."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the subscription deletion event occurred."
+        
+      - name: event_id
+        description: "Unique identifier for this subscription deletion event, derived from the id field in the source table."
+        
+      # Note: This model is currently configured as disabled in the dbt project.

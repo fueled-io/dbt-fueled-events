@@ -1,0 +1,218 @@
+version: 2
+
+models:
+  - name: s3_destination_order_cancelled
+    description: "Raw order cancellation events from S3 destination sources, capturing data when customers cancel their orders across platforms."
+    columns:
+      - name: original_timestamp
+        description: "Original timestamp when the order cancelled event was created, before any processing."
+        
+      - name: billing_address_country_code
+        description: "Country code from the billing address associated with the cancelled order, coalesced from properties or context traits."
+        
+      - name: user_id
+        description: "Unique identifier for the authenticated user who cancelled the order, coalesced from userId or context.userId."
+        
+      - name: context_user_agent
+        description: "User agent string from the browser or device that triggered the order cancellation event."
+        
+      - name: order_id
+        description: "Unique identifier for the order that was cancelled, sourced from properties.id."
+        
+      - name: value
+        description: "Monetary value of the cancelled order, equivalent to the total amount, cast as FLOAT64."
+        
+      - name: products
+        description: "JSON string representation of the products array in the cancelled order, including product details."
+        
+      - name: context_passed_ip
+        description: "IP address of the user passed in the context when the order was cancelled."
+        
+      - name: context_fueled_external_id
+        description: "External identifier used by Fueled to track the user across platforms during order cancellation."
+        
+      - name: context_tracking_consent
+        description: "Boolean flag indicating if the user consented to analytics tracking during order cancellation."
+        
+      - name: billing_address_first_name
+        description: "First name from the billing address associated with the cancelled order, coalesced from properties or customer."
+        
+      - name: payment_type
+        description: "Payment method used for the cancelled order, such as credit card or PayPal."
+        
+      - name: billing_address_last_name
+        description: "Last name from the billing address associated with the cancelled order, coalesced from properties or customer."
+        
+      - name: cart_id
+        description: "Unique identifier for the shopping cart associated with the cancelled order."
+        
+      - name: loaded_at
+        description: "Timestamp when the data was loaded into the destination, typically null in raw data."
+        
+      - name: received_at
+        description: "Timestamp when the event was received by the data collection system, typically null in raw data."
+        
+      - name: billing_address_postal_code
+        description: "Postal or ZIP code from the billing address associated with the cancelled order."
+        
+      - name: timestamp
+        description: "Timestamp of when the order cancelled event occurred, derived from hydration_timestamp."
+        
+      - name: sent_at
+        description: "Timestamp when the order cancelled event was sent to the collection system, typically null in raw data."
+        
+      - name: currency
+        description: "Currency code for the monetary values in the cancelled order (e.g., USD, EUR)."
+        
+      - name: context_fb_external_id
+        description: "Facebook external identifier used for ad attribution related to the cancelled order."
+        
+      - name: context_source
+        description: "Source of the order cancelled event data within the tracking system."
+        
+      - name: context_url
+        description: "Full URL of the page where the order cancellation event occurred."
+        
+      - name: total
+        description: "Total monetary value of the cancelled order, including all products, tax, and shipping."
+        
+      - name: context_anonymous_id
+        description: "Anonymous identifier assigned to users who are not authenticated when cancelling the order."
+        
+      - name: revenue
+        description: "Total revenue associated with the cancelled order, cast as INT64."
+        
+      - name: context_endpoint_version
+        description: "Version of the endpoint that captured this order cancelled event, typically null in raw data."
+        
+      - name: context_source_type
+        description: "Type of source that generated this order cancelled event, typically null in raw data."
+        
+      - name: context_library_version
+        description: "Version of the tracking library that captured the order cancelled event."
+        
+      - name: context_request_ip
+        description: "IP address of the request that triggered this order cancelled event."
+        
+      - name: id
+        description: "Unique identifier for this specific order cancelled event, sourced from properties.id."
+        
+      - name: context_fb_fbp
+        description: "Facebook browser identifier cookie value for ad attribution during order cancellation."
+        
+      - name: type
+        description: "Type of the order cancellation, providing additional context about the cancellation reason or method."
+        
+      - name: channel
+        description: "Channel through which the order cancellation was processed, set to 'server' for server-side events."
+        
+      - name: billing_address_address
+        description: "Street address from the billing address associated with the cancelled order."
+        
+      - name: context_destination_type
+        description: "Type of destination where this order cancelled event data is being sent, typically null in raw data."
+        
+      - name: context_rudderstack_source
+        description: "Source identifier if using Rudderstack as a CDP for this order cancelled event, typically null in raw data."
+        
+      - name: context_fb_fbc
+        description: "Facebook click identifier cookie value for ad attribution during order cancellation."
+        
+      - name: tax
+        description: "Tax amount applied to the cancelled order, cast as INT64."
+        
+      - name: coupon
+        description: "Coupon or promo code applied to the cancelled order."
+        
+      - name: subtotal
+        description: "Subtotal monetary value of all products in the cancelled order, excluding tax and shipping, cast as INT64."
+        
+      - name: context_ip
+        description: "IP address of the user when the order cancelled event was triggered."
+        
+      - name: context_source_id
+        description: "Identifier for the data source endpoint that captured this order cancelled event, typically null in raw data."
+        
+      - name: affiliation
+        description: "Store or business affiliation for the cancelled order, typically null in raw data."
+        
+      - name: uuid_ts
+        description: "Timestamp derived from the hydration timestamp, used for uniqueness in identifiers."
+        
+      - name: billing_address_country
+        description: "Country name from the billing address associated with the cancelled order."
+        
+      - name: billing_address_city
+        description: "City from the billing address associated with the cancelled order."
+        
+      - name: status
+        description: "Status of the cancelled order, typically indicating the cancellation state."
+        
+      - name: event
+        description: "Type of event that occurred, set to 'Order Cancelled'."
+        
+      - name: billing_address_phone
+        description: "Phone number from the billing address associated with the cancelled order."
+        
+      - name: context_destination_id
+        description: "Identifier for the destination where this order cancelled event data is being sent, typically null in raw data."
+        
+      - name: event_text
+        description: "Text description of the event, typically null as the event field is used instead."
+        
+      - name: context_library_name
+        description: "Name of the tracking library used to capture the order cancelled event."
+        
+      - name: context_ga_4_session_id
+        description: "Session identifier from Google Analytics 4 during order cancellation."
+        
+      - name: shipping
+        description: "Shipping cost associated with the cancelled order, cast as FLOAT64."
+        
+      - name: context_ga_4_client_id
+        description: "Google Analytics 4 client identifier for the user who cancelled the order."
+        
+      - name: context_locale
+        description: "Locale setting of the user's browser or device when cancelling the order (e.g., en-US)."
+        
+      - name: discount
+        description: "Discount amount applied to the cancelled order, often as a result of using a coupon, cast as INT64."
+        
+      - name: context_ga4_session_id
+        description: "Session identifier from Google Analytics 4 during order cancellation."
+        
+      - name: context_ga4_client_id
+        description: "Google Analytics 4 client identifier for the user who cancelled the order."
+        
+      - name: billing_address_state
+        description: "State or province from the billing address associated with the cancelled order."
+        
+      - name: billing_address_state_code
+        description: "State or province code from the billing address associated with the cancelled order."
+        
+      - name: context_user_id
+        description: "User identifier from the context object, potentially different from the top-level user_id field."
+        
+      - name: context_klaviyo_exchange_id
+        description: "Klaviyo exchange identifier for email marketing attribution related to the cancelled order."
+        
+      - name: context_ga4_user_id
+        description: "Google Analytics 4 user identifier for the user who cancelled the order."
+        
+      - name: billing_address_company
+        description: "Company name from the billing address associated with the cancelled order, typically null in raw data."
+        
+      - name: context_country_code
+        description: "Country code from the context object, indicating the user's location during order cancellation."
+        
+      - name: context_category_preferences_analytics
+        description: "Boolean flag indicating the user's consent preference for analytics category during order cancellation."
+        
+      - name: context_category_preferences_advertising
+        description: "Boolean flag indicating the user's consent preference for advertising category during order cancellation."
+        
+      - name: context_category_preferences_functional
+        description: "Boolean flag indicating the user's consent preference for functional category during order cancellation."
+        
+      - name: context_category_preferences_data_sharing
+        description: "Boolean flag indicating the user's consent preference for data sharing category during order cancellation."

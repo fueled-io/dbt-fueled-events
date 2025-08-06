@@ -1,0 +1,74 @@
+version: 2
+
+models:
+  - name: fueled_events_gold_product_removed
+    description: "Gold layer model for product removal from cart events, providing a clean and business-ready view of product removal data with complete marketing attribution."
+    columns:
+      - name: event_id
+        description: "Unique identifier for this specific product removed event."
+        
+      - name: anonymous_id
+        description: "Unique identifier for the user, coalesced from either context_fueled_external_id or context_anonymous_id to ensure consistent user tracking."
+        
+      - name: user_id
+        description: "Unique identifier for authenticated users who removed the product from cart."
+        
+      - name: timestamp
+        description: "Timestamp when the product removed event occurred, normalized for analysis."
+        
+      - name: date
+        description: "Date when the product removed event occurred, extracted from the timestamp."
+        
+      - name: cart_id
+        description: "Identifier for the cart from which the product was removed."
+        
+      - name: product_id
+        description: "Unique identifier for the product that was removed from cart."
+        
+      - name: sku
+        description: "Stock keeping unit code for the product that was removed from cart."
+        
+      - name: name
+        description: "Name of the product that was removed from the cart."
+        
+      - name: category
+        description: "Category or type of the product that was removed from cart."
+        
+      - name: brand
+        description: "Brand of the product that was removed from cart."
+        
+      - name: variant
+        description: "Variant or version of the product that was removed from cart."
+        
+      - name: price
+        description: "Price of the product that was removed from cart."
+        
+      - name: quantity
+        description: "Quantity of the product that was removed from cart."
+        
+      - name: marketing_source
+        description: "Identified source of the marketing campaign that drove the user session where the product was removed."
+        
+      - name: marketing_medium
+        description: "Identified medium of the marketing campaign that drove the user session where the product was removed."
+        
+      - name: marketing_campaign
+        description: "Identified campaign that drove the user session where the product was removed, if available."
+        
+      - name: marketing_term
+        description: "Identified search term or keywords that drove the user session where the product was removed, if available."
+        
+      - name: marketing_content
+        description: "Identified content variation that drove the user session where the product was removed, if available."
+        
+      - name: session_id
+        description: "Identifier for the user session during which the product was removed from cart."
+        
+      - name: device_type
+        description: "Type of device used when the product was removed from cart (mobile, tablet, desktop)."
+        
+      - name: browser
+        description: "Browser used when the product was removed from cart."
+        
+      - name: os
+        description: "Operating system used when the product was removed from cart."

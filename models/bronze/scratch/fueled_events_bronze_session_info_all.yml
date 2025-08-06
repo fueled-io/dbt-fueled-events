@@ -1,0 +1,72 @@
+version: 2
+
+models:
+  - name: fueled_events_bronze_session_info_all
+    description: "Bronze layer model that processes user session data from page view events, identifying session boundaries, calculating session metrics, and capturing attribution data for all user sessions."
+    columns:
+      - name: context_anonymous_id
+        description: "Anonymous identifier for the user, coalesced from context_fueled_external_id or context_anonymous_id to ensure user tracking across sessions."
+        
+      - name: user_id
+        description: "Unique identifier for the authenticated user, if available."
+        
+      - name: context_fueled_external_id
+        description: "External identifier used by Fueled for tracking users across different platforms."
+        
+      - name: context_session_id
+        description: "Original session identifier from the tracking system."
+        
+      - name: context_campaign_name
+        description: "Name of the marketing campaign associated with the session, if applicable."
+        
+      - name: context_campaign_source
+        description: "Source of the marketing campaign associated with the session (e.g., google, facebook)."
+        
+      - name: context_campaign_medium
+        description: "Medium of the marketing campaign associated with the session (e.g., cpc, email)."
+        
+      - name: context_referrer
+        description: "URL of the referring page that led the user to this session, decoded for better readability."
+        
+      - name: context_page_url
+        description: "URL of the page viewed during the session, decoded for better readability."
+        
+      - name: landing_page_url
+        description: "URL of the first page viewed in the session, with custom categorization for checkout and account pages based on configured variables."
+        
+      - name: context_os_name
+        description: "Name of the operating system used by the user during the session."
+        
+      - name: title
+        description: "Title of the webpage from the HTML document title element."
+        
+      - name: timestamp
+        description: "Timestamp when the page view event occurred."
+        
+      - name: time_diff
+        description: "Time difference between consecutive events for the same user, used to determine session boundaries."
+        
+      - name: new_session_flag
+        description: "Flag (0 or 1) indicating whether this event starts a new session based on the time_diff and session_interval variable."
+        
+      - name: session_id
+        description: "Unique identifier for the session, generated as a hexadecimal MD5 hash of the anonymous ID and session number."
+        
+      - name: session_start
+        description: "Timestamp of the first event in the session."
+        
+      - name: session_end
+        description: "Timestamp of the last event in the session."
+        
+      - name: session_first_touch
+        description: "Row number within the session ordered by timestamp ascending, with 1 indicating the first touch event."
+        
+      - name: session_last_touch
+        description: "Row number within the session ordered by timestamp descending, with 1 indicating the last touch event."
+        
+      # Attribution click IDs from get_attribution_click_ids macro will include 
+      # fields related to marketing attribution extracted from the referrer.
+      
+      # Note: This model combines data from both the fueled_events_atomic.pages source
+      # and the s3_destination_pages reference model when include_s3_destination_data
+      # variable is set to true, with data split based on the s3_destination_date variable.

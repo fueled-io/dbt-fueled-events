@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: fueled_events_bronze_signed_up
+    description: "Bronze layer model that processes user signup events from both fueled_events_atomic source and s3_destination_products_signed_up reference model, capturing when users create new accounts."
+    columns:
+      - name: email
+        description: "Email address provided by the user during signup."
+        
+      - name: first_name
+        description: "First name provided by the user during signup."
+        
+      - name: last_name
+        description: "Last name provided by the user during signup."
+        
+      - name: anonymous_id
+        description: "Anonymous identifier for the user, coalesced from context_fueled_external_id or context_anonymous_id to ensure user tracking across sessions."
+        
+      - name: user_id
+        description: "Unique identifier assigned to the user upon successful signup."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the signup event occurred."
+        
+      - name: event_id
+        description: "Unique identifier for this signup event, derived from the id field in the source tables."
+        
+      # Shared event attributes from the get_shared_event_attributes macro will include
+      # fields like campaign information, page data, user traits, and other context
+      # that are standardized across all event types.
+      
+      # Attribution click IDs from get_attribution_click_ids macro will include 
+      # fields related to marketing attribution extracted from the referrer.
+      
+      # Note: This model combines data from both the fueled_events_atomic.signed_up source
+      # and the s3_destination_products_signed_up reference model when include_s3_destination_data
+      # variable is set to true, with data split based on the s3_destination_date variable.

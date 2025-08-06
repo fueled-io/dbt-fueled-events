@@ -1,0 +1,326 @@
+version: 2
+
+models:
+  - name: s3_destination_newsletter_signup_completed
+    description: "Raw newsletter signup completion events from S3 destination sources, capturing user interactions with newsletter subscription functionality across platforms."
+    columns:
+      - name: context_traits_address_street
+        description: "Street address from the user's profile data who completed a newsletter signup."
+        
+      - name: address_country_code
+        description: "Country code from the user's address information, typically null in the raw newsletter signup data."
+        
+      - name: context_traits_external_customer_id
+        description: "External customer identifier from an e-commerce or CRM system for the user who signed up for the newsletter."
+        
+      - name: context_version
+        description: "Version identifier for the context object structure in the newsletter signup event."
+        
+      - name: context_ga4_client_id
+        description: "Google Analytics 4 client identifier for the user who completed the newsletter signup."
+        
+      - name: context_ip
+        description: "IP address of the user when the newsletter signup event was triggered."
+        
+      - name: context_request_ip
+        description: "IP address of the request that triggered this newsletter signup event."
+        
+      - name: context_user_agent
+        description: "User agent string from the browser or device that triggered the newsletter signup event."
+        
+      - name: first_name
+        description: "First name provided by the user during newsletter signup, coalesced from properties, customer, or context traits."
+        
+      - name: context_debug
+        description: "Boolean flag indicating if the newsletter signup event was sent in debug mode."
+        
+      - name: context_source_id
+        description: "Identifier for the data source endpoint that captured this newsletter signup event."
+        
+      - name: loaded_at
+        description: "Timestamp when the data was loaded into the destination, derived from hydration_timestamp."
+        
+      - name: context_traits_last_name
+        description: "User's last name from profile data when signing up for the newsletter."
+        
+      - name: context_traits_address_country
+        description: "Country from the user's address information when signing up for the newsletter."
+        
+      - name: context_session_id
+        description: "Unique identifier for the user's session during which they signed up for the newsletter."
+        
+      - name: context_campaign_medium
+        description: "Marketing medium through which the campaign was delivered that led to newsletter signup."
+        
+      - name: context_fb_fbp
+        description: "Facebook browser identifier cookie value for ad attribution related to newsletter signup."
+        
+      - name: context_page_url
+        description: "Full URL of the page where the newsletter signup event occurred."
+        
+      - name: context_fb_event_id
+        description: "Facebook event identifier for tracking this newsletter signup conversion."
+        
+      - name: visitor_type
+        description: "Classification of the visitor during newsletter signup (e.g., new, returning), typically null in raw data."
+        
+      - name: channel
+        description: "Marketing or traffic channel through which the user arrived before newsletter signup."
+        
+      - name: context_traits_address_country_code
+        description: "Country code from the user's address information when signing up for the newsletter."
+        
+      - name: address_city
+        description: "City from the user's address, typically null in the raw newsletter signup data."
+        
+      - name: context_source_type
+        description: "Type of source that generated this newsletter signup event."
+        
+      - name: received_at
+        description: "Timestamp when the event was received by the data collection system."
+        
+      - name: context_campaign_term
+        description: "Search terms associated with the campaign that led to newsletter signup."
+        
+      - name: context_timezone
+        description: "Timezone of the user when the newsletter signup event was recorded."
+        
+      - name: context_campaign_source
+        description: "Original source of the marketing campaign that drove this user to sign up for the newsletter."
+        
+      - name: id
+        description: "Unique identifier for the newsletter signup event, sourced from event_id."
+        
+      - name: context_page_title
+        description: "Title of the page where the newsletter signup event occurred."
+        
+      - name: context_anonymous_id
+        description: "Anonymous identifier assigned to users who are not authenticated when signing up for the newsletter."
+        
+      - name: context_page_height
+        description: "Height of the browser viewport in pixels when the newsletter signup occurred."
+        
+      - name: uuid_ts
+        description: "Timestamp derived from the original event timestamp, used for uniqueness in identifiers."
+        
+      - name: context_campaign_content
+        description: "Content identifier of the marketing campaign, used for A/B testing and content-targeted ads."
+        
+      - name: context_locale
+        description: "Locale setting of the user's browser or device when signing up for the newsletter."
+        
+      - name: phone
+        description: "Phone number provided by the user during newsletter signup, coalesced from properties, customer, or context traits."
+        
+      - name: address_state_code
+        description: "State or province code from the user's address, typically null in raw newsletter signup data."
+        
+      - name: address_postal_code
+        description: "Postal or ZIP code from the user's address, typically null in raw newsletter signup data."
+        
+      - name: context_traits_phone
+        description: "User's phone number from profile data when signing up for the newsletter."
+        
+      - name: context_library_version
+        description: "Version of the tracking library that captured the newsletter signup event."
+        
+      - name: context_initialized
+        description: "Boolean flag indicating if the tracking library was properly initialized during newsletter signup."
+        
+      - name: context_destination_id
+        description: "Identifier for the destination where this newsletter signup event data is being sent."
+        
+      - name: timestamp
+        description: "Timestamp of the newsletter signup event, derived from the original timestamp."
+        
+      - name: event_text
+        description: "Text description of the event, with value 'Newsletter Signup Completed'."
+        
+      - name: context_traits_first_name
+        description: "User's first name from profile data when signing up for the newsletter."
+        
+      - name: context_traits_order_count
+        description: "Count of previous orders made by the user who signed up for the newsletter."
+        
+      - name: address_country
+        description: "Country from the user's address, typically null in the raw newsletter signup data."
+        
+      - name: context_campaign_id
+        description: "Unique identifier for the marketing campaign related to this newsletter signup event."
+        
+      - name: context_offline
+        description: "Boolean flag indicating if the newsletter signup event was captured while offline."
+        
+      - name: context_page_search
+        description: "Search parameters from the URL query string where the newsletter signup event occurred."
+        
+      - name: context_referrer
+        description: "URL of the referring page that led the user to the page where they signed up for the newsletter."
+        
+      - name: context_campaign_gclid
+        description: "Google Click ID (gclid) for tracking ad conversions related to newsletter signup."
+        
+      - name: email
+        description: "Email address provided by the user during newsletter signup, coalesced from properties, customer, or context traits."
+        
+      - name: context_library_name
+        description: "Name of the tracking library used to capture the newsletter signup event."
+        
+      - name: event
+        description: "Type of event that occurred, with value 'Newsletter Signup Completed'."
+        
+      - name: context_traits_email
+        description: "User's email address from profile data when signing up for the newsletter."
+        
+      - name: context_traits_visitor_type
+        description: "Classification of the visitor type (e.g., new, returning) from user profile data."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the newsletter signup event was created, before any processing."
+        
+      - name: context_fb_fbc
+        description: "Facebook click identifier cookie value for ad attribution during newsletter signup."
+        
+      - name: context_page_referrer
+        description: "Full URL of the referring page that led to the newsletter signup page."
+        
+      - name: context_destination_type
+        description: "Type of destination where this newsletter signup event data is being sent."
+        
+      - name: context_page_path
+        description: "Path portion of the URL where the newsletter signup event occurred, excluding domain."
+        
+      - name: user_id
+        description: "Unique identifier for authenticated users who signed up for the newsletter."
+        
+      - name: context_traits_name
+        description: "User's full name from profile data when signing up for the newsletter."
+        
+      - name: order_count
+        description: "Count of previous orders made by the user who signed up for the newsletter, typically null in raw data."
+        
+      - name: sent_at
+        description: "Timestamp when the newsletter signup event was sent to the collection system."
+        
+      - name: context_page_width
+        description: "Width of the browser viewport in pixels when the newsletter signup occurred."
+        
+      - name: context_os_name
+        description: "Name of the operating system where the newsletter signup event occurred."
+        
+      - name: context_fueled_external_id
+        description: "External identifier used by Fueled to track the user across platforms during newsletter signup."
+        
+      - name: context_traits_address_state_code
+        description: "State or province code from the user's address information when signing up for the newsletter."
+        
+      - name: external_customer_id
+        description: "Customer identifier from an external system for the user who signed up for the newsletter."
+        
+      - name: context_traits_address_postal_code
+        description: "Postal or ZIP code from the user's address information when signing up for the newsletter."
+        
+      - name: context_traits_address_state
+        description: "State or province from the user's address information when signing up for the newsletter."
+        
+      - name: context_rudderstack_source
+        description: "Source identifier if using Rudderstack as a CDP for this newsletter signup event."
+        
+      - name: last_name
+        description: "Last name provided by the user during newsletter signup."
+        
+      - name: context_traits_shopify_customer_id
+        description: "Shopify's unique identifier for the customer who signed up for the newsletter."
+        
+      - name: address_street
+        description: "Street address provided by the user, typically null in raw newsletter signup data."
+        
+      - name: name
+        description: "Full name provided by the user during newsletter signup."
+        
+      - name: context_source
+        description: "Source of the newsletter signup event data within the tracking system."
+        
+      - name: context_ga4_session_id
+        description: "Session identifier from Google Analytics 4 during newsletter signup."
+        
+      - name: context_app
+        description: "Application identifier from which the newsletter signup event originated."
+        
+      - name: context_ga4_user_id
+        description: "Google Analytics 4 user identifier for the user who signed up for the newsletter."
+        
+      - name: address_state
+        description: "State or province from the user's address, typically null in raw newsletter signup data."
+        
+      - name: context_traits_address_city
+        description: "City from the user's address information when signing up for the newsletter."
+        
+      - name: context_campaign_name
+        description: "Name of the marketing campaign associated with this newsletter signup event."
+        
+      - name: context_fb_external_id
+        description: "Facebook external identifier used for ad attribution related to newsletter signup."
+        
+      - name: context_endpoint_version
+        description: "Version of the endpoint that captured this newsletter signup event, derived from schema_version."
+        
+      - name: context_klaviyo_exchange_id
+        description: "Klaviyo exchange identifier for email marketing attribution related to newsletter signup."
+        
+      - name: context_campaign_klaviyo_id
+        description: "Klaviyo campaign identifier for email marketing attribution related to newsletter signup."
+        
+      - name: lifetime_value
+        description: "Monetary value representing the customer's lifetime value, typically null in raw newsletter signup data."
+        
+      - name: context_traits_lifetime_value
+        description: "Monetary value representing the customer's lifetime value from profile data when signing up."
+        
+      - name: context_page_hash
+        description: "Hash portion of the URL where the newsletter signup occurred, starting with #."
+        
+      - name: context_campaign_redirect
+        description: "Redirect URL associated with the campaign that led to newsletter signup."
+        
+      - name: context_campaign_source_platform
+        description: "Platform of the campaign source that drove newsletter signup (e.g., facebook, google)."
+        
+      - name: context_campaign_audience
+        description: "Target audience of the campaign that led to newsletter signup."
+        
+      - name: context_campaign_agid
+        description: "Ad group identifier for the campaign that led to newsletter signup."
+        
+      - name: context_ipv6
+        description: "IPv6 address of the user when signing up for the newsletter."
+        
+      - name: context_ipv4
+        description: "IPv4 address of the user when signing up for the newsletter."
+        
+      - name: context_tracking_consent_preferences
+        description: "Boolean flag indicating if the user consented to preferences tracking during newsletter signup."
+        
+      - name: context_tracking_consent_analytics
+        description: "Boolean flag indicating if the user consented to analytics tracking during newsletter signup."
+        
+      - name: context_tracking_consent_marketing
+        description: "Boolean flag indicating if the user consented to marketing tracking during newsletter signup."
+        
+      - name: context_tracking_consent_sale_of_data
+        description: "Boolean flag indicating if the user consented to sale of data during newsletter signup."
+        
+      - name: context_category_preferences_analytics
+        description: "Boolean flag indicating the user's consent preference for analytics category during newsletter signup."
+        
+      - name: context_category_preferences_advertising
+        description: "Boolean flag indicating the user's consent preference for advertising category during newsletter signup."
+        
+      - name: context_category_preferences_data_sharing
+        description: "Boolean flag indicating the user's consent preference for data sharing category during newsletter signup."
+        
+      - name: context_category_preferences_functional
+        description: "Boolean flag indicating the user's consent preference for functional category during newsletter signup."
+        
+      - name: context_campaign_fbaudience
+        description: "Facebook audience identifier for the campaign that led to newsletter signup."

@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: fueled_events_bronze_product_list_viewed_products
+    description: "Bronze layer model that unnests individual products from product_list_viewed events, providing details for each product viewed in product listing pages."
+    columns:
+      - name: event_type
+        description: "Fixed identifier indicating the source event type, set to 'product_list_viewed' for all records in this model."
+        
+      - name: event_id
+        description: "Unique identifier for the product list viewed event, references the id field from the source product_list_viewed table."
+        
+      - name: original_timestamp
+        description: "Original timestamp when the product list viewed event occurred, used for ordering and tracking when products were viewed in listings."
+        
+      - name: brand
+        description: "Brand name of the product in the listing, extracted from the JSON product object."
+        
+      - name: category
+        description: "Category classification of the product in the listing, extracted from the JSON product object."
+        
+      - name: imageUrl
+        description: "URL to the product image in the listing, extracted from the JSON product object."
+        
+      - name: name
+        description: "Product name in the listing, extracted from the JSON product object."
+        
+      - name: position
+        description: "Position of the product in the list display order, extracted from the JSON product object."
+        
+      - name: price
+        description: "Price of the product in the listing, extracted from the JSON product object."
+        
+      - name: product_id
+        description: "Unique identifier for the product in the listing, extracted from the productId field in the JSON product object."
+        
+      - name: quantity
+        description: "Quantity field for the product in the listing (typically not used in list views but preserved for schema consistency), extracted from the JSON product object."
+        
+      - name: sku
+        description: "Stock Keeping Unit (SKU) of the product in the listing, extracted from the JSON product object."
+        
+      - name: url
+        description: "URL to the product page from the listing, extracted from the JSON product object."
+        
+      - name: variant
+        description: "Product variant information in the listing (such as size, color, etc.), extracted from the JSON product object."
+        
+      - name: unnested_product_column
+        description: "Raw JSON of the entire unnested product object, preserved for debugging or accessing additional fields not explicitly extracted."

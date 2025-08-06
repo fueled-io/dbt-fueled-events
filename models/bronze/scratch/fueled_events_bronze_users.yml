@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: fueled_events_bronze_users
+    description: "Bronze layer model that processes user profile data from the fueled_events_atomic source, capturing user information and attributes."
+    columns:
+      - name: address_city
+        description: "City component of the user's address."
+        
+      - name: address_country_code
+        description: "Country code component of the user's address, typically in ISO format."
+        
+      - name: address_postal_code
+        description: "Postal or ZIP code component of the user's address."
+        
+      - name: address_state
+        description: "State or province component of the user's address."
+        
+      - name: address_street
+        description: "Street address component of the user's address."
+        
+      - name: addresses
+        description: "JSON array or object containing all addresses associated with the user, possibly including multiple addresses."
+        
+      - name: created_at
+        description: "Timestamp when the user account was created."
+        
+      - name: email
+        description: "Email address associated with the user's account."
+        
+      - name: external_customer_id
+        description: "External identifier for the customer, potentially from an integrated system like an e-commerce platform."
+        
+      - name: first_name
+        description: "User's first name or given name."
+        
+      - name: last_name
+        description: "User's last name or family name."
+        
+      - name: name
+        description: "User's full name, typically combining first_name and last_name."
+        
+      - name: phone
+        description: "Phone number associated with the user's account."
+        
+      - name: anonymous_id
+        description: "Anonymous identifier for the user, coalesced from context_fueled_external_id or context_anonymous_id to ensure user tracking across sessions."
+        
+      - name: user_id
+        description: "Unique identifier for the user, derived from the id field in the source table."
+        
+      # Shared event attributes from the get_shared_event_attributes macro will include
+      # fields like campaign information, page data, user traits, and other context
+      # that are standardized across all event types.
+      
+      # Note: This model appears to have a syntax issue with a trailing comma in the SQL that may need to be addressed.
