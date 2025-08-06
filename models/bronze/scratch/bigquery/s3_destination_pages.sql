@@ -22,6 +22,8 @@ SELECT
     JSON_VALUE(context, '$.klaviyoExchangeId')                                           AS context_klaviyo_exchange_id,
     JSON_VALUE(context, '$.page.path')                                                                               AS path,
     JSON_VALUE(context, '$.ga4.clientId')                                               AS context_ga4_client_id,
+    JSON_VALUE(context, '$.ga4.clientId')                                               AS context_ga_4_client_id,
+
     event_id                                                                           AS id,
     SAFE_CAST(JSON_VALUE(context, '$.debug') AS BOOL)                                       AS context_debug,
     JSON_VALUE(context, '$.referrer')                                                  AS context_referrer,
@@ -47,6 +49,8 @@ SELECT
     SAFE_CAST(JSON_VALUE(properties, '$.width')   AS INT64)                                  AS width,
     JSON_VALUE(context, '$.fb.externalId')                                              AS context_fb_external_id,
     JSON_VALUE(context, '$.ga4.sessionId')                                              AS context_ga4_session_id,
+    JSON_VALUE(context, '$.ga4.sessionId')                                              AS context_ga_4_session_id,
+
     sourceEndpointId                                                                  AS context_source_id,
     SAFE_CAST(JSON_VALUE(properties, '$.width')   AS INT64)                                  AS context_page_width,
     JSON_VALUE(context, '$.campaign.id')                                               AS context_campaign_id,
@@ -162,6 +166,7 @@ SELECT
     SAFE_CAST(NULL AS STRING) AS context_klaviyo_exchange_id,
     SAFE_CAST(NULL AS STRING) AS path,
     SAFE_CAST(NULL AS STRING) AS context_ga4_client_id,
+    SAFE_CAST(NULL AS STRING) AS context_ga_4_client_id,
     SAFE_CAST(NULL AS STRING) AS id,
     SAFE_CAST(NULL AS BOOL) AS context_debug,
     SAFE_CAST(NULL AS STRING) AS context_referrer,
@@ -183,6 +188,7 @@ SELECT
     SAFE_CAST(NULL AS INT64) AS width,
     SAFE_CAST(NULL AS STRING) AS context_fb_external_id,
     SAFE_CAST(NULL AS STRING) AS context_ga4_session_id,
+    SAFE_CAST(NULL AS STRING) AS context_ga_4_session_id,
     SAFE_CAST(NULL AS STRING) AS context_source_id,
     SAFE_CAST(NULL AS INT64) AS context_page_width,
     SAFE_CAST(NULL AS STRING) AS context_campaign_id,

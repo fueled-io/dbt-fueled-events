@@ -10,7 +10,6 @@ with
     product_removed as (
 
         select
-            position,
             coalesce(context_fueled_external_id, context_anonymous_id) as anonymous_id,
             user_id,
             original_timestamp
@@ -23,7 +22,6 @@ with
             where original_timestamp < '{{var('s3_destination_date', '2025-07-21')}}'
             union all
             select
-                position,
                 coalesce(context_fueled_external_id, context_anonymous_id) as anonymous_id,
                 user_id,
                 original_timestamp
