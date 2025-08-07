@@ -10,7 +10,7 @@ with
 
         select
             products,
-            total,
+            CAST(total as FLOAT64) as total,
             coalesce(context_fueled_external_id, context_anonymous_id) as anonymous_id,
             user_id,
             original_timestamp
@@ -24,7 +24,7 @@ with
             union all
             select
             products,
-            total,
+            CAST(total as FLOAT64) as total,
             coalesce(context_fueled_external_id, context_anonymous_id) as anonymous_id,
             user_id,
             original_timestamp
