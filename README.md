@@ -103,10 +103,15 @@ Here are the available flags you can use to control the transformations:
 Here are the available variables you can tweak to control you analysis:
 
 **fueled__atomic_schema**: Defines the schema (or dataset) where Fueled’s raw (atomic) events are stored.
+
 **landing_page_checkout**: The URL prefix to identify and categorize checkout-related events.
+
 **landing_page_account**:The URL prefix for account management pages, used to classify sign-up, login, and other account-related events.
+
 **direct_channel**: Specifies your primary or direct sales channel. Useful for attribution and tracking direct traffic. Mention your domain to identify
+
 **session_interval**: Determines the session timeout window (in minutes) to group user events into sessions or session id.
 
-**include_s3_destination_data**: Determines whether to include S3 destination data in the bronze models. Set to false for projects without S3 data
-**s3_destination_date**: Determines the date up to which S3 destination data should be included in the bronze models
+**include_s3_destination_data**: Determines whether to include S3 destination data in the bronze models. Set to false for projects without S3 data.
+
+**s3_destination_date**: Determines the date up to which S3 destination data should be included in the bronze models.
