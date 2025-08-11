@@ -24,6 +24,7 @@
         ('context_page_referrer', 'STRING'),
         ('context_page_height', 'INT64'),
         ('context_page_width', 'INT64'),
+        ('context_url', 'STRING'),
         ('context_referrer', 'STRING'),
         ('context_ip', 'STRING'),
         ('context_ipv4', 'STRING'),
