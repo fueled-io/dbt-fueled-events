@@ -61,8 +61,11 @@ models:
       - name: marketing_content
         description: "Identified content variation that drove the user session where the product was removed, if available."
         
-      - name: session_id
+      - name: fueled_stitched_session_id
         description: "Identifier for the user session during which the product was removed from cart."
+        
+      - name: session_id
+        description: "Raw context session identifier from the event payload (unstitched)."
         
       - name: device_type
         description: "Type of device used when the product was removed from cart (mobile, tablet, desktop)."

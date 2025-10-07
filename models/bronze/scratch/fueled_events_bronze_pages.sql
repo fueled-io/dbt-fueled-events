@@ -20,6 +20,7 @@ with
             width,
             coalesce(context_fueled_external_id, context_anonymous_id) as anonymous_id,
             user_id,
+            context_session_id,
             original_timestamp
             {{ get_shared_event_attributes("fueled_events_atomic", "pages") }},
             id as event_id,
@@ -40,6 +41,7 @@ with
                 width,
                 coalesce(context_fueled_external_id, context_anonymous_id) as anonymous_id,
                 user_id,
+                context_session_id,
                 original_timestamp
                 {{ get_shared_event_attributes("fueled_events_atomic", "pages") }},
                 id as event_id,

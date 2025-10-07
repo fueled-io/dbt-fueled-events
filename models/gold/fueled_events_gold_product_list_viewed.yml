@@ -4,8 +4,11 @@ models:
   - name: fueled_events_gold_product_list_viewed
     description: "Gold layer model for product list viewed events, joining silver product list viewed data with session-level marketing attribution data for comprehensive product discovery analysis."
     columns:
-      - name: session_id
+      - name: fueled_stitched_session_id
         description: "Unique identifier for the user session during which the product list was viewed, joined from session touch level attributes."
+      
+      - name: session_id
+        description: "Raw context session identifier from the event payload (unstitched)."
       
       - name: anonymous_id
         description: "Unique identifier for the user, coalesced from either context_fueled_external_id or context_anonymous_id to ensure consistent user tracking."

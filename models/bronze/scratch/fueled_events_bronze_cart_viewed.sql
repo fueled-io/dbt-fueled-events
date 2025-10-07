@@ -12,6 +12,7 @@ with
             products,
             CAST(total as FLOAT64) as total,
             coalesce(context_fueled_external_id, context_anonymous_id) as anonymous_id,
+            context_session_id,
             user_id,
             original_timestamp
             {{ get_shared_event_attributes("fueled_events_atomic", "cart_viewed") }},
@@ -26,6 +27,7 @@ with
             products,
             CAST(total as FLOAT64) as total,
             coalesce(context_fueled_external_id, context_anonymous_id) as anonymous_id,
+            context_session_id,
             user_id,
             original_timestamp
             {{ get_shared_event_attributes("fueled_events_atomic", "cart_viewed") }},

@@ -37,8 +37,11 @@ models:
       - name: marketing_content
         description: "Identified content variation that drove the user to the site before this search, if available."
         
-      - name: session_id
+      - name: fueled_stitched_session_id
         description: "Identifier for the user session during which this search was performed."
+        
+      - name: session_id
+        description: "Raw context session identifier from the event payload (unstitched)."
         
       - name: landing_page
         description: "First page the user visited in the session where this search was performed."

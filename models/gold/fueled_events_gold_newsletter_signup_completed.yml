@@ -36,6 +36,12 @@ models:
         
       - name: marketing_content
         description: "Identified content variation that drove the newsletter signup, if available."
+
+      - name: fueled_stitched_session_id
+        description: "Unique identifier for the stitched user session associated with this newsletter signup, derived from session stitching logic."
+        
+      - name: session_id
+        description: "Raw context session identifier from the event payload (unstitched)."
         
       - name: landing_page
         description: "First page the user visited in the session when they signed up for the newsletter."

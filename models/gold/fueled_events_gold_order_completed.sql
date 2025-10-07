@@ -5,8 +5,9 @@
 
 with purchase as(
 select 
-  s.session_id,
-  oc.*,
+  s.session_id as fueled_stitched_session_id,
+  oc.context_session_id as session_id,
+  oc.* EXCEPT (context_session_id),
   s.session_first_touch_marketing_source,
   s.session_last_touch_marketing_source,
   s.session_first_touch_marketing_medium,

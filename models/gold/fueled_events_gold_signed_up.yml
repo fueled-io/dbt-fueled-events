@@ -36,6 +36,9 @@ models:
         
       - name: marketing_content
         description: "Identified content variation that drove the signup event, if available."
+
+      - name: fueled_stitched_session_id
+        description: "Unique identifier for the stitched user session associated with this signup, derived from session stitching logic."
         
       - name: landing_page
         description: "First page the user visited in the session where they signed up."

@@ -5,8 +5,9 @@
 
 with signup as (
 select 
-  s.session_id,
-  su.*,
+  s.session_id as fueled_stitched_session_id,
+  su.context_session_id as session_id,
+  su.* EXCEPT (context_session_id),
   s.session_first_touch_marketing_source,
   s.session_last_touch_marketing_source,
   s.session_first_touch_marketing_medium,

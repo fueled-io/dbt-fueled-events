@@ -4,8 +4,11 @@ models:
   - name: fueled_events_gold_cart_viewed
     description: "Gold layer model for cart viewed events, joining silver cart viewed data with session-level marketing attribution data for comprehensive analysis."
     columns:
-      - name: session_id
+      - name: fueled_stitched_session_id
         description: "Unique identifier for the user session during which the cart was viewed, joined from session touch level attributes."
+      
+      - name: session_id
+        description: "Raw context session identifier from the event payload (unstitched)."
       
       - name: products
         description: "JSON string representation of the products array in the cart, including product details such as SKU, name, price, and quantity."

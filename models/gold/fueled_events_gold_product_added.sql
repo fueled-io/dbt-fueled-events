@@ -4,8 +4,9 @@
 ) }}
 
 select 
-  s.session_id,
-  pa.*,
+  s.session_id as fueled_stitched_session_id,
+  pa.context_session_id as session_id,
+  pa.* EXCEPT (context_session_id),
   s.session_first_touch_marketing_source,
   s.session_last_touch_marketing_source,
   s.session_first_touch_marketing_medium,

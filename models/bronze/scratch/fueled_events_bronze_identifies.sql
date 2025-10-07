@@ -16,6 +16,7 @@ with
             phone,
             coalesce(context_fueled_external_id, context_anonymous_id) as anonymous_id,
             user_id,
+            context_session_id,
             external_customer_id,
             created_at,
             original_timestamp
